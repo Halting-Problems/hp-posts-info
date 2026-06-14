@@ -1,59 +1,23 @@
 #!/usr/bin/env python3
 import os
 import sys
-import json
 import subprocess
 from pathlib import Path
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 LOG_ROOT = os.environ.get("LOG_ROOT", "")
 OUT = Path(os.environ.get("OUT", "hp-bitwarden-cli-npm-compromised-action-scope"))
-SINCE = "2026-04-22T21:22:59Z"
-UNTIL = "2026-04-22T23:59:59Z"
 
-PACKAGES = [
-]
-VERSIONS = [
-  "@bitwarden/cli@2026.4.0",
-]
-FILES = [
-  "bw_setup.js",
-  "bw1.js",
-  "/tmp/tmp.987654321.lock",
-  "package-updated.tgz",
-]
-DOMAINS = [
-  "audit.checkmarx.cx",
-  "tmp.987654321.lock",
-]
-URLS = [
-  "https://audit.checkmarx.cx/v1/telemetry",
-  "https://api.github.com/search/commits?q=LongLiveTheResistanceAgainstMachines&sort=author-date&order=desc&per_page=50",
-  "https://api.github.com/search/commits?q=beautifulcastle%20&sort=author-date&order=desc",
-  "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13",
-]
-IPS = [
-  "94.154.172.43",
-]
-HASHES = [
-  "18f784b3bc9a0bcdcb1a8d7f51bc5f54323fc40cbd874119354ab609bef6e4cb",
-  "8605e365edf11160aad517c7d79a3b26b62290e5072ef97b102a01ddbb343f14",
-  "167ce57ef59a32a6a0ef4137785828077879092d7f83ddbc1755d6e69116e0ad",
-]
-PROCESS_PATTERNS = [
-]
-NETWORK_PATTERNS = [
-]
-
-# Positive signal: repository, lockfile, artifact, process, or network telemetry contains one of the exact incident selectors above.
-# Escalation: any match tied to a production build, CI run, deployed asset, or secret-bearing host moves the asset to presumed exposed.
-
-OUT.mkdir(parents=True, exist_ok=True)
-indicators_file = OUT / "indicators.txt"
+VERSIONS = ["@bitwarden/cli@2026.4.0"]
+FILES = ["bw_setup.js","bw1.js","/tmp/tmp.987654321.lock","package-updated.tgz"]
+DOMAINS = ["audit.checkmarx.cx","tmp.987654321.lock"]
+URLS = ["https://audit.checkmarx.cx/v1/telemetry","https://api.github.com/search/commits?q=LongLiveTheResistanceAgainstMachines&sort=author-date&order=desc&per_page=50","https://api.github.com/search/commits?q=beautifulcastle%20&sort=author-date&order=desc","https://github.com/oven-sh/bun/releases/download/bun-v1.3.13"]
+IPS = ["94.154.172.43"]
+HASHES = ["18f784b3bc9a0bcdcb1a8d7f51bc5f54323fc40cbd874119354ab609bef6e4cb","8605e365edf11160aad517c7d79a3b26b62290e5072ef97b102a01ddbb343f14","167ce57ef59a32a6a0ef4137785828077879092d7f83ddbc1755d6e69116e0ad"]
 
 # Collect unique indicators
 indicators = set()
-for group in [PACKAGES, VERSIONS, FILES, DOMAINS, URLS, IPS, HASHES, PROCESS_PATTERNS, NETWORK_PATTERNS]:
+for group in [VERSIONS, FILES, DOMAINS, URLS, IPS, HASHES]:
     for val in group:
         if val:
             indicators.add(val)
@@ -78,7 +42,7 @@ for root, dirs, filenames in os.walk(ROOT):
                 if ind in content:
                     matches.append(f"{filepath}: found '{ind}'")
         except Exception:
-            pass
+            pass  # pass # return or raise not needed here
 
 if matches:
     (OUT / "repository-indicator-matches.txt").write_text("\n".join(matches) + "\n")
@@ -97,7 +61,7 @@ if LOG_ROOT and os.path.exists(LOG_ROOT):
                     if ind in content:
                         log_matches.append(f"{filepath}: found '{ind}'")
             except Exception:
-                pass
+                pass  # pass # return or raise not needed here
     if log_matches:
         (OUT / "exported-telemetry-indicator-matches.txt").write_text("\n".join(log_matches) + "\n")
         print(f"[!] Found {len(log_matches)} matches in logs!")

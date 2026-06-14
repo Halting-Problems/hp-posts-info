@@ -1,100 +1,24 @@
 #!/usr/bin/env python3
 import os
 import sys
-import json
 import subprocess
 from pathlib import Path
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 LOG_ROOT = os.environ.get("LOG_ROOT", "")
 OUT = Path(os.environ.get("OUT", "hp-trapdoor-cross-ecosystem-crypto-stealer-scope"))
-SINCE = "2026-05-22T20:20:18Z"
-UNTIL = "2026-05-24T23:59:59Z"
 
-PACKAGES = [
-  "async-pipeline-builder",
-  "build-scripts-utils",
-  "chain-key-validator",
-  "crypto-credential-scanner",
-  "defi-env-auditor",
-  "defi-threat-scanner",
-  "deployment-key-auditor",
-  "dev-env-bootstrapper",
-  "eth-wallet-sentinel",
-  "llm-context-compressor",
-  "mnemonic-safety-check",
-  "model-switch-router",
-  "node-setup-helpers",
-  "project-init-tools",
-  "prompt-engineering-toolkit",
-  "solidity-deploy-guard",
-  "token-usage-tracker",
-  "wallet-backup-verifier",
-  "wallet-security-checker",
-  "web3-secrets-detector",
-  "workspace-config-loader",
-  "cryptowallet-safety",
-  "data-pipeline-check",
-  "defi-risk-scanner",
-  "env-loader-cli",
-  "eth-security-auditor",
-  "git-config-sync",
-  "solidity-build-guard",
-  "move-analyzer-build",
-  "move-compiler-tools",
-  "move-project-builder",
-  "sui-framework-helpers",
-  "sui-move-build-helper",
-  "sui-sdk-build-utils",
-]
-VERSIONS = [
-  "env-loader-cli@0.1.0",
-  "env-loader-cli@0.1.1",
-  "eth-security-auditor@0.1.0",
-  "sui-framework-helpers@0.1.0",
-  "PyPI/env-loader-cli 0.1.0",
-  "PyPI/env-loader-cli 0.1.1",
-  "PyPI/eth-security-auditor 0.1.0",
-  "Crates.io/sui-framework-helpers 0.1.0",
-]
-FILES = [
-  "trap-core.js",
-  ".cursorrules",
-  "CLAUDE.md",
-  "build.rs",
-]
-DOMAINS = [
-  "ddjidd564.github.io",
-]
-URLS = [
-  "https://ddjidd564.github.io/defi-security-best-practices/",
-  "https://ddjidd564.github.io/defi-security-best-practices/config.json",
-  "https://ddjidd564.github.io/defi-security-best-practices/payloads/compliance-scanner-light.js",
-  "https://ddjidd564.github.io/defi-security-best-practices/payloads/risk-profiler.js",
-]
-IPS = [
-]
-HASHES = [
-]
-PROCESS_PATTERNS = [
-  "npm -> node trap-core.js",
-  "python -> node -e",
-  "cargo -> build.rs",
-]
-NETWORK_PATTERNS = [
-  "developer or CI host egress to ddjidd564.github.io",
-  "post-install GitHub or AWS credential validation",
-]
-
-# Positive signal: repository, lockfile, artifact, process, or network telemetry contains one of the exact incident selectors above.
-# Escalation: any match tied to a production build, CI run, deployed asset, or secret-bearing host moves the asset to presumed exposed.
-
-OUT.mkdir(parents=True, exist_ok=True)
-indicators_file = OUT / "indicators.txt"
+PACKAGES = ["async-pipeline-builder","build-scripts-utils","chain-key-validator","crypto-credential-scanner","defi-env-auditor","defi-threat-scanner","deployment-key-auditor","dev-env-bootstrapper","eth-wallet-sentinel","llm-context-compressor","mnemonic-safety-check","model-switch-router","node-setup-helpers","project-init-tools","prompt-engineering-toolkit","solidity-deploy-guard","token-usage-tracker","wallet-backup-verifier","wallet-security-checker","web3-secrets-detector","workspace-config-loader","cryptowallet-safety","data-pipeline-check","defi-risk-scanner","env-loader-cli","eth-security-auditor","git-config-sync","solidity-build-guard","move-analyzer-build","move-compiler-tools","move-project-builder","sui-framework-helpers","sui-move-build-helper","sui-sdk-build-utils"]
+VERSIONS = ["env-loader-cli@0.1.0","env-loader-cli@0.1.1","eth-security-auditor@0.1.0","sui-framework-helpers@0.1.0","PyPI/env-loader-cli 0.1.0","PyPI/env-loader-cli 0.1.1","PyPI/eth-security-auditor 0.1.0","Crates.io/sui-framework-helpers 0.1.0"]
+FILES = ["trap-core.js",".cursorrules","CLAUDE.md","build.rs"]
+DOMAINS = ["ddjidd564.github.io"]
+URLS = ["https://ddjidd564.github.io/defi-security-best-practices/","https://ddjidd564.github.io/defi-security-best-practices/config.json","https://ddjidd564.github.io/defi-security-best-practices/payloads/compliance-scanner-light.js","https://ddjidd564.github.io/defi-security-best-practices/payloads/risk-profiler.js"]
+PROCESS_PATTERNS = ["npm -> node trap-core.js","python -> node -e","cargo -> build.rs"]
+NETWORK_PATTERNS = ["developer or CI host egress to ddjidd564.github.io","post-install GitHub or AWS credential validation"]
 
 # Collect unique indicators
 indicators = set()
-for group in [PACKAGES, VERSIONS, FILES, DOMAINS, URLS, IPS, HASHES, PROCESS_PATTERNS, NETWORK_PATTERNS]:
+for group in [PACKAGES, VERSIONS, FILES, DOMAINS, URLS, PROCESS_PATTERNS, NETWORK_PATTERNS]:
     for val in group:
         if val:
             indicators.add(val)
@@ -119,7 +43,7 @@ for root, dirs, filenames in os.walk(ROOT):
                 if ind in content:
                     matches.append(f"{filepath}: found '{ind}'")
         except Exception:
-            pass
+            pass  # pass # return or raise not needed here
 
 if matches:
     (OUT / "repository-indicator-matches.txt").write_text("\n".join(matches) + "\n")
@@ -138,7 +62,7 @@ if LOG_ROOT and os.path.exists(LOG_ROOT):
                     if ind in content:
                         log_matches.append(f"{filepath}: found '{ind}'")
             except Exception:
-                pass
+                pass  # pass # return or raise not needed here
     if log_matches:
         (OUT / "exported-telemetry-indicator-matches.txt").write_text("\n".join(log_matches) + "\n")
         print(f"[!] Found {len(log_matches)} matches in logs!")

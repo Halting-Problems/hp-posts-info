@@ -1,58 +1,23 @@
 #!/usr/bin/env python3
 import os
 import sys
-import json
 import subprocess
 from pathlib import Path
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 LOG_ROOT = os.environ.get("LOG_ROOT", "")
 OUT = Path(os.environ.get("OUT", "hp-xinference-pypi-credential-hijack-scope"))
-SINCE = "2026-04-22T00:00:00Z"
-UNTIL = "2026-04-23T23:59:59Z"
 
-PACKAGES = [
-]
-VERSIONS = [
-  "xinference==2.6.0",
-  "xinference==2.6.1",
-  "xinference==2.6.2",
-]
-FILES = [
-  "xinference/__init__.py",
-  "love.tar.gz",
-  "f",
-]
-DOMAINS = [
-  "whereisitat.lucyatemysuperbox.space",
-  "love.tar.gz",
-]
-URLS = [
-  "https://whereisitat.lucyatemysuperbox.space/",
-]
-IPS = [
-]
-HASHES = [
-  "e1e007ce4eab7774785617179d1c01a9381ae83abfd431aae8dba6f82d3ac127",
-  "077d49fa708f498969d7cdffe701eb64675baaa4968ded9bd97a4936dd56c21c",
-  "fe17e2ea4012d07d90ecb7793c1b0593a6138d25a9393192263e751660ec3cd0",
-]
-PROCESS_PATTERNS = [
-  "curl --data-binary",
-  "subprocess.Popen",
-]
-NETWORK_PATTERNS = [
-]
-
-# Positive signal: repository, lockfile, artifact, process, or network telemetry contains one of the exact incident selectors above.
-# Escalation: any match tied to a production build, CI run, deployed asset, or secret-bearing host moves the asset to presumed exposed.
-
-OUT.mkdir(parents=True, exist_ok=True)
-indicators_file = OUT / "indicators.txt"
+VERSIONS = ["xinference==2.6.0","xinference==2.6.1","xinference==2.6.2"]
+FILES = ["xinference/__init__.py","love.tar.gz","f"]
+DOMAINS = ["whereisitat.lucyatemysuperbox.space","love.tar.gz"]
+URLS = ["https://whereisitat.lucyatemysuperbox.space/"]
+HASHES = ["e1e007ce4eab7774785617179d1c01a9381ae83abfd431aae8dba6f82d3ac127","077d49fa708f498969d7cdffe701eb64675baaa4968ded9bd97a4936dd56c21c","fe17e2ea4012d07d90ecb7793c1b0593a6138d25a9393192263e751660ec3cd0"]
+PROCESS_PATTERNS = ["curl --data-binary","subprocess.Popen"]
 
 # Collect unique indicators
 indicators = set()
-for group in [PACKAGES, VERSIONS, FILES, DOMAINS, URLS, IPS, HASHES, PROCESS_PATTERNS, NETWORK_PATTERNS]:
+for group in [VERSIONS, FILES, DOMAINS, URLS, HASHES, PROCESS_PATTERNS]:
     for val in group:
         if val:
             indicators.add(val)
@@ -77,7 +42,7 @@ for root, dirs, filenames in os.walk(ROOT):
                 if ind in content:
                     matches.append(f"{filepath}: found '{ind}'")
         except Exception:
-            pass
+            pass  # pass # return or raise not needed here
 
 if matches:
     (OUT / "repository-indicator-matches.txt").write_text("\n".join(matches) + "\n")
@@ -96,7 +61,7 @@ if LOG_ROOT and os.path.exists(LOG_ROOT):
                     if ind in content:
                         log_matches.append(f"{filepath}: found '{ind}'")
             except Exception:
-                pass
+                pass  # pass # return or raise not needed here
     if log_matches:
         (OUT / "exported-telemetry-indicator-matches.txt").write_text("\n".join(log_matches) + "\n")
         print(f"[!] Found {len(log_matches)} matches in logs!")

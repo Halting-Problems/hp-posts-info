@@ -1,65 +1,24 @@
 #!/usr/bin/env python3
 import os
 import sys
-import json
 import subprocess
 from pathlib import Path
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 LOG_ROOT = os.environ.get("LOG_ROOT", "")
 OUT = Path(os.environ.get("OUT", "hp-elementary-data-pypi-ghcr-compromise-scope"))
-SINCE = "2026-04-24T22:10:00Z"
-UNTIL = "2026-04-25T23:59:59Z"
 
-PACKAGES = [
-  "elementary-data",
-]
-VERSIONS = [
-  "0.23.3",
-  "elementary-data==0.23.3",
-  "ghcr.io/elementary-data/elementary:0.23.3",
-  "ghcr.io/elementary-data/elementary:latest",
-]
-FILES = [
-  "elementary.pth",
-  "trin.tar.gz",
-  "/tmp/.trinny-security-update",
-  "%TEMP%\\\\.trinny-security-update",
-]
-DOMAINS = [
-  "igotnofriendsonlineorirl-imgonnakmslmao.skyhanni.cloud",
-  "trin.tar.gz",
-]
-URLS = [
-]
-IPS = [
-]
-HASHES = [
-  "sha256:31ecc5939de6d24cf60c50d4ca26cf7a8c322db82a8ce4bd122ebd89cf634255",
-  "sha256:b3bbfafde1a0db3a4d47e70eb0eb2ca19daef4a19410154a71abee567b35d3d9",
-  "sha256:fe52712660fef56586d954e50f81ccc7b96ed2809b5e930c7b9d032e7ab03b8d",
-  "sha256:5cf8f4c3fa0b7e84cb0096c94eb9af941ea632c9acffa002d0db3b3c1d9ef97e",
-  "31ecc5939de6d24cf60c50d4ca26cf7a8c322db82a8ce4bd122ebd89cf634255",
-  "b3bbfafde1a0db3a4d47e70eb0eb2ca19daef4a19410154a71abee567b35d3d9",
-  "fe52712660fef56586d954e50f81ccc7b96ed2809b5e930c7b9d032e7ab03b8d",
-  "5cf8f4c3fa0b7e84cb0096c94eb9af941ea632c9acffa002d0db3b3c1d9ef97e",
-]
-PROCESS_PATTERNS = [
-  "Python startup executes `elementary.pth`",
-]
-NETWORK_PATTERNS = [
-  "egress related to elementary-data 0.23.3 package or GHCR image",
-]
-
-# Positive signal: repository, lockfile, artifact, process, or network telemetry contains one of the exact incident selectors above.
-# Escalation: any match tied to a production build, CI run, deployed asset, or secret-bearing host moves the asset to presumed exposed.
-
-OUT.mkdir(parents=True, exist_ok=True)
-indicators_file = OUT / "indicators.txt"
+PACKAGES = ["elementary-data"]
+VERSIONS = ["0.23.3","elementary-data==0.23.3","ghcr.io/elementary-data/elementary:0.23.3","ghcr.io/elementary-data/elementary:latest"]
+FILES = ["elementary.pth","trin.tar.gz","/tmp/.trinny-security-update","%TEMP%\\\\.trinny-security-update"]
+DOMAINS = ["igotnofriendsonlineorirl-imgonnakmslmao.skyhanni.cloud","trin.tar.gz"]
+HASHES = ["sha256:31ecc5939de6d24cf60c50d4ca26cf7a8c322db82a8ce4bd122ebd89cf634255","sha256:b3bbfafde1a0db3a4d47e70eb0eb2ca19daef4a19410154a71abee567b35d3d9","sha256:fe52712660fef56586d954e50f81ccc7b96ed2809b5e930c7b9d032e7ab03b8d","sha256:5cf8f4c3fa0b7e84cb0096c94eb9af941ea632c9acffa002d0db3b3c1d9ef97e","31ecc5939de6d24cf60c50d4ca26cf7a8c322db82a8ce4bd122ebd89cf634255","b3bbfafde1a0db3a4d47e70eb0eb2ca19daef4a19410154a71abee567b35d3d9","fe52712660fef56586d954e50f81ccc7b96ed2809b5e930c7b9d032e7ab03b8d","5cf8f4c3fa0b7e84cb0096c94eb9af941ea632c9acffa002d0db3b3c1d9ef97e"]
+PROCESS_PATTERNS = ["Python startup executes `elementary.pth`"]
+NETWORK_PATTERNS = ["egress related to elementary-data 0.23.3 package or GHCR image"]
 
 # Collect unique indicators
 indicators = set()
-for group in [PACKAGES, VERSIONS, FILES, DOMAINS, URLS, IPS, HASHES, PROCESS_PATTERNS, NETWORK_PATTERNS]:
+for group in [PACKAGES, VERSIONS, FILES, DOMAINS, HASHES, PROCESS_PATTERNS, NETWORK_PATTERNS]:
     for val in group:
         if val:
             indicators.add(val)
@@ -84,7 +43,7 @@ for root, dirs, filenames in os.walk(ROOT):
                 if ind in content:
                     matches.append(f"{filepath}: found '{ind}'")
         except Exception:
-            pass
+            pass  # pass # return or raise not needed here
 
 if matches:
     (OUT / "repository-indicator-matches.txt").write_text("\n".join(matches) + "\n")
@@ -103,7 +62,7 @@ if LOG_ROOT and os.path.exists(LOG_ROOT):
                     if ind in content:
                         log_matches.append(f"{filepath}: found '{ind}'")
             except Exception:
-                pass
+                pass  # pass # return or raise not needed here
     if log_matches:
         (OUT / "exported-telemetry-indicator-matches.txt").write_text("\n".join(log_matches) + "\n")
         print(f"[!] Found {len(log_matches)} matches in logs!")

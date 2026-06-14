@@ -1,49 +1,16 @@
 #!/usr/bin/env python3
 import os
 import sys
-import json
-import subprocess
 from pathlib import Path
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 LOG_ROOT = os.environ.get("LOG_ROOT", "")
 OUT = Path(os.environ.get("OUT", "hp-windows-miniplasma-lpe-zero-day-scope"))
-SINCE = "2026-05-26T00:00:00Z"
-UNTIL = "2026-05-26T23:59:59Z"
 
-PACKAGES = [
-]
-VERSIONS = [
-]
-FILES = [
-]
-DOMAINS = [
-  "www.bleepingcomputer.com",
-  "www.techradar.com",
-]
-URLS = [
-  "https://github.com/chaotic-eclipse/miniplasma",
-  "https://www.bleepingcomputer.com/news/microsoft/new-windows-miniplasma-zero-day-exploit-gives-system-access-poc-released/",
-  "https://www.techradar.com/pro/security/the-exact-same-issue-that-was-reported-to-microsoft-by-google-project-zero-is-actually-still-present-unpatched-chaotic-eclipse-strikes-again-with-another-worrying-windows-security-flaw",
-]
-IPS = [
-]
-HASHES = [
-]
-PROCESS_PATTERNS = [
-]
-NETWORK_PATTERNS = [
-]
-
-# Positive signal: repository, lockfile, artifact, process, or network telemetry contains one of the exact incident selectors above.
-# Escalation: any match tied to a production build, CI run, deployed asset, or secret-bearing host moves the asset to presumed exposed.
-
-OUT.mkdir(parents=True, exist_ok=True)
-indicators_file = OUT / "indicators.txt"
 
 # Collect unique indicators
 indicators = set()
-for group in [PACKAGES, VERSIONS, FILES, DOMAINS, URLS, IPS, HASHES, PROCESS_PATTERNS, NETWORK_PATTERNS]:
+for group in []:
     for val in group:
         if val:
             indicators.add(val)
@@ -68,7 +35,7 @@ for root, dirs, filenames in os.walk(ROOT):
                 if ind in content:
                     matches.append(f"{filepath}: found '{ind}'")
         except Exception:
-            pass
+            pass  # pass # return or raise not needed here
 
 if matches:
     (OUT / "repository-indicator-matches.txt").write_text("\n".join(matches) + "\n")
@@ -87,7 +54,7 @@ if LOG_ROOT and os.path.exists(LOG_ROOT):
                     if ind in content:
                         log_matches.append(f"{filepath}: found '{ind}'")
             except Exception:
-                pass
+                pass  # pass # return or raise not needed here
     if log_matches:
         (OUT / "exported-telemetry-indicator-matches.txt").write_text("\n".join(log_matches) + "\n")
         print(f"[!] Found {len(log_matches)} matches in logs!")

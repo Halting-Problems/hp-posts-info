@@ -1,54 +1,22 @@
 #!/usr/bin/env python3
 import os
 import sys
-import json
 import subprocess
 from pathlib import Path
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 LOG_ROOT = os.environ.get("LOG_ROOT", "")
 OUT = Path(os.environ.get("OUT", "hp-intercom-client-npm-shai-hulud-scope"))
-SINCE = "2026-04-30T14:41:04Z"
-UNTIL = "2026-06-08T11:53:00Z"
 
-PACKAGES = [
-  "intercom-client",
-]
-VERSIONS = [
-  "7.0.4",
-  "intercom-client@7.0.4",
-]
-FILES = [
-  "setup.mjs",
-  "router_runtime.js",
-]
-DOMAINS = [
-  "api.github.com",
-  "metadata.google.internal",
-]
-URLS = [
-  "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/",
-]
-IPS = [
-  "169.254.169.254",
-]
-HASHES = [
-  "5f748fbc89cde66abefa826439c765a0081a027792e9da8d80fbf23571311622",
-  "fe64699649591948d6f960705caac86fe99600bf76e3eae29b4517705a58f0e2",
-  "5ae8b2343e97cc3b2c945ec34318b63f27fa2db1e3d8fbaa78c298aa63db52ed",
-]
-PROCESS_PATTERNS = [
-  "npm preinstall launches Bun-backed loader files",
-]
-NETWORK_PATTERNS = [
-  "egress related to intercom-client 7.0.4",
-]
-
-# Positive signal: repository, lockfile, artifact, process, or network telemetry contains one of the exact incident selectors above.
-# Escalation: any match tied to a production build, CI run, deployed asset, or secret-bearing host moves the asset to presumed exposed.
-
-OUT.mkdir(parents=True, exist_ok=True)
-indicators_file = OUT / "indicators.txt"
+PACKAGES = ["intercom-client"]
+VERSIONS = ["7.0.4","intercom-client@7.0.4"]
+FILES = ["setup.mjs","router_runtime.js"]
+DOMAINS = ["api.github.com","metadata.google.internal"]
+URLS = ["https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/"]
+IPS = ["169.254.169.254"]
+HASHES = ["5f748fbc89cde66abefa826439c765a0081a027792e9da8d80fbf23571311622","fe64699649591948d6f960705caac86fe99600bf76e3eae29b4517705a58f0e2","5ae8b2343e97cc3b2c945ec34318b63f27fa2db1e3d8fbaa78c298aa63db52ed"]
+PROCESS_PATTERNS = ["npm preinstall launches Bun-backed loader files"]
+NETWORK_PATTERNS = ["egress related to intercom-client 7.0.4"]
 
 # Collect unique indicators
 indicators = set()
@@ -77,7 +45,7 @@ for root, dirs, filenames in os.walk(ROOT):
                 if ind in content:
                     matches.append(f"{filepath}: found '{ind}'")
         except Exception:
-            pass
+            pass  # pass # return or raise not needed here
 
 if matches:
     (OUT / "repository-indicator-matches.txt").write_text("\n".join(matches) + "\n")
@@ -96,7 +64,7 @@ if LOG_ROOT and os.path.exists(LOG_ROOT):
                     if ind in content:
                         log_matches.append(f"{filepath}: found '{ind}'")
             except Exception:
-                pass
+                pass  # pass # return or raise not needed here
     if log_matches:
         (OUT / "exported-telemetry-indicator-matches.txt").write_text("\n".join(log_matches) + "\n")
         print(f"[!] Found {len(log_matches)} matches in logs!")

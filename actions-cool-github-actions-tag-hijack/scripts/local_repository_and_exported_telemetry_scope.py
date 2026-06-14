@@ -1,53 +1,19 @@
 #!/usr/bin/env python3
 import os
 import sys
-import json
-import subprocess
 from pathlib import Path
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 LOG_ROOT = os.environ.get("LOG_ROOT", "")
 OUT = Path(os.environ.get("OUT", "hp-actions-cool-github-actions-tag-hijack-scope"))
-SINCE = "2026-05-18T19:10:24Z"
-UNTIL = "2026-05-24T23:59:59Z"
 
-PACKAGES = [
-]
-VERSIONS = [
-]
-FILES = [
-]
-DOMAINS = [
-  "t.m-kosche.com",
-]
-URLS = [
-]
-IPS = [
-]
-HASHES = [
-  "1c9e803c80cc7fed000022d4c94f4b5bc2e90062",
-  "147337a919d92f4bf42f02843682d694650f1e22",
-  "7f6120bb10c870b9fde146961a18e5bf0b3d4401",
-  "c43d668894bebbeea688878ab6774fa405f22251",
-]
-PROCESS_PATTERNS = [
-  "Bun under /home/runner/.bun/bin/bun",
-  "python3 reading /proc//mem",
-  "gh auth token followed by sudo python3",
-  "tr or grep filtering for isSecret:true",
-]
-NETWORK_PATTERNS = [
-]
-
-# Positive signal: repository, lockfile, artifact, process, or network telemetry contains one of the exact incident selectors above.
-# Escalation: any match tied to a production build, CI run, deployed asset, or secret-bearing host moves the asset to presumed exposed.
-
-OUT.mkdir(parents=True, exist_ok=True)
-indicators_file = OUT / "indicators.txt"
+DOMAINS = ["t.m-kosche.com"]
+HASHES = ["1c9e803c80cc7fed000022d4c94f4b5bc2e90062","147337a919d92f4bf42f02843682d694650f1e22","7f6120bb10c870b9fde146961a18e5bf0b3d4401","c43d668894bebbeea688878ab6774fa405f22251"]
+PROCESS_PATTERNS = ["Bun under /home/runner/.bun/bin/bun","python3 reading /proc//mem","gh auth token followed by sudo python3","tr or grep filtering for isSecret:true"]
 
 # Collect unique indicators
 indicators = set()
-for group in [PACKAGES, VERSIONS, FILES, DOMAINS, URLS, IPS, HASHES, PROCESS_PATTERNS, NETWORK_PATTERNS]:
+for group in [DOMAINS, HASHES, PROCESS_PATTERNS]:
     for val in group:
         if val:
             indicators.add(val)
@@ -72,7 +38,7 @@ for root, dirs, filenames in os.walk(ROOT):
                 if ind in content:
                     matches.append(f"{filepath}: found '{ind}'")
         except Exception:
-            pass
+            pass  # pass # return or raise not needed here
 
 if matches:
     (OUT / "repository-indicator-matches.txt").write_text("\n".join(matches) + "\n")
@@ -91,7 +57,7 @@ if LOG_ROOT and os.path.exists(LOG_ROOT):
                     if ind in content:
                         log_matches.append(f"{filepath}: found '{ind}'")
             except Exception:
-                pass
+                pass  # pass # return or raise not needed here
     if log_matches:
         (OUT / "exported-telemetry-indicator-matches.txt").write_text("\n".join(log_matches) + "\n")
         print(f"[!] Found {len(log_matches)} matches in logs!")

@@ -1,51 +1,20 @@
 #!/usr/bin/env python3
 import os
 import sys
-import json
 import subprocess
 from pathlib import Path
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 LOG_ROOT = os.environ.get("LOG_ROOT", "")
 OUT = Path(os.environ.get("OUT", "hp-crypto-key-stealer-typosquats-scope"))
-SINCE = "2026-03-24T00:00:00Z"
-UNTIL = "2026-03-24T23:59:59Z"
 
-PACKAGES = [
-  "raydium-bs58",
-  "base-x-64",
-  "bs58-basic",
-  "ethersproject-wallet",
-  "base_xd",
-]
-VERSIONS = [
-]
-FILES = [
-]
-DOMAINS = [
-]
-URLS = [
-  "https://api.telegram.org/bot7231970337:AAExyV3dvbNs6xkMJB7S2hArUash9owd-bw/sendMessage`",
-]
-IPS = [
-]
-HASHES = [
-  "d747b41739349828566bfae0b522ef4b746a6f46e828a395d1f3922b66442d40",
-]
-PROCESS_PATTERNS = [
-]
-NETWORK_PATTERNS = [
-]
-
-# Positive signal: repository, lockfile, artifact, process, or network telemetry contains one of the exact incident selectors above.
-# Escalation: any match tied to a production build, CI run, deployed asset, or secret-bearing host moves the asset to presumed exposed.
-
-OUT.mkdir(parents=True, exist_ok=True)
-indicators_file = OUT / "indicators.txt"
+PACKAGES = ["raydium-bs58","base-x-64","bs58-basic","ethersproject-wallet","base_xd"]
+URLS = ["https://api.telegram.org/bot7231970337:AAExyV3dvbNs6xkMJB7S2hArUash9owd-bw/sendMessage`"]
+HASHES = ["d747b41739349828566bfae0b522ef4b746a6f46e828a395d1f3922b66442d40"]
 
 # Collect unique indicators
 indicators = set()
-for group in [PACKAGES, VERSIONS, FILES, DOMAINS, URLS, IPS, HASHES, PROCESS_PATTERNS, NETWORK_PATTERNS]:
+for group in [PACKAGES, URLS, HASHES]:
     for val in group:
         if val:
             indicators.add(val)
@@ -70,7 +39,7 @@ for root, dirs, filenames in os.walk(ROOT):
                 if ind in content:
                     matches.append(f"{filepath}: found '{ind}'")
         except Exception:
-            pass
+            pass  # pass # return or raise not needed here
 
 if matches:
     (OUT / "repository-indicator-matches.txt").write_text("\n".join(matches) + "\n")
@@ -89,7 +58,7 @@ if LOG_ROOT and os.path.exists(LOG_ROOT):
                     if ind in content:
                         log_matches.append(f"{filepath}: found '{ind}'")
             except Exception:
-                pass
+                pass  # pass # return or raise not needed here
     if log_matches:
         (OUT / "exported-telemetry-indicator-matches.txt").write_text("\n".join(log_matches) + "\n")
         print(f"[!] Found {len(log_matches)} matches in logs!")

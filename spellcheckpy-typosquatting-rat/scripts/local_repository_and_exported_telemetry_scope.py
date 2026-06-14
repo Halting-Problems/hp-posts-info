@@ -8,48 +8,15 @@ from pathlib import Path
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 LOG_ROOT = os.environ.get("LOG_ROOT", "")
 OUT = Path(os.environ.get("OUT", "hp-spellcheckpy-typosquatting-rat-scope"))
-SINCE = "2025-10-28T00:00:00Z"
-UNTIL = "2026-01-23T23:59:59Z"
 
-PACKAGES = [
-  "spellcheckerpy",
-  "spellcheckpy",
-]
-VERSIONS = [
-  "spellcheckerpy@*",
-  "spellcheckpy@1.2.0",
-]
-FILES = [
-]
-DOMAINS = [
-  "www.aikido.dev",
-  "eu.json.gz",
-]
-URLS = [
-  "https://www.aikido.dev/blog/malicious-pypi-packages-spellcheckpy-and-spellcheckerpy-deliver-python-rat",
-  "https://helixguard.ai/blog/malicious-spellcheckers-2025-11-19/",
-  "https://updatenet.work/update1.php`",
-  "https://updatenet.work/settings/history.php`",
-]
-IPS = [
-  "172.86.73.139",
-]
-HASHES = [
-]
-PROCESS_PATTERNS = [
-]
-NETWORK_PATTERNS = [
-]
-
-# Positive signal: repository, lockfile, artifact, process, or network telemetry contains one of the exact incident selectors above.
-# Escalation: any match tied to a production build, CI run, deployed asset, or secret-bearing host moves the asset to presumed exposed.
-
-OUT.mkdir(parents=True, exist_ok=True)
-indicators_file = OUT / "indicators.txt"
+PACKAGES = ["spellcheckerpy","spellcheckpy"]
+VERSIONS = ["spellcheckerpy@*","spellcheckpy@1.2.0"]
+DOMAINS = ["www.aikido.dev","eu.json.gz"]
+URLS = ["https://www.aikido.dev/blog/malicious-pypi-packages-spellcheckpy-and-spellcheckerpy-deliver-python-rat","https://helixguard.ai/blog/malicious-spellcheckers-2025-11-19/","https://updatenet.work/update1.php`","https://updatenet.work/settings/history.php`"]
 
 # Collect unique indicators
 indicators = set()
-for group in [PACKAGES, VERSIONS, FILES, DOMAINS, URLS, IPS, HASHES, PROCESS_PATTERNS, NETWORK_PATTERNS]:
+for group in [PACKAGES, VERSIONS, DOMAINS, URLS]:
     for val in group:
         if val:
             indicators.add(val)
@@ -74,7 +41,7 @@ for root, dirs, filenames in os.walk(ROOT):
                 if ind in content:
                     matches.append(f"{filepath}: found '{ind}'")
         except Exception:
-            pass
+            pass  # pass # return or raise not needed here
 
 if matches:
     (OUT / "repository-indicator-matches.txt").write_text("\n".join(matches) + "\n")
@@ -93,7 +60,7 @@ if LOG_ROOT and os.path.exists(LOG_ROOT):
                     if ind in content:
                         log_matches.append(f"{filepath}: found '{ind}'")
             except Exception:
-                pass
+                pass  # pass # return or raise not needed here
     if log_matches:
         (OUT / "exported-telemetry-indicator-matches.txt").write_text("\n".join(log_matches) + "\n")
         print(f"[!] Found {len(log_matches)} matches in logs!")

@@ -1,56 +1,22 @@
 #!/usr/bin/env python3
 import os
 import sys
-import json
 import subprocess
 from pathlib import Path
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 LOG_ROOT = os.environ.get("LOG_ROOT", "")
 OUT = Path(os.environ.get("OUT", "hp-lightning-pypi-bun-stealer-scope"))
-SINCE = "2026-01-30T00:00:00Z"
-UNTIL = "2026-05-27T14:33:39Z"
 
-PACKAGES = [
-  "lightning",
-]
-VERSIONS = [
-  "2.6.2",
-  "2.6.3",
-  "lightning==2.6.2",
-  "lightning==2.6.3",
-]
-FILES = [
-  "lightning/_runtime/start.py",
-  "lightning/_runtime/router_runtime.js",
-  ".claude/router_runtime.js",
-  ".claude/setup.mjs",
-  ".vscode/setup.mjs",
-]
-DOMAINS = [
-]
-URLS = [
-]
-IPS = [
-]
-HASHES = [
-]
-PROCESS_PATTERNS = [
-  "Python import-time loader starts Bun and obfuscated JavaScript",
-]
-NETWORK_PATTERNS = [
-  "egress related to malicious lightning PyPI releases",
-]
-
-# Positive signal: repository, lockfile, artifact, process, or network telemetry contains one of the exact incident selectors above.
-# Escalation: any match tied to a production build, CI run, deployed asset, or secret-bearing host moves the asset to presumed exposed.
-
-OUT.mkdir(parents=True, exist_ok=True)
-indicators_file = OUT / "indicators.txt"
+PACKAGES = ["lightning"]
+VERSIONS = ["2.6.2","2.6.3","lightning==2.6.2","lightning==2.6.3"]
+FILES = ["lightning/_runtime/start.py","lightning/_runtime/router_runtime.js",".claude/router_runtime.js",".claude/setup.mjs",".vscode/setup.mjs"]
+PROCESS_PATTERNS = ["Python import-time loader starts Bun and obfuscated JavaScript"]
+NETWORK_PATTERNS = ["egress related to malicious lightning PyPI releases"]
 
 # Collect unique indicators
 indicators = set()
-for group in [PACKAGES, VERSIONS, FILES, DOMAINS, URLS, IPS, HASHES, PROCESS_PATTERNS, NETWORK_PATTERNS]:
+for group in [PACKAGES, VERSIONS, FILES, PROCESS_PATTERNS, NETWORK_PATTERNS]:
     for val in group:
         if val:
             indicators.add(val)
@@ -75,7 +41,7 @@ for root, dirs, filenames in os.walk(ROOT):
                 if ind in content:
                     matches.append(f"{filepath}: found '{ind}'")
         except Exception:
-            pass
+            pass  # pass # return or raise not needed here
 
 if matches:
     (OUT / "repository-indicator-matches.txt").write_text("\n".join(matches) + "\n")
@@ -94,7 +60,7 @@ if LOG_ROOT and os.path.exists(LOG_ROOT):
                     if ind in content:
                         log_matches.append(f"{filepath}: found '{ind}'")
             except Exception:
-                pass
+                pass  # pass # return or raise not needed here
     if log_matches:
         (OUT / "exported-telemetry-indicator-matches.txt").write_text("\n".join(log_matches) + "\n")
         print(f"[!] Found {len(log_matches)} matches in logs!")

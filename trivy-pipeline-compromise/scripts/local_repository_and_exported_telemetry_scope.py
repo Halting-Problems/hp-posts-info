@@ -1,60 +1,21 @@
 #!/usr/bin/env python3
 import os
 import sys
-import json
 import subprocess
 from pathlib import Path
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 LOG_ROOT = os.environ.get("LOG_ROOT", "")
 OUT = Path(os.environ.get("OUT", "hp-trivy-pipeline-compromise-scope"))
-SINCE = "2026-02-28T00:00:00Z"
-UNTIL = "2026-03-20T09:00:00Z"
 
-PACKAGES = [
-  "aquasecurity/trivy-action",
-  "aquasecurity/setup-trivy",
-  "aquasec/trivy",
-]
-VERSIONS = [
-  "aquasecurity/trivy-action@v0.0.1..v0.34.2",
-  "aquasecurity/setup-trivy@v0.2.0..v0.2.6",
-  "trivy-binary@v0.69.4",
-  "aquasec/trivy:0.69.5",
-  "aquasec/trivy:0.69.6",
-  "aquasecurity/trivy-action@v0.0.1-v0.34.2",
-  "aquasecurity/setup-trivy@v0.2.0-v0.2.6",
-  "aquasecurity/trivy@v0.69.4",
-]
-FILES = [
-]
-DOMAINS = [
-  "scan.aquasecurtiy.org",
-  "www.legitsecurity.com",
-]
-URLS = [
-  "https://scan.aquasecurtiy.org/exfil",
-  "https://www.legitsecurity.com",
-  "https://github.com/advisories/GHSA-69fq-xp46-6x23",
-]
-IPS = [
-]
-HASHES = [
-]
-PROCESS_PATTERNS = [
-]
-NETWORK_PATTERNS = [
-]
-
-# Positive signal: repository, lockfile, artifact, process, or network telemetry contains one of the exact incident selectors above.
-# Escalation: any match tied to a production build, CI run, deployed asset, or secret-bearing host moves the asset to presumed exposed.
-
-OUT.mkdir(parents=True, exist_ok=True)
-indicators_file = OUT / "indicators.txt"
+PACKAGES = ["aquasecurity/trivy-action","aquasecurity/setup-trivy","aquasec/trivy"]
+VERSIONS = ["aquasecurity/trivy-action@v0.0.1..v0.34.2","aquasecurity/setup-trivy@v0.2.0..v0.2.6","trivy-binary@v0.69.4","aquasec/trivy:0.69.5","aquasec/trivy:0.69.6","aquasecurity/trivy-action@v0.0.1-v0.34.2","aquasecurity/setup-trivy@v0.2.0-v0.2.6","aquasecurity/trivy@v0.69.4"]
+DOMAINS = ["scan.aquasecurtiy.org","www.legitsecurity.com"]
+URLS = ["https://scan.aquasecurtiy.org/exfil","https://www.legitsecurity.com","https://github.com/advisories/GHSA-69fq-xp46-6x23"]
 
 # Collect unique indicators
 indicators = set()
-for group in [PACKAGES, VERSIONS, FILES, DOMAINS, URLS, IPS, HASHES, PROCESS_PATTERNS, NETWORK_PATTERNS]:
+for group in [PACKAGES, VERSIONS, DOMAINS, URLS]:
     for val in group:
         if val:
             indicators.add(val)
@@ -79,7 +40,7 @@ for root, dirs, filenames in os.walk(ROOT):
                 if ind in content:
                     matches.append(f"{filepath}: found '{ind}'")
         except Exception:
-            pass
+            pass  # pass # return or raise not needed here
 
 if matches:
     (OUT / "repository-indicator-matches.txt").write_text("\n".join(matches) + "\n")
@@ -98,7 +59,7 @@ if LOG_ROOT and os.path.exists(LOG_ROOT):
                     if ind in content:
                         log_matches.append(f"{filepath}: found '{ind}'")
             except Exception:
-                pass
+                pass  # pass # return or raise not needed here
     if log_matches:
         (OUT / "exported-telemetry-indicator-matches.txt").write_text("\n".join(log_matches) + "\n")
         print(f"[!] Found {len(log_matches)} matches in logs!")

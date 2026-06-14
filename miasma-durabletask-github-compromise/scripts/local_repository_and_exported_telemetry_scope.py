@@ -1,61 +1,19 @@
 #!/usr/bin/env python3
 import os
 import sys
-import json
-import subprocess
 from pathlib import Path
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 LOG_ROOT = os.environ.get("LOG_ROOT", "")
 OUT = Path(os.environ.get("OUT", "hp-miasma-durabletask-github-compromise-scope"))
-SINCE = "2026-06-05T08:00:00Z"
-UNTIL = "2026-06-05T23:59:59Z"
 
-PACKAGES = [
-]
-VERSIONS = [
-]
-FILES = [
-  ".vscode/tasks.json",
-  ".claude/settings.json",
-  ".gemini/settings.json",
-  ".cursor/rules/setup.mdc",
-  ".github/setup.js",
-]
-DOMAINS = [
-  "api.masscan.cloud",
-  "filev2.getsession.org",
-  "seed1.getsession.org",
-  "seed2.getsession.org",
-  "seed3.getsession.org",
-  "git-tanstack.com",
-]
-URLS = [
-  "https://api.masscan.cloud",
-  "https://filev2.getsession.org",
-  "https://seed1.getsession.org",
-  "https://seed2.getsession.org",
-  "https://seed3.getsession.org",
-  "https://git-tanstack.com",
-]
-IPS = [
-]
-HASHES = [
-]
-PROCESS_PATTERNS = [
-]
-NETWORK_PATTERNS = [
-]
-
-# Positive signal: repository, lockfile, artifact, process, or network telemetry contains one of the exact incident selectors above.
-# Escalation: any match tied to a production build, CI run, deployed asset, or secret-bearing host moves the asset to presumed exposed.
-
-OUT.mkdir(parents=True, exist_ok=True)
-indicators_file = OUT / "indicators.txt"
+FILES = [".vscode/tasks.json",".claude/settings.json",".gemini/settings.json",".cursor/rules/setup.mdc",".github/setup.js"]
+DOMAINS = ["api.masscan.cloud","filev2.getsession.org","seed1.getsession.org","seed2.getsession.org","seed3.getsession.org","git-tanstack.com"]
+URLS = ["https://api.masscan.cloud","https://filev2.getsession.org","https://seed1.getsession.org","https://seed2.getsession.org","https://seed3.getsession.org","https://git-tanstack.com"]
 
 # Collect unique indicators
 indicators = set()
-for group in [PACKAGES, VERSIONS, FILES, DOMAINS, URLS, IPS, HASHES, PROCESS_PATTERNS, NETWORK_PATTERNS]:
+for group in [FILES, DOMAINS, URLS]:
     for val in group:
         if val:
             indicators.add(val)
@@ -80,7 +38,7 @@ for root, dirs, filenames in os.walk(ROOT):
                 if ind in content:
                     matches.append(f"{filepath}: found '{ind}'")
         except Exception:
-            pass
+            pass  # pass # return or raise not needed here
 
 if matches:
     (OUT / "repository-indicator-matches.txt").write_text("\n".join(matches) + "\n")
@@ -99,7 +57,7 @@ if LOG_ROOT and os.path.exists(LOG_ROOT):
                     if ind in content:
                         log_matches.append(f"{filepath}: found '{ind}'")
             except Exception:
-                pass
+                pass  # pass # return or raise not needed here
     if log_matches:
         (OUT / "exported-telemetry-indicator-matches.txt").write_text("\n".join(log_matches) + "\n")
         print(f"[!] Found {len(log_matches)} matches in logs!")

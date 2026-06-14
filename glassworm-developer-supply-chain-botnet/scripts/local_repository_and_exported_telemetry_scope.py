@@ -1,49 +1,18 @@
 #!/usr/bin/env python3
 import os
 import sys
-import json
-import subprocess
 from pathlib import Path
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 LOG_ROOT = os.environ.get("LOG_ROOT", "")
 OUT = Path(os.environ.get("OUT", "hp-glassworm-developer-supply-chain-botnet-scope"))
-SINCE = "2026-04-29T18:15:00Z"
-UNTIL = "2026-05-27T23:59:59Z"
 
-PACKAGES = [
-]
-VERSIONS = [
-]
-FILES = [
-]
-DOMAINS = [
-]
-URLS = [
-  "https://nodejs.org/download/release",
-]
-IPS = [
-  "164.92.88.210",
-]
-HASHES = [
-  "1b62b7c2ed7cc296ce821f977ef7b22bae59ef1dcdb9a34ae19467ee39bcf168",
-  "4ebfe8f66ca7e9751060b3301b5e8838d6017593cdae748541de83bfa28183bd",
-  "97c275e3406ad6576529f41604ad138c5bdc4297d195bf61b049e14f6b30adfd",
-]
-PROCESS_PATTERNS = [
-]
-NETWORK_PATTERNS = [
-]
-
-# Positive signal: repository, lockfile, artifact, process, or network telemetry contains one of the exact incident selectors above.
-# Escalation: any match tied to a production build, CI run, deployed asset, or secret-bearing host moves the asset to presumed exposed.
-
-OUT.mkdir(parents=True, exist_ok=True)
-indicators_file = OUT / "indicators.txt"
+URLS = ["https://nodejs.org/download/release"]
+HASHES = ["1b62b7c2ed7cc296ce821f977ef7b22bae59ef1dcdb9a34ae19467ee39bcf168","4ebfe8f66ca7e9751060b3301b5e8838d6017593cdae748541de83bfa28183bd","97c275e3406ad6576529f41604ad138c5bdc4297d195bf61b049e14f6b30adfd"]
 
 # Collect unique indicators
 indicators = set()
-for group in [PACKAGES, VERSIONS, FILES, DOMAINS, URLS, IPS, HASHES, PROCESS_PATTERNS, NETWORK_PATTERNS]:
+for group in [URLS, HASHES]:
     for val in group:
         if val:
             indicators.add(val)
@@ -68,7 +37,7 @@ for root, dirs, filenames in os.walk(ROOT):
                 if ind in content:
                     matches.append(f"{filepath}: found '{ind}'")
         except Exception:
-            pass
+            pass  # pass # return or raise not needed here
 
 if matches:
     (OUT / "repository-indicator-matches.txt").write_text("\n".join(matches) + "\n")
@@ -87,7 +56,7 @@ if LOG_ROOT and os.path.exists(LOG_ROOT):
                     if ind in content:
                         log_matches.append(f"{filepath}: found '{ind}'")
             except Exception:
-                pass
+                pass  # pass # return or raise not needed here
     if log_matches:
         (OUT / "exported-telemetry-indicator-matches.txt").write_text("\n".join(log_matches) + "\n")
         print(f"[!] Found {len(log_matches)} matches in logs!")

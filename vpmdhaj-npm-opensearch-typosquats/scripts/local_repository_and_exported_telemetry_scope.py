@@ -1,62 +1,21 @@
 #!/usr/bin/env python3
 import os
 import sys
-import json
 import subprocess
 from pathlib import Path
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 LOG_ROOT = os.environ.get("LOG_ROOT", "")
 OUT = Path(os.environ.get("OUT", "hp-vpmdhaj-npm-opensearch-typosquats-scope"))
-SINCE = "2026-05-28T00:00:00Z"
-UNTIL = "2026-05-28T23:59:59Z"
 
-PACKAGES = [
-  "@vpmdhaj/devops-tools",
-  "@vpmdhaj/elastic-helper",
-  "@vpmdhaj/opensearch-setup",
-  "@vpmdhaj/search-setup",
-  "app-config-utility",
-  "elastic-opensearch-helper",
-  "env-config-manager",
-  "opensearch-config-utility",
-  "opensearch-security-scanner",
-  "opensearch-setup",
-  "opensearch-setup-tool",
-  "search-cluster-setup",
-  "search-engine-setup",
-  "vpmdhaj-opensearch-setup",
-]
-VERSIONS = [
-]
-FILES = [
-]
-DOMAINS = [
-  "aab.sportsontheweb.net",
-  "www.sportsontheweb.net",
-]
-URLS = [
-]
-IPS = [
-]
-HASHES = [
-  "a39155771e93e65b05195c8a705dfc03aa85c2ec682505f0d557233a8f275145",
-  "9d962ed605bb4a39991f8fab9b1d2e423ea4d545f23fd44d9473a6423d94bbf",
-]
-PROCESS_PATTERNS = [
-]
-NETWORK_PATTERNS = [
-]
-
-# Positive signal: repository, lockfile, artifact, process, or network telemetry contains one of the exact incident selectors above.
-# Escalation: any match tied to a production build, CI run, deployed asset, or secret-bearing host moves the asset to presumed exposed.
-
-OUT.mkdir(parents=True, exist_ok=True)
-indicators_file = OUT / "indicators.txt"
+PACKAGES = ["@vpmdhaj/devops-tools","@vpmdhaj/elastic-helper","@vpmdhaj/opensearch-setup","@vpmdhaj/search-setup","app-config-utility","elastic-opensearch-helper","env-config-manager","opensearch-config-utility","opensearch-security-scanner","opensearch-setup","opensearch-setup-tool","search-cluster-setup","search-engine-setup","vpmdhaj-opensearch-setup","@vpmdhaj/aws-compat","@vpmdhaj/aws-credential-provider-env","@vpmdhaj/aws-credential-provider-http","@vpmdhaj/aws-sdk-client-opensearch","@vpmdhaj/aws-sdk-client-sts","@vpmdhaj/aws-sdk-credential-provider-node","@vpmdhaj/aws-sdk-types","@vpmdhaj/bun","@vpmdhaj/opensearch","@vpmdhaj/opensearch-project","@vpmdhaj/opensearch-js","@vpmdhaj/sts-client"]
+VERSIONS = ["@vpmdhaj/opensearch-setup@1.0.9102","@vpmdhaj/opensearch-setup@1.0.9103","@vpmdhaj/elastic-helper@1.0.7267","@vpmdhaj/elastic-helper@1.0.7268","@vpmdhaj/elastic-helper@1.0.7269","@vpmdhaj/elastic-helper@1.0.7270"]
+DOMAINS = ["aab.sportsontheweb.net","www.sportsontheweb.net"]
+HASHES = ["a39155771e93e65b05195c8a705dfc03aa85c2ec682505f0d557233a8f275145","9d962ed605bb4a39991f8fab9b1d2e423ea4d545f23fd44d9473a6423d94bbf"]
 
 # Collect unique indicators
 indicators = set()
-for group in [PACKAGES, VERSIONS, FILES, DOMAINS, URLS, IPS, HASHES, PROCESS_PATTERNS, NETWORK_PATTERNS]:
+for group in [PACKAGES, VERSIONS, DOMAINS, HASHES]:
     for val in group:
         if val:
             indicators.add(val)
@@ -81,7 +40,7 @@ for root, dirs, filenames in os.walk(ROOT):
                 if ind in content:
                     matches.append(f"{filepath}: found '{ind}'")
         except Exception:
-            pass
+            pass  # pass # return or raise not needed here
 
 if matches:
     (OUT / "repository-indicator-matches.txt").write_text("\n".join(matches) + "\n")
@@ -100,7 +59,7 @@ if LOG_ROOT and os.path.exists(LOG_ROOT):
                     if ind in content:
                         log_matches.append(f"{filepath}: found '{ind}'")
             except Exception:
-                pass
+                pass  # pass # return or raise not needed here
     if log_matches:
         (OUT / "exported-telemetry-indicator-matches.txt").write_text("\n".join(log_matches) + "\n")
         print(f"[!] Found {len(log_matches)} matches in logs!")

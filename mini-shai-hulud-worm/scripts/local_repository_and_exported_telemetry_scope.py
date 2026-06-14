@@ -1,95 +1,23 @@
 #!/usr/bin/env python3
 import os
 import sys
-import json
 import subprocess
 from pathlib import Path
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 LOG_ROOT = os.environ.get("LOG_ROOT", "")
 OUT = Path(os.environ.get("OUT", "hp-mini-shai-hulud-worm-scope"))
-SINCE = "2026-04-20T00:00:00Z"
-UNTIL = "2026-05-23T23:59:59Z"
 
-PACKAGES = [
-  "@tanstack/react-router",
-  "@tanstack/vue-router",
-  "@tanstack/solid-router",
-  "@tanstack/react-start",
-  "@tanstack/router-core",
-  "@antv/g2",
-  "@antv/g6",
-  "@antv/x6",
-  "@antv/l7",
-  "@antv/s2",
-  "@antv/f2",
-  "echarts-for-react",
-  "timeago.js",
-  "size-sensor",
-  "canvas-nest.js",
-  "@sap/cds",
-  "@sap/cds-dk",
-  "opensearch-py",
-  "lite-llm",
-  "nx-console",
-]
-VERSIONS = [
-  "@tanstack/react-router@1.169.5",
-  "@tanstack/react-router@1.169.8",
-  "@tanstack/vue-router@1.169.5",
-  "@tanstack/vue-router@1.169.8",
-  "@tanstack/solid-router@1.169.5",
-  "@tanstack/solid-router@1.169.8",
-  "@tanstack/react-start@1.167.68",
-  "@tanstack/react-start@1.167.71",
-  "@antv/g2@4.2.8",
-  "@antv/g6@4.8.24",
-  "nx-console@18.95.0",
-  "@antv/* published 2026-05-19T01:39:00",
-]
-FILES = [
-  "router_init.js",
-  "setup_bun.js",
-  "bun_environment.js",
-  "transformers.pyz",
-  "gh-token-monitor",
-]
-DOMAINS = [
-  "filev2.getsession.org",
-  "api.masscan.cloud",
-  "git-tanstack.com",
-  "t.m-kosche.com",
-  "www.endorlabs.com",
-  "www.microsoft.com",
-  "www.sentinelone.com",
-]
-URLS = [
-  "https://filev2.getsession.org/upload",
-  "https://api.masscan.cloud/ping",
-  "https://www.endorlabs.com/blog/mini-shai-hulud-npm-worm-hits-sap-developer-packages",
-  "https://tanstack.com/blog/postmortem-cve-2026-45321",
-  "https://www.microsoft.com/en-us/security/blog/hunting-the-shai-hulud-supply-chain-worm",
-  "https://www.sentinelone.com/blog/anatomy-of-cve-2026-45321",
-]
-IPS = [
-]
-HASHES = [
-  "ab4fcadaec49c03278063dd269ea5eef82d24f2124a8e15d7b90f2fa8601266c",
-]
-PROCESS_PATTERNS = [
-]
-NETWORK_PATTERNS = [
-]
-
-# Positive signal: repository, lockfile, artifact, process, or network telemetry contains one of the exact incident selectors above.
-# Escalation: any match tied to a production build, CI run, deployed asset, or secret-bearing host moves the asset to presumed exposed.
-
-OUT.mkdir(parents=True, exist_ok=True)
-indicators_file = OUT / "indicators.txt"
+PACKAGES = ["@tanstack/react-router","@tanstack/vue-router","@tanstack/solid-router","@tanstack/react-start","@tanstack/router-core","@antv/g2","@antv/g6","@antv/x6","@antv/l7","@antv/s2","@antv/f2","echarts-for-react","timeago.js","size-sensor","canvas-nest.js","@sap/cds","@sap/cds-dk","opensearch-py","lite-llm","nx-console"]
+VERSIONS = ["@tanstack/react-router@1.169.5","@tanstack/react-router@1.169.8","@tanstack/vue-router@1.169.5","@tanstack/vue-router@1.169.8","@tanstack/solid-router@1.169.5","@tanstack/solid-router@1.169.8","@tanstack/react-start@1.167.68","@tanstack/react-start@1.167.71","@antv/g2@4.2.8","@antv/g6@4.8.24","nx-console@18.95.0","@antv/* published 2026-05-19T01:39:00"]
+FILES = ["router_init.js","setup_bun.js","bun_environment.js","transformers.pyz","gh-token-monitor"]
+DOMAINS = ["filev2.getsession.org","api.masscan.cloud","git-tanstack.com","t.m-kosche.com","www.endorlabs.com","www.microsoft.com","www.sentinelone.com"]
+URLS = ["https://filev2.getsession.org/upload","https://api.masscan.cloud/ping","https://www.endorlabs.com/blog/mini-shai-hulud-npm-worm-hits-sap-developer-packages","https://tanstack.com/blog/postmortem-cve-2026-45321","https://www.microsoft.com/en-us/security/blog/hunting-the-shai-hulud-supply-chain-worm","https://www.sentinelone.com/blog/anatomy-of-cve-2026-45321"]
+HASHES = ["ab4fcadaec49c03278063dd269ea5eef82d24f2124a8e15d7b90f2fa8601266c"]
 
 # Collect unique indicators
 indicators = set()
-for group in [PACKAGES, VERSIONS, FILES, DOMAINS, URLS, IPS, HASHES, PROCESS_PATTERNS, NETWORK_PATTERNS]:
+for group in [PACKAGES, VERSIONS, FILES, DOMAINS, URLS, HASHES]:
     for val in group:
         if val:
             indicators.add(val)
@@ -114,7 +42,7 @@ for root, dirs, filenames in os.walk(ROOT):
                 if ind in content:
                     matches.append(f"{filepath}: found '{ind}'")
         except Exception:
-            pass
+            pass  # pass # return or raise not needed here
 
 if matches:
     (OUT / "repository-indicator-matches.txt").write_text("\n".join(matches) + "\n")
@@ -133,7 +61,7 @@ if LOG_ROOT and os.path.exists(LOG_ROOT):
                     if ind in content:
                         log_matches.append(f"{filepath}: found '{ind}'")
             except Exception:
-                pass
+                pass  # pass # return or raise not needed here
     if log_matches:
         (OUT / "exported-telemetry-indicator-matches.txt").write_text("\n".join(log_matches) + "\n")
         print(f"[!] Found {len(log_matches)} matches in logs!")

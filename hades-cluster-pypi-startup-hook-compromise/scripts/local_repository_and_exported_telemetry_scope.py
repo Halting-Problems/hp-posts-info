@@ -1,116 +1,21 @@
 #!/usr/bin/env python3
 import os
 import sys
-import json
 import subprocess
 from pathlib import Path
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 LOG_ROOT = os.environ.get("LOG_ROOT", "")
 OUT = Path(os.environ.get("OUT", "hp-hades-cluster-pypi-startup-hook-compromise-scope"))
-SINCE = "2026-06-07T00:00:00Z"
-UNTIL = "2026-06-07T23:59:59Z"
 
-PACKAGES = [
-]
-VERSIONS = [
-  "bramin==0.0.2",
-  "bramin==0.0.3",
-  "bramin==0.0.4",
-  "cmd2func==0.2.2",
-  "cmd2func==0.2.3",
-  "coolbox==0.4.1",
-  "coolbox==0.4.2",
-  "dynamo-release==1.5.4",
-  "executor-engine==0.3.4",
-  "executor-engine==0.3.5",
-  "executor-http==0.1.3",
-  "executor-http==0.1.4",
-  "funcdesc==0.2.2",
-  "funcdesc==0.2.3",
-  "magique==0.6.8",
-  "magique==0.6.9",
-  "magique-ai==0.4.4",
-  "magique-ai==0.4.5",
-  "mrbios==0.1.1",
-  "mrbios==0.1.2",
-  "napari-ufish==0.0.2",
-  "napari-ufish==0.0.3",
-  "nucbox==0.1.2",
-  "nucbox==0.1.3",
-  "okite==0.0.7",
-  "okite==0.0.8",
-  "pantheon-agents==0.6.1",
-  "pantheon-agents==0.6.2",
-  "pantheon-toolsets==0.5.5",
-  "pantheon-toolsets==0.5.6",
-  "spateo-release==1.1.2",
-  "synago==0.1.1",
-  "synago==0.1.2",
-  "ufish==0.1.2",
-  "ufish==0.1.3",
-  "uprobe==0.1.3",
-  "uprobe==0.1.4",
-  "dreamgen==1.8.1",
-  "embiggen==0.11.97",
-  "ensmallen==0.8.101",
-  "gpsea==0.9.14",
-  "instructor-mcp==1.15.2",
-  "instructor-mcp==1.15.3",
-  "langchain-core-mcp==1.4.2",
-  "langchain-core-mcp==1.4.3",
-  "mem8==6.0.1",
-  "mflux-streamlit==0.0.3",
-  "mflux-streamlit==0.0.4",
-  "openai-mcp==2.41.1",
-  "openai-mcp==2.41.2",
-  "orchestr8-platform==3.3.2",
-  "phenopacket-store-toolkit==0.1.7",
-  "ppkt2synergy==0.1.1",
-  "pyphetools==0.9.120",
-  "ray-mcp-server==0.2.1",
-  "rlask==3.1.7",
-  "rsquests==2.34.3",
-  "tiktoken-mcp==0.13.1",
-  "tiktoken-mcp==0.13.2",
-  "tlask==3.1.4",
-]
-FILES = [
-  "*-setup.pth",
-  "langchain_core-setup.pth",
-  "_index.js",
-  "ensmallen_haswell.abi3.so",
-  "ensmallen_core2.abi3.so",
-]
-DOMAINS = [
-]
-URLS = [
-]
-IPS = [
-]
-HASHES = [
-  "dc48b09b2a5954f7ff79ab8a2fd80202bd3b59c08c7cdbc6025aa923cb4c0efe",
-  "e1342a80d4b5e83d2c7c22e1e0aaa95f2d88e3dbf0d853a4994b180c93a4b17d",
-  "c539766062555d47716f8432e73adbe3a0c0c954a0b6c4005017a668975e275c",
-  "6d332f814f15f19758d65026bbfd0a8c49671b319ec77b8fa1b27fc48afff7d9",
-  "6506d31707a39949f89534bf9705bcf889f1ecae3dbc6f4ff88d67a8be3d01b2",
-]
-PROCESS_PATTERNS = [
-  "Python startup loads a *-setup.pth hook",
-  "Bun executes _index.js from a Python environment",
-]
-NETWORK_PATTERNS = [
-]
-
-# Positive signal: repository, lockfile, artifact, process, or network telemetry contains one of the exact incident selectors above.
-# Escalation: any match tied to a production build, CI run, deployed asset, or secret-bearing host moves the asset to presumed exposed.
-
-OUT.mkdir(parents=True, exist_ok=True)
-indicators_file = OUT / "indicators.txt"
+VERSIONS = ["bramin==0.0.2","bramin==0.0.3","bramin==0.0.4","cmd2func==0.2.2","cmd2func==0.2.3","coolbox==0.4.1","coolbox==0.4.2","dynamo-release==1.5.4","executor-engine==0.3.4","executor-engine==0.3.5","executor-http==0.1.3","executor-http==0.1.4","funcdesc==0.2.2","funcdesc==0.2.3","magique==0.6.8","magique==0.6.9","magique-ai==0.4.4","magique-ai==0.4.5","mrbios==0.1.1","mrbios==0.1.2","napari-ufish==0.0.2","napari-ufish==0.0.3","nucbox==0.1.2","nucbox==0.1.3","okite==0.0.7","okite==0.0.8","pantheon-agents==0.6.1","pantheon-agents==0.6.2","pantheon-toolsets==0.5.5","pantheon-toolsets==0.5.6","spateo-release==1.1.2","synago==0.1.1","synago==0.1.2","ufish==0.1.2","ufish==0.1.3","uprobe==0.1.3","uprobe==0.1.4","dreamgen==1.8.1","embiggen==0.11.97","ensmallen==0.8.101","gpsea==0.9.14","instructor-mcp==1.15.2","instructor-mcp==1.15.3","langchain-core-mcp==1.4.2","langchain-core-mcp==1.4.3","mem8==6.0.1","mflux-streamlit==0.0.3","mflux-streamlit==0.0.4","openai-mcp==2.41.1","openai-mcp==2.41.2","orchestr8-platform==3.3.2","phenopacket-store-toolkit==0.1.7","ppkt2synergy==0.1.1","pyphetools==0.9.120","ray-mcp-server==0.2.1","rlask==3.1.7","rsquests==2.34.3","tiktoken-mcp==0.13.1","tiktoken-mcp==0.13.2","tlask==3.1.4"]
+FILES = ["*-setup.pth","langchain_core-setup.pth","_index.js","ensmallen_haswell.abi3.so","ensmallen_core2.abi3.so"]
+HASHES = ["dc48b09b2a5954f7ff79ab8a2fd80202bd3b59c08c7cdbc6025aa923cb4c0efe","e1342a80d4b5e83d2c7c22e1e0aaa95f2d88e3dbf0d853a4994b180c93a4b17d","c539766062555d47716f8432e73adbe3a0c0c954a0b6c4005017a668975e275c","6d332f814f15f19758d65026bbfd0a8c49671b319ec77b8fa1b27fc48afff7d9","6506d31707a39949f89534bf9705bcf889f1ecae3dbc6f4ff88d67a8be3d01b2"]
+PROCESS_PATTERNS = ["Python startup loads a *-setup.pth hook","Bun executes _index.js from a Python environment"]
 
 # Collect unique indicators
 indicators = set()
-for group in [PACKAGES, VERSIONS, FILES, DOMAINS, URLS, IPS, HASHES, PROCESS_PATTERNS, NETWORK_PATTERNS]:
+for group in [VERSIONS, FILES, HASHES, PROCESS_PATTERNS]:
     for val in group:
         if val:
             indicators.add(val)
@@ -135,7 +40,7 @@ for root, dirs, filenames in os.walk(ROOT):
                 if ind in content:
                     matches.append(f"{filepath}: found '{ind}'")
         except Exception:
-            pass
+            pass  # pass # return or raise not needed here
 
 if matches:
     (OUT / "repository-indicator-matches.txt").write_text("\n".join(matches) + "\n")
@@ -154,7 +59,7 @@ if LOG_ROOT and os.path.exists(LOG_ROOT):
                     if ind in content:
                         log_matches.append(f"{filepath}: found '{ind}'")
             except Exception:
-                pass
+                pass  # pass # return or raise not needed here
     if log_matches:
         (OUT / "exported-telemetry-indicator-matches.txt").write_text("\n".join(log_matches) + "\n")
         print(f"[!] Found {len(log_matches)} matches in logs!")
