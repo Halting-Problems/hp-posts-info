@@ -1,0 +1,148 @@
+{
+  "schema_version": "3.0",
+  "event_id": "gemstuffer-rubygems-exfiltration-channel-2026-05-28",
+  "event_name": "GemStuffer RubyGems Exfiltration Channel",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "supply-chain",
+    "rubygems",
+    "ruby",
+    "exfiltration",
+    "public-sector"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://socket.dev/blog/gemstuffer",
+      "https://socket.dev/supply-chain-attacks/gemstuffer",
+      "https://guides.rubygems.org/rubygems-org-api/",
+      "https://status.rubygems.org/history",
+      "https://rubygems.org/pages/data"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "rubygems, ruby rubygems.org"
+    ],
+    "registries": [
+      "rubygems.org"
+    ],
+    "packages": [],
+    "versions": [
+      "agenda-sample-yard 0.1.1",
+      "bot9evil 0.1.0",
+      "fetchrootx2 0.0.1",
+      "soufetchabc 0.0.3",
+      "lambeth71b 0.0.1"
+    ],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-05-28T00:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-05-28",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-05-28",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "unknown",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [
+      "agenda-sample-yard 0.1.1",
+      "bot9evil 0.1.0",
+      "fetchrootx2 0.0.1",
+      "soufetchabc 0.0.3",
+      "lambeth71b 0.0.1"
+    ],
+    "files": [
+      "payload.rb",
+      "script.rb",
+      "evil.rb",
+      "yardload.rb",
+      "yard_plugin.rb",
+      "exploit.rb",
+      "extconf.rb",
+      "fetcher.rb",
+      "/tmp/gemhome/.gem/credentials",
+      "/tmp/rubydocran_*",
+      "lib/result.txt",
+      "x.gemspec"
+    ],
+    "hashes": [
+      "239440c830e17530dda0a8a06ed2708860998750a1e3ed2239e919465dc59420",
+      "c2d6bcacc88177e0f2c8c262726f86f37e671b1692c8bc135bac4b610ddcf31a",
+      "34212b88108cab6ded037257d6fbc79a61b4c2ea8ecddc6c513b5aad1f308638",
+      "2e4e099275efb8f886824a8eccdc595e624cd08ebb1772bd427710e08ff3ab24",
+      "94d6c0b589704c8cc75e19f7250d6bfda473266dd7dd7e23fd14bd1bb972a717"
+    ],
+    "domains": [
+      "rubygems.org",
+      "moderngov.lambeth.gov.uk",
+      "democracy.wandsworth.gov.uk",
+      "moderngov.southwark.gov.uk"
+    ],
+    "urls": [
+      "https://rubygems.org/api/v1/gems",
+      "https://moderngov.lambeth.gov.uk/mgCalendarMonthView.aspx?M=1&Y=2026&GL=1&bcr=1",
+      "https://democracy.wandsworth.gov.uk/mgCalendarMonthView.aspx?M=1&Y=2026&GL=1&bcr=1",
+      "https://moderngov.southwark.gov.uk/mgCalendarMonthView.aspx?M=1&Y=2026&GL=1&bcr=1"
+    ],
+    "ips": [],
+    "process_patterns": [
+      "ruby writing /tmp/gemhome/.gem/credentials",
+      "ruby running gem build",
+      "ruby running gem push",
+      "ruby Net::HTTP::Post to RubyGems"
+    ],
+    "network_patterns": [
+      "POST hxxps://rubygems.org/api/v1/gems",
+      "GET ModernGov mgCalendarMonthView.aspx with User-Agent Mozilla/5.0"
+    ]
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [
+      "ruby writing /tmp/gemhome/.gem/credentials",
+      "ruby running gem build",
+      "ruby running gem push",
+      "ruby Net::HTTP::Post to RubyGems"
+    ],
+    "network_hunts": [
+      "rubygems.org",
+      "moderngov.lambeth.gov.uk",
+      "democracy.wandsworth.gov.uk",
+      "moderngov.southwark.gov.uk"
+    ],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

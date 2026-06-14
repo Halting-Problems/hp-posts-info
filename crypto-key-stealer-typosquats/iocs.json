@@ -1,0 +1,103 @@
+{
+  "schema_version": "3.0",
+  "event_id": "crypto-key-stealer-typosquats-2026-03-24",
+  "event_name": "Crypto Private Key Stealer Solana/Ethereum Typosquats",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "npm",
+    "malicious-package",
+    "typosquatting",
+    "credential-theft",
+    "crypto-stealer"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://socket.dev/blog/5-malicious-npm-packages-typosquat-solana-and-ethereum-libraries-steal-private-keys",
+      "https://registry.npmjs.org/raydium-bs58",
+      "https://registry.npmjs.org/base-x-64",
+      "https://registry.npmjs.org/bs58-basic",
+      "https://registry.npmjs.org/ethersproject-wallet",
+      "https://registry.npmjs.org/base_xd",
+      "https://github.com/advisories/GHSA-qm27-pj7f-f7jh",
+      "https://github.com/advisories/GHSA-x4xx-m9j7-vf6h",
+      "https://github.com/advisories/GHSA-wq8j-wv4x-xhh8"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "npm, javascript npm registry"
+    ],
+    "registries": [
+      "npmjs.com"
+    ],
+    "packages": [
+      "raydium-bs58",
+      "base-x-64",
+      "bs58-basic",
+      "ethersproject-wallet",
+      "base_xd"
+    ],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-03-24T00:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-03-24",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-03-24",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "package installation",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [
+      "d747b41739349828566bfae0b522ef4b746a6f46e828a395d1f3922b66442d40"
+    ],
+    "domains": [],
+    "urls": [
+      "https://api.telegram.org/bot7231970337:AAExyV3dvbNs6xkMJB7S2hArUash9owd-bw/sendMessage`"
+    ],
+    "ips": [],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

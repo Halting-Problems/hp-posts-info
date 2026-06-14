@@ -1,0 +1,105 @@
+{
+  "schema_version": "3.0",
+  "event_id": "actions-cool-github-actions-tag-hijack-2026-05-24",
+  "event_name": "actions-cool GitHub Actions Tag Hijack Credential Theft",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "supply-chain",
+    "github-actions",
+    "ci-cd",
+    "credential-theft",
+    "tag-hijack"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://www.stepsecurity.io/blog/actions-cool-issues-helper-github-action-compromised-all-tags-point-to-imposter-commit-that-exfiltrates-ci-cd-credentials",
+      "https://www.stepsecurity.io/incidents",
+      "https://github.com/actions-cool/issues-helper",
+      "https://github.com/actions-cool/maintain-one-comment"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [
+      "GitHub Actions"
+    ],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-05-18T19:10:24Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-05-24",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-05-24",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "workflow references hijacked action tag",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [
+      "1c9e803c80cc7fed000022d4c94f4b5bc2e90062",
+      "147337a919d92f4bf42f02843682d694650f1e22",
+      "7f6120bb10c870b9fde146961a18e5bf0b3d4401",
+      "c43d668894bebbeea688878ab6774fa405f22251"
+    ],
+    "domains": [
+      "t.m-kosche.com"
+    ],
+    "urls": [],
+    "ips": [],
+    "process_patterns": [
+      "Bun under /home/runner/.bun/bin/bun",
+      "python3 reading /proc//mem",
+      "gh auth token followed by sudo python3",
+      "tr or grep filtering for isSecret:true"
+    ],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [
+      "Bun under /home/runner/.bun/bin/bun",
+      "python3 reading /proc//mem",
+      "gh auth token followed by sudo python3",
+      "tr or grep filtering for isSecret:true"
+    ],
+    "network_hunts": [
+      "t.m-kosche.com"
+    ],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

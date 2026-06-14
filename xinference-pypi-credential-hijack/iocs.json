@@ -1,0 +1,116 @@
+{
+  "schema_version": "3.0",
+  "event_id": "xinference-pypi-credential-hijack-2026-04-22",
+  "event_name": "Xinference PyPI 2.6.x Import-Time Credential Exfiltration",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "pypi",
+    "supply-chain",
+    "xinference",
+    "ai-ml",
+    "credential-theft"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://research.jfrog.com/post/xinference-compromise/",
+      "https://pypi.org/project/xinference/#history"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "pypi"
+    ],
+    "registries": [
+      "pypi.org"
+    ],
+    "packages": [],
+    "versions": [
+      "xinference==2.6.0",
+      "xinference==2.6.1",
+      "xinference==2.6.2"
+    ],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-04-22T00:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-04-22",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-04-22",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "package installation",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [
+      "xinference==2.6.0",
+      "xinference==2.6.1",
+      "xinference==2.6.2"
+    ],
+    "files": [
+      "xinference/__init__.py",
+      "love.tar.gz",
+      "f"
+    ],
+    "hashes": [
+      "e1e007ce4eab7774785617179d1c01a9381ae83abfd431aae8dba6f82d3ac127",
+      "077d49fa708f498969d7cdffe701eb64675baaa4968ded9bd97a4936dd56c21c",
+      "fe17e2ea4012d07d90ecb7793c1b0593a6138d25a9393192263e751660ec3cd0"
+    ],
+    "domains": [
+      "whereisitat.lucyatemysuperbox.space",
+      "love.tar.gz"
+    ],
+    "urls": [
+      "https://whereisitat.lucyatemysuperbox.space/"
+    ],
+    "ips": [],
+    "process_patterns": [
+      "curl --data-binary",
+      "subprocess.Popen"
+    ],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [
+      "curl --data-binary",
+      "subprocess.Popen"
+    ],
+    "network_hunts": [
+      "whereisitat.lucyatemysuperbox.space",
+      "love.tar.gz"
+    ],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

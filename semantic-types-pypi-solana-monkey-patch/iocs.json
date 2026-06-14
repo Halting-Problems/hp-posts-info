@@ -1,0 +1,115 @@
+{
+  "schema_version": "3.0",
+  "event_id": "semantic-types-pypi-solana-monkey-patch-2025-01-26",
+  "event_name": "semantic-types PyPI Solana Keypair Monkey Patch",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "pypi",
+    "supply-chain",
+    "solana",
+    "cryptocurrency",
+    "monkey-patching"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://socket.dev/blog/monkey-patched-pypi-packages-steal-solana-private-keys"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "pypi"
+    ],
+    "registries": [
+      "pypi.org"
+    ],
+    "packages": [],
+    "versions": [
+      "0.1.5",
+      "0.1.6",
+      "semantic-types==0.1.5",
+      "semantic-types==0.1.6",
+      "solana-keypair",
+      "solana-publickey",
+      "solana-mev-agent-py",
+      "solana-trading-bot",
+      "soltrade"
+    ],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2025-01-26T00:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2025-01-26",
+    "removal_time": "unknown",
+    "disclosure_time": "2025-01-26",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "package installation",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [
+      "0.1.5",
+      "0.1.6",
+      "semantic-types==0.1.5",
+      "semantic-types==0.1.6",
+      "solana-keypair",
+      "solana-publickey",
+      "solana-mev-agent-py",
+      "solana-trading-bot",
+      "soltrade"
+    ],
+    "files": [],
+    "hashes": [
+      "5a4d8480c9d1e82ba102f200258882fb9e694e8fc0343b6982c5540beccdca62"
+    ],
+    "domains": [
+      "api.devnet.solana.com",
+      "solders.keypair.Keypair"
+    ],
+    "urls": [
+      "https://api.devnet.solana.com"
+    ],
+    "ips": [],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [
+      "api.devnet.solana.com",
+      "solders.keypair.Keypair"
+    ],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

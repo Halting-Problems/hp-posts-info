@@ -1,0 +1,119 @@
+{
+  "schema_version": "3.0",
+  "event_id": "bitwarden-cli-npm-compromised-action-2026-04-22",
+  "event_name": "Bitwarden CLI npm 2026.4.0 Credential Stealer",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "npm",
+    "supply-chain",
+    "bitwarden",
+    "github-actions",
+    "credential-theft",
+    "ci-cd"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://community.bitwarden.com/t/bitwarden-statement-on-checkmarx-supply-chain-incident/96127",
+      "https://research.jfrog.com/post/bitwarden-cli-hijack/",
+      "https://socket.dev/blog/bitwarden-cli-compromised",
+      "https://registry.npmjs.org/@bitwarden%2fcli",
+      "https://www.cve.org/CVERecord?id=CVE-2026-42994"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "npm"
+    ],
+    "registries": [
+      "npmjs.com"
+    ],
+    "packages": [],
+    "versions": [
+      "@bitwarden/cli@2026.4.0"
+    ],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [
+      "GitHub Actions"
+    ],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-04-22T21:22:59Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-04-22",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-04-22",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "package installation",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [
+      "@bitwarden/cli@2026.4.0"
+    ],
+    "files": [
+      "bw_setup.js",
+      "bw1.js",
+      "/tmp/tmp.987654321.lock",
+      "package-updated.tgz"
+    ],
+    "hashes": [
+      "18f784b3bc9a0bcdcb1a8d7f51bc5f54323fc40cbd874119354ab609bef6e4cb",
+      "8605e365edf11160aad517c7d79a3b26b62290e5072ef97b102a01ddbb343f14",
+      "167ce57ef59a32a6a0ef4137785828077879092d7f83ddbc1755d6e69116e0ad"
+    ],
+    "domains": [
+      "audit.checkmarx.cx",
+      "tmp.987654321.lock"
+    ],
+    "urls": [
+      "https://audit.checkmarx.cx/v1/telemetry",
+      "https://api.github.com/search/commits?q=LongLiveTheResistanceAgainstMachines&sort=author-date&order=desc&per_page=50",
+      "https://api.github.com/search/commits?q=beautifulcastle%20&sort=author-date&order=desc",
+      "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13"
+    ],
+    "ips": [
+      "94.154.172.43"
+    ],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [
+      "audit.checkmarx.cx",
+      "tmp.987654321.lock",
+      "94.154.172.43"
+    ],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}
