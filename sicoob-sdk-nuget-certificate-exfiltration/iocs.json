@@ -70,11 +70,11 @@
   },
   "iocs": {
     "package_versions": [
-      "2.0.0",
-      "2.0.1",
-      "2.0.2",
-      "2.0.3",
-      "2.0.4"
+      "Sicoob.Sdk@2.0.0",
+      "Sicoob.Sdk@2.0.1",
+      "Sicoob.Sdk@2.0.2",
+      "Sicoob.Sdk@2.0.3",
+      "Sicoob.Sdk@2.0.4"
     ],
     "files": [
       "lib/net8.0/Sicoob.Sdk.dll"

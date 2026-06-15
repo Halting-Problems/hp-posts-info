@@ -61,8 +61,7 @@
   },
   "iocs": {
     "package_versions": [
-      "18.95.0",
-      "Nx Console v18.95.0"
+      "nx-console@18.95.0"
     ],
     "files": [
       "~/.local/share/kitty/cat.py",

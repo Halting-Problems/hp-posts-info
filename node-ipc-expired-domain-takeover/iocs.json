@@ -62,9 +62,9 @@
   },
   "iocs": {
     "package_versions": [
-      "9.1.6",
-      "9.2.3",
-      "12.0.1"
+      "node-ipc@9.1.6",
+      "node-ipc@9.2.3",
+      "node-ipc@12.0.1"
     ],
     "files": [],
     "hashes": [],

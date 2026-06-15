@@ -1,5 +1,5 @@
 hunts:
-  - id: atomic-arch-ebpf-maps
+  - id: atomic-arch-aur-compromise-ebpf-maps
     title: Detect Atomic Arch Pinned eBPF Maps
     question: Did the rootkit pin its known eBPF maps to the BPF virtual filesystem?
     evidence_basis:
@@ -16,7 +16,7 @@ hunts:
     classification_on_match: confirmed_compromise
     script_path: scripts/detect_ebpf_maps.py
 
-  - id: atomic-arch-package-caches
+  - id: atomic-arch-aur-compromise-package-caches
     title: Detect Tampered Package Manager Caches
     question: Are the compromised dependency packages atomic-lockfile or js-digest cached on this workstation?
     evidence_basis:
@@ -32,7 +32,7 @@ hunts:
     classification_on_match: presumed_exposed
     script_path: scripts/check_package_caches.py
 
-  - id: atomic-arch-systemd-persistence
+  - id: atomic-arch-aur-compromise-systemd-persistence
     title: Detect Suspicious Systemd Persistence Units
     question: Did the malware configure a persistent systemd service with instant infinite restart logic?
     evidence_basis:

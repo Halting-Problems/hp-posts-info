@@ -119,7 +119,13 @@
     ],
     "process_hunts": [],
     "network_hunts": [
-      "tidio.cc"
+      "tidio.cc",
+      "84.201.6.54",
+      "a.omappapi.com",
+      "a.opmnstr.com",
+      "a.optnmstr.com",
+      "a.trstplse.com",
+      "clientcdn.pushengage.com"
     ],
     "ci_cd_hunts": [],
     "registry_hunts": []

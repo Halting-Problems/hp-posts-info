@@ -11,7 +11,7 @@ VERSIONS = ["art-template 4.13.3","art-template 4.13.5","art-template 4.13.6"]
 FILES = ["lib/template-web.js","49554fde7424c31c.js"]
 DOMAINS = ["git.youzzjizz.com","v3.jiathis.com","utaq.cfww.shop","cfww.shop","l1ewsu3yjkqeroy.xyz","hm.baidu.com"]
 URLS = ["https://git.youzzjizz.com/git.js","https://v3.jiathis.com/code/jia.js?uid=artemplate","https://v3.jiathis.com/code/art.js","https://utaq.cfww.shop/gooll/49554fde7424c31c.js","https://l1ewsu3yjkqeroy.xyz/api/ip-sync/sync"]
-HASHES = ["f31bdd069fe7966ae11be1f78ee5dd44445938856dd1df12379e0e84a6851f5c (SHA-256, 49554fde7424c31c.js)","8064d4e0322f069b3dba13e7957ff0ca7dab7984 (SHA-1, 49554fde7424c31c.js)","6e79ae622b7ef30f31fdbcc2dc65339e (MD5, 49554fde7424c31c.js)","f31bdd069fe7966ae11be1f78ee5dd44445938856dd1df12379e0e84a6851f5c","8064d4e0322f069b3dba13e7957ff0ca7dab7984","6e79ae622b7ef30f31fdbcc2dc65339e"]
+HASHES = ["f31bdd069fe7966ae11be1f78ee5dd44445938856dd1df12379e0e84a6851f5c","8064d4e0322f069b3dba13e7957ff0ca7dab7984","6e79ae622b7ef30f31fdbcc2dc65339e"]
 
 # Collect unique indicators
 indicators = set()

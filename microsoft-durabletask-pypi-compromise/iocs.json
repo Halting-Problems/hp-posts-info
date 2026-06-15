@@ -62,9 +62,9 @@
   },
   "iocs": {
     "package_versions": [
-      "1.4.1",
-      "1.4.2",
-      "1.4.3"
+      "durabletask==1.4.1",
+      "durabletask==1.4.2",
+      "durabletask==1.4.3"
     ],
     "files": [],
     "hashes": [],
