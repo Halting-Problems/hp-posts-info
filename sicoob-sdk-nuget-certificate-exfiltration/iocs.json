@@ -33,12 +33,7 @@
     ],
     "registries": [],
     "packages": [
-      "Sicoob.Sdk",
-      "Sicoob.Sdk@2.0.0",
-      "Sicoob.Sdk@2.0.1",
-      "Sicoob.Sdk@2.0.2",
-      "Sicoob.Sdk@2.0.3",
-      "Sicoob.Sdk@2.0.4"
+      "Sicoob.Sdk"
     ],
     "versions": [
       "2.0.0",

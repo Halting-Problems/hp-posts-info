@@ -7,7 +7,7 @@ ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 LOG_ROOT = os.environ.get("LOG_ROOT", "")
 OUT = Path(os.environ.get("OUT", "hp-sicoob-sdk-nuget-certificate-exfiltration-scope"))
 
-PACKAGES = ["Sicoob.Sdk","Sicoob.Sdk@2.0.0","Sicoob.Sdk@2.0.1","Sicoob.Sdk@2.0.2","Sicoob.Sdk@2.0.3","Sicoob.Sdk@2.0.4"]
+PACKAGES = ["Sicoob.Sdk"]
 VERSIONS = ["2.0.0","2.0.1","2.0.2","2.0.3","2.0.4"]
 FILES = ["lib/net8.0/Sicoob.Sdk.dll"]
 DOMAINS = ["o4511335034847232.ingest.de.sentry.io","Sicoob.Sdk.dll"]
