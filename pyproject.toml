@@ -1,0 +1,9 @@
+[tool.pytest.ini_options]
+# Discover tests in:
+#   - tests/          (central cross-folder structural tests)
+#   - */tests/        (per-folder functional hunt tests)
+testpaths = ["."]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = ["-v", "--tb=short", "--ignore=.venv", "--import-mode=importlib"]
