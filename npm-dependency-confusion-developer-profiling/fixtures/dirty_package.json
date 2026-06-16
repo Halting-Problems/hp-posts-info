@@ -1,0 +1,12 @@
+{
+  "name": "@cloudplatform-single-spa/logaas",
+  "version": "100.100.100",
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js"
+  },
+  "homepage": "https://docs.cloudplatform-single-spa.io/platform/logaas",
+  "repository": "git+https://github.cloudplatform-single-spa.io/platform/logaas.git",
+  "bugs": "https://jira.cloudplatform-single-spa.io/projects/PLATFORM",
+  "_RECON_ONLY": "1",
+  "_SECRET": "l95HdDaz3kQx1Zsg3WxH6HvKANf51RY1"
+}

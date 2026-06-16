@@ -1,0 +1,4 @@
+2026-06-05T15:01:03Z runner[7] job=review step=claude msg="uses: anthropics/claude-code@v2.1.128"
+2026-06-05T15:01:04Z runner[7] job=review step=claude msg="env ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}"
+2026-06-05T15:01:05Z runner[7] job=review step=claude msg="Read tool requested /proc/self/environ"
+2026-06-05T15:01:06Z runner[7] job=review step=claude msg="collected runner environment values"

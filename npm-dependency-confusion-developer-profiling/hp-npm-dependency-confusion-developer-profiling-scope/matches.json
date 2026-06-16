@@ -1,0 +1,27 @@
+[
+  {
+    "indicator": "scope_cloudplatform",
+    "path": "/tmp/pytest-of-sam/pytest-41/test_dirty_fixture_returns_one0/dirty/package.json",
+    "pattern": "@cloudplatform-single-spa"
+  },
+  {
+    "indicator": "rep_logaas",
+    "path": "/tmp/pytest-of-sam/pytest-41/test_dirty_fixture_returns_one0/dirty/package.json",
+    "pattern": "@cloudplatform-single-spa/logaas"
+  },
+  {
+    "indicator": "payload_recon",
+    "path": "/tmp/pytest-of-sam/pytest-41/test_dirty_fixture_returns_one0/dirty/package.json",
+    "pattern": "_RECON_ONLY"
+  },
+  {
+    "indicator": "install_hook",
+    "path": "/tmp/pytest-of-sam/pytest-41/test_dirty_fixture_returns_one0/dirty/package.json",
+    "pattern": "postinstall"
+  },
+  {
+    "indicator": "fake_enterprise_domains",
+    "path": "/tmp/pytest-of-sam/pytest-41/test_dirty_fixture_returns_one0/dirty/package.json",
+    "pattern": "github.cloudplatform-single-spa.io"
+  }
+]

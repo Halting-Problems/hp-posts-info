@@ -1,0 +1,11 @@
+hunts:
+  - id: "claude-code-github-action-secret-exposure-hunt-1"
+    title: "checkout and exported log scope"
+    question: "Does the checkout or exported log scope contain indicators associated with the Claude Code GitHub Action secret-exposure case?"
+    telemetry:
+      family: "process"
+      collection_context: "repository checkout or CI/CD log export"
+    positive_signal: "Matched anthropics/claude-code, v2.1.128, ANTHROPIC_API_KEY, or /proc/self/environ in checkout or log telemetry"
+    false_positives: "Legitimate Claude Code release notes or examples may mention the action name or version without indicating exposure; require workflow context before escalation."
+    classification_on_match: "presumed_exposed"
+    script_path: "scripts/checkout_and_log_scope.py"
