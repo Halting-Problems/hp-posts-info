@@ -1,0 +1,3 @@
+pip install mflux-streamlit==0.0.4
+import _index.js
+pypi:project-status=quarantined
