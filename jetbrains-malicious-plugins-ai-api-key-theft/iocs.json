@@ -1,0 +1,197 @@
+{
+  "schema_version": "3.0",
+  "event_id": "jetbrains-malicious-plugins-ai-api-key-theft-2026-06-19",
+  "event_name": "15 Malicious JetBrains Plugins Stole AI API Keys from 70,000 Developers",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "publish_ready",
+  "confidence": "high",
+  "confidence_reason": "JetBrains official response confirms the purge and disablement path; StepSecurity provides the plugin inventory, publisher handles, timeline, and C2 details.",
+  "attack_types": [
+    "supply-chain",
+    "credential-theft",
+    "ide-plugin-compromise",
+    "marketplace-abuse"
+  ],
+  "sources": {
+    "direct": [
+      "https://blog.jetbrains.com/platform/2026/06/marketplace-ecosystem-security-update-malicious-ai-plugins/"
+    ],
+    "primary_research": [
+      "https://www.stepsecurity.io/blog/jetbrains-malicious-plugins-ai-api-key-theft",
+      "https://plugins.jetbrains.com/plugin/org.sm.yms.toolkit",
+      "https://plugins.jetbrains.com/plugin/com.json.simple.kit",
+      "https://plugins.jetbrains.com/plugin/com.dp.git.ai.tool"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "jetbrains-marketplace",
+      "ide-plugins"
+    ],
+    "registries": [
+      "JetBrains Marketplace"
+    ],
+    "packages": [
+      "org.sm.yms.toolkit",
+      "com.json.simple.kit",
+      "org.bug.find.tools",
+      "org.translate.ai.simple",
+      "com.yy.test.ai.simple",
+      "com.dev.ai.toolkit",
+      "com.json.view.simple",
+      "com.my.git.ai.kit",
+      "org.check.ai.ds",
+      "com.review.tool.code",
+      "org.code.assist.dev.tool",
+      "com.coder.ai.dpt",
+      "com.my.code.tools",
+      "ord.cp.code.ai.kit",
+      "com.dp.git.ai.tool"
+    ],
+    "versions": [
+      "late-2025-to-2026-06-17 listings"
+    ],
+    "repositories": [
+      "not_observed"
+    ],
+    "vendors": [
+      "mycode",
+      "misshewei",
+      "keteme",
+      "simpledev",
+      "skyblue",
+      "dialycode",
+      "947cb4c8-5db1-4cf0-8182-0aae7c433bb3"
+    ],
+    "ci_cd_systems": [
+      "not_observed"
+    ],
+    "container_images": [
+      "not_observed"
+    ],
+    "developer_tools": [
+      "JetBrains IDEs",
+      "JetBrains Marketplace"
+    ],
+    "credentials_at_risk": [
+      "OpenAI API keys",
+      "DeepSeek API keys",
+      "SiliconFlow API keys"
+    ]
+  },
+  "timeline": {
+    "first_seen": "2026-06-19",
+    "malicious_publish_time": "2025-10-31",
+    "discovery_time": "2026-06-16",
+    "removal_time": "2026-06-17",
+    "disclosure_time": "2026-06-17",
+    "patch_or_fix_time": "2026-06-17"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [
+      "DeepSeek Junit Test (org.sm.yms.toolkit)",
+      "DeepSeek Git Commit (com.json.simple.kit)",
+      "DeepSeek FindBugs (org.bug.find.tools)",
+      "DeepSeek AI Chat (org.translate.ai.simple)",
+      "DeepSeek Dev AI (com.yy.test.ai.simple)",
+      "DeepSeek AI Coding (com.dev.ai.toolkit)",
+      "AI FindBugs (com.json.view.simple)",
+      "AI Git Commitor (com.my.git.ai.kit)",
+      "AI Coder Review (org.check.ai.ds)",
+      "DeepSeek Coder AI (com.review.tool.code)",
+      "AI Coder Assistant (org.code.assist.dev.tool)",
+      "DeepSeek Code Review (com.coder.ai.dpt)",
+      "CodeGPT AI Assistant (com.my.code.tools)",
+      "DeepSeek AI Assist (ord.cp.code.ai.kit)",
+      "Coding Simple Tool (com.dp.git.ai.tool)"
+    ],
+    "execution_trigger": "developer enters an AI provider API key and clicks Apply inside the plugin settings",
+    "payload_behavior": [
+      "validates API-key-like input",
+      "deduplicates already-seen keys",
+      "posts JSON payloads over plaintext HTTP",
+      "installs a JVM-wide X509TrustManager to suppress TLS warnings"
+    ],
+    "provenance": {
+      "jetbrains_response": "official vendor purge and disablement notice",
+      "stepsecurity_research": "plugin inventory, publisher handles, C2 analysis, and timeline"
+    }
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [],
+    "domains": [],
+    "urls": [
+      "http://39.107.60.51/api/software/key",
+      "http://39.107.60.51/api/software/check",
+      "https://www.stepsecurity.io/blog/jetbrains-malicious-plugins-ai-api-key-theft",
+      "https://blog.jetbrains.com/platform/2026/06/marketplace-ecosystem-security-update-malicious-ai-plugins/",
+      "https://plugins.jetbrains.com/plugin/org.sm.yms.toolkit",
+      "https://plugins.jetbrains.com/plugin/com.json.simple.kit",
+      "https://plugins.jetbrains.com/plugin/com.dp.git.ai.tool"
+    ],
+    "ips": [
+      "39.107.60.51"
+    ],
+    "process_patterns": [
+      "JetBrains IDE process sending HTTP POST requests to 39.107.60.51"
+    ],
+    "network_patterns": [
+      "POST /api/software/key",
+      "POST /api/software/check",
+      "X-Api-Key: F48D2AA7CF341F782C1D"
+    ]
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [
+      "JetBrains plugin directories containing the listed plugin IDs"
+    ],
+    "process_hunts": [
+      "IDE process telemetry showing outbound HTTP to 39.107.60.51"
+    ],
+    "network_hunts": [
+      "39.107.60.51",
+      "proxy or firewall logs showing POST /api/software/key or /api/software/check from 39.107.60.51"
+    ],
+    "ci_cd_hunts": [
+      "not_applicable unless the same AI keys were reused in build automation"
+    ],
+    "registry_hunts": [
+      "Marketplace inventory for the 15 malicious plugin IDs"
+    ]
+  },
+  "open_questions": [
+    "What exact repository or publisher recovery path produced the 7 vendor accounts?",
+    "How many AI API keys were actually exfiltrated versus merely exposed to the C2 endpoint?",
+    "Did any of the affected developers reuse the stolen AI keys in other environments?"
+  ],
+  "defender_takeaways": {
+    "detection": "Watch JetBrains IDE telemetry for the listed plugin IDs, the publisher handles, and outbound HTTP to 39.107.60.51.",
+    "hunting": "Scope IDE settings, plugin directories, proxy logs, and AI-provider billing records before removing all evidence.",
+    "remediation": "Remove the plugins, block the C2 IP, and rotate any AI provider keys entered into the affected settings screens.",
+    "prevention": "Require Marketplace allowlists and monitor IDE extensions with the same rigor used for browser add-ons or package managers."
+  },
+  "remediation_gates": {
+    "containment_complete": [
+      "Listed plugins removed from all managed JetBrains IDEs",
+      "39.107.60.51 blocked at network controls"
+    ],
+    "eradication_complete": [
+      "Residual plugin caches cleared",
+      "Unexpected plugin directories removed"
+    ],
+    "recovery_complete": [
+      "AI provider keys entered into the plugins revoked and reissued",
+      "Provider usage logs show no post-discovery abuse"
+    ],
+    "closure_required": [
+      "No outbound hits to 39.107.60.51 remain",
+      "No listed plugin IDs remain installed",
+      "Risk owner accepts any residual uncertainty"
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+Installed plugins:
+- DeepSeek Junit Test (org.sm.yms.toolkit)
+- AI Coder Assistant (org.code.assist.dev.tool)
+- CodeGPT AI Assistant (com.my.code.tools)

@@ -1,0 +1,2 @@
+2026-06-19T12:11:01Z java.exe POST http://39.107.60.51/api/software/key X-Api-Key: F48D2AA7CF341F782C1D
+2026-06-19T12:11:02Z java.exe POST http://39.107.60.51/api/software/check 200 OK

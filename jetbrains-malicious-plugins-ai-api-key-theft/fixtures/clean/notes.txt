@@ -1,0 +1,1 @@
+This fixture contains no malicious JetBrains plugin identifiers and no attacker network selectors.

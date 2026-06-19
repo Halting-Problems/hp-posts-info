@@ -1,0 +1,11 @@
+hunts:
+  - id: "jetbrains-malicious-plugins-ai-api-key-theft-hunt-1"
+    title: "JetBrains plugin and telemetry scope"
+    question: "Does the telemetry scope contain indicators associated with the malicious JetBrains Marketplace AI-key theft campaign?"
+    telemetry:
+      family: "file"
+      collection_context: "JetBrains IDE plugin inventory, local files, and exported telemetry"
+    positive_signal: "Indicators of compromise matched in telemetry: JetBrains plugin IDs, publisher handles, or C2 network selectors"
+    false_positives: "Benign JetBrains plugins may mention AI models in metadata, but they should not contain the campaign's exact plugin IDs, publisher handles, or attacker C2 selectors."
+    classification_on_match: "treat the workstation as credential-compromised and rotate any AI provider keys entered into the matched plugins"
+    script_path: "scripts/jetbrains_malicious_plugins_ai_api_key_theft_scope.py"
