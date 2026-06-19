@@ -1,0 +1,24 @@
+{
+  "name": "buffer-utilities",
+  "dist-tags": {
+    "latest": "0.0.1-security"
+  },
+  "time": {
+    "created": "2026-06-09T11:48:35.438Z",
+    "modified": "2026-06-09T11:48:38.303Z",
+    "1.0.0": "2026-05-30T08:15:38.814Z",
+    "1.1.0": "2026-06-08T18:42:59.012Z",
+    "1.1.1": "2026-06-09T05:30:48.293Z",
+    "0.0.1-security": "2026-06-09T11:48:35.610Z"
+  },
+  "versions": {
+    "0.0.1-security": {
+      "name": "buffer-utilities",
+      "version": "0.0.1-security",
+      "description": "security holding package",
+      "dist": {
+        "tarball": "https://registry.npmjs.org/buffer-utilities/-/buffer-utilities-0.0.1-security.tgz"
+      }
+    }
+  }
+}

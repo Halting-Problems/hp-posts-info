@@ -1,0 +1,11 @@
+hunts:
+  - id: "sonatype-2026-003558-buffer-utilities-hunt-1"
+    title: "repository, log, and npm packument scope"
+    question: "Does the telemetry scope contain patterns associated with the buffer-utilities Lazarus Group npm brandjacking campaign?"
+    telemetry:
+      family: "file"
+      collection_context: "host filesystem, build log export, or npm packument snapshot"
+    positive_signal: "Indicators of compromise matched in telemetry: buffer family package names, install-time loader markers, or historical buffer-utilities registry metadata"
+    false_positives: "Benign mentions of buffer-utilities in source notes or the security-holder package can appear after cleanup; confirm with the matching time entries and loader markers before escalating."
+    classification_on_match: "Presumed exposed if only inventory artifacts are present; confirmed compromise if loader markers or staged payload traces appear in the same host or build context."
+    script_path: "scripts/buffer_utilities_campaign_scope.py"

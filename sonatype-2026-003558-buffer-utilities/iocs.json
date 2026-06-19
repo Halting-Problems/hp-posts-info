@@ -1,0 +1,198 @@
+{
+  "schema_version": "3.0",
+  "event_id": "sonatype-2026-003558-buffer-utilities-2026-06-03",
+  "event_name": "Lazarus Group npm Brandjacking Campaign / buffer-utilities",
+  "parent_campaign_id": "sonatype-2026-003558",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "Sonatype and JFrog both describe malicious buffer-utilities behavior, and the live npm packument still shows historical release timestamps even though the package is now held by a security placeholder. The package-version matrix for the broader campaign remains incomplete.",
+  "attack_types": [
+    "npm",
+    "node",
+    "supply-chain",
+    "brandjacking",
+    "dropper"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://www.sonatype.com/blog/lazarus-groups-latest-brandjacking-campaign-on-npm",
+      "https://research.jfrog.com/post/easy-day-js/",
+      "https://registry.npmjs.org/buffer-utilities"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "npm",
+      "node"
+    ],
+    "registries": [
+      "registry.npmjs.org"
+    ],
+    "packages": [
+      "buffer-utilities",
+      "buffer",
+      "buffer-util-extend",
+      "express-denv",
+      "jwt-path",
+      "webpack-patch",
+      "chai-as-patch",
+      "chai-beta",
+      "react-next-dom"
+    ],
+    "versions": [
+      "buffer-utilities@1.0.0",
+      "buffer-utilities@1.1.0",
+      "buffer-utilities@1.1.1"
+    ],
+    "repositories": [],
+    "vendors": [
+      "Sonatype Security Research",
+      "JFrog Security Research"
+    ],
+    "ci_cd_systems": [
+      "npm install",
+      "pnpm install",
+      "yarn install"
+    ],
+    "container_images": [],
+    "developer_tools": [
+      "Node.js",
+      "npm CLI",
+      "pnpm CLI",
+      "yarn CLI"
+    ],
+    "credentials_at_risk": [
+      "npm auth tokens",
+      "developer workstation secrets",
+      "CI runner environment variables",
+      "cloud provider API keys",
+      "SSH keys"
+    ]
+  },
+  "timeline": {
+    "first_seen": "2026-06-03T00:00:00Z",
+    "malicious_publish_time": "2026-05-30T08:15:38.814Z",
+    "discovery_time": "2026-06-03",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-06-03",
+    "patch_or_fix_time": "2026-06-09T11:48:35.610Z"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [
+      "buffer-utilities",
+      "buffer-utilities@1.0.0",
+      "buffer-utilities@1.1.0",
+      "buffer-utilities@1.1.1"
+    ],
+    "execution_trigger": "npm lifecycle installation path; JFrog reports a postinstall loader that runs immediately after install",
+    "payload_behavior": [
+      "fetches remote payloads",
+      "executes a second-stage Node.js backdoor",
+      "collects hostname, username, operating system, home directory, and process arguments",
+      "creates a hidden .vscode directory in the user's home folder",
+      "drops marker files named .pkg_history and .pkg_logs"
+    ],
+    "provenance": {
+      "package_registry": "registry.npmjs.org",
+      "research_notes": "live registry and article review"
+    }
+  },
+  "iocs": {
+    "package_versions": [
+      "buffer-utilities@1.0.0",
+      "buffer-utilities@1.1.0",
+      "buffer-utilities@1.1.1"
+    ],
+    "files": [
+      "setup.cjs",
+      ".vscode",
+      ".pkg_history",
+      ".pkg_logs"
+    ],
+    "hashes": [],
+    "domains": [
+      "registry.npmjs.org"
+    ],
+    "urls": [
+      "https://registry.npmjs.org/buffer-utilities",
+      "https://registry.npmjs.org/buffer-utilities/-/buffer-utilities-1.0.0.tgz",
+      "https://registry.npmjs.org/buffer-utilities/-/buffer-utilities-1.1.0.tgz",
+      "https://registry.npmjs.org/buffer-utilities/-/buffer-utilities-1.1.1.tgz",
+      "https://registry.npmjs.org/buffer-utilities/-/buffer-utilities-0.0.1-security.tgz"
+    ],
+    "ips": [],
+    "process_patterns": [
+      "postinstall",
+      "node setup.cjs --no-warnings",
+      "spawn(process.execPath, ..., detached: true)"
+    ],
+    "network_patterns": [
+      "registry.npmjs.org/buffer-utilities",
+      "buffer-utilities-1.0.0.tgz",
+      "buffer-utilities-1.1.0.tgz",
+      "buffer-utilities-1.1.1.tgz"
+    ]
+  },
+  "detection": {
+    "lockfile_hunts": [
+      "buffer-utilities in package-lock.json, pnpm-lock.yaml, or yarn.lock",
+      "buffer-util-extend, express-denv, jwt-path, webpack-patch, chai-as-patch, chai-beta, or react-next-dom in dependency trees"
+    ],
+    "filesystem_hunts": [
+      "setup.cjs next to package metadata",
+      "hidden .vscode directory under the user home folder",
+      "marker files .pkg_history and .pkg_logs in temp or home directories"
+    ],
+    "process_hunts": [
+      "npm install or pnpm install invoking node setup.cjs --no-warnings",
+      "Node child process launched in detached mode after fetching a second-stage payload"
+    ],
+    "network_hunts": [
+      "registry.npmjs.org/buffer-utilities",
+      "registry.npmjs.org/buffer-utilities/-/buffer-utilities-1.0.0.tgz",
+      "registry.npmjs.org/buffer-utilities/-/buffer-utilities-1.1.0.tgz",
+      "registry.npmjs.org/buffer-utilities/-/buffer-utilities-1.1.1.tgz"
+    ],
+    "ci_cd_hunts": [
+      "dependency install jobs that resolve buffer-utilities before lockfile review",
+      "CI runners retaining npm tokens or cloud secrets in environment variables"
+    ],
+    "registry_hunts": [
+      "registry.npmjs.org",
+      "current packument showing latest=0.0.1-security",
+      "historical time entries for 1.0.0, 1.1.0, and 1.1.1",
+      "tarball URLs for historical versions returning 404 in live registry checks"
+    ]
+  },
+  "open_questions": [
+    "Need complete package-version matrix for the whole campaign.",
+    "Need to verify whether buffer-utilities artifacts remain mirrored in any registry cache or package archive."
+  ],
+  "defender_takeaways": {
+    "detection": "Look for buffer-utilities family names in lockfiles and install logs, then confirm whether the host ever ran node setup.cjs --no-warnings or created .pkg_history, .pkg_logs, or a hidden .vscode directory.",
+    "hunting": "Treat install-time matches as high-signal because JFrog describes a postinstall loader that fetches and launches a second-stage backdoor immediately after package installation.",
+    "remediation": "Remove the package from dependency graphs, rebuild lockfiles from known-good sources, and review the install host for secrets that were present during the install window.",
+    "prevention": "Pin dependency sources, review new npm names that mimic trusted ecosystems, and block unapproved install-time scripts in developer and CI environments."
+  },
+  "remediation_gates": {
+    "containment_complete": [
+      "Dependency references to buffer-utilities and the related brandjacking names are removed or pinned to a reviewed allowlist.",
+      "The affected host or runner has no remaining install-time execution from setup.cjs."
+    ],
+    "eradication_complete": [
+      "The hidden .vscode directory and marker files created by the loader are removed after preserving copies for forensics.",
+      "Any second-stage payload artifacts are identified or ruled out by host review."
+    ],
+    "recovery_complete": [
+      "Lockfiles are regenerated from clean sources and installs succeed without invoking unexpected lifecycle scripts.",
+      "Relevant npm, SSH, cloud, and CI credentials exposed during the install window are replaced or otherwise invalidated from a clean machine."
+    ],
+    "closure_required": [
+      "A clean re-install on a hardened environment confirms that the package graph no longer resolves to the malicious package names.",
+      "The registry artifact gap remains documented if no external archive copy of the malicious tarballs can be located."
+    ]
+  }
+}
