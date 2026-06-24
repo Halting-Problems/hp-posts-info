@@ -1,0 +1,11 @@
+hunts:
+  - id: "codfish-semantic-release-action-tag-hijack-hunt-1"
+    title: "local repository and exported telemetry scope"
+    question: "Does the telemetry scope contain references associated with the codfish/semantic-release-action tag hijack?"
+    telemetry:
+      family: "process"
+      collection_context: "host filesystem or log export"
+    positive_signal: "Workflow content, caches, or exported telemetry contains compromised codfish/semantic-release-action refs, the malicious commit SHA, or the injected Bun/composite-action selectors."
+    false_positives: "Historical documentation, archived advisories, or lab fixtures that intentionally preserve the malicious selectors."
+    classification_on_match: "Treat a match as at least potentially exposed; escalate to presumed exposed if a workflow or run history proves execution during or after the tag hijack window."
+    script_path: "scripts/local_repository_and_exported_telemetry_scope.py"

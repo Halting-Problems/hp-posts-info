@@ -1,0 +1,190 @@
+{
+  "schema_version": "3.0",
+  "event_id": "codfish-semantic-release-action-tag-hijack-2026-06-24",
+  "event_name": "codfish/semantic-release-action GitHub Action Tag Hijack",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "high",
+  "confidence_reason": "StepSecurity published a same-day technical analysis, GitHub's tags API shows fifteen mutable version tags currently resolving to the same injected commit, and the raw malicious action.yml materially differs from the clean docker-based action definition.",
+  "attack_types": [
+    "supply-chain",
+    "github-actions",
+    "ci-cd",
+    "credential-theft",
+    "tag-hijack"
+  ],
+  "sources": {
+    "direct": [
+      "https://api.github.com/repos/codfish/semantic-release-action",
+      "https://api.github.com/repos/codfish/semantic-release-action/tags?per_page=100",
+      "https://raw.githubusercontent.com/codfish/semantic-release-action/5792aba0e2180b9b80b77644370a6889d5817456/action.yml",
+      "https://raw.githubusercontent.com/codfish/semantic-release-action/8f9a58f2acdc190c356f79159b5de2548cdb63cd/action.yml"
+    ],
+    "primary_research": [
+      "https://www.stepsecurity.io/blog/supply-chain-compromise-codfish-semantic-release-action"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "GitHub Actions"
+    ],
+    "registries": [
+      "GitHub"
+    ],
+    "packages": [
+      "codfish/semantic-release-action"
+    ],
+    "versions": [
+      "codfish/semantic-release-action@v5.0.0",
+      "codfish/semantic-release-action@v5",
+      "codfish/semantic-release-action@v4.0.1",
+      "codfish/semantic-release-action@v4.0.0",
+      "codfish/semantic-release-action@v4",
+      "codfish/semantic-release-action@v3.5.0",
+      "codfish/semantic-release-action@v3.4.1",
+      "codfish/semantic-release-action@v3.4.0",
+      "codfish/semantic-release-action@v3.3.0",
+      "codfish/semantic-release-action@v3.2.0",
+      "codfish/semantic-release-action@v3.1.1",
+      "codfish/semantic-release-action@v3.1.0",
+      "codfish/semantic-release-action@v3.0.0",
+      "codfish/semantic-release-action@v3",
+      "codfish/semantic-release-action@v2.2.1"
+    ],
+    "repositories": [
+      "github.com/codfish/semantic-release-action"
+    ],
+    "vendors": [
+      "codfish"
+    ],
+    "ci_cd_systems": [
+      "GitHub Actions"
+    ],
+    "container_images": [],
+    "developer_tools": [
+      "semantic-release"
+    ],
+    "credentials_at_risk": [
+      "GITHUB_TOKEN",
+      "GitHub OIDC tokens",
+      "GitHub Personal Access Tokens",
+      "release credentials exposed to GitHub Actions runners"
+    ]
+  },
+  "timeline": {
+    "first_seen": "2026-06-24T15:39:06Z",
+    "malicious_publish_time": "2026-06-24T15:39:06Z",
+    "discovery_time": "2026-06-24T18:26:38Z",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-06-24T18:26:38Z",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [
+      "commit:5792aba0e2180b9b80b77644370a6889d5817456",
+      "action.yml converted from docker to composite",
+      "index.js payload executed through bun run"
+    ],
+    "execution_trigger": "workflow references a mutable codfish/semantic-release-action tag that now resolves to the injected commit",
+    "payload_behavior": [
+      "installs Bun through oven-sh/setup-bun",
+      "executes an obfuscated index.js payload under if: always()",
+      "attempts to read Runner.Worker memory for secrets",
+      "harvests GitHub OIDC and Personal Access Tokens",
+      "attempts propagation into repositories reachable with stolen credentials"
+    ],
+    "provenance": {
+      "clean_reference_sha": "8f9a58f2acdc190c356f79159b5de2548cdb63cd",
+      "malicious_reference_sha": "5792aba0e2180b9b80b77644370a6889d5817456",
+      "mutable_tags_currently_pointing_to_malicious_sha": 15
+    }
+  },
+  "iocs": {
+    "package_versions": [
+      "codfish/semantic-release-action@v5.0.0",
+      "codfish/semantic-release-action@v5",
+      "codfish/semantic-release-action@v4.0.1",
+      "codfish/semantic-release-action@v4.0.0",
+      "codfish/semantic-release-action@v4",
+      "codfish/semantic-release-action@v3.5.0",
+      "codfish/semantic-release-action@v3.4.1",
+      "codfish/semantic-release-action@v3.4.0",
+      "codfish/semantic-release-action@v3.3.0",
+      "codfish/semantic-release-action@v3.2.0",
+      "codfish/semantic-release-action@v3.1.1",
+      "codfish/semantic-release-action@v3.1.0",
+      "codfish/semantic-release-action@v3.0.0",
+      "codfish/semantic-release-action@v3",
+      "codfish/semantic-release-action@v2.2.1"
+    ],
+    "files": [
+      "action.yml",
+      "index.js"
+    ],
+    "hashes": [
+      "5792aba0e2180b9b80b77644370a6889d5817456",
+      "8f9a58f2acdc190c356f79159b5de2548cdb63cd"
+    ],
+    "domains": [],
+    "urls": [
+      "https://raw.githubusercontent.com/codfish/semantic-release-action/5792aba0e2180b9b80b77644370a6889d5817456/action.yml",
+      "https://raw.githubusercontent.com/codfish/semantic-release-action/8f9a58f2acdc190c356f79159b5de2548cdb63cd/action.yml"
+    ],
+    "ips": [],
+    "process_patterns": [
+      "oven-sh/setup-bun",
+      "bun run $GITHUB_ACTION_PATH/index.js",
+      "Runner.Worker memory access"
+    ],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [
+      "Search workflow files and generated action caches for codfish/semantic-release-action refs pinned to the compromised tag set."
+    ],
+    "filesystem_hunts": [
+      "Search repositories, Actions cache exports, and retained workspace artifacts for the malicious composite action selectors and commit SHA."
+    ],
+    "process_hunts": [
+      "Review runner telemetry for Bun installation followed by bun run against the action checkout path."
+    ],
+    "network_hunts": [
+      "Review GitHub API and git push activity from identities exposed to affected workflow runs because the public analysis has not yet decoded a stable external C2 endpoint."
+    ],
+    "ci_cd_hunts": [
+      "Enumerate workflow runs that resolved codfish/semantic-release-action mutable tags on or after 2026-06-24T15:39:06Z."
+    ],
+    "registry_hunts": []
+  },
+  "open_questions": [
+    "The public reporting does not yet identify the initial repository-control mechanism.",
+    "The public reporting does not yet decode a stable external exfiltration endpoint.",
+    "A maintainer remediation advisory or tag restoration timeline was not available during this refresh."
+  ],
+  "defender_takeaways": {
+    "detection": "Treat mutable third-party GitHub Action tags as untrusted after 2026-06-24T15:39:06Z unless run records prove a full-SHA pin to a clean commit.",
+    "hunting": "Start by enumerating workflow files, Actions caches, and run metadata for the compromised tag set and the injected Bun/composite-action selectors.",
+    "remediation": "Rotate all credentials reachable from affected workflows, then rebuild or invalidate cached action content on self-hosted runners.",
+    "prevention": "Pin third-party actions to reviewed full commit SHAs and narrow GitHub token and id-token permissions per job."
+  },
+  "remediation_gates": {
+    "containment_complete": [
+      "Mutable codfish/semantic-release-action tags are removed or replaced with reviewed full commit SHAs in all workflows.",
+      "Self-hosted runners that executed the affected refs are isolated until cache and persistence review is complete."
+    ],
+    "eradication_complete": [
+      "Affected action caches and checked-out workspace artifacts are deleted or rebuilt from clean sources.",
+      "No remaining workflow, reusable workflow, or template references the compromised tag set."
+    ],
+    "recovery_complete": [
+      "Replacement credentials have been issued from a clean environment and tested in remediated workflows.",
+      "Downstream GitHub, cloud, and registry audits show no unauthorized follow-on use."
+    ],
+    "closure_required": [
+      "Run-level scoping is complete for all repositories that referenced codfish/semantic-release-action by mutable tag on or after 2026-06-24T15:39:06Z.",
+      "Risk owners accept any residual uncertainty caused by missing runner telemetry or missing maintainer disclosure."
+    ]
+  }
+}
