@@ -1,7 +1,7 @@
 hunts:
   - id: "leo-platform-npm-miasma-compromise-hunt-1"
     title: "local repository and exported telemetry scope"
-    question: "Does the telemetry scope contain indicators associated with the Leo Platform npm Miasma / Phantom Gyp compromise?"
+    question: "Does the telemetry scope contain indicators associated with the Leo Platform npm Miasma / Phantom Gyp compromise and the linked follow-on package wave?"
     telemetry:
       family: "process"
       collection_context: "host filesystem, package cache, or exported CI/endpoint logs"

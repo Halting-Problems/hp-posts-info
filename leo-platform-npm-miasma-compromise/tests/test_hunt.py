@@ -41,7 +41,7 @@ def test_script_detects_package_and_behavioral_indicator(tmp_path: Path):
     out_dir.mkdir()
     hit_file = scan_dir / 'package-lock.json'
     hit_file.write_text(
-        'leo-sdk@6.0.19\nRunner.Worker\nhttps://api.github.com/graphql\n',
+        'leo-sdk@6.0.19\nhexo-deployer-wrangler@1.0.4\nRunner.Worker\nhttps://api.github.com/graphql\n',
         encoding='utf-8',
     )
 
@@ -50,6 +50,7 @@ def test_script_detects_package_and_behavioral_indicator(tmp_path: Path):
     assert result.returncode == 0
     matches = (out_dir / 'repository-indicator-matches.txt').read_text(encoding='utf-8')
     assert 'leo-sdk@6.0.19' in matches
+    assert 'hexo-deployer-wrangler@1.0.4' in matches
     assert 'Runner.Worker' in matches
     assert 'https://api.github.com/graphql' in matches
 

@@ -11,6 +11,8 @@ OUT.mkdir(parents=True, exist_ok=True)
 INDICATORS_FILE = OUT / 'indicators.txt'
 
 PACKAGES = [
+    'hexo-deployer-wrangler',
+    'hexo-shoka-swiper',
     'leo-auth',
     'leo-aws',
     'leo-cache',
@@ -26,6 +28,7 @@ PACKAGES = [
     'leo-logger',
     'leo-sdk',
     'leo-streams',
+    'prism-silq',
     'rstreams-metrics',
     'rstreams-shard-util',
     'serverless-convention',
@@ -46,9 +49,12 @@ PACKAGE_VERSIONS = [
     'leo-auth@4.0.6',
     'leo-cache@1.0.2',
     'leo-cli@3.0.3',
+    'hexo-deployer-wrangler@1.0.4',
+    'hexo-shoka-swiper@0.1.10',
     'leo-cron@2.0.2',
     'leo-connector-redshift@3.0.6',
     'leo-connector-oracle@2.0.1',
+    'prism-silq@1.0.1',
     'rstreams-shard-util@1.0.1',
     'leo-connector-mysql@3.0.3',
     'leo-cdk-lib@0.0.2',
@@ -64,6 +70,9 @@ HASHES = [
     '1dcc0a39e1cd7293a9058cfc41e1afe8b397c943',
     'ef8bf6dd92cbc29ef8d23f3f0fa786ed20a856b1',
     '9be49287057cd6a54ef4a70a8d541a7259efbd2d',
+    'c05068f18e7f94304b92a307a030e0038ab61004',
+    'cb78d0dca573f99a22b41ca01e99853a6162d5d5',
+    'c721c184dbb5c2dc23bacfd28571daef1decfac1',
 ]
 DOMAINS = [
     'api.github.com',

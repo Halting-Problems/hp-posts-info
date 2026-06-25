@@ -5,14 +5,28 @@ claims:
     evidence:
       - source: "https://www.stepsecurity.io/blog/mass-npm-supply-chain-attack-20-leo-platform-packages-compromised"
         note: "Primary research lists all 20 package/version pairs and the shared publish window."
+  - id: leo-platform-follow-on-packages
+    status: confirmed
+    statement: "Socket and Sonatype identified three additional malicious npm packages linked to the same Miasma wave: hexo-deployer-wrangler@1.0.4, hexo-shoka-swiper@0.1.10, and prism-silq@1.0.1."
+    evidence:
+      - source: "https://socket.dev/blog/miasma-mini-shai-hulud-hits-leoplatform-npm-packages-go-ecosystem"
+        note: "Socket states the campaign was not limited to the czirker publisher and names the three additional packages published by npm user llxlr."
+      - source: "https://www.sonatype.com/blog/miasma-returns-leo-platform-compromise-in-npm"
+        note: "Sonatype says the three additional packages contain the same obfuscated payload and binding.gyp execution method."
   - id: leo-platform-registry-confirmation
     status: confirmed
-    statement: "npm registry metadata preserves representative publish timestamps for packages such as leo-logger, leo-sdk, leo-aws, and solo-nav around 2026-06-24T23:04:55Z."
+    statement: "npm registry metadata preserves representative publish timestamps for the initial Leo Platform burst around 2026-06-24T23:04:55Z and the three linked follow-on packages around 2026-06-25T09:17:14Z."
     evidence:
       - source: "https://registry.npmjs.org/leo-logger"
         note: "Registry time metadata shows version 1.0.8 published at 2026-06-24T23:04:55.255Z."
       - source: "https://registry.npmjs.org/leo-sdk"
         note: "Registry time metadata shows version 6.0.19 published at 2026-06-24T23:04:55.643Z."
+      - source: "https://registry.npmjs.org/hexo-deployer-wrangler"
+        note: "Registry time metadata shows version 1.0.4 published at 2026-06-25T09:17:15.007Z by maintainer llxlr."
+      - source: "https://registry.npmjs.org/hexo-shoka-swiper"
+        note: "Registry time metadata shows version 0.1.10 published at 2026-06-25T09:17:14.707Z by maintainer llxlr."
+      - source: "https://registry.npmjs.org/prism-silq"
+        note: "Registry time metadata shows version 1.0.1 published at 2026-06-25T09:17:14.731Z by maintainer llxlr."
   - id: leo-platform-campaign-link
     status: likely
     statement: "The Leo Platform compromise is likely a child event of the Miasma / Mini Shai-Hulud activity because StepSecurity described identical Phantom Gyp, obfuscation, Bun, and GitHub exfiltration fingerprints."
