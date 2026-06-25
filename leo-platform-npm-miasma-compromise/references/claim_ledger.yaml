@@ -1,0 +1,23 @@
+claims:
+  - id: leo-platform-20-package-burst
+    status: confirmed
+    statement: "StepSecurity reported 20 malicious Leo Platform npm packages published in a coordinated burst on 2026-06-24."
+    evidence:
+      - source: "https://www.stepsecurity.io/blog/mass-npm-supply-chain-attack-20-leo-platform-packages-compromised"
+        note: "Primary research lists all 20 package/version pairs and the shared publish window."
+  - id: leo-platform-registry-confirmation
+    status: confirmed
+    statement: "npm registry metadata preserves representative publish timestamps for packages such as leo-logger, leo-sdk, leo-aws, and solo-nav around 2026-06-24T23:04:55Z."
+    evidence:
+      - source: "https://registry.npmjs.org/leo-logger"
+        note: "Registry time metadata shows version 1.0.8 published at 2026-06-24T23:04:55.255Z."
+      - source: "https://registry.npmjs.org/leo-sdk"
+        note: "Registry time metadata shows version 6.0.19 published at 2026-06-24T23:04:55.643Z."
+  - id: leo-platform-campaign-link
+    status: likely
+    statement: "The Leo Platform compromise is likely a child event of the Miasma / Mini Shai-Hulud activity because StepSecurity described identical Phantom Gyp, obfuscation, Bun, and GitHub exfiltration fingerprints."
+    evidence:
+      - source: "https://www.stepsecurity.io/blog/mass-npm-supply-chain-attack-20-leo-platform-packages-compromised"
+        note: "The Leo article explicitly compares the wave to the earlier Miasma campaign."
+      - source: "https://www.stepsecurity.io/blog/multiple-redhat-cloud-services-npm-packages-compromised"
+        note: "The earlier Miasma write-up provides the baseline payload family used for the comparison."

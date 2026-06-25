@@ -1,0 +1,11 @@
+hunts:
+  - id: "leo-platform-npm-miasma-compromise-hunt-1"
+    title: "local repository and exported telemetry scope"
+    question: "Does the telemetry scope contain indicators associated with the Leo Platform npm Miasma / Phantom Gyp compromise?"
+    telemetry:
+      family: "process"
+      collection_context: "host filesystem, package cache, or exported CI/endpoint logs"
+    positive_signal: "Affected Leo Platform package selectors, payload fingerprints, or post-install behavior matched in the scanned scope."
+    false_positives: "Benign references to the StepSecurity article or internal documentation can match the textual selectors without proving execution."
+    classification_on_match: "potentially_exposed"
+    script_path: "scripts/local_repository_and_exported_telemetry_scope.py"

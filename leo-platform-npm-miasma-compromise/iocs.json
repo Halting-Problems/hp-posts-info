@@ -1,0 +1,225 @@
+{
+  "schema_version": "3.0",
+  "event_id": "leo-platform-npm-miasma-compromise-2026-06-25",
+  "event_name": "Leo Platform npm Miasma / Phantom Gyp Compromise",
+  "parent_campaign_id": "mini-shai-hulud-worm",
+  "is_campaign_level": false,
+  "publication_state": "publish_ready",
+  "confidence": "high",
+  "confidence_reason": "StepSecurity documented the affected package list and publish burst, and npm registry metadata confirms representative publish timestamps for multiple packages in that burst.",
+  "attack_types": [
+    "npm",
+    "supply-chain",
+    "credential-theft",
+    "phantom-gyp",
+    "miasma",
+    "mini-shai-hulud"
+  ],
+  "sources": {
+    "direct": [
+      "https://registry.npmjs.org/leo-logger",
+      "https://registry.npmjs.org/leo-sdk",
+      "https://registry.npmjs.org/solo-nav"
+    ],
+    "primary_research": [
+      "https://www.stepsecurity.io/blog/mass-npm-supply-chain-attack-20-leo-platform-packages-compromised",
+      "https://www.stepsecurity.io/blog/multiple-redhat-cloud-services-npm-packages-compromised"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "npm"
+    ],
+    "registries": [
+      "npmjs.com"
+    ],
+    "packages": [
+      "leo-logger",
+      "leo-sdk",
+      "leo-aws",
+      "leo-config",
+      "leo-streams",
+      "serverless-leo",
+      "leo-connector-mongo",
+      "serverless-convention",
+      "rstreams-metrics",
+      "leo-connector-elasticsearch",
+      "leo-auth",
+      "leo-cache",
+      "leo-cli",
+      "leo-cron",
+      "leo-connector-redshift",
+      "leo-connector-oracle",
+      "rstreams-shard-util",
+      "leo-connector-mysql",
+      "leo-cdk-lib",
+      "solo-nav"
+    ],
+    "versions": [
+      "leo-logger@1.0.8",
+      "leo-sdk@6.0.19",
+      "leo-aws@2.0.4",
+      "leo-config@1.1.1",
+      "leo-streams@2.0.1",
+      "serverless-leo@3.0.14",
+      "leo-connector-mongo@3.0.8",
+      "serverless-convention@2.0.4",
+      "rstreams-metrics@2.0.2",
+      "leo-connector-elasticsearch@2.0.6",
+      "leo-auth@4.0.6",
+      "leo-cache@1.0.2",
+      "leo-cli@3.0.3",
+      "leo-cron@2.0.2",
+      "leo-connector-redshift@3.0.6",
+      "leo-connector-oracle@2.0.1",
+      "rstreams-shard-util@1.0.1",
+      "leo-connector-mysql@3.0.3",
+      "leo-cdk-lib@0.0.2",
+      "solo-nav@1.0.1"
+    ],
+    "repositories": [],
+    "vendors": [
+      "Leo Platform"
+    ],
+    "ci_cd_systems": [
+      "GitHub Actions"
+    ],
+    "container_images": [],
+    "developer_tools": [
+      "Bun",
+      "node-gyp"
+    ],
+    "credentials_at_risk": [
+      "GitHub tokens",
+      "npm publishing tokens",
+      "cloud credentials",
+      "Vault tokens",
+      "1Password credentials"
+    ]
+  },
+  "timeline": {
+    "first_seen": "2026-06-25T08:52:15Z",
+    "malicious_publish_time": "2026-06-24T23:04:55Z",
+    "discovery_time": "2026-06-25",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-06-25",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [
+      "binding.gyp",
+      "index.js"
+    ],
+    "execution_trigger": "npm install via binding.gyp / node-gyp shell expansion",
+    "payload_behavior": [
+      "reads /proc/{pid}/mem for Runner.Worker secrets",
+      "downloads Bun v1.3.13 from GitHub Releases",
+      "encrypts and commits stolen data to GitHub via GraphQL",
+      "publishes additional npm packages through bypass_2fa"
+    ],
+    "provenance": {
+      "campaign_relation": "likely child event of the Miasma / Mini Shai-Hulud activity based on identical Phantom Gyp and payload fingerprints"
+    }
+  },
+  "iocs": {
+    "package_versions": [
+      "leo-logger@1.0.8",
+      "leo-sdk@6.0.19",
+      "leo-aws@2.0.4",
+      "leo-config@1.1.1",
+      "leo-streams@2.0.1",
+      "serverless-leo@3.0.14",
+      "leo-connector-mongo@3.0.8",
+      "serverless-convention@2.0.4",
+      "rstreams-metrics@2.0.2",
+      "leo-connector-elasticsearch@2.0.6",
+      "leo-auth@4.0.6",
+      "leo-cache@1.0.2",
+      "leo-cli@3.0.3",
+      "leo-cron@2.0.2",
+      "leo-connector-redshift@3.0.6",
+      "leo-connector-oracle@2.0.1",
+      "rstreams-shard-util@1.0.1",
+      "leo-connector-mysql@3.0.3",
+      "leo-cdk-lib@0.0.2",
+      "solo-nav@1.0.1"
+    ],
+    "files": [
+      "binding.gyp",
+      "index.js",
+      "stub.c"
+    ],
+    "hashes": [
+      "d45ad3cffbcc7c4b354ebe9d71d002fa585379ec",
+      "1dcc0a39e1cd7293a9058cfc41e1afe8b397c943",
+      "ef8bf6dd92cbc29ef8d23f3f0fa786ed20a856b1",
+      "9be49287057cd6a54ef4a70a8d541a7259efbd2d"
+    ],
+    "domains": [
+      "api.github.com",
+      "github.com"
+    ],
+    "urls": [
+      "https://api.github.com/graphql",
+      "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/"
+    ],
+    "ips": [],
+    "process_patterns": [
+      "Runner.Worker",
+      "/proc/{pid}/mem",
+      "bypass_2fa",
+      "ALL=(ALL) NOPASSWD:ALL",
+      "/tmp/p"
+    ],
+    "network_patterns": [
+      "GitHub GraphQL API exfiltration with victim token",
+      "Bun v1.3.13 download during install"
+    ]
+  },
+  "detection": {
+    "lockfile_hunts": [
+      "Search lockfiles and package cache records for the listed Leo Platform package versions."
+    ],
+    "filesystem_hunts": [
+      "Look for binding.gyp plus payload selectors such as Runner.Worker or bypass_2fa in package caches and extracted tarballs."
+    ],
+    "process_hunts": [
+      "Check endpoint or CI telemetry for Bun execution, Runner.Worker memory access, or node-gyp shell expansion during dependency install."
+    ],
+    "network_hunts": [
+      "api.github.com",
+      "github.com",
+      "Review outbound connections to GitHub GraphQL and Bun release URLs during npm install windows."
+    ],
+    "ci_cd_hunts": [
+      "Audit GitHub Actions logs and workflow diffs for post-install secret theft and workflow write activity."
+    ],
+    "registry_hunts": [
+      "Confirm whether internal mirrors cached the malicious package versions before cleanup."
+    ]
+  },
+  "open_questions": [
+    "A public vendor statement or cleanup timeline from Leo Platform was not located during this refresh."
+  ],
+  "defender_takeaways": {
+    "detection": "Treat any install of the listed versions as a potential credential-theft event and search both package evidence and GitHub/cloud follow-on activity.",
+    "hunting": "Use package-version selectors together with GitHub GraphQL, Bun download, and Runner.Worker memory-access patterns to separate documentation references from true execution.",
+    "remediation": "Rebuild from clean dependencies and rotate every credential reachable from affected runners or workstations.",
+    "prevention": "Disable unnecessary install-time script execution, restrict publish rights, and isolate CI runner trust boundaries."
+  },
+  "remediation_gates": {
+    "containment_complete": [
+      "Affected package versions removed from lockfiles, caches, and internal mirrors"
+    ],
+    "eradication_complete": [
+      "Hosts and runners rebuilt from clean dependencies"
+    ],
+    "recovery_complete": [
+      "GitHub, npm, cloud, Vault, and password-manager credentials rotated"
+    ],
+    "closure_required": [
+      "No unexplained GitHub or cloud write activity remains in the exposure window"
+    ]
+  }
+}
