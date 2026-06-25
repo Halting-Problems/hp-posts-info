@@ -1,0 +1,181 @@
+{
+  "schema_version": "3.0",
+  "event_id": "simonecorsi-mawesome-tag-hijack-2026-06-24",
+  "event_name": "simonecorsi/mawesome GitHub Action Tag Hijack",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "high",
+  "confidence_reason": "StepSecurity publicly reported the compromise, the current GitHub tags API and ls-remote output still show four mutable refs resolving to the same suspicious commit, and the affected action definition now delegates to a pinned clean commit before always executing an obfuscated Bun-based second stage.",
+  "attack_types": [
+    "supply-chain",
+    "github-actions",
+    "ci-cd",
+    "credential-theft",
+    "tag-hijack"
+  ],
+  "sources": {
+    "direct": [
+      "https://api.github.com/repos/simonecorsi/mawesome/tags?per_page=100",
+      "https://api.github.com/repos/simonecorsi/mawesome/commits/e339407b8e34dc1540290d1d310bccafbc6028ca",
+      "https://raw.githubusercontent.com/simonecorsi/mawesome/v1/action.yml",
+      "https://raw.githubusercontent.com/simonecorsi/mawesome/main/action.yml",
+      "https://raw.githubusercontent.com/simonecorsi/mawesome/v1/index.js"
+    ],
+    "primary_research": [
+      "https://www.stepsecurity.io/blog/simonecorsi-mawesome-github-action-has-been-compromised"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "GitHub Actions"
+    ],
+    "registries": [
+      "GitHub"
+    ],
+    "packages": [
+      "simonecorsi/mawesome"
+    ],
+    "versions": [
+      "simonecorsi/mawesome@latest",
+      "simonecorsi/mawesome@v1",
+      "simonecorsi/mawesome@v2",
+      "simonecorsi/mawesome@v2.2.0"
+    ],
+    "repositories": [
+      "github.com/simonecorsi/mawesome"
+    ],
+    "vendors": [
+      "simonecorsi"
+    ],
+    "ci_cd_systems": [
+      "GitHub Actions"
+    ],
+    "container_images": [],
+    "developer_tools": [
+      "Bun",
+      "GitHub Actions"
+    ],
+    "credentials_at_risk": [
+      "GITHUB_TOKEN",
+      "GitHub Personal Access Tokens",
+      "GitHub App installation tokens",
+      "GitHub OIDC tokens",
+      "Vault tokens reachable from workflow environments",
+      "cloud credentials reachable from workflow environments"
+    ]
+  },
+  "timeline": {
+    "first_seen": "2026-06-24",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-06-24",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-06-24",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [
+      "commit:e339407b8e34dc1540290d1d310bccafbc6028ca",
+      "action.yml converted from node16 to composite execution",
+      "index.js executed through bun run under if: always()"
+    ],
+    "execution_trigger": "workflow resolution of a mutable simonecorsi/mawesome tag that currently points to e339407b8e34dc1540290d1d310bccafbc6028ca",
+    "payload_behavior": [
+      "delegates first to clean commit 4a665037e0619e2181c7cccc3291d75104175a92",
+      "installs Bun through oven-sh/setup-bun",
+      "executes an obfuscated index.js payload under if: always()",
+      "contains token-validation, GitHub API, and secret-selection logic",
+      "contains references to Vault and multiple cloud credential environment variables"
+    ],
+    "provenance": {
+      "clean_reference_sha": "4a665037e0619e2181c7cccc3291d75104175a92",
+      "malicious_reference_sha": "e339407b8e34dc1540290d1d310bccafbc6028ca",
+      "mutable_tags_currently_pointing_to_malicious_sha": 4
+    }
+  },
+  "iocs": {
+    "package_versions": [
+      "simonecorsi/mawesome@latest",
+      "simonecorsi/mawesome@v1",
+      "simonecorsi/mawesome@v2",
+      "simonecorsi/mawesome@v2.2.0"
+    ],
+    "files": [
+      "action.yml",
+      "index.js"
+    ],
+    "hashes": [
+      "e339407b8e34dc1540290d1d310bccafbc6028ca",
+      "4a665037e0619e2181c7cccc3291d75104175a92",
+      "6e26314c306ed5ea744eb90ebc6f3f70298abcb5",
+      "7a59a7d02b1fdf6432ea9467b8e31357217288f7"
+    ],
+    "domains": [],
+    "urls": [
+      "https://raw.githubusercontent.com/simonecorsi/mawesome/v1/action.yml",
+      "https://raw.githubusercontent.com/simonecorsi/mawesome/main/action.yml",
+      "https://raw.githubusercontent.com/simonecorsi/mawesome/v1/index.js"
+    ],
+    "ips": [],
+    "process_patterns": [
+      "oven-sh/setup-bun",
+      "bun run $GITHUB_ACTION_PATH/index.js",
+      "createCipheriv",
+      "createDecipheriv",
+      "pbkdf2Sync",
+      "VAULT_TOKEN",
+      "ARM_CLIENT_SECRET",
+      "GOOGLE_APPLICATION_CREDENTIALS",
+      "X-GitHub-Api-Version"
+    ],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [
+      "Search workflow files, reusable workflows, and templates for simonecorsi/mawesome refs that still trust latest, v1, v2, or v2.2.0."
+    ],
+    "filesystem_hunts": [
+      "Search repositories, retained action caches, and exported telemetry for the affected commit SHA and the injected Bun/composite-action selectors."
+    ],
+    "process_hunts": [
+      "Review runner telemetry for oven-sh/setup-bun followed by bun run against the action checkout path."
+    ],
+    "network_hunts": [
+      "Audit GitHub API follow-on activity and any cloud or Vault access reachable from affected workflows because the public analysis has not yet decoded a stable external exfiltration endpoint."
+    ],
+    "ci_cd_hunts": [
+      "Enumerate workflow runs that resolved simonecorsi/mawesome mutable tags on or after the June 24, 2026 disclosure window."
+    ],
+    "registry_hunts": []
+  },
+  "open_questions": [
+    "The exact tag-move timestamp is not exposed by the reviewed public GitHub endpoints.",
+    "The public reporting does not yet identify the initial repository-control mechanism.",
+    "The public reporting does not yet decode a stable external exfiltration endpoint or publish confirmed downstream victim telemetry."
+  ],
+  "defender_takeaways": {
+    "detection": "Treat mutable simonecorsi/mawesome tags as untrusted until run records prove a reviewed full-SHA pin outside the affected set.",
+    "hunting": "Start by enumerating workflow files, action caches, and run metadata for the four affected refs and the injected Bun/composite-action selectors.",
+    "remediation": "Rotate every credential reachable from affected workflows, then invalidate or rebuild cached action content on self-hosted runners.",
+    "prevention": "Pin third-party actions to reviewed full commit SHAs and narrow GITHUB_TOKEN and id-token permissions per job."
+  },
+  "remediation_gates": {
+    "containment_complete": [
+      "Mutable simonecorsi/mawesome tags are removed or replaced with reviewed full commit SHAs in all workflows.",
+      "Self-hosted runners that executed affected refs are isolated until cache and persistence review is complete."
+    ],
+    "eradication_complete": [
+      "Affected action caches and checked-out workspace artifacts are deleted or rebuilt from clean sources.",
+      "No remaining workflow, reusable workflow, or template reference resolves to latest, v1, v2, or v2.2.0."
+    ],
+    "recovery_complete": [
+      "Replacement credentials have been issued from a clean environment and tested in remediated workflows.",
+      "GitHub, cloud, and Vault audits show no unauthorized follow-on use during the scoped exposure window."
+    ],
+    "closure_required": [
+      "Run-level scoping is complete for every repository that referenced simonecorsi/mawesome by mutable tag during or after the disclosure window.",
+      "Risk owners accept any residual uncertainty caused by missing tag-history timestamps or absent maintainer disclosure."
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+hunts:
+  - id: "simonecorsi-mawesome-tag-hijack-hunt-1"
+    title: "local repository and exported telemetry scope"
+    question: "Does the telemetry scope contain references associated with the simonecorsi/mawesome GitHub Action tag hijack?"
+    telemetry:
+      family: "process"
+      collection_context: "host filesystem or log export"
+    positive_signal: "Workflow content, caches, or exported telemetry contains compromised simonecorsi/mawesome refs, the affected commit SHA, or the injected Bun/composite-action selectors."
+    false_positives: "Historical advisories, lab fixtures, or intentionally preserved samples that reproduce the affected action definition for analysis."
+    classification_on_match: "Treat a match as at least potentially exposed; escalate to presumed exposed if workflow or run history proves execution during or after the June 24, 2026 disclosure window."
+    script_path: "scripts/local_repository_and_exported_telemetry_scope.py"
