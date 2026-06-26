@@ -1,0 +1,11 @@
+hunts:
+  - id: "immobiliarelabs-backstage-npm-phantom-gyp-hunt-1"
+    title: "Immobiliare Labs Backstage npm exposure scope"
+    question: "Do repositories, lockfiles, npm cache exports, or install/build logs show installation of the compromised @immobiliarelabs Backstage package versions from June 26, 2026?"
+    telemetry:
+      family: "package-manager"
+      collection_context: "source tree, dependency lockfiles, package-cache export, and optional LOG_ROOT containing npm/pnpm/yarn/CI logs"
+    positive_signal: "A compromised @immobiliarelabs Backstage package version, tarball hash, binding.gyp hook, or node index.js execution pattern is present in scoped evidence."
+    false_positives: "Package names without one of the listed compromised versions need follow-up version resolution before incident classification."
+    classification_on_match: "Treat hosts, runners, builders, and Backstage deployment pipelines that installed matching versions as presumed credential exposure until runtime telemetry and downstream audits are clean."
+    script_path: "scripts/immobiliarelabs_backstage_scope.py"

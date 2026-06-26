@@ -1,0 +1,222 @@
+{
+  "schema_version": "3.0",
+  "event_id": "immobiliarelabs-backstage-npm-phantom-gyp-2026-06-26",
+  "event_name": "Multiple @immobiliarelabs Backstage Plugins Compromised on npm",
+  "parent_campaign_id": "node-gyp-phantom-gyp-npm-worm",
+  "is_campaign_level": false,
+  "publication_state": "publish_ready",
+  "confidence": "high",
+  "confidence_reason": "StepSecurity published primary analysis with the affected package/version table, GitHub issue #1052 records the maintainer-notification thread and affected versions, npm registry metadata confirms simultaneous June 26 patch releases and tarball shasums, and static tarball comparison confirms binding.gyp plus a new 4,991,856-byte index.js in @immobiliarelabs/backstage-plugin-gitlab@2.1.2.",
+  "attack_types": [
+    "npm",
+    "backstage",
+    "node-gyp",
+    "supply-chain",
+    "credential-theft",
+    "ci-cd"
+  ],
+  "sources": {
+    "direct": [
+      "https://github.com/immobiliare/backstage-plugin-gitlab/issues/1052"
+    ],
+    "primary_research": [
+      "https://www.stepsecurity.io/blog/immobiliarelabs-npm-packages-compromised",
+      "https://registry.npmjs.org/@immobiliarelabs%2Fbackstage-plugin-gitlab",
+      "https://registry.npmjs.org/@immobiliarelabs%2Fbackstage-plugin-gitlab-backend",
+      "https://registry.npmjs.org/@immobiliarelabs%2Fbackstage-plugin-ldap-auth",
+      "https://registry.npmjs.org/@immobiliarelabs%2Fbackstage-plugin-ldap-auth-backend"
+    ],
+    "correlated": [
+      "https://snyk.io/blog/node-gyp-supply-chain-compromise-self-propagating-npm-worm-binding-gyp/"
+    ]
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "npm"
+    ],
+    "registries": [
+      "npmjs.com"
+    ],
+    "packages": [
+      "@immobiliarelabs/backstage-plugin-gitlab",
+      "@immobiliarelabs/backstage-plugin-gitlab-backend",
+      "@immobiliarelabs/backstage-plugin-ldap-auth",
+      "@immobiliarelabs/backstage-plugin-ldap-auth-backend"
+    ],
+    "versions": [],
+    "repositories": [
+      "immobiliare/backstage-plugin-gitlab"
+    ],
+    "vendors": [
+      "Immobiliare Labs"
+    ],
+    "ci_cd_systems": [
+      "GitHub Actions",
+      "Backstage deployment pipelines"
+    ],
+    "container_images": [],
+    "developer_tools": [
+      "Backstage",
+      "npm",
+      "pnpm",
+      "yarn",
+      "node-gyp",
+      "AI coding assistant configs"
+    ],
+    "credentials_at_risk": [
+      "GitHub Actions secrets",
+      "cloud provider credentials",
+      "npm tokens",
+      "package registry tokens",
+      "Backstage deployment credentials",
+      "developer workstation secrets"
+    ]
+  },
+  "timeline": {
+    "first_seen": "2026-06-26T15:00:49Z",
+    "malicious_publish_time": "2026-06-26T15:00:49Z/2026-06-26T15:08:37Z",
+    "discovery_time": "2026-06-26T15:18:01Z",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-06-26",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [
+      "package/binding.gyp",
+      "package/index.js"
+    ],
+    "execution_trigger": "npm install invokes node-gyp through binding.gyp; the gyp source shell expansion runs node index.js",
+    "payload_behavior": [
+      "credential harvesting from GitHub Actions secrets, cloud provider keys, and package registry tokens as reported by StepSecurity",
+      "attempted persistence in AI coding assistant configuration files as reported by StepSecurity",
+      "Bun runtime downloader and obfuscated credential harvesting payload according to StepSecurity's static analysis"
+    ],
+    "provenance": {
+      "artifact_comparison": "@immobiliarelabs/backstage-plugin-gitlab@2.1.2 adds package/binding.gyp and a 4,991,856-byte package/index.js compared with @immobiliarelabs/backstage-plugin-gitlab@2.1.1"
+    }
+  },
+  "iocs": {
+    "package_versions": [
+      "@immobiliarelabs/backstage-plugin-gitlab@1.0.1",
+      "@immobiliarelabs/backstage-plugin-gitlab@2.1.2",
+      "@immobiliarelabs/backstage-plugin-gitlab@3.0.3",
+      "@immobiliarelabs/backstage-plugin-gitlab@4.0.2",
+      "@immobiliarelabs/backstage-plugin-gitlab@5.2.1",
+      "@immobiliarelabs/backstage-plugin-gitlab@6.13.1",
+      "@immobiliarelabs/backstage-plugin-gitlab@7.0.2",
+      "@immobiliarelabs/backstage-plugin-gitlab-backend@3.0.3",
+      "@immobiliarelabs/backstage-plugin-gitlab-backend@4.0.2",
+      "@immobiliarelabs/backstage-plugin-gitlab-backend@5.2.1",
+      "@immobiliarelabs/backstage-plugin-gitlab-backend@6.13.1",
+      "@immobiliarelabs/backstage-plugin-gitlab-backend@7.0.2",
+      "@immobiliarelabs/backstage-plugin-ldap-auth@1.1.4",
+      "@immobiliarelabs/backstage-plugin-ldap-auth@2.0.5",
+      "@immobiliarelabs/backstage-plugin-ldap-auth@3.0.2",
+      "@immobiliarelabs/backstage-plugin-ldap-auth@4.3.2",
+      "@immobiliarelabs/backstage-plugin-ldap-auth@5.2.1",
+      "@immobiliarelabs/backstage-plugin-ldap-auth-backend@1.1.3",
+      "@immobiliarelabs/backstage-plugin-ldap-auth-backend@2.0.5",
+      "@immobiliarelabs/backstage-plugin-ldap-auth-backend@3.0.2",
+      "@immobiliarelabs/backstage-plugin-ldap-auth-backend@4.3.2",
+      "@immobiliarelabs/backstage-plugin-ldap-auth-backend@5.2.1"
+    ],
+    "files": [
+      "binding.gyp",
+      "index.js",
+      "package/binding.gyp",
+      "package/index.js"
+    ],
+    "hashes": [
+      "d830d5b00af9bfe60347dbda5e93d924aac37a39",
+      "7ae466337c9f0951feae7b30d6f4b8afc8066bf8",
+      "7b4d99626d9c8bfa9fa0f8006e6d37c66320e57d",
+      "92a67fe894bdcbb563cf8e09309e41ca34d4773a",
+      "a36134e065b6317977cefdd689e4f618634d4919",
+      "5987abaf99305c4d9be48ebf35f255cd37b2dbc6",
+      "6bd93e1adce382d2172e68ad9fcb73b7e2281de8",
+      "6c0196d7df24c4f8c5fa67e179b3864cee571437",
+      "5e4fb65fe26b1d81eed844a071218b8e80cb05cc",
+      "4ae5348a58060816646ae681495dff6b51ac8a3e",
+      "a28eb85ec7d79c7dbb4200e3b79043b2e001a77a",
+      "ce5c35e2d682a30a54b64f954c50fa5297f24908",
+      "0ef092f8a08f98cdb9670496e2bbe567dde514e0",
+      "c63e6d86ebe37f171040f18d916eab0b943e1c26",
+      "5b03aec413b8cdb5816ceefe01b6d5d567ea1265",
+      "08664303657e7889f51f4d1fe4882847873d165c",
+      "de475c8e984307e741f3fa806e8576dc6ae4e3f8",
+      "babfa31e6b21e88bd04bd83a066e364d40eb9180",
+      "9c70373f80c11afed6cac96363044573a4674f08",
+      "4bfc39e5187c2337d76a6999fa085e4332e7ae8b",
+      "061a099c939e418bf09b5796852590f0e8ac7e42",
+      "54ef1bbcbbcdf9390c70b4628934b434ea871174",
+      "7a879ed69a8191df5c68535f6ac41b830577b698de943c66ff40e51482d90d79"
+    ],
+    "domains": [],
+    "urls": [
+      "https://registry.npmjs.org/@immobiliarelabs/backstage-plugin-gitlab/-/backstage-plugin-gitlab-2.1.2.tgz"
+    ],
+    "ips": [],
+    "process_patterns": [
+      "node-gyp rebuild",
+      "node index.js",
+      "binding.gyp"
+    ],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [
+      "@immobiliarelabs/backstage-plugin-gitlab@2.1.2",
+      "@immobiliarelabs/backstage-plugin-gitlab-backend@7.0.2",
+      "@immobiliarelabs/backstage-plugin-ldap-auth@5.2.1",
+      "@immobiliarelabs/backstage-plugin-ldap-auth-backend@5.2.1"
+    ],
+    "filesystem_hunts": [
+      "binding.gyp",
+      "index.js"
+    ],
+    "process_hunts": [
+      "node-gyp rebuild",
+      "node index.js"
+    ],
+    "network_hunts": [],
+    "ci_cd_hunts": [
+      "npm install",
+      "pnpm install",
+      "yarn install",
+      "backstage-plugin-gitlab"
+    ],
+    "registry_hunts": [
+      "d830d5b00af9bfe60347dbda5e93d924aac37a39",
+      "7ae466337c9f0951feae7b30d6f4b8afc8066bf8",
+      "7a879ed69a8191df5c68535f6ac41b830577b698de943c66ff40e51482d90d79"
+    ]
+  },
+  "open_questions": [
+    "Public sources reviewed for this post do not yet confirm the exact initial access path used to publish the malicious npm releases.",
+    "Removal or maintainer-republished clean versions were not confirmed in the reviewed registry metadata at publication time."
+  ],
+  "defender_takeaways": {
+    "detection": "Search lockfiles, package caches, CI logs, and Backstage deployment histories for the exact affected @immobiliarelabs package versions and tarball shasums.",
+    "hunting": "Treat node-gyp execution that resolves these package versions as install-time execution, not merely dependency presence.",
+    "remediation": "Rotate GitHub, npm, cloud, registry, Backstage deployment, and developer workstation credentials reachable from environments that installed affected versions.",
+    "prevention": "Block lifecycle/build hooks for dependency install in untrusted contexts and alert on new binding.gyp files in packages that historically had no native build step."
+  },
+  "remediation_gates": {
+    "containment_complete": [
+      "Affected package versions removed from manifests, lockfiles, package caches, internal mirrors, Backstage build images, and deployment pipelines.",
+      "Hosts or runners that installed affected versions isolated or rebuilt from clean images."
+    ],
+    "eradication_complete": [
+      "No remaining @immobiliarelabs compromised versions, tarball shasums, binding.gyp additions, or node index.js execution records in scoped evidence.",
+      "AI coding assistant configuration files on exposed systems checked for unexpected persistence entries."
+    ],
+    "recovery_complete": [
+      "Backstage deployments rebuilt with clean package versions or packages removed until maintainer-confirmed fixed releases are available.",
+      "GitHub, npm, cloud, registry, and deployment credentials reachable from exposed systems rotated from clean workstations."
+    ],
+    "closure_required": [
+      "Downstream GitHub, cloud, npm, and registry audit logs reviewed for unauthorized activity after 2026-06-26T15:00:49Z.",
+      "Evidence package retains positive or negative results from repository, lockfile, cache, CI, and runtime telemetry searches."
+    ]
+  }
+}

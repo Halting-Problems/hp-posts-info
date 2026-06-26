@@ -1,0 +1,14 @@
+{
+  "binding_gyp_size": null,
+  "file_count": 15,
+  "has_binding_gyp": false,
+  "has_index_js": false,
+  "index_js_size": null,
+  "sha1": "0c1c0615c6f617f4df3498e6f06ef048b428d3a8",
+  "sha256": "90938abba1e9d4e51c999f23ab2db67c7d7d97fb8a1359046a829e8c7dfec323",
+  "sha512": "sha512-8cSLK0VHLrtv0gGSuJwHiP91j6E9iQiyhrYQoURwAzKF3tma4Lq9ES+Wmtj4fjyr2H4+JUPOZBPbsxHgAFj9bA==",
+  "tarball": "https://registry.npmjs.org/@immobiliarelabs/backstage-plugin-gitlab/-/backstage-plugin-gitlab-2.1.1.tgz",
+  "top_new_interesting": [],
+  "unpackedSize": 228219,
+  "version": "2.1.1"
+}
