@@ -1,0 +1,194 @@
+{
+  "schema_version": "3.0",
+  "event_id": "pnpm-package-manager-supply-chain-advisory-batch-2026-06-26",
+  "event_name": "pnpm package-manager supply-chain advisory batch",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "publish_ready",
+  "confidence": "high",
+  "confidence_reason": "Direct GitHub Security Advisory records from the pnpm project identify affected package-manager versions, vulnerable behaviors, and fixed ranges for lockfile integrity, registry auth, Git dependency, alias traversal, patch traversal, and environment expansion issues.",
+  "attack_types": [
+    "developer-tooling",
+    "package-manager",
+    "lockfile-integrity",
+    "registry-credential-exposure",
+    "ci-cd-exposure"
+  ],
+  "sources": {
+    "direct": [
+      "https://github.com/pnpm/pnpm/security/advisories/GHSA-hg3w-7f8c-63hp",
+      "https://github.com/pnpm/pnpm/security/advisories/GHSA-54hh-g5mx-jqcp",
+      "https://github.com/pnpm/pnpm/security/advisories/GHSA-q6j5-fjx5-2mc3",
+      "https://github.com/pnpm/pnpm/security/advisories/GHSA-p4xf-rf54-rj3x",
+      "https://github.com/pnpm/pnpm/security/advisories/GHSA-hwx4-2j3j-g496",
+      "https://github.com/pnpm/pnpm/security/advisories/GHSA-cjhr-43r9-cfmw",
+      "https://github.com/pnpm/pnpm/security/advisories/GHSA-rxhj-4m44-96r4",
+      "https://github.com/pnpm/pnpm/security/advisories/GHSA-3qhv-2rgh-x77r"
+    ],
+    "primary_research": [
+      "https://github.com/pnpm/pnpm/security/advisories/GHSA-3qhv-2rgh-x77r"
+    ],
+    "correlated": [
+      "https://github.com/advisories?query=pnpm"
+    ]
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "npm",
+      "Node.js",
+      "package-manager tooling"
+    ],
+    "registries": [
+      "npm",
+      "private npm-compatible registries"
+    ],
+    "packages": [
+      "pnpm"
+    ],
+    "versions": [
+      "<10.34.2",
+      ">=11.0.0 <11.5.3"
+    ],
+    "repositories": [
+      "pnpm/pnpm"
+    ],
+    "vendors": [
+      "pnpm"
+    ],
+    "ci_cd_systems": [
+      "GitHub Actions",
+      "generic CI package-install jobs"
+    ],
+    "container_images": [],
+    "developer_tools": [
+      "pnpm CLI",
+      "Corepack-managed pnpm",
+      "CI package-manager installs"
+    ],
+    "credentials_at_risk": [
+      "npm auth tokens",
+      "private registry tokens",
+      "CI environment secrets",
+      "developer package-manager credentials"
+    ]
+  },
+  "timeline": {
+    "first_seen": "2026-05-25T09:07:31Z",
+    "malicious_publish_time": "not_applicable",
+    "discovery_time": "2026-06-26T21:49:22Z",
+    "removal_time": "not_applicable",
+    "disclosure_time": "2026-05-25T09:07:31Z",
+    "patch_or_fix_time": "2026-06-10T23:39:06Z"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "Repository-controlled pnpm install inputs, lockfiles, .npmrc files, patch files, Git dependencies, and registry metadata processed by vulnerable pnpm versions",
+    "payload_behavior": [
+      "lockfile integrity verification can fail open or be repaired by default in specific scenarios",
+      "repository or registry controlled metadata can influence filesystem links, patch writes, Git fetch arguments, or registry credential destinations"
+    ],
+    "provenance": {
+      "patched_10_baseline": "10.34.2",
+      "patched_11_baseline": "11.5.3"
+    }
+  },
+  "iocs": {
+    "package_versions": [
+      "pnpm < 10.34.2",
+      "pnpm >= 11.0.0"
+    ],
+    "files": [
+      "package.json",
+      "pnpm-lock.yaml",
+      "pnpm-workspace.yaml",
+      ".npmrc",
+      "*.patch",
+      ".github/workflows"
+    ],
+    "hashes": [],
+    "domains": [
+      "codeload.github.com"
+    ],
+    "urls": [
+      "https://github.com/pnpm/pnpm/security/advisories/GHSA-hg3w-7f8c-63hp",
+      "https://github.com/pnpm/pnpm/security/advisories/GHSA-54hh-g5mx-jqcp",
+      "https://github.com/pnpm/pnpm/security/advisories/GHSA-q6j5-fjx5-2mc3",
+      "https://github.com/pnpm/pnpm/security/advisories/GHSA-p4xf-rf54-rj3x",
+      "https://github.com/pnpm/pnpm/security/advisories/GHSA-hwx4-2j3j-g496",
+      "https://github.com/pnpm/pnpm/security/advisories/GHSA-cjhr-43r9-cfmw",
+      "https://github.com/pnpm/pnpm/security/advisories/GHSA-rxhj-4m44-96r4",
+      "https://github.com/pnpm/pnpm/security/advisories/GHSA-3qhv-2rgh-x77r"
+    ],
+    "ips": [],
+    "process_patterns": [
+      "pnpm install",
+      "pnpm add",
+      "pnpm view",
+      "pnpm patch",
+      "git fetch"
+    ],
+    "network_patterns": [
+      "registry=",
+      "Authorization"
+    ]
+  },
+  "detection": {
+    "lockfile_hunts": [
+      "pnpm <10.34.2",
+      "pnpm >=11.0.0 <11.5.3",
+      "codeload.github.com",
+      "commit: --"
+    ],
+    "filesystem_hunts": [
+      "pnpm-lock.yaml",
+      "pnpm-workspace.yaml",
+      ".npmrc",
+      "*.patch",
+      ".github/workflows"
+    ],
+    "process_hunts": [
+      "pnpm install",
+      "pnpm patch",
+      "git fetch"
+    ],
+    "network_hunts": [
+      "codeload.github.com",
+      "registry=",
+      "Authorization"
+    ],
+    "ci_cd_hunts": [
+      "Corepack pnpm setup",
+      "pnpm/action-setup",
+      "pnpm install"
+    ],
+    "registry_hunts": [
+      "registry=",
+      "Authorization",
+      "codeload.github.com"
+    ]
+  },
+  "open_questions": [
+    "The reviewed direct advisories do not confirm exploitation in the wild or victim counts.",
+    "Practical exposure depends on whether vulnerable pnpm versions processed untrusted repositories, lockfiles, .npmrc files, registry metadata, Git dependencies, or patch files in a credential-bearing environment."
+  ],
+  "defender_takeaways": {
+    "detection": "Inventory pnpm versions and repository-controlled install inputs in source repositories, CI jobs, and developer workstations.",
+    "hunting": "Prioritize jobs that run pnpm install on pull requests, forks, third-party source drops, or projects with repository .npmrc and patch files.",
+    "remediation": "Upgrade pnpm to 10.34.2 or later on 10.x and 11.5.3 or later on 11.x, then review registry-auth logs and patch/lockfile changes during the vulnerable window.",
+    "prevention": "Keep package-manager auth scoped to explicit registries, require frozen lockfiles for CI, and run untrusted install flows on isolated runners without long-lived secrets."
+  },
+  "remediation_gates": {
+    "containment_complete": [
+      "Credential-bearing CI jobs no longer run vulnerable pnpm versions against untrusted repository input."
+    ],
+    "eradication_complete": [
+      "Source, runner, and Corepack configuration evidence show pnpm 10.34.2 or 11.5.3 or later."
+    ],
+    "recovery_complete": [
+      "Registry auth logs and CI logs have been reviewed for repository-selected registry requests, traversal patch application, Git dependency fetch anomalies, and lockfile integrity changes."
+    ],
+    "closure_complete": [
+      "Every pnpm install path has a documented version, input-trust boundary, and secret exposure decision."
+    ]
+  }
+}

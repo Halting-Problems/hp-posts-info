@@ -1,9 +1,0 @@
-hunts:
-  - id: "gemstuffer-rubygems-exfiltration-channel-hunt-1"
-    title: "local repository and exported telemetry scope"
-    question: "Does the telemetry scope contain patterns associated with GemStuffer RubyGems Exfiltration Channel?"
-    telemetry:
-      family: "process"
-      collection_context: "host filesystem or log export"
-    positive_signal: "Indicators of compromise matched in telemetry: local repository and exported telemetry scope"
-    script_path: "scripts/local_repository_and_exported_telemetry_scope.py"

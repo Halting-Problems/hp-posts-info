@@ -1,0 +1,11 @@
+hunts:
+  - id: "glasswasm-open-vsx-extensions-hunt-1"
+    title: "Open VSX extension, Solana dead-drop, and runtime telemetry scope"
+    question: "Does the telemetry scope contain indicators associated with the GlassWASM trojanized Open VSX extensions?"
+    telemetry:
+      family: "file"
+      collection_context: "developer workstation extension inventory, local files, and exported process or network telemetry"
+    positive_signal: "Indicators of compromise matched in telemetry: the trojanized Open VSX package IDs, zaitoona43 publisher artifacts, Solana dead-drop selectors, or runtime command-execution patterns"
+    false_positives: "Legitimate blockchain-development tooling can mention Solana RPC methods, but it should not also contain the exact trojanized package IDs, watched wallet, malicious Open VSX URLs, or dodod.lat second-stage paths."
+    classification_on_match: "Treat the endpoint as potentially code-executed and rotate developer, CI, cloud, and wallet credentials reachable from the affected IDE session."
+    script_path: "scripts/glasswasm_open_vsx_scope.py"

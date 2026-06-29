@@ -18,6 +18,7 @@ import pytest
 import yaml
 
 from .conftest import POST_FOLDERS, POST_FOLDER_IDS
+from .ioc_quality import find_script_coverage_errors
 
 
 # -------------------------------------------------------------------------
@@ -345,3 +346,41 @@ class TestScript:
                 assert d in source, (
                     f"Script {script.name} in {post_folder.name} does not exclude '{d}' from directory walk"
                 )
+
+    def test_ioc_values_are_represented_in_manifest_scripts(self, post_folder):
+        """Durable IOC values must be represented in at least one script for this folder."""
+        data = _load_iocs(post_folder)
+        scripts = _get_script_paths(post_folder)
+        errors = find_script_coverage_errors(data, scripts, post_folder.name)
+        assert not errors, "\n".join(errors)
+
+
+def test_script_coverage_rejects_unrepresented_iocs(tmp_path):
+    """A listed IOC is not deployable if no script can detect it in files or logs."""
+    script = tmp_path / "hunt.py"
+    script.write_text("#!/usr/bin/env python3\nDOMAINS = ['evil.example']\n", encoding="utf-8")
+    data = {
+        "affected_assets": {"packages": ["missing-package"]},
+        "iocs": {
+            "package_versions": [],
+            "files": [],
+            "hashes": [],
+            "domains": ["evil.example"],
+            "urls": [],
+            "ips": [],
+            "process_patterns": [],
+            "network_patterns": [],
+        },
+        "detection": {
+            "lockfile_hunts": [],
+            "filesystem_hunts": [],
+            "process_hunts": [],
+            "network_hunts": ["evil.example"],
+            "ci_cd_hunts": [],
+            "registry_hunts": [],
+        },
+    }
+
+    errors = find_script_coverage_errors(data, [script], "coverage-test")
+
+    assert any("missing-package" in error for error in errors)

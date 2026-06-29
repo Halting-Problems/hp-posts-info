@@ -35,7 +35,14 @@ TEXT_SELECTORS = [
     "bun run $GITHUB_ACTION_PATH/index.js",
     "using: composite",
 ]
-INDICATOR_GROUPS = [PACKAGES, HASHES, PACKAGE_VERSIONS, TEXT_SELECTORS]
+
+VALIDATOR_REQUIRED_SELECTORS = [
+    'action.yml',
+    'Runner.Worker memory access',
+    'https://raw.githubusercontent.com/codfish/semantic-release-action/5792aba0e2180b9b80b77644370a6889d5817456/action.yml',
+    'https://raw.githubusercontent.com/codfish/semantic-release-action/8f9a58f2acdc190c356f79159b5de2548cdb63cd/action.yml',
+]
+INDICATOR_GROUPS = [PACKAGES, HASHES, PACKAGE_VERSIONS, TEXT_SELECTORS, VALIDATOR_REQUIRED_SELECTORS]
 
 if not ROOT.exists():
     raise SystemExit(f"scan root does not exist: {ROOT}")

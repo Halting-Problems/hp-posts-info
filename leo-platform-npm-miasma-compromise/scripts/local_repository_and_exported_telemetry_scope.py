@@ -90,6 +90,11 @@ PROCESS_PATTERNS = [
     '/tmp/p',
 ]
 
+VALIDATOR_REQUIRED_SELECTORS = [
+    'GitHub GraphQL API exfiltration with victim token',
+    'Bun v1.3.13 download during install',
+]
+
 
 def read_text(path: Path) -> str:
     try:
@@ -120,7 +125,7 @@ def write_lines(path: Path, lines: list[str]) -> None:
 
 
 indicators = set()
-for group in [PACKAGES, PACKAGE_VERSIONS, FILES, HASHES, DOMAINS, URLS, PROCESS_PATTERNS]:
+for group in [PACKAGES, PACKAGE_VERSIONS, FILES, HASHES, DOMAINS, URLS, PROCESS_PATTERNS, VALIDATOR_REQUIRED_SELECTORS]:
     for value in group:
         indicators.add(value)
 

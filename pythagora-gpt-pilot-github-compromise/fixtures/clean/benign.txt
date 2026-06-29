@@ -1,0 +1,2 @@
+Routine repository note.
+No suspicious commit rewrites or lint failures here.

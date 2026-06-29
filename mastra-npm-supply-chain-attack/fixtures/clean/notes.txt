@@ -1,0 +1,3 @@
+Mastra security review notes
+No compromised package versions present here.
+Dependency graph is clean and there are no install-time indicators.

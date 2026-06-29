@@ -1,9 +1,0 @@
-hunts:
-  - id: "windows-miniplasma-lpe-zero-day-hunt-1"
-    title: "local repository and exported telemetry scope"
-    question: "Does the telemetry scope contain patterns associated with Windows cldflt.sys Zero-Day: MiniPlasma Kernel LPE?"
-    telemetry:
-      family: "process"
-      collection_context: "host filesystem or log export"
-    positive_signal: "Indicators of compromise matched in telemetry: local repository and exported telemetry scope"
-    script_path: "scripts/local_repository_and_exported_telemetry_scope.py"

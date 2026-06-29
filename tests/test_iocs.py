@@ -24,6 +24,7 @@ from .conftest import (
     IOCS_REQUIRED_DETECTION_KEYS,
     IOCS_REQUIRED_TIMELINE_KEYS,
 )
+from .ioc_quality import find_ioc_quality_errors, _package_version_parts
 
 SUPPORTED_SCHEMA_VERSIONS = {"3.0", "2.0"}
 
@@ -328,10 +329,180 @@ class TestIocs:
         if not affected_packages:
             return  # nothing to check
 
-        # Each affected package must appear in at least one package_version entry
-        for pkg in affected_packages:
-            matched = any(re.split(r'(?<=.)@|==|:| ', pv)[0] == pkg for pv in package_versions)
-            assert matched, (
-                f"Package '{pkg}' in affected_assets.packages has no corresponding "
-                f"entry in iocs.package_versions in {post_folder.name}/iocs.json"
+        # Each package_version entry must point back to a known affected package.
+        for package_version in package_versions:
+            parts = _package_version_parts(str(package_version))
+            if not parts:
+                continue
+            pkg, _version = parts
+            if "." in pkg and "/" in pkg:
+                continue
+            package_candidates = {pkg, pkg.split("/", 1)[-1]}
+            assert package_candidates & affected_packages, (
+                f"Package version '{package_version}' in iocs.package_versions has no "
+                f"corresponding affected_assets.packages entry in {post_folder.name}/iocs.json"
             )
+
+    def test_ioc_values_are_semantic_and_typed(self, post_folder):
+        """IOC values must be literal observables, not prose guidance or malformed package/version fields."""
+        data = _load_iocs(post_folder)
+        errors = find_ioc_quality_errors(data, post_folder.name)
+        assert not errors, "\n".join(errors)
+
+
+def test_ioc_quality_rejects_sentence_suggestions():
+    """Natural-language remediation/audit instructions are not valid IOCs."""
+    data = {
+        "affected_assets": {"packages": []},
+        "iocs": {
+            "package_versions": [],
+            "files": [],
+            "hashes": [],
+            "domains": [],
+            "urls": [],
+            "ips": [],
+            "process_patterns": ["audit all github secrets"],
+            "network_patterns": [],
+        },
+        "detection": {
+            "lockfile_hunts": [],
+            "filesystem_hunts": [],
+            "process_hunts": [],
+            "network_hunts": [],
+            "ci_cd_hunts": [],
+            "registry_hunts": [],
+        },
+    }
+
+    errors = find_ioc_quality_errors(data, "bad-sentence")
+
+    assert any("audit all github secrets" in error and "prose" in error for error in errors)
+
+
+def test_ioc_quality_rejects_versioned_package_names():
+    """affected_assets.packages must contain canonical package names only."""
+    data = {
+        "affected_assets": {"packages": ["packageA >= 1.0.0"]},
+        "iocs": {
+            "package_versions": ["packageA >= 1.0.0"],
+            "files": [],
+            "hashes": [],
+            "domains": [],
+            "urls": [],
+            "ips": [],
+            "process_patterns": [],
+            "network_patterns": [],
+        },
+        "detection": {
+            "lockfile_hunts": [],
+            "filesystem_hunts": [],
+            "process_hunts": [],
+            "network_hunts": [],
+            "ci_cd_hunts": [],
+            "registry_hunts": [],
+        },
+    }
+
+    errors = find_ioc_quality_errors(data, "bad-package")
+
+    assert any("affected_assets.packages" in error and "packageA >= 1.0.0" in error for error in errors)
+
+
+def test_ioc_quality_rejects_bare_version_constraints():
+    """iocs.package_versions must include a package name with the version constraint."""
+    data = {
+        "affected_assets": {"packages": ["packageA"]},
+        "iocs": {
+            "package_versions": [">= 1.0.0"],
+            "files": [],
+            "hashes": [],
+            "domains": [],
+            "urls": [],
+            "ips": [],
+            "process_patterns": [],
+            "network_patterns": [],
+        },
+        "detection": {
+            "lockfile_hunts": [],
+            "filesystem_hunts": [],
+            "process_hunts": [],
+            "network_hunts": [],
+            "ci_cd_hunts": [],
+            "registry_hunts": [],
+        },
+    }
+
+    errors = find_ioc_quality_errors(data, "bad-version")
+
+    assert any("iocs.package_versions" in error and ">= 1.0.0" in error for error in errors)
+
+
+def test_ioc_quality_rejects_defanged_package_versions():
+    """Package-version IOCs must keep normal version syntax; only network IOCs are defanged."""
+    data = {
+        "affected_assets": {"packages": ["packageA"]},
+        "iocs": {
+            "package_versions": ["packageA@1[.]2[.]3"],
+            "files": [],
+            "hashes": [],
+            "domains": [],
+            "urls": [],
+            "ips": [],
+            "process_patterns": [],
+            "network_patterns": [],
+        },
+        "detection": {
+            "lockfile_hunts": [],
+            "filesystem_hunts": [],
+            "process_hunts": [],
+            "network_hunts": [],
+            "ci_cd_hunts": [],
+            "registry_hunts": [],
+        },
+    }
+
+    errors = find_ioc_quality_errors(data, "bad-defanged-version")
+
+    assert any(
+        "iocs.package_versions" in error
+        and "packageA@1[.]2[.]3" in error
+        and "must not be defanged" in error
+        for error in errors
+    )
+
+
+def test_ioc_quality_rejects_versions_typed_as_ips():
+    """Software versions that look like IPv4 addresses must not be typed as IP IOCs."""
+    data = {
+        "affected_assets": {
+            "packages": [],
+            "versions": ["11.86.0.41"],
+        },
+        "iocs": {
+            "package_versions": [],
+            "files": [],
+            "hashes": [],
+            "domains": [],
+            "urls": [],
+            "ips": ["11.86.0.41"],
+            "process_patterns": [],
+            "network_patterns": [],
+        },
+        "detection": {
+            "lockfile_hunts": [],
+            "filesystem_hunts": [],
+            "process_hunts": [],
+            "network_hunts": ["11.86.0.41"],
+            "ci_cd_hunts": [],
+            "registry_hunts": [],
+        },
+    }
+
+    errors = find_ioc_quality_errors(data, "bad-version-ip")
+
+    assert any(
+        "iocs.ips" in error
+        and "11.86.0.41" in error
+        and "software version" in error
+        for error in errors
+    )

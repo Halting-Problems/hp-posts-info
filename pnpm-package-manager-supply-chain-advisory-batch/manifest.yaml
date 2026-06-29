@@ -1,0 +1,11 @@
+hunts:
+  - id: "pnpm-package-manager-supply-chain-advisory-batch-hunt-1"
+    title: "pnpm vulnerable package-manager version and risky install-input exposure audit"
+    question: "Do repository manifests, lockfiles, .npmrc files, patch files, CI definitions, or exported install logs show pnpm versions and install inputs that fall inside the 2026 pnpm supply-chain advisory batch exposure envelope?"
+    telemetry:
+      family: "file"
+      collection_context: "source repositories, pnpm-lock.yaml files, pnpm-workspace.yaml, .npmrc configuration, patch files, CI workflow definitions, package-manager logs, and exported build telemetry"
+    positive_signal: "The script found a pnpm version below the conservative patched baselines 10.34.2 or 11.5.3, or repository-controlled install inputs tied to the published pnpm advisories such as traversal patches, registry auth configuration, codeload GitHub tarballs without integrity, or lockfile commit arguments beginning with a dash."
+    false_positives: "Documentation examples and test fixtures can match; validate whether the file controls an actual install, CI job, registry request, or patch application before classifying compromise."
+    classification_on_match: "presumed_exposed"
+    script_path: "scripts/pnpm_supply_chain_exposure_audit.py"

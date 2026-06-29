@@ -1,0 +1,9 @@
+hunts:
+  - id: "shai-hulululud-ai-scanner-disruption-package-hunt-1"
+    title: "repository, cache, and exported telemetry scope"
+    question: "Does the telemetry scope contain selectors associated with the shai_hulululud AI-scanner anti-analysis npm package?"
+    telemetry:
+      family: "file"
+      collection_context: "repository trees, package caches, and exported telemetry"
+    positive_signal: "Indicators of compromise matched in telemetry: package name/version, artifact hash, tarball URL, or repeated anti-analysis package content"
+    script_path: "scripts/ioc_scope_scan.py"

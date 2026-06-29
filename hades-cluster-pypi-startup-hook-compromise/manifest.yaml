@@ -1,9 +1,0 @@
-hunts:
-  - id: hades-cluster-pypi-startup-hook-compromise-hunt-1
-    title: local repository and exported telemetry scope
-    question: Does the telemetry scope contain patterns associated with the Hades Cluster PyPI campaign update?
-    telemetry:
-      family: process
-      collection_context: filesystem or log export
-    positive_signal: Indicators of compromise matched in telemetry
-    script_path: scripts/scan_hades_cluster.py

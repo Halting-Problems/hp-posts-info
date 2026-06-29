@@ -1,0 +1,11 @@
+hunts:
+  - id: "cyclonedx-cdxgen-maven-scanning-command-injection-hunt-1"
+    title: "cdxgen vulnerable Maven scanner usage in repositories and CI telemetry"
+    question: "Do repository manifests, lockfiles, CI definitions, or exported logs show @cyclonedx/cdxgen versions before 12.4.3 or Maven scan invocations that should be reviewed after GHSA-5vwr-qchf-q4pf?"
+    telemetry:
+      family: "file"
+      collection_context: "source repositories, package lockfiles, CI workflow definitions, SBOM job logs, or exported build telemetry"
+    positive_signal: "The script found @cyclonedx/cdxgen before 12.4.3 or cdxgen Maven scanning references in the supplied evidence tree."
+    false_positives: "Documentation-only references can match; validate whether the repository or CI job actually executes cdxgen against attacker-controlled Maven projects."
+    classification_on_match: "presumed_exposed"
+    script_path: "scripts/cdxgen_maven_scanner_exposure_audit.py"

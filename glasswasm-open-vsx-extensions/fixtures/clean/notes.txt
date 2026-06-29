@@ -1,0 +1,1 @@
+This clean fixture intentionally omits any Open VSX GlassWASM package IDs, Solana wallet selectors, or dodod hostnames.

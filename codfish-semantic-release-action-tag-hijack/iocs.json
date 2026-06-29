@@ -142,19 +142,40 @@
   },
   "detection": {
     "lockfile_hunts": [
-      "Search workflow files and generated action caches for codfish/semantic-release-action refs pinned to the compromised tag set."
+      "codfish/semantic-release-action@v5.0.0",
+      "codfish/semantic-release-action@v5",
+      "codfish/semantic-release-action@v4.0.1",
+      "codfish/semantic-release-action@v4.0.0",
+      "codfish/semantic-release-action@v4",
+      "codfish/semantic-release-action@v3.5.0",
+      "codfish/semantic-release-action@v3.4.1",
+      "codfish/semantic-release-action@v3.4.0",
+      "codfish/semantic-release-action@v3.3.0",
+      "codfish/semantic-release-action@v3.2.0",
+      "codfish/semantic-release-action@v3.1.1",
+      "codfish/semantic-release-action@v3.1.0",
+      "codfish/semantic-release-action@v3.0.0",
+      "codfish/semantic-release-action@v3",
+      "codfish/semantic-release-action@v2.2.1"
     ],
     "filesystem_hunts": [
-      "Search repositories, Actions cache exports, and retained workspace artifacts for the malicious composite action selectors and commit SHA."
+      "action.yml",
+      "index.js",
+      "5792aba0e2180b9b80b77644370a6889d5817456",
+      "using: composite"
     ],
     "process_hunts": [
-      "Review runner telemetry for Bun installation followed by bun run against the action checkout path."
+      "oven-sh/setup-bun",
+      "bun run $GITHUB_ACTION_PATH/index.js",
+      "Runner.Worker memory access"
     ],
     "network_hunts": [
-      "Review GitHub API and git push activity from identities exposed to affected workflow runs because the public analysis has not yet decoded a stable external C2 endpoint."
+      "api.github.com",
+      "github.com"
     ],
     "ci_cd_hunts": [
-      "Enumerate workflow runs that resolved codfish/semantic-release-action mutable tags on or after 2026-06-24T15:39:06Z."
+      "codfish/semantic-release-action",
+      "2026-06-24T15:39:06Z"
     ],
     "registry_hunts": []
   },

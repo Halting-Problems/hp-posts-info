@@ -1,0 +1,26 @@
+{
+  "captured_at": "2026-06-20",
+  "checks": [
+    {
+      "url": "https://open-vsx.org/api/exargd/vsblack",
+      "status": 404,
+      "body": {"error": "Extension not found: exargd.vsblack", "deprecated": false, "downloadable": false}
+    },
+    {
+      "url": "https://open-vsx.org/api/noellee-doc/flint-debug",
+      "status": 404,
+      "body": {"error": "Extension not found: noellee-doc.flint-debug", "deprecated": false, "downloadable": false}
+    },
+    {
+      "url": "https://open-vsx.org/api/-/query?extensionName=vsblack&namespaceName=exargd",
+      "status": 200,
+      "body": {"offset": 0, "totalSize": 0, "extensions": []}
+    },
+    {
+      "url": "https://open-vsx.org/api/-/query?extensionName=flint-debug&namespaceName=noellee-doc",
+      "status": 200,
+      "body": {"offset": 0, "totalSize": 0, "extensions": []}
+    }
+  ],
+  "note": "These direct checks prove surviving removal state on 2026-06-20 but do not recover the historical listing metadata that existed before removal."
+}

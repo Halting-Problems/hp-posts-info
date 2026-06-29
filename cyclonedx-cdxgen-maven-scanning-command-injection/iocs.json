@@ -1,0 +1,91 @@
+{
+  "schema_version": "3.0",
+  "event_id": "cyclonedx-cdxgen-maven-scanning-command-injection-2026-06-26",
+  "event_name": "@cyclonedx/cdxgen Maven scanning command injection via repository-controlled module paths",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "publish_ready",
+  "confidence": "high",
+  "confidence_reason": "Direct upstream GitHub Security Advisory and upstream pull request identify affected package, vulnerable range, fixed release, and the Maven scanner command-construction flaw.",
+  "attack_types": [
+    "developer-tooling",
+    "sbom-tooling",
+    "ci-cd-exposure",
+    "command-injection"
+  ],
+  "sources": {
+    "direct": [
+      "https://github.com/cdxgen/cdxgen/security/advisories/GHSA-5vwr-qchf-q4pf",
+      "https://github.com/cdxgen/cdxgen/pull/4059"
+    ],
+    "primary_research": [
+      "https://github.com/cdxgen/cdxgen/security/advisories/GHSA-5vwr-qchf-q4pf"
+    ],
+    "correlated": [
+      "https://github.com/advisories/GHSA-5vwr-qchf-q4pf"
+    ]
+  },
+  "affected_assets": {
+    "ecosystems": ["npm", "Maven", "SBOM tooling"],
+    "registries": ["npm"],
+    "packages": ["@cyclonedx/cdxgen"],
+    "versions": ["< 12.4.3"],
+    "repositories": ["cdxgen/cdxgen"],
+    "vendors": ["CycloneDX"],
+    "ci_cd_systems": ["GitHub Actions", "generic CI SBOM jobs"],
+    "container_images": [],
+    "developer_tools": ["cdxgen CLI", "cdxgen server mode"],
+    "credentials_at_risk": ["CI runner environment variables", "developer workstation credentials visible to scanner process"]
+  },
+  "timeline": {
+    "first_seen": "2026-06-26T19:47:24Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-06-26T19:47:24Z",
+    "removal_time": "not_applicable",
+    "disclosure_time": "2026-06-26T19:47:24Z",
+    "patch_or_fix_time": "2026-05-22T22:26:57.787Z"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "Scanning an attacker-controlled Maven project with @cyclonedx/cdxgen before 12.4.3",
+    "payload_behavior": ["repository-controlled path interpreted by shell during Maven scanner command construction"],
+    "provenance": {
+      "npm_fixed_version": "12.4.3",
+      "fixed_tarball_integrity": "sha512-1cg3zWCW5J+nU2TDXi3ehM5n2PdznlWQ8KNr/blGIGGu995pZECUJKDB7iOVMRRC+C5GNoDMmN8CYLTX0/vr7A=="
+    }
+  },
+  "iocs": {
+    "package_versions": ["@cyclonedx/cdxgen < 12.4.3"],
+    "files": ["package.json", "package-lock.json", "pnpm-lock.yaml", "yarn.lock", ".github/workflows"],
+    "hashes": [],
+    "domains": [],
+    "urls": ["https://github.com/cdxgen/cdxgen/security/advisories/GHSA-5vwr-qchf-q4pf", "https://github.com/cdxgen/cdxgen/pull/4059"],
+    "ips": [],
+    "process_patterns": ["cdxgen", "--type maven", "-t maven"],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": ["@cyclonedx/cdxgen < 12.4.3"],
+    "filesystem_hunts": [".github/workflows", "package.json", "package-lock.json", "pnpm-lock.yaml", "yarn.lock"],
+    "process_hunts": ["cdxgen", "--type maven", "-t maven"],
+    "network_hunts": [],
+    "ci_cd_hunts": ["cdxgen --type maven", "cdxgen -t maven", "CDXGEN_TYPE=maven"],
+    "registry_hunts": []
+  },
+  "open_questions": [
+    "No reviewed direct source confirmed exploitation in the wild as of the 2026-06-26 advisory review.",
+    "The public advisory does not quantify how many downstream CI systems scanned untrusted Maven projects with affected cdxgen versions."
+  ],
+  "defender_takeaways": {
+    "detection": "Search source, lockfile, and CI evidence for @cyclonedx/cdxgen before 12.4.3 and cdxgen Maven scanner invocations.",
+    "hunting": "Prioritize SBOM jobs that scan pull requests, forks, or third-party Maven repositories.",
+    "remediation": "Upgrade cdxgen to 12.4.3 or later before scanning untrusted Maven projects.",
+    "prevention": "Run SBOM generation for untrusted repositories in isolated runners without long-lived credentials."
+  },
+  "remediation_gates": {
+    "containment_complete": ["Affected SBOM jobs are disabled or moved to isolated runners until cdxgen is upgraded."],
+    "eradication_complete": ["Lockfiles and scanner containers show @cyclonedx/cdxgen 12.4.3 or later."],
+    "recovery_complete": ["Recent SBOM job logs have been reviewed for unexpected command execution indicators."],
+    "closure_complete": ["All untrusted-repository scanning paths have documented runner isolation and patched cdxgen versions."]
+  }
+}

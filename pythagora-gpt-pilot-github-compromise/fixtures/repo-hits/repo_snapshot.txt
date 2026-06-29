@@ -1,0 +1,8 @@
+Pythagora-io/gpt-pilot
+LeonOstrez
+53154df1c66b42021f230c3fb6ef797c4b7c3e83
+90f59f5de6819a43ffe9b6272e3ed65aaadca804
+_hooks.py
+_runtime.bin
+core/telemetry/_hooks.py
+core/telemetry/__init__.py
