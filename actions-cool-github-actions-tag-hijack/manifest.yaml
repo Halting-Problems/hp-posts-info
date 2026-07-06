@@ -1,0 +1,11 @@
+hunts:
+  - id: "actions-cool-github-actions-tag-hijack-hunt-1"
+    title: "local repository and exported telemetry scope"
+    question: "Does this scope contain package, workflow, process, filesystem, or network indicators associated with actions-cool GitHub Actions Tag Hijack Credential Theft?"
+    telemetry:
+      family: "process"
+      collection_context: "repository checkout, package cache, CI logs, endpoint logs, or exported runner telemetry"
+    positive_signal: "One or more incident-specific package, file, process, network, repository, or workflow selectors matched the reviewed scope."
+    false_positives: "String-only matches in threat-intelligence notes or copied advisories should be reviewed before declaring exposure."
+    classification_on_match: "potentially_exposed"
+    script_path: "scripts/local_repository_and_exported_telemetry_scope.py"

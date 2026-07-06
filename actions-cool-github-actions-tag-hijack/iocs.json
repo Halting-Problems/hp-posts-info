@@ -1,0 +1,173 @@
+{
+  "schema_version": "3.0",
+  "event_id": "actions-cool-github-actions-tag-hijack-2026-05-18",
+  "event_name": "actions-cool GitHub Actions Tag Hijack Credential Theft",
+  "parent_campaign_id": "miasma-mini-shai-hulud-family",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "Migrated from older Astro-era campaign coverage and primary StepSecurity research into the Next.js/Postgres hp-posts-info contract; selected indicators are source-backed but this pass did not perform fresh artifact diffing.",
+  "attack_types": [
+    "github-actions",
+    "tag-hijack",
+    "ci-cd",
+    "credential-theft",
+    "runner-memory-scraping"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://www.stepsecurity.io/blog/actions-cool-issues-helper-github-action-compromised-all-tags-point-to-imposter-commit-that-exfiltrates-ci-cd-credentials"
+    ],
+    "correlated": [
+      "https://haltingproblems.com/blog/evolution-of-supply-chain-attacks/"
+    ]
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [],
+    "packages": [
+      "actions-cool/issues-helper",
+      "actions-cool/maintain-one-comment"
+    ],
+    "versions": [
+      "mutable tags"
+    ],
+    "repositories": [
+      "actions-cool/issues-helper",
+      "actions-cool/maintain-one-comment"
+    ],
+    "vendors": [],
+    "ci_cd_systems": [
+      "GitHub Actions"
+    ],
+    "container_images": [],
+    "developer_tools": [
+      "GitHub Actions runners",
+      "developer workstations"
+    ],
+    "credentials_at_risk": [
+      "GitHub tokens",
+      "OIDC tokens",
+      "cloud credentials",
+      "package registry tokens",
+      "SSH keys"
+    ]
+  },
+  "timeline": {
+    "first_seen": "2026-05-18T00:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-05-18",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-05-18",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [
+      "action.yml",
+      "dist/index.js",
+      "/home/runner/.bun/bin/bun"
+    ],
+    "execution_trigger": "workflow resolves a mutable GitHub Action tag moved to an imposter commit",
+    "payload_behavior": [
+      "Bun runtime download",
+      "Runner.Worker memory scraping",
+      "GitHub token collection",
+      "HTTPS exfiltration"
+    ],
+    "provenance": {
+      "migration_source": "legacy Astro blog campaign roundup",
+      "fresh_artifact_diff": "not performed in this pass"
+    }
+  },
+  "iocs": {
+    "package_versions": [
+      "actions-cool/issues-helper@mutable-tags",
+      "actions-cool/maintain-one-comment@mutable-tags"
+    ],
+    "files": [
+      "action.yml",
+      "dist/index.js",
+      "/home/runner/.bun/bin/bun"
+    ],
+    "hashes": [
+      "1c9e803c80cc7fed000022d4c94f4b5bc2e90062"
+    ],
+    "domains": [
+      "t.m-kosche.com"
+    ],
+    "urls": [
+      "https://app.stepsecurity.io/github/actions-security-demo/compromised-packages/actions/runs/26056902433"
+    ],
+    "ips": [],
+    "process_patterns": [
+      "Runner.Worker",
+      "/proc/<Runner.Worker PID>/mem",
+      "gh auth token",
+      "sudo python3",
+      "isSecret"
+    ],
+    "network_patterns": [
+      "HTTPS to t.m-kosche.com"
+    ]
+  },
+  "detection": {
+    "lockfile_hunts": [
+      "actions-cool/issues-helper@mutable-tags",
+      "actions-cool/maintain-one-comment@mutable-tags"
+    ],
+    "filesystem_hunts": [
+      "action.yml",
+      "dist/index.js",
+      "/home/runner/.bun/bin/bun",
+      "imposter commit",
+      "Build action for vX.Y.Z"
+    ],
+    "process_hunts": [
+      "Runner.Worker",
+      "/proc/<Runner.Worker PID>/mem",
+      "gh auth token",
+      "sudo python3",
+      "isSecret"
+    ],
+    "network_hunts": [
+      "t.m-kosche.com",
+      "https://app.stepsecurity.io/github/actions-security-demo/compromised-packages/actions/runs/26056902433",
+      "HTTPS to t.m-kosche.com"
+    ],
+    "ci_cd_hunts": [
+      "workflow references affected actions/packages",
+      "Runner.Worker memory access",
+      "unexpected Bun runtime download in CI"
+    ],
+    "registry_hunts": [
+      "actions-cool/issues-helper",
+      "actions-cool/maintain-one-comment"
+    ]
+  },
+  "open_questions": [
+    "Public cleanup status and downstream victim count need direct confirmation before publication_state is raised above needs_review."
+  ],
+  "defender_takeaways": {
+    "detection": "Search lockfiles, workflow definitions, package caches, and runner telemetry for the incident-specific selectors in this folder.",
+    "hunting": "Prioritize CI runners and developer machines that resolved affected package versions or action tags during the reported window.",
+    "remediation": "Rebuild from clean dependencies, rotate reachable GitHub/npm/cloud credentials, and audit follow-on repository or package publishing activity.",
+    "prevention": "Pin GitHub Actions to immutable SHAs, enforce package cooldowns, and alert on unexpected Bun downloads, Runner.Worker memory reads, and package install hooks."
+  },
+  "remediation_gates": {
+    "containment_complete": [
+      "Block affected packages/actions and known exfiltration destinations.",
+      "Isolate matching runners or developer hosts."
+    ],
+    "eradication_complete": [
+      "Remove malicious versions/tags from internal mirrors and caches.",
+      "Rebuild affected environments from trusted baselines."
+    ],
+    "recovery_complete": [
+      "Rotate exposed credentials and verify no unauthorized repositories, packages, commits, workflows, or cloud sessions remain."
+    ],
+    "closure_required": [
+      "Document every matched selector and disposition unknown matches as false positive, potentially exposed, or confirmed compromise."
+    ]
+  }
+}

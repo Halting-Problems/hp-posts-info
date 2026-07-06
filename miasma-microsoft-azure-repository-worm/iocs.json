@@ -1,0 +1,179 @@
+{
+  "schema_version": "3.0",
+  "event_id": "miasma-microsoft-azure-repository-worm-2026-06-05",
+  "event_name": "Miasma Worm Hits Microsoft Azure Repositories",
+  "parent_campaign_id": "miasma-mini-shai-hulud-family",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "Migrated from older Astro-era campaign coverage and primary StepSecurity research into the Next.js/Postgres hp-posts-info contract; selected indicators are source-backed but this pass did not perform fresh artifact diffing.",
+  "attack_types": [
+    "github",
+    "developer-tooling",
+    "supply-chain",
+    "credential-theft",
+    "worm"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://www.stepsecurity.io/blog/miasma-worm-hits-microsoft-again-azure-functions-action-and-72-other-repositories-disabled-after-supply-chain-attack-targeting-ai-coding-agents"
+    ],
+    "correlated": [
+      "https://haltingproblems.com/blog/evolution-of-supply-chain-attacks/"
+    ]
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [],
+    "packages": [
+      "Azure/durabletask",
+      "Azure/azure-functions-action"
+    ],
+    "versions": [
+      "repository commit compromise"
+    ],
+    "repositories": [
+      "Azure/durabletask",
+      "Azure/azure-functions-action",
+      "Microsoft GitHub organizations disabled repositories"
+    ],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [
+      "GitHub Actions runners",
+      "developer workstations"
+    ],
+    "credentials_at_risk": [
+      "GitHub tokens",
+      "OIDC tokens",
+      "cloud credentials",
+      "package registry tokens",
+      "SSH keys"
+    ]
+  },
+  "timeline": {
+    "first_seen": "2026-06-05T00:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-06-05",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-06-05",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [
+      ".claude/settings.json",
+      ".claude/index.js",
+      ".claude/setup.mjs",
+      ".vscode/tasks.json",
+      ".vscode/setup.mjs"
+    ],
+    "execution_trigger": "developer or automation opens/uses a repository containing planted IDE and AI-assistant hook files",
+    "payload_behavior": [
+      "repository backdoor files",
+      "AI coding agent startup hooks",
+      "credential harvesting",
+      "GitHub organization spread"
+    ],
+    "provenance": {
+      "migration_source": "legacy Astro blog campaign roundup",
+      "fresh_artifact_diff": "not performed in this pass"
+    }
+  },
+  "iocs": {
+    "package_versions": [
+      "Azure/durabletask@malicious-commit",
+      "Azure/azure-functions-action@repository-compromise"
+    ],
+    "files": [
+      ".claude/settings.json",
+      ".claude/index.js",
+      ".claude/setup.mjs",
+      ".vscode/tasks.json",
+      ".vscode/setup.mjs"
+    ],
+    "hashes": [],
+    "domains": [
+      "api.github.com",
+      "github.com"
+    ],
+    "urls": [
+      "https://www.stepsecurity.io/blog/miasma-worm-hits-microsoft-again-azure-functions-action-and-72-other-repositories-disabled-after-supply-chain-attack-targeting-ai-coding-agents"
+    ],
+    "ips": [],
+    "process_patterns": [
+      "Runner.Worker",
+      "gh auth token",
+      "node .claude/setup.mjs",
+      "node .vscode/setup.mjs"
+    ],
+    "network_patterns": [
+      "GitHub repository exfiltration",
+      "Miasma"
+    ]
+  },
+  "detection": {
+    "lockfile_hunts": [
+      "Azure/durabletask@malicious-commit",
+      "Azure/azure-functions-action@repository-compromise"
+    ],
+    "filesystem_hunts": [
+      ".claude/settings.json",
+      ".claude/index.js",
+      ".claude/setup.mjs",
+      ".vscode/tasks.json",
+      ".vscode/setup.mjs",
+      "Azure/durabletask",
+      "73 repositories",
+      "AI Coding Agent Hijacking"
+    ],
+    "process_hunts": [
+      "Runner.Worker",
+      "gh auth token",
+      "node .claude/setup.mjs",
+      "node .vscode/setup.mjs"
+    ],
+    "network_hunts": [
+      "api.github.com",
+      "github.com",
+      "https://www.stepsecurity.io/blog/miasma-worm-hits-microsoft-again-azure-functions-action-and-72-other-repositories-disabled-after-supply-chain-attack-targeting-ai-coding-agents",
+      "GitHub repository exfiltration",
+      "Miasma"
+    ],
+    "ci_cd_hunts": [
+      "workflow references affected actions/packages",
+      "Runner.Worker memory access",
+      "unexpected Bun runtime download in CI"
+    ],
+    "registry_hunts": [
+      "Azure/durabletask",
+      "Azure/azure-functions-action"
+    ]
+  },
+  "open_questions": [
+    "Public cleanup status and downstream victim count need direct confirmation before publication_state is raised above needs_review."
+  ],
+  "defender_takeaways": {
+    "detection": "Search lockfiles, workflow definitions, package caches, and runner telemetry for the incident-specific selectors in this folder.",
+    "hunting": "Prioritize CI runners and developer machines that resolved affected package versions or action tags during the reported window.",
+    "remediation": "Rebuild from clean dependencies, rotate reachable GitHub/npm/cloud credentials, and audit follow-on repository or package publishing activity.",
+    "prevention": "Pin GitHub Actions to immutable SHAs, enforce package cooldowns, and alert on unexpected Bun downloads, Runner.Worker memory reads, and package install hooks."
+  },
+  "remediation_gates": {
+    "containment_complete": [
+      "Block affected packages/actions and known exfiltration destinations.",
+      "Isolate matching runners or developer hosts."
+    ],
+    "eradication_complete": [
+      "Remove malicious versions/tags from internal mirrors and caches.",
+      "Rebuild affected environments from trusted baselines."
+    ],
+    "recovery_complete": [
+      "Rotate exposed credentials and verify no unauthorized repositories, packages, commits, workflows, or cloud sessions remain."
+    ],
+    "closure_required": [
+      "Document every matched selector and disposition unknown matches as false positive, potentially exposed, or confirmed compromise."
+    ]
+  }
+}

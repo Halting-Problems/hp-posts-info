@@ -1,0 +1,200 @@
+{
+  "schema_version": "3.0",
+  "event_id": "mini-shai-hulud-sap-npm-bun-runtime-2026-04-29",
+  "event_name": "Mini Shai-Hulud SAP npm Bun Runtime Payloads",
+  "parent_campaign_id": "miasma-mini-shai-hulud-family",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "Migrated from older Astro-era campaign coverage and primary StepSecurity research into the Next.js/Postgres hp-posts-info contract; selected indicators are source-backed but this pass did not perform fresh artifact diffing.",
+  "attack_types": [
+    "npm",
+    "supply-chain",
+    "credential-theft",
+    "worm",
+    "developer-tooling"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://www.stepsecurity.io/blog/a-mini-shai-hulud-has-appeared"
+    ],
+    "correlated": [
+      "https://haltingproblems.com/blog/evolution-of-supply-chain-attacks/"
+    ]
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [],
+    "packages": [
+      "mbt",
+      "@cap-js/sqlite",
+      "@cap-js/postgres",
+      "@cap-js/db-service"
+    ],
+    "versions": [
+      "mbt v1.2.48",
+      "@cap-js/sqlite v2.2.2",
+      "@cap-js/postgres v2.2.2",
+      "@cap-js/db-service v2.10.1"
+    ],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [
+      "GitHub Actions runners",
+      "developer workstations"
+    ],
+    "credentials_at_risk": [
+      "GitHub tokens",
+      "OIDC tokens",
+      "cloud credentials",
+      "package registry tokens",
+      "SSH keys"
+    ]
+  },
+  "timeline": {
+    "first_seen": "2026-04-29T00:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-04-29",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-04-29",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [
+      "setup.mjs",
+      "execution.js",
+      ".vscode/tasks.json",
+      ".claude/settings.json",
+      ".github/workflows/format-check.yml"
+    ],
+    "execution_trigger": "npm preinstall hook runs node setup.mjs, downloads Bun, and launches execution.js",
+    "payload_behavior": [
+      "Bun runtime bootstrap",
+      "Runner.Worker memory scraping",
+      "GitHub repository dead-drop exfiltration",
+      "developer workspace persistence",
+      "workflow injection"
+    ],
+    "provenance": {
+      "migration_source": "legacy Astro blog campaign roundup",
+      "fresh_artifact_diff": "not performed in this pass"
+    }
+  },
+  "iocs": {
+    "package_versions": [
+      "mbt@1.2.48",
+      "@cap-js/sqlite@2.2.2",
+      "@cap-js/postgres@2.2.2",
+      "@cap-js/db-service@2.10.1"
+    ],
+    "files": [
+      "setup.mjs",
+      "execution.js",
+      ".vscode/tasks.json",
+      ".claude/settings.json",
+      ".github/workflows/format-check.yml"
+    ],
+    "hashes": [
+      "4066781fa830224c8bbcc3aa005a396657f9c8f9016f9a64ad44a9d7f5f45e34",
+      "80a3d2877813968ef847ae73b5eeeb70b9435254e74d7f07d8cf4057f0a710ac",
+      "6f933d00b7d05678eb43c90963a80b8947c4ae6830182f89df31da9f568fea95"
+    ],
+    "domains": [
+      "api.github.com",
+      "github.com",
+      "registry.npmjs.org"
+    ],
+    "urls": [
+      "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/",
+      "https://github.com/search?q=%22A+Mini+Shai-Hulud+has+Appeared%22&type=repositories"
+    ],
+    "ips": [],
+    "process_patterns": [
+      "Runner.Worker",
+      "/proc/{pid}/mem",
+      "node setup.mjs",
+      "bun execution.js",
+      "gh auth token"
+    ],
+    "network_patterns": [
+      "A Mini Shai-Hulud has Appeared",
+      "sardaukar-",
+      "mentat-",
+      "fremen-"
+    ]
+  },
+  "detection": {
+    "lockfile_hunts": [
+      "mbt@1.2.48",
+      "@cap-js/sqlite@2.2.2",
+      "@cap-js/postgres@2.2.2",
+      "@cap-js/db-service@2.10.1"
+    ],
+    "filesystem_hunts": [
+      "setup.mjs",
+      "execution.js",
+      ".vscode/tasks.json",
+      ".claude/settings.json",
+      ".github/workflows/format-check.yml",
+      "A Mini Shai-Hulud has Appeared",
+      "dependabout/github_actions/format/setup-formatter"
+    ],
+    "process_hunts": [
+      "Runner.Worker",
+      "/proc/{pid}/mem",
+      "node setup.mjs",
+      "bun execution.js",
+      "gh auth token"
+    ],
+    "network_hunts": [
+      "api.github.com",
+      "github.com",
+      "registry.npmjs.org",
+      "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/",
+      "https://github.com/search?q=%22A+Mini+Shai-Hulud+has+Appeared%22&type=repositories",
+      "A Mini Shai-Hulud has Appeared",
+      "sardaukar-",
+      "mentat-",
+      "fremen-"
+    ],
+    "ci_cd_hunts": [
+      "workflow references affected actions/packages",
+      "Runner.Worker memory access",
+      "unexpected Bun runtime download in CI"
+    ],
+    "registry_hunts": [
+      "mbt",
+      "@cap-js/sqlite",
+      "@cap-js/postgres",
+      "@cap-js/db-service"
+    ]
+  },
+  "open_questions": [
+    "Public cleanup status and downstream victim count need direct confirmation before publication_state is raised above needs_review."
+  ],
+  "defender_takeaways": {
+    "detection": "Search lockfiles, workflow definitions, package caches, and runner telemetry for the incident-specific selectors in this folder.",
+    "hunting": "Prioritize CI runners and developer machines that resolved affected package versions or action tags during the reported window.",
+    "remediation": "Rebuild from clean dependencies, rotate reachable GitHub/npm/cloud credentials, and audit follow-on repository or package publishing activity.",
+    "prevention": "Pin GitHub Actions to immutable SHAs, enforce package cooldowns, and alert on unexpected Bun downloads, Runner.Worker memory reads, and package install hooks."
+  },
+  "remediation_gates": {
+    "containment_complete": [
+      "Block affected packages/actions and known exfiltration destinations.",
+      "Isolate matching runners or developer hosts."
+    ],
+    "eradication_complete": [
+      "Remove malicious versions/tags from internal mirrors and caches.",
+      "Rebuild affected environments from trusted baselines."
+    ],
+    "recovery_complete": [
+      "Rotate exposed credentials and verify no unauthorized repositories, packages, commits, workflows, or cloud sessions remain."
+    ],
+    "closure_required": [
+      "Document every matched selector and disposition unknown matches as false positive, potentially exposed, or confirmed compromise."
+    ]
+  }
+}
