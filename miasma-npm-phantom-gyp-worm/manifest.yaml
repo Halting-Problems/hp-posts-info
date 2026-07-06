@@ -1,7 +1,7 @@
 hunts:
-  - id: "actions-cool-github-actions-tag-hijack-hunt-1"
+  - id: "miasma-npm-phantom-gyp-worm-hunt-1"
     title: "local repository and exported telemetry scope"
-    question: "Does this scope contain package, workflow, process, filesystem, or network indicators associated with actions-cool GitHub Actions Tag Hijack Credential Theft?"
+    question: "Does this scope contain package, workflow, process, filesystem, or network indicators associated with Miasma npm Phantom Gyp Self-Spreading Worm?"
     telemetry:
       family: "process"
       collection_context: "repository checkout, package cache, CI logs, endpoint logs, or exported runner telemetry"

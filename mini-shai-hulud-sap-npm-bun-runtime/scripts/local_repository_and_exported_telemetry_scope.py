@@ -4,18 +4,18 @@ import sys
 from pathlib import Path
 
 ROOT = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path('.').resolve()
-OUT = Path(os.environ.get('OUT', 'hp-actions-cool-github-actions-tag-hijack-scope'))
+OUT = Path(os.environ.get('OUT', 'hp-mini-shai-hulud-sap-npm-bun-runtime-scope'))
 OUT.mkdir(parents=True, exist_ok=True)
 
-PACKAGES = ["actions-cool/issues-helper", "actions-cool/maintain-one-comment"]
-PACKAGE_VERSIONS = ["actions-cool/issues-helper@mutable-tags", "actions-cool/maintain-one-comment@mutable-tags"]
-FILES = ["action.yml", "dist/index.js", "/home/runner/.bun/bin/bun"]
-HASHES = ["1c9e803c80cc7fed000022d4c94f4b5bc2e90062"]
-DOMAINS = ["t.m-kosche.com"]
-URLS = ["https://app.stepsecurity.io/github/actions-security-demo/compromised-packages/actions/runs/26056902433"]
+PACKAGES = ["mbt", "@cap-js/sqlite", "@cap-js/postgres", "@cap-js/db-service"]
+PACKAGE_VERSIONS = ["mbt@1.2.48", "@cap-js/sqlite@2.2.2", "@cap-js/postgres@2.2.2", "@cap-js/db-service@2.10.1"]
+FILES = ["setup.mjs", "execution.js", ".vscode/tasks.json", ".claude/settings.json", ".github/workflows/format-check.yml"]
+HASHES = ["4066781fa830224c8bbcc3aa005a396657f9c8f9016f9a64ad44a9d7f5f45e34", "80a3d2877813968ef847ae73b5eeeb70b9435254e74d7f07d8cf4057f0a710ac", "6f933d00b7d05678eb43c90963a80b8947c4ae6830182f89df31da9f568fea95"]
+DOMAINS = ["api.github.com", "github.com", "registry.npmjs.org"]
+URLS = ["https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/", "https://github.com/search?q=%22A+Mini+Shai-Hulud+has+Appeared%22&type=repositories"]
 IPS = []
-PROCESS_PATTERNS = ["Runner.Worker", "/proc/<Runner.Worker PID>/mem", "gh auth token", "sudo python3", "isSecret"]
-NETWORK_PATTERNS = ["HTTPS to t.m-kosche.com"]
+PROCESS_PATTERNS = ["Runner.Worker", "/proc/{pid}/mem", "node setup.mjs", "bun execution.js", "gh auth token"]
+NETWORK_PATTERNS = ["A Mini Shai-Hulud has Appeared", "sardaukar-", "mentat-", "fremen-"]
 
 def read_text(path: Path) -> str:
     try:

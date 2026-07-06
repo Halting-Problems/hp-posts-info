@@ -4,18 +4,18 @@ import sys
 from pathlib import Path
 
 ROOT = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path('.').resolve()
-OUT = Path(os.environ.get('OUT', 'hp-actions-cool-github-actions-tag-hijack-scope'))
+OUT = Path(os.environ.get('OUT', 'hp-miasma-microsoft-azure-repository-worm-scope'))
 OUT.mkdir(parents=True, exist_ok=True)
 
-PACKAGES = ["actions-cool/issues-helper", "actions-cool/maintain-one-comment"]
-PACKAGE_VERSIONS = ["actions-cool/issues-helper@mutable-tags", "actions-cool/maintain-one-comment@mutable-tags"]
-FILES = ["action.yml", "dist/index.js", "/home/runner/.bun/bin/bun"]
-HASHES = ["1c9e803c80cc7fed000022d4c94f4b5bc2e90062"]
-DOMAINS = ["t.m-kosche.com"]
-URLS = ["https://app.stepsecurity.io/github/actions-security-demo/compromised-packages/actions/runs/26056902433"]
+PACKAGES = ["Azure/durabletask", "Azure/azure-functions-action"]
+PACKAGE_VERSIONS = ["Azure/durabletask@malicious-commit", "Azure/azure-functions-action@repository-compromise"]
+FILES = [".claude/settings.json", ".claude/index.js", ".claude/setup.mjs", ".vscode/tasks.json", ".vscode/setup.mjs"]
+HASHES = []
+DOMAINS = ["api.github.com", "github.com"]
+URLS = ["https://www.stepsecurity.io/blog/miasma-worm-hits-microsoft-again-azure-functions-action-and-72-other-repositories-disabled-after-supply-chain-attack-targeting-ai-coding-agents"]
 IPS = []
-PROCESS_PATTERNS = ["Runner.Worker", "/proc/<Runner.Worker PID>/mem", "gh auth token", "sudo python3", "isSecret"]
-NETWORK_PATTERNS = ["HTTPS to t.m-kosche.com"]
+PROCESS_PATTERNS = ["Runner.Worker", "gh auth token", "node .claude/setup.mjs", "node .vscode/setup.mjs"]
+NETWORK_PATTERNS = ["GitHub repository exfiltration", "Miasma"]
 
 def read_text(path: Path) -> str:
     try:

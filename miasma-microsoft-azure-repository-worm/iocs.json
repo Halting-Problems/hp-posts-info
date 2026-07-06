@@ -1,23 +1,23 @@
 {
   "schema_version": "3.0",
-  "event_id": "actions-cool-github-actions-tag-hijack-2026-05-18",
-  "event_name": "actions-cool GitHub Actions Tag Hijack Credential Theft",
+  "event_id": "miasma-microsoft-azure-repository-worm-2026-06-05",
+  "event_name": "Miasma Worm Hits Microsoft Azure Repositories",
   "parent_campaign_id": "miasma-mini-shai-hulud-family",
   "is_campaign_level": false,
   "publication_state": "needs_review",
   "confidence": "medium",
   "confidence_reason": "Migrated from older Astro-era campaign coverage and primary StepSecurity research into the Next.js/Postgres hp-posts-info contract; selected indicators are source-backed but this pass did not perform fresh artifact diffing.",
   "attack_types": [
-    "github-actions",
-    "tag-hijack",
-    "ci-cd",
+    "github",
+    "developer-tooling",
+    "supply-chain",
     "credential-theft",
-    "runner-memory-scraping"
+    "worm"
   ],
   "sources": {
     "direct": [],
     "primary_research": [
-      "https://www.stepsecurity.io/blog/actions-cool-issues-helper-github-action-compromised-all-tags-point-to-imposter-commit-that-exfiltrates-ci-cd-credentials"
+      "https://www.stepsecurity.io/blog/miasma-worm-hits-microsoft-again-azure-functions-action-and-72-other-repositories-disabled-after-supply-chain-attack-targeting-ai-coding-agents"
     ],
     "correlated": [
       "https://haltingproblems.com/blog/evolution-of-supply-chain-attacks/"
@@ -27,20 +27,19 @@
     "ecosystems": [],
     "registries": [],
     "packages": [
-      "actions-cool/issues-helper",
-      "actions-cool/maintain-one-comment"
+      "Azure/durabletask",
+      "Azure/azure-functions-action"
     ],
     "versions": [
-      "mutable tags"
+      "repository commit compromise"
     ],
     "repositories": [
-      "actions-cool/issues-helper",
-      "actions-cool/maintain-one-comment"
+      "Azure/durabletask",
+      "Azure/azure-functions-action",
+      "Microsoft GitHub organizations disabled repositories"
     ],
     "vendors": [],
-    "ci_cd_systems": [
-      "GitHub Actions"
-    ],
+    "ci_cd_systems": [],
     "container_images": [],
     "developer_tools": [
       "GitHub Actions runners",
@@ -55,25 +54,27 @@
     ]
   },
   "timeline": {
-    "first_seen": "2026-05-18T00:00:00Z",
+    "first_seen": "2026-06-05T00:00:00Z",
     "malicious_publish_time": "unknown",
-    "discovery_time": "2026-05-18",
+    "discovery_time": "2026-06-05",
     "removal_time": "unknown",
-    "disclosure_time": "2026-05-18",
+    "disclosure_time": "2026-06-05",
     "patch_or_fix_time": "unknown"
   },
   "artifact_analysis": {
     "malicious_artifacts": [
-      "action.yml",
-      "dist/index.js",
-      "/home/runner/.bun/bin/bun"
+      ".claude/settings.json",
+      ".claude/index.js",
+      ".claude/setup.mjs",
+      ".vscode/tasks.json",
+      ".vscode/setup.mjs"
     ],
-    "execution_trigger": "workflow resolves a mutable GitHub Action tag moved to an imposter commit",
+    "execution_trigger": "developer or automation opens/uses a repository containing planted IDE and AI-assistant hook files",
     "payload_behavior": [
-      "Bun runtime download",
-      "Runner.Worker memory scraping",
-      "GitHub token collection",
-      "HTTPS exfiltration"
+      "repository backdoor files",
+      "AI coding agent startup hooks",
+      "credential harvesting",
+      "GitHub organization spread"
     ],
     "provenance": {
       "migration_source": "legacy Astro blog campaign roundup",
@@ -82,58 +83,63 @@
   },
   "iocs": {
     "package_versions": [
-      "actions-cool/issues-helper@mutable-tags",
-      "actions-cool/maintain-one-comment@mutable-tags"
+      "Azure/durabletask@malicious-commit",
+      "Azure/azure-functions-action@repository-compromise"
     ],
     "files": [
-      "action.yml",
-      "dist/index.js",
-      "/home/runner/.bun/bin/bun"
+      ".claude/settings.json",
+      ".claude/index.js",
+      ".claude/setup.mjs",
+      ".vscode/tasks.json",
+      ".vscode/setup.mjs"
     ],
-    "hashes": [
-      "1c9e803c80cc7fed000022d4c94f4b5bc2e90062"
-    ],
+    "hashes": [],
     "domains": [
-      "t.m-kosche.com"
+      "api.github.com",
+      "github.com"
     ],
     "urls": [
-      "https://app.stepsecurity.io/github/actions-security-demo/compromised-packages/actions/runs/26056902433"
+      "https://www.stepsecurity.io/blog/miasma-worm-hits-microsoft-again-azure-functions-action-and-72-other-repositories-disabled-after-supply-chain-attack-targeting-ai-coding-agents"
     ],
     "ips": [],
     "process_patterns": [
       "Runner.Worker",
-      "/proc/<Runner.Worker PID>/mem",
       "gh auth token",
-      "sudo python3",
-      "isSecret"
+      "node .claude/setup.mjs",
+      "node .vscode/setup.mjs"
     ],
     "network_patterns": [
-      "HTTPS to t.m-kosche.com"
+      "GitHub repository exfiltration",
+      "Miasma"
     ]
   },
   "detection": {
     "lockfile_hunts": [
-      "actions-cool/issues-helper@mutable-tags",
-      "actions-cool/maintain-one-comment@mutable-tags"
+      "Azure/durabletask@malicious-commit",
+      "Azure/azure-functions-action@repository-compromise"
     ],
     "filesystem_hunts": [
-      "action.yml",
-      "dist/index.js",
-      "/home/runner/.bun/bin/bun",
-      "imposter commit",
-      "Build action for vX.Y.Z"
+      ".claude/settings.json",
+      ".claude/index.js",
+      ".claude/setup.mjs",
+      ".vscode/tasks.json",
+      ".vscode/setup.mjs",
+      "Azure/durabletask",
+      "73 repositories",
+      "AI Coding Agent Hijacking"
     ],
     "process_hunts": [
       "Runner.Worker",
-      "/proc/<Runner.Worker PID>/mem",
       "gh auth token",
-      "sudo python3",
-      "isSecret"
+      "node .claude/setup.mjs",
+      "node .vscode/setup.mjs"
     ],
     "network_hunts": [
-      "t.m-kosche.com",
-      "https://app.stepsecurity.io/github/actions-security-demo/compromised-packages/actions/runs/26056902433",
-      "HTTPS to t.m-kosche.com"
+      "api.github.com",
+      "github.com",
+      "https://www.stepsecurity.io/blog/miasma-worm-hits-microsoft-again-azure-functions-action-and-72-other-repositories-disabled-after-supply-chain-attack-targeting-ai-coding-agents",
+      "GitHub repository exfiltration",
+      "Miasma"
     ],
     "ci_cd_hunts": [
       "workflow references affected actions/packages",
@@ -141,8 +147,8 @@
       "unexpected Bun runtime download in CI"
     ],
     "registry_hunts": [
-      "actions-cool/issues-helper",
-      "actions-cool/maintain-one-comment"
+      "Azure/durabletask",
+      "Azure/azure-functions-action"
     ]
   },
   "open_questions": [

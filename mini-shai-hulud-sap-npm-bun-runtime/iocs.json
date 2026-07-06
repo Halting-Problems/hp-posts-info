@@ -1,23 +1,23 @@
 {
   "schema_version": "3.0",
-  "event_id": "actions-cool-github-actions-tag-hijack-2026-05-18",
-  "event_name": "actions-cool GitHub Actions Tag Hijack Credential Theft",
+  "event_id": "mini-shai-hulud-sap-npm-bun-runtime-2026-04-29",
+  "event_name": "Mini Shai-Hulud SAP npm Bun Runtime Payloads",
   "parent_campaign_id": "miasma-mini-shai-hulud-family",
   "is_campaign_level": false,
   "publication_state": "needs_review",
   "confidence": "medium",
   "confidence_reason": "Migrated from older Astro-era campaign coverage and primary StepSecurity research into the Next.js/Postgres hp-posts-info contract; selected indicators are source-backed but this pass did not perform fresh artifact diffing.",
   "attack_types": [
-    "github-actions",
-    "tag-hijack",
-    "ci-cd",
+    "npm",
+    "supply-chain",
     "credential-theft",
-    "runner-memory-scraping"
+    "worm",
+    "developer-tooling"
   ],
   "sources": {
     "direct": [],
     "primary_research": [
-      "https://www.stepsecurity.io/blog/actions-cool-issues-helper-github-action-compromised-all-tags-point-to-imposter-commit-that-exfiltrates-ci-cd-credentials"
+      "https://www.stepsecurity.io/blog/a-mini-shai-hulud-has-appeared"
     ],
     "correlated": [
       "https://haltingproblems.com/blog/evolution-of-supply-chain-attacks/"
@@ -27,20 +27,20 @@
     "ecosystems": [],
     "registries": [],
     "packages": [
-      "actions-cool/issues-helper",
-      "actions-cool/maintain-one-comment"
+      "mbt",
+      "@cap-js/sqlite",
+      "@cap-js/postgres",
+      "@cap-js/db-service"
     ],
     "versions": [
-      "mutable tags"
+      "mbt v1.2.48",
+      "@cap-js/sqlite v2.2.2",
+      "@cap-js/postgres v2.2.2",
+      "@cap-js/db-service v2.10.1"
     ],
-    "repositories": [
-      "actions-cool/issues-helper",
-      "actions-cool/maintain-one-comment"
-    ],
+    "repositories": [],
     "vendors": [],
-    "ci_cd_systems": [
-      "GitHub Actions"
-    ],
+    "ci_cd_systems": [],
     "container_images": [],
     "developer_tools": [
       "GitHub Actions runners",
@@ -55,25 +55,28 @@
     ]
   },
   "timeline": {
-    "first_seen": "2026-05-18T00:00:00Z",
+    "first_seen": "2026-04-29T00:00:00Z",
     "malicious_publish_time": "unknown",
-    "discovery_time": "2026-05-18",
+    "discovery_time": "2026-04-29",
     "removal_time": "unknown",
-    "disclosure_time": "2026-05-18",
+    "disclosure_time": "2026-04-29",
     "patch_or_fix_time": "unknown"
   },
   "artifact_analysis": {
     "malicious_artifacts": [
-      "action.yml",
-      "dist/index.js",
-      "/home/runner/.bun/bin/bun"
+      "setup.mjs",
+      "execution.js",
+      ".vscode/tasks.json",
+      ".claude/settings.json",
+      ".github/workflows/format-check.yml"
     ],
-    "execution_trigger": "workflow resolves a mutable GitHub Action tag moved to an imposter commit",
+    "execution_trigger": "npm preinstall hook runs node setup.mjs, downloads Bun, and launches execution.js",
     "payload_behavior": [
-      "Bun runtime download",
+      "Bun runtime bootstrap",
       "Runner.Worker memory scraping",
-      "GitHub token collection",
-      "HTTPS exfiltration"
+      "GitHub repository dead-drop exfiltration",
+      "developer workspace persistence",
+      "workflow injection"
     ],
     "provenance": {
       "migration_source": "legacy Astro blog campaign roundup",
@@ -82,58 +85,80 @@
   },
   "iocs": {
     "package_versions": [
-      "actions-cool/issues-helper@mutable-tags",
-      "actions-cool/maintain-one-comment@mutable-tags"
+      "mbt@1.2.48",
+      "@cap-js/sqlite@2.2.2",
+      "@cap-js/postgres@2.2.2",
+      "@cap-js/db-service@2.10.1"
     ],
     "files": [
-      "action.yml",
-      "dist/index.js",
-      "/home/runner/.bun/bin/bun"
+      "setup.mjs",
+      "execution.js",
+      ".vscode/tasks.json",
+      ".claude/settings.json",
+      ".github/workflows/format-check.yml"
     ],
     "hashes": [
-      "1c9e803c80cc7fed000022d4c94f4b5bc2e90062"
+      "4066781fa830224c8bbcc3aa005a396657f9c8f9016f9a64ad44a9d7f5f45e34",
+      "80a3d2877813968ef847ae73b5eeeb70b9435254e74d7f07d8cf4057f0a710ac",
+      "6f933d00b7d05678eb43c90963a80b8947c4ae6830182f89df31da9f568fea95"
     ],
     "domains": [
-      "t.m-kosche.com"
+      "api.github.com",
+      "github.com",
+      "registry.npmjs.org"
     ],
     "urls": [
-      "https://app.stepsecurity.io/github/actions-security-demo/compromised-packages/actions/runs/26056902433"
+      "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/",
+      "https://github.com/search?q=%22A+Mini+Shai-Hulud+has+Appeared%22&type=repositories"
     ],
     "ips": [],
     "process_patterns": [
       "Runner.Worker",
-      "/proc/<Runner.Worker PID>/mem",
-      "gh auth token",
-      "sudo python3",
-      "isSecret"
+      "/proc/{pid}/mem",
+      "node setup.mjs",
+      "bun execution.js",
+      "gh auth token"
     ],
     "network_patterns": [
-      "HTTPS to t.m-kosche.com"
+      "A Mini Shai-Hulud has Appeared",
+      "sardaukar-",
+      "mentat-",
+      "fremen-"
     ]
   },
   "detection": {
     "lockfile_hunts": [
-      "actions-cool/issues-helper@mutable-tags",
-      "actions-cool/maintain-one-comment@mutable-tags"
+      "mbt@1.2.48",
+      "@cap-js/sqlite@2.2.2",
+      "@cap-js/postgres@2.2.2",
+      "@cap-js/db-service@2.10.1"
     ],
     "filesystem_hunts": [
-      "action.yml",
-      "dist/index.js",
-      "/home/runner/.bun/bin/bun",
-      "imposter commit",
-      "Build action for vX.Y.Z"
+      "setup.mjs",
+      "execution.js",
+      ".vscode/tasks.json",
+      ".claude/settings.json",
+      ".github/workflows/format-check.yml",
+      "A Mini Shai-Hulud has Appeared",
+      "dependabout/github_actions/format/setup-formatter"
     ],
     "process_hunts": [
       "Runner.Worker",
-      "/proc/<Runner.Worker PID>/mem",
-      "gh auth token",
-      "sudo python3",
-      "isSecret"
+      "/proc/{pid}/mem",
+      "node setup.mjs",
+      "bun execution.js",
+      "gh auth token"
     ],
     "network_hunts": [
-      "t.m-kosche.com",
-      "https://app.stepsecurity.io/github/actions-security-demo/compromised-packages/actions/runs/26056902433",
-      "HTTPS to t.m-kosche.com"
+      "api.github.com",
+      "github.com",
+      "registry.npmjs.org",
+      "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/",
+      "https://github.com/search?q=%22A+Mini+Shai-Hulud+has+Appeared%22&type=repositories",
+      "A Mini Shai-Hulud has Appeared",
+      "sardaukar-",
+      "mentat-",
+      "fremen-"
     ],
     "ci_cd_hunts": [
       "workflow references affected actions/packages",
@@ -141,8 +166,10 @@
       "unexpected Bun runtime download in CI"
     ],
     "registry_hunts": [
-      "actions-cool/issues-helper",
-      "actions-cool/maintain-one-comment"
+      "mbt",
+      "@cap-js/sqlite",
+      "@cap-js/postgres",
+      "@cap-js/db-service"
     ]
   },
   "open_questions": [

@@ -1,0 +1,235 @@
+{
+  "schema_version": "3.0",
+  "event_id": "miasma-npm-phantom-gyp-worm-2026-06-03",
+  "event_name": "Miasma npm Phantom Gyp Self-Spreading Worm",
+  "parent_campaign_id": "miasma-mini-shai-hulud-family",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "Migrated from older Astro-era campaign coverage and primary StepSecurity research into the Next.js/Postgres hp-posts-info contract; selected indicators are source-backed but this pass did not perform fresh artifact diffing.",
+  "attack_types": [
+    "npm",
+    "supply-chain",
+    "phantom-gyp",
+    "worm",
+    "credential-theft"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://www.stepsecurity.io/blog/binding-gyp-npm-supply-chain-attack-spreads-like-worm"
+    ],
+    "correlated": [
+      "https://haltingproblems.com/blog/evolution-of-supply-chain-attacks/"
+    ]
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [],
+    "packages": [
+      "@evolvconsulting/evolv-coder-lite",
+      "@jagreehal/workflow",
+      "@vapi-ai/server-sdk",
+      "ai-sdk-ollama",
+      "autotel",
+      "autotel-adapters",
+      "autotel-audit",
+      "autotel-aws",
+      "autotel-backends",
+      "autotel-cli",
+      "autotel-cloudflare",
+      "autotel-devtools",
+      "autotel-drizzle",
+      "autotel-edge",
+      "autotel-eventcatalog",
+      "autotel-hono",
+      "autotel-mcp",
+      "awaitly",
+      "awaitly-analyze",
+      "awaitly-libsql"
+    ],
+    "versions": [
+      "57 npm packages across 286+ malicious versions"
+    ],
+    "repositories": [
+      "github.com/liuende501"
+    ],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [
+      "GitHub Actions runners",
+      "developer workstations"
+    ],
+    "credentials_at_risk": [
+      "GitHub tokens",
+      "OIDC tokens",
+      "cloud credentials",
+      "package registry tokens",
+      "SSH keys"
+    ]
+  },
+  "timeline": {
+    "first_seen": "2026-06-03T00:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-06-03",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-06-03",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [
+      "binding.gyp",
+      "index.js",
+      "stub.c"
+    ],
+    "execution_trigger": "node-gyp processes binding.gyp shell expansion during npm install",
+    "payload_behavior": [
+      "Bun runtime download",
+      "obfuscated JavaScript payload",
+      "Runner.Worker memory scraping",
+      "GitHub API exfiltration",
+      "self-propagating package modification"
+    ],
+    "provenance": {
+      "migration_source": "legacy Astro blog campaign roundup",
+      "fresh_artifact_diff": "not performed in this pass"
+    }
+  },
+  "iocs": {
+    "package_versions": [
+      "@vapi-ai/server-sdk@0.11.1",
+      "@vapi-ai/server-sdk@0.11.2",
+      "@vapi-ai/server-sdk@1.2.1",
+      "@vapi-ai/server-sdk@1.2.2",
+      "ai-sdk-ollama@0.13.1",
+      "ai-sdk-ollama@1.1.1",
+      "ai-sdk-ollama@2.2.1",
+      "ai-sdk-ollama@3.8.5",
+      "@evolvconsulting/evolv-coder-lite@1.2.0",
+      "@jagreehal/workflow@1.16.1"
+    ],
+    "files": [
+      "binding.gyp",
+      "index.js",
+      "stub.c"
+    ],
+    "hashes": [
+      "288f26c2eadcb1a7923fe376d16f5404216cce15d9fc162a4a78574dc7df399a",
+      "ef641e956f91d501b748085996303c96a64d67f63bfeef0dda175e5aa19cca90",
+      "5926b86b642e00672252953eb30d8f75cfb7797fe3118bd6fa2cfbee92905d61",
+      "ceff7c51d70832c3ec8dd2744b606a23b3c924ef664ae23439b9b742ea154108",
+      "da39146ef451d1b174a24d00b1e2a45cd38d54e849737f8f35333dcb22175707"
+    ],
+    "domains": [
+      "api.github.com",
+      "github.com"
+    ],
+    "urls": [
+      "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/"
+    ],
+    "ips": [],
+    "process_patterns": [
+      "node-gyp rebuild",
+      "node index.js",
+      "Runner.Worker",
+      "/proc/{pid}/mem",
+      "gh auth token",
+      "sudo python3"
+    ],
+    "network_patterns": [
+      "thebeautifulmarchoftime",
+      "IfYouInvalidateThisTokenItWillNukeTheComputerOfTheOwner",
+      "Miasma - The Spreading Blight"
+    ]
+  },
+  "detection": {
+    "lockfile_hunts": [
+      "@vapi-ai/server-sdk@0.11.1",
+      "@vapi-ai/server-sdk@0.11.2",
+      "@vapi-ai/server-sdk@1.2.1",
+      "@vapi-ai/server-sdk@1.2.2",
+      "ai-sdk-ollama@0.13.1",
+      "ai-sdk-ollama@1.1.1",
+      "ai-sdk-ollama@2.2.1",
+      "ai-sdk-ollama@3.8.5",
+      "@evolvconsulting/evolv-coder-lite@1.2.0",
+      "@jagreehal/workflow@1.16.1"
+    ],
+    "filesystem_hunts": [
+      "binding.gyp",
+      "index.js",
+      "stub.c",
+      "globalThis.getBunPath",
+      "oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6"
+    ],
+    "process_hunts": [
+      "node-gyp rebuild",
+      "node index.js",
+      "Runner.Worker",
+      "/proc/{pid}/mem",
+      "gh auth token",
+      "sudo python3"
+    ],
+    "network_hunts": [
+      "api.github.com",
+      "github.com",
+      "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/",
+      "thebeautifulmarchoftime",
+      "IfYouInvalidateThisTokenItWillNukeTheComputerOfTheOwner",
+      "Miasma - The Spreading Blight"
+    ],
+    "ci_cd_hunts": [
+      "workflow references affected actions/packages",
+      "Runner.Worker memory access",
+      "unexpected Bun runtime download in CI"
+    ],
+    "registry_hunts": [
+      "@evolvconsulting/evolv-coder-lite",
+      "@jagreehal/workflow",
+      "@vapi-ai/server-sdk",
+      "ai-sdk-ollama",
+      "autotel",
+      "autotel-adapters",
+      "autotel-audit",
+      "autotel-aws",
+      "autotel-backends",
+      "autotel-cli",
+      "autotel-cloudflare",
+      "autotel-devtools",
+      "autotel-drizzle",
+      "autotel-edge",
+      "autotel-eventcatalog",
+      "autotel-hono",
+      "autotel-mcp",
+      "awaitly",
+      "awaitly-analyze",
+      "awaitly-libsql"
+    ]
+  },
+  "open_questions": [
+    "Public cleanup status and downstream victim count need direct confirmation before publication_state is raised above needs_review."
+  ],
+  "defender_takeaways": {
+    "detection": "Search lockfiles, workflow definitions, package caches, and runner telemetry for the incident-specific selectors in this folder.",
+    "hunting": "Prioritize CI runners and developer machines that resolved affected package versions or action tags during the reported window.",
+    "remediation": "Rebuild from clean dependencies, rotate reachable GitHub/npm/cloud credentials, and audit follow-on repository or package publishing activity.",
+    "prevention": "Pin GitHub Actions to immutable SHAs, enforce package cooldowns, and alert on unexpected Bun downloads, Runner.Worker memory reads, and package install hooks."
+  },
+  "remediation_gates": {
+    "containment_complete": [
+      "Block affected packages/actions and known exfiltration destinations.",
+      "Isolate matching runners or developer hosts."
+    ],
+    "eradication_complete": [
+      "Remove malicious versions/tags from internal mirrors and caches.",
+      "Rebuild affected environments from trusted baselines."
+    ],
+    "recovery_complete": [
+      "Rotate exposed credentials and verify no unauthorized repositories, packages, commits, workflows, or cloud sessions remain."
+    ],
+    "closure_required": [
+      "Document every matched selector and disposition unknown matches as false positive, potentially exposed, or confirmed compromise."
+    ]
+  }
+}
