@@ -1,0 +1,141 @@
+{
+  "schema_version": "3.0",
+  "event_id": "shai-hulululud-ai-scanner-disruption-package-2026-06-16",
+  "event_name": "shai_hulululud npm Package Uses Prompt Injection and Token Flooding to Disrupt AI Malware Scanners",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "Public evidence confirms the package identity, publication timestamp, and anti-analysis framing. The current evidence does not prove downstream credential theft or a second-stage payload.",
+  "attack_types": [
+    "npm",
+    "supply-chain",
+    "ai-scanner-anti-analysis",
+    "obfuscated-javascript",
+    "protestware-or-potentially-unwanted"
+  ],
+  "sources": {
+    "direct": [
+      "https://registry.npmjs.org/shai_hulululud",
+      "https://registry.npmjs.org/shai_hulululud/-/shai_hulululud-1.0.48596.tgz"
+    ],
+    "primary_research": [
+      "https://socket.dev/blog/npm-package-uses-prompt-injection-and-token-flooding-to-disrupt-ai-malware-scanners"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "npm"
+    ],
+    "registries": [
+      "npmjs.com"
+    ],
+    "packages": [
+      "shai_hulululud"
+    ],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [
+      "AI malware scanners",
+      "AI-assisted dependency review pipelines"
+    ],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-06-16T13:01:59Z",
+    "malicious_publish_time": "2026-06-16T13:01:59Z",
+    "discovery_time": "2026-06-16",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-06-16",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [
+      "shai_hulululud@1.0.48596",
+      "shai_hulululud-1.0.48596.tgz"
+    ],
+    "execution_trigger": "package inspection or JavaScript execution of index.js after install",
+    "payload_behavior": [
+      "Large JavaScript file dominated by repeated comment lines intended to flood or disrupt AI-assisted review",
+      "Obfuscated JavaScript appended near the end of the file",
+      "Contains eval() usage in the retrieved artifact"
+    ],
+    "provenance": {
+      "maintainer": "ptchli_knldg",
+      "tarball_sha256": "9dcce285116e31a5c8f8e3a4ed596a791e62c3e47185e4ee36c489422b1fbbbc",
+      "tarball_shasum": "8478bad8f0661d2a5ea65a8dc4bf86114f77d939",
+      "dist_integrity": "sha512-8+piWBAYXtsUv1+yZbTzMdM4HK9ENcW9BsywFThx3FzkQW8ngW2fH23k4SXKPSl9T4O86NAfH3aY++iPCsf0Ug=="
+    }
+  },
+  "iocs": {
+    "package_versions": [
+      "shai_hulululud@1.0.48596"
+    ],
+    "files": [
+      "shai_hulululud-1.0.48596.tgz",
+      "index.js"
+    ],
+    "hashes": [
+      "9dcce285116e31a5c8f8e3a4ed596a791e62c3e47185e4ee36c489422b1fbbbc",
+      "8478bad8f0661d2a5ea65a8dc4bf86114f77d939"
+    ],
+    "domains": [],
+    "urls": [
+      "https://registry.npmjs.org/shai_hulululud",
+      "https://registry.npmjs.org/shai_hulululud/-/shai_hulululud-1.0.48596.tgz",
+      "https://socket.dev/blog/npm-package-uses-prompt-injection-and-token-flooding-to-disrupt-ai-malware-scanners"
+    ],
+    "ips": [],
+    "process_patterns": [
+      "eval(",
+      "shai_hulululud"
+    ],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [
+      "shai_hulululud@1.0.48596"
+    ],
+    "filesystem_hunts": [
+      "shai_hulululud-1.0.48596.tgz",
+      "index.js"
+    ],
+    "process_hunts": [
+      "eval("
+    ],
+    "network_hunts": [],
+    "ci_cd_hunts": [],
+    "registry_hunts": [
+      "https://registry.npmjs.org/shai_hulululud"
+    ]
+  },
+  "open_questions": [
+    "Public reporting does not prove whether the package contains a functional second-stage payload beyond anti-analysis and obfuscation.",
+    "No public source reviewed here confirms package removal or additional related publisher artifacts.",
+    "Technique overlap with Mini Shai-Hulud, Miasma, and Hades is suggestive, but shared operator identity is not proven."
+  ],
+  "defender_takeaways": {
+    "detection": "Search dependency records, package caches, and artifact stores for the exact package name, version, tarball URL, and tarball hashes.",
+    "hunting": "Treat repositories or scanners that ingested the package as potentially disrupted and verify that human review, not only AI automation, assessed the artifact.",
+    "remediation": "Remove the package from any test mirrors or caches, block the exact package/version, and document whether review tooling crashed or skipped analysis.",
+    "prevention": "Require deterministic package quarantine and static artifact inspection for unusually large single-file packages with heavy repetition or obfuscation."
+  },
+  "remediation_gates": {
+    "containment_complete": [
+      "All internal mirrors, caches, and sandboxes block or quarantine shai_hulululud@1.0.48596."
+    ],
+    "eradication_complete": [
+      "The package no longer appears in package caches, lockfiles, or review queues."
+    ],
+    "recovery_complete": [
+      "Human review confirms no dependent automation silently skipped package analysis because of context flooding or safety-trigger handling."
+    ],
+    "closure_required": [
+      "Evidence shows the package was either never ingested or was removed from every affected scanning and repository environment."
+    ]
+  }
+}

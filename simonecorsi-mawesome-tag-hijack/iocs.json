@@ -133,19 +133,32 @@
   },
   "detection": {
     "lockfile_hunts": [
-      "Search workflow files, reusable workflows, and templates for simonecorsi/mawesome refs that still trust latest, v1, v2, or v2.2.0."
+      "simonecorsi/mawesome@latest",
+      "simonecorsi/mawesome@v1",
+      "simonecorsi/mawesome@v2",
+      "simonecorsi/mawesome@v2.2.0"
     ],
     "filesystem_hunts": [
-      "Search repositories, retained action caches, and exported telemetry for the affected commit SHA and the injected Bun/composite-action selectors."
+      "action.yml",
+      "index.js",
+      "e339407b8e34dc1540290d1d310bccafbc6028ca",
+      "4a665037e0619e2181c7cccc3291d75104175a92"
     ],
     "process_hunts": [
-      "Review runner telemetry for oven-sh/setup-bun followed by bun run against the action checkout path."
+      "oven-sh/setup-bun",
+      "bun run $GITHUB_ACTION_PATH/index.js",
+      "createCipheriv",
+      "createDecipheriv",
+      "pbkdf2Sync"
     ],
     "network_hunts": [
-      "Audit GitHub API follow-on activity and any cloud or Vault access reachable from affected workflows because the public analysis has not yet decoded a stable external exfiltration endpoint."
+      "api.github.com",
+      "github.com",
+      "X-GitHub-Api-Version"
     ],
     "ci_cd_hunts": [
-      "Enumerate workflow runs that resolved simonecorsi/mawesome mutable tags on or after the June 24, 2026 disclosure window."
+      "simonecorsi/mawesome",
+      "2026-06-24"
     ],
     "registry_hunts": []
   },

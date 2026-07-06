@@ -191,30 +191,68 @@
       "/tmp/p"
     ],
     "network_patterns": [
-      "GitHub GraphQL API exfiltration with victim token",
-      "Bun v1.3.13 download during install"
+      "api.github.com/graphql",
+      "github.com/oven-sh/bun/releases/download/bun-v1.3.13"
     ]
   },
   "detection": {
     "lockfile_hunts": [
-      "Search lockfiles and package cache records for the listed malicious package versions, including the three follow-on packages reported after the initial Leo Platform burst."
+      "leo-logger@1.0.8",
+      "leo-sdk@6.0.19",
+      "leo-aws@2.0.4",
+      "leo-config@1.1.1",
+      "leo-streams@2.0.1",
+      "serverless-leo@3.0.14",
+      "leo-connector-mongo@3.0.8",
+      "serverless-convention@2.0.4",
+      "rstreams-metrics@2.0.2",
+      "leo-connector-elasticsearch@2.0.6",
+      "leo-auth@4.0.6",
+      "leo-cache@1.0.2",
+      "leo-cli@3.0.3",
+      "hexo-deployer-wrangler@1.0.4",
+      "hexo-shoka-swiper@0.1.10",
+      "leo-cron@2.0.2",
+      "leo-connector-redshift@3.0.6",
+      "leo-connector-oracle@2.0.1",
+      "prism-silq@1.0.1",
+      "rstreams-shard-util@1.0.1",
+      "leo-connector-mysql@3.0.3",
+      "leo-cdk-lib@0.0.2",
+      "solo-nav@1.0.1"
     ],
     "filesystem_hunts": [
-      "Look for binding.gyp plus payload selectors such as Runner.Worker or bypass_2fa in package caches and extracted tarballs."
+      "binding.gyp",
+      "index.js",
+      "stub.c",
+      "Runner.Worker",
+      "bypass_2fa"
     ],
     "process_hunts": [
-      "Check endpoint or CI telemetry for Bun execution, Runner.Worker memory access, or node-gyp shell expansion during dependency install."
+      "Runner.Worker",
+      "/proc/{pid}/mem",
+      "bypass_2fa",
+      "ALL=(ALL) NOPASSWD:ALL",
+      "/tmp/p"
     ],
     "network_hunts": [
       "api.github.com",
       "github.com",
-      "Review outbound connections to GitHub GraphQL and Bun release URLs during npm install windows."
+      "https://api.github.com/graphql",
+      "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/"
     ],
     "ci_cd_hunts": [
-      "Audit GitHub Actions logs and workflow diffs for post-install secret theft and workflow write activity."
+      "GITHUB_TOKEN",
+      "GitHub Actions",
+      "node-gyp"
     ],
     "registry_hunts": [
-      "Confirm whether internal mirrors cached the malicious package versions before cleanup."
+      "leo-logger",
+      "leo-sdk",
+      "solo-nav",
+      "hexo-deployer-wrangler",
+      "hexo-shoka-swiper",
+      "prism-silq"
     ]
   },
   "open_questions": [

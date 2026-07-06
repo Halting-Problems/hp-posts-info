@@ -1,0 +1,5 @@
+installed_extensions:
+- vscode/exargd/vsblack@0.0.1
+- downloaded file exargd.vsblack-0.0.1.vsix
+- loader asset snqpkebiwrxmoivl.wasm
+- publisher trace zaitoona43 -> https://github.com/zaitoona43

@@ -1,0 +1,122 @@
+{
+  "schema_version": "3.0",
+  "event_id": "mastra-npm-supply-chain-attack-2026-06-17",
+  "event_name": "Mastra npm Supply Chain Attack",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "npm",
+    "supply-chain",
+    "typosquatting",
+    "postinstall",
+    "credential-theft",
+    "mastra"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://www.stepsecurity.io/blog/mastra-npm-packages-compromised-using-easy-day-js",
+      "https://snyk.io/blog/a-forgotten-contributor-account-compromised-the-entire-mastra-npm-package-scope/",
+      "https://github.com/mastra-ai/mastra/issues/18045",
+      "https://registry.npmjs.org/@mastra%2Fcore"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "npm"
+    ],
+    "registries": [
+      "npmjs.com"
+    ],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": [
+      "npm tokens",
+      "GitHub tokens",
+      "cloud credentials",
+      "developer workstation secrets",
+      "CI/CD secrets"
+    ]
+  },
+  "timeline": {
+    "first_seen": "2026-06-17T00:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-06-17",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-06-17",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "package installation",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [
+      "easy-day-js@1.11.22",
+      "easy-day-js@1.11.21",
+      "@mastra/schema-compat@1.2.12",
+      "@mastra/core@1.42.1",
+      "@mastra/memory@1.20.4",
+      "@mastra/server@2.1.1",
+      "@mastra/loggers@1.1.3",
+      "@mastra/observability@1.14.2",
+      "@mastra/deployer@1.42.1"
+    ],
+    "files": [
+      "setup.cjs",
+      "yarn.lock",
+      "bun.lock"
+    ],
+    "hashes": [
+      "221c45a790dec2a296af57969e1165a16f8f49733aeab64c0bbd768d9943badf"
+    ],
+    "domains": [],
+    "urls": [
+      "https://23.254.164.92:8000/update/49890878"
+    ],
+    "ips": [
+      "23.254.164.92",
+      "23.254.164.123"
+    ],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [
+      "setup.cjs",
+      "yarn.lock",
+      "bun.lock",
+      "23.254.164.92",
+      "23.254.164.123"
+    ],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

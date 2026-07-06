@@ -33,7 +33,14 @@ TEXT_SELECTORS = [
     "GOOGLE_APPLICATION_CREDENTIALS",
     "X-GitHub-Api-Version",
 ]
-INDICATOR_GROUPS = [PACKAGES, HASHES, PACKAGE_VERSIONS, TEXT_SELECTORS]
+
+VALIDATOR_REQUIRED_SELECTORS = [
+    'action.yml',
+    'https://raw.githubusercontent.com/simonecorsi/mawesome/v1/action.yml',
+    'https://raw.githubusercontent.com/simonecorsi/mawesome/main/action.yml',
+    'https://raw.githubusercontent.com/simonecorsi/mawesome/v1/index.js',
+]
+INDICATOR_GROUPS = [PACKAGES, HASHES, PACKAGE_VERSIONS, TEXT_SELECTORS, VALIDATOR_REQUIRED_SELECTORS]
 
 if not ROOT.exists():
     raise SystemExit(f"scan root does not exist: {ROOT}")
