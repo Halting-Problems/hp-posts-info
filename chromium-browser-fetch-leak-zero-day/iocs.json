@@ -1,0 +1,87 @@
+{
+  "schema_version": "3.0",
+  "event_id": "chromium-browser-fetch-leak-zero-day-2026-05-26",
+  "event_name": "Chromium Background Fetch Zero-Day: Persistent Service Worker Exposure",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "google-chrome",
+    "chromium",
+    "zero-day",
+    "security-bypass",
+    "cross-site-scripting"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://arstechnica.com/security/2026/05/google-publishes-exploit-code-threatening-millions-of-chromium-users/",
+      "https://chromium.googlesource.com/chromium/src/+/2976e22e8416cf3a341294855047bb6280ced6b2",
+      "https://github.com/brave/brave-core/pull/36655",
+      "https://chromereleases.googleblog.com/2026/06/stable-channel-update-for-desktop.html",
+      "https://chromereleases.googleblog.com/"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-05-26T00:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-05-26",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-05-26",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "unknown",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [
+      "2976e22e8416cf3a341294855047bb6280ced6b2"
+    ],
+    "domains": [],
+    "urls": [],
+    "ips": [],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

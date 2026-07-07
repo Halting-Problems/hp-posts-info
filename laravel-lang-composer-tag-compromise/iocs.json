@@ -1,0 +1,100 @@
+{
+  "schema_version": "3.0",
+  "event_id": "laravel-lang-composer-tag-compromise-2026-05-24",
+  "event_name": "Laravel-Lang Composer Tag Rewrite RCE Compromise",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "supply-chain",
+    "packagist",
+    "composer",
+    "laravel",
+    "credential-theft"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://www.stepsecurity.io/blog/laravel-lang-supply-chain-attack",
+      "https://socket.dev/blog/laravel-lang-compromise",
+      "https://github.com/Laravel-Lang/http-statuses/issues/277",
+      "https://blog.packagist.com/an-update-on-composer-packagist-supply-chain-security/",
+      "https://repo.packagist.org/p2/laravel-lang/http-statuses.json"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-05-22T22:32:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-05-24",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-05-24",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "unknown",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [
+      "2f0ee073c6f29d66188a845592029c9b52528f04"
+    ],
+    "domains": [
+      "helpers.php",
+      "autoload.files",
+      "flipboxstudio.info",
+      "autoload.php"
+    ],
+    "urls": [
+      "https://flipboxstudio.info/payload",
+      "https://flipboxstudio.info/exfil"
+    ],
+    "ips": [],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [
+      "helpers.php",
+      "autoload.files",
+      "flipboxstudio.info",
+      "autoload.php"
+    ],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

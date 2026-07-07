@@ -1,0 +1,92 @@
+{
+  "schema_version": "3.0",
+  "event_id": "litellm-pypi-hijacking-2026-03-24",
+  "event_name": "LiteLLM Python SDK PyPI Hijacking & Cascading Trust Failure",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "pypi",
+    "package-compromise",
+    "supply-chain",
+    "credential-theft",
+    "teampcp",
+    "cascading-trust"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://blog.litellm.ai/security/postmortem-litellm-pypi-hijacking",
+      "https://www.datadoghq.com/blog/datadog-security-research-pth-backdoors-pypi/",
+      "https://www.zscaler.com/blogs/security-research/trivy-litellm-cascade-malicious-pypi-packages"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [
+      "pypi.org"
+    ],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-03-19T08:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-03-24",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-03-24",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "package installation",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [],
+    "domains": [
+      "www.litellm.ai"
+    ],
+    "urls": [
+      "https://www.litellm.ai"
+    ],
+    "ips": [],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [
+      "www.litellm.ai"
+    ],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

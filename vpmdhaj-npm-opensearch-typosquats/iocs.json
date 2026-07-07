@@ -1,0 +1,97 @@
+{
+  "schema_version": "3.0",
+  "event_id": "vpmdhaj-npm-opensearch-typosquats-2026-05-28",
+  "event_name": "vpmdhaj npm OpenSearch Typosquats Steal Cloud and CI/CD Secrets",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "npm",
+    "typosquatting",
+    "supply-chain",
+    "credential-theft",
+    "ci-cd"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://www.microsoft.com/en-us/security/blog/2026/05/28/typosquatted-npm-packages-used-steal-cloud-ci-cd-secrets/",
+      "https://www.npmjs.com/~vpmdhaj",
+      "https://www.npmjs.com/package/@vpmdhaj/elastic-helper",
+      "https://docs.npmjs.com/cli/v11/using-npm/scripts",
+      "https://bun.com/docs/runtime",
+      "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [
+      "npmjs.com"
+    ],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-05-28T00:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-05-28",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-05-28",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "package installation",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [
+      "a39155771e93e65b05195c8a705dfc03aa85c2ec682505f0d557233a8f275145",
+      "9d962ed605bb4a39991f8fab9b1d2e423ea4d545f23fd44d9473a6423d94bbf"
+    ],
+    "domains": [
+      "aab.sportsontheweb.net",
+      "www.sportsontheweb.net"
+    ],
+    "urls": [],
+    "ips": [],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [
+      "aab.sportsontheweb.net",
+      "www.sportsontheweb.net"
+    ],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

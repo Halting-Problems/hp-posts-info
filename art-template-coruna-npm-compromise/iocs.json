@@ -1,0 +1,111 @@
+{
+  "schema_version": "3.0",
+  "event_id": "art-template-coruna-npm-compromise-2026-05-24",
+  "event_name": "art-template npm Coruna Browser Exploit Compromise",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "supply-chain",
+    "npm",
+    "browser",
+    "javascript",
+    "exploit-delivery"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://socket.dev/blog/coruna-respawned-compromised-art-template-npm-package",
+      "https://safedep.io/art-template-npm-supply-chain-compromise/",
+      "https://registry.npmjs.org/art-template",
+      "https://github.com/goofychris/art-template/issues/665",
+      "https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [
+      "npmjs.com"
+    ],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-05-24T00:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-05-24",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-05-24",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "package installation",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [
+      "f31bdd069fe7966ae11be1f78ee5dd44445938856dd1df12379e0e84a6851f5c",
+      "8064d4e0322f069b3dba13e7957ff0ca7dab7984",
+      "6e79ae622b7ef30f31fdbcc2dc65339e"
+    ],
+    "domains": [
+      "git.youzzjizz.com",
+      "v3.jiathis.com",
+      "utaq.cfww.shop",
+      "cfww.shop",
+      "l1ewsu3yjkqeroy.xyz",
+      "hm.baidu.com"
+    ],
+    "urls": [
+      "https://git.youzzjizz.com/git.js",
+      "https://v3.jiathis.com/code/jia.js?uid=artemplate",
+      "https://v3.jiathis.com/code/art.js",
+      "https://utaq.cfww.shop/gooll/49554fde7424c31c.js",
+      "https://l1ewsu3yjkqeroy.xyz/api/ip-sync/sync"
+    ],
+    "ips": [],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [
+      "git.youzzjizz.com",
+      "v3.jiathis.com",
+      "utaq.cfww.shop",
+      "cfww.shop",
+      "l1ewsu3yjkqeroy.xyz",
+      "hm.baidu.com"
+    ],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

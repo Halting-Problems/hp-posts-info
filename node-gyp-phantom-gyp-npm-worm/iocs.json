@@ -1,0 +1,90 @@
+{
+  "schema_version": "3.0",
+  "event_id": "node-gyp-phantom-gyp-npm-worm-2026-06-05",
+  "event_name": "Phantom Gyp npm Worm Abuses node-gyp Build Hooks",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "npm",
+    "node-gyp",
+    "supply-chain",
+    "credential-theft",
+    "ci-cd"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://snyk.io/blog/node-gyp-supply-chain-compromise-self-propagating-npm-worm-binding-gyp/",
+      "https://security.snyk.io/node-gyp-supply-chain-compromise-june-2026",
+      "https://www.npmjs.com/",
+      "https://github.com/nodejs/node-gyp"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [
+      "npmjs.com"
+    ],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-06-05T00:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-06-05",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-06-05",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "package installation",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [],
+    "domains": [
+      "binding.gyp"
+    ],
+    "urls": [],
+    "ips": [],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [
+      "binding.gyp"
+    ],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "schema_version": "3.0",
+  "event_id": "mini-shai-hulud-worm-2026-05-23",
+  "event_name": "Mini Shai-Hulud Self-Propagating Software Supply Chain Worm",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "npm",
+    "pypi",
+    "supply-chain",
+    "worm",
+    "teampcp",
+    "slsa",
+    "credentials-theft"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://tanstack.com/blog/postmortem-cve-2026-45321",
+      "https://www.sentinelone.com/blog/anatomy-of-cve-2026-45321",
+      "https://www.endorlabs.com/blog/mini-shai-hulud-npm-worm-hits-sap-developer-packages",
+      "https://www.wiz.io/blog/sigstore-provenance-forgery-and-oidc-abuse",
+      "https://www.tenable.com/blog/sigstore-provenance-forgery-and-oidc-abuse",
+      "https://www.microsoft.com/en-us/security/blog/hunting-the-shai-hulud-supply-chain-worm",
+      "https://www.aikido.dev/blog/the-may-2026-supply-chain-wave",
+      "https://orca.security/resources/blog/atool-antv-npm-supply-chain-attack/",
+      "https://unit42.paloaltonetworks.com/shai-hulud-here-we-go-again/",
+      "https://www.chainguard.dev/unchained/atool-antv-npm-supply-chain",
+      "https://www.stepsecurity.io/blog/atool-antv-npm-supply-chain-attack",
+      "https://cremit.io/blog/antv-npm-supply-chain/",
+      "https://research.jfrog.com/post/shai-hulud-here-we-go-again/",
+      "https://research.jfrog.com/post/shai-hulud-here-we-go-again-may19/"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [
+      "npmjs.com",
+      "pypi.org"
+    ],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-04-20T00:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-05-23",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-05-23",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "package installation",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [
+      "ab4fcadaec49c03278063dd269ea5eef82d24f2124a8e15d7b90f2fa8601266c"
+    ],
+    "domains": [
+      "transformers.pyz",
+      "filev2.getsession.org",
+      "api.masscan.cloud",
+      "git-tanstack.com",
+      "t.m-kosche.com",
+      "www.endorlabs.com",
+      "www.microsoft.com",
+      "www.sentinelone.com"
+    ],
+    "urls": [
+      "https://filev2.getsession.org/upload",
+      "https://api.masscan.cloud/ping",
+      "https://www.endorlabs.com/blog/mini-shai-hulud-npm-worm-hits-sap-developer-packages",
+      "https://tanstack.com/blog/postmortem-cve-2026-45321",
+      "https://www.microsoft.com/en-us/security/blog/hunting-the-shai-hulud-supply-chain-worm",
+      "https://www.sentinelone.com/blog/anatomy-of-cve-2026-45321"
+    ],
+    "ips": [],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [
+      "transformers.pyz",
+      "filev2.getsession.org",
+      "api.masscan.cloud",
+      "git-tanstack.com",
+      "t.m-kosche.com",
+      "www.endorlabs.com",
+      "www.microsoft.com",
+      "www.sentinelone.com"
+    ],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

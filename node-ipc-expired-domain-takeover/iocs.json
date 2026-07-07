@@ -1,0 +1,92 @@
+{
+  "schema_version": "3.0",
+  "event_id": "node-ipc-expired-domain-takeover-2026-05-14",
+  "event_name": "Node-IPC Expired Domain & Maintainer Account Hijacking",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "package-compromise",
+    "maintainer-hijacking",
+    "supply-chain",
+    "domain-takeover",
+    "dns-exfiltration",
+    "credential-theft"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://snyk.io/vuln/SNYK-JS-NODEIPC-2425026",
+      "https://www.csoonline.com/article/3653995/node-ipc-expired-domain-takeover-infects-thousands-of-projects.html",
+      "https://cybersecuritynews.com/node-ipc-dns-exfiltration-technical-analysis/",
+      "https://daily.dev/blog/node-ipc-expired-domain-security-postmortem",
+      "https://landh.tech/blog/2026/node-ipc-expired-domain-anomaly-telemetry/"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2025-01-15T00:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-05-14",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-05-14",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "unknown",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [],
+    "domains": [
+      "snyk.io"
+    ],
+    "urls": [
+      "https://snyk.io"
+    ],
+    "ips": [],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [
+      "snyk.io"
+    ],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

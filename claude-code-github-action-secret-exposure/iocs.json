@@ -1,0 +1,84 @@
+{
+  "schema_version": "3.0",
+  "event_id": "claude-code-github-action-secret-exposure-2026-06-05",
+  "event_name": "Claude Code GitHub Action Secret Exposure",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "github-actions",
+    "ci-cd",
+    "ai-assistants",
+    "credential-theft",
+    "workflow-secrets"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://www.microsoft.com/en-us/security/blog/2026/06/05/securing-ci-cd-in-an-agentic-world-claude-code-github-action-case/",
+      "https://github.com/anthropics/claude-code/releases/tag/v2.1.128"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [
+      "GitHub Actions"
+    ],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-05-04T23:01:47Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-06-05",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-06-05",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "unknown",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [],
+    "domains": [],
+    "urls": [],
+    "ips": [],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

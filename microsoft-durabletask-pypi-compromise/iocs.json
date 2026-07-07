@@ -1,0 +1,92 @@
+{
+  "schema_version": "3.0",
+  "event_id": "microsoft-durabletask-pypi-compromise-2026-05-19",
+  "event_name": "Microsoft DurableTask Python SDK PyPI Hijacking",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "pypi",
+    "package-compromise",
+    "supply-chain",
+    "credential-theft",
+    "microsoft",
+    "teampcp"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://www.stepsecurity.io/blog/durabletask-compromise-analysis",
+      "https://snyk.io/blog/pypi-threat-vectors-durabletask-hijack",
+      "https://jfrog.com/blog/rope-pyz-malicious-injection-pypi-compromise"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [
+      "pypi.org"
+    ],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-05-19T06:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-05-19",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-05-19",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "package installation",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [],
+    "domains": [
+      "www.stepsecurity.io"
+    ],
+    "urls": [
+      "https://www.stepsecurity.io"
+    ],
+    "ips": [],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [
+      "www.stepsecurity.io"
+    ],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "schema_version": "3.0",
+  "event_id": "spellcheckpy-typosquatting-rat-2026-01-23",
+  "event_name": "PyPI spellcheckpy Typosquatting RAT Campaign",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "pypi",
+    "typosquatting",
+    "rat",
+    "malware"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://www.aikido.dev/blog/malicious-pypi-packages-spellcheckpy-and-spellcheckerpy-deliver-python-rat",
+      "https://helixguard.ai/blog/malicious-spellcheckers-2025-11-19/",
+      "https://www.halcyon.ai/blog/cloudzy-iranian-linked-c2p-infrastructure-ransomware",
+      "https://thehackernews.com/2025/11/malicious-pypi-packages-spellcheckpy-typosquat.html"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [
+      "pypi.org"
+    ],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2025-10-28T00:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-01-23",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-01-23",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "package installation",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [],
+    "domains": [
+      "www.aikido.dev",
+      "update1.php",
+      "history.php"
+    ],
+    "urls": [
+      "https://www.aikido.dev/blog/malicious-pypi-packages-spellcheckpy-and-spellcheckerpy-deliver-python-rat",
+      "https://helixguard.ai/blog/malicious-spellcheckers-2025-11-19/",
+      "https://updatenet.work/update1.php",
+      "https://updatenet.work/settings/history.php"
+    ],
+    "ips": [],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [
+      "www.aikido.dev",
+      "update1.php",
+      "history.php"
+    ],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "schema_version": "3.0",
+  "event_id": "packagist-github-postinstall-hook-campaign-2026-05-24",
+  "event_name": "Packagist GitHub Postinstall Hook Malware Campaign",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "supply-chain",
+    "packagist",
+    "github",
+    "npm",
+    "postinstall"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://socket.dev/blog/malicious-postinstall-hook-found-across-700-github-repos",
+      "https://blog.packagist.com/malicious-package-removal-notification/",
+      "https://github.com/advisories/GHSA-m8v4-5hj4-m9f2",
+      "https://gridinsoft.com/blogs/systemd-network-helper-reverse-engineering/",
+      "https://daily.dev/blog/securing-composer-and-npm-hybrid-workflows"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [
+      "npmjs.com"
+    ],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-05-24T00:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-05-24",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-05-24",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "package installation",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [],
+    "domains": [],
+    "urls": [
+      "https://github.com/parikhpreyash4/systemd-network-helper-aa5c751f/releases/latest/download/gvfsd-network"
+    ],
+    "ips": [],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

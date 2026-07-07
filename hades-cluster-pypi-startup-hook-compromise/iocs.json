@@ -1,0 +1,99 @@
+{
+  "schema_version": "3.0",
+  "event_id": "hades-cluster-pypi-startup-hook-compromise-2026-06-07",
+  "event_name": "Hades Cluster PyPI Worm Abuses Python Startup Hooks",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "pypi",
+    "startup-hook",
+    "supply-chain",
+    "credential-theft",
+    "hades-cluster"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://socket.dev/blog/shai-hulud-descends-to-hades-miasma-pypi-wave",
+      "https://socket.dev/blog/mini-shai-hulud-miasma-and-hades-worms-target-bioinformatics-and-mcp-developers-via-malicious",
+      "https://www.stepsecurity.io/blog/the-hades-campaign-pypi-packages",
+      "https://pypi.org/simple/mflux-streamlit/",
+      "https://pypi.org/simple/mrbios/"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [
+      "pypi.org"
+    ],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-06-07T00:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-06-07",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-06-07",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "package installation",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [
+      "dc48b09b2a5954f7ff79ab8a2fd80202bd3b59c08c7cdbc6025aa923cb4c0efe",
+      "e1342a80d4b5e83d2c7c22e1e0aaa95f2d88e3dbf0d853a4994b180c93a4b17d",
+      "c539766062555d47716f8432e73adbe3a0c0c954a0b6c4005017a668975e275c",
+      "6d332f814f15f19758d65026bbfd0a8c49671b319ec77b8fa1b27fc48afff7d9",
+      "6506d31707a39949f89534bf9705bcf889f1ecae3dbc6f4ff88d67a8be3d01b2"
+    ],
+    "domains": [
+      "setup.pth",
+      "abi3.so"
+    ],
+    "urls": [],
+    "ips": [],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [
+      "setup.pth",
+      "abi3.so"
+    ],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

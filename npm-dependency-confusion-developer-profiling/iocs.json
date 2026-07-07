@@ -1,0 +1,87 @@
+{
+  "schema_version": "3.0",
+  "event_id": "npm-dependency-confusion-developer-profiling-2026-05-29",
+  "event_name": "Microsoft-tracked npm dependency-confusion developer-profiling campaign",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "npm",
+    "dependency-confusion",
+    "supply-chain",
+    "ci-cd",
+    "developer-profiling",
+    "credential-theft"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://www.microsoft.com/en-us/security/blog/2026/05/29/33-malicious-npm-packages-abuse-dependency-confusion-profile-developer-environments/",
+      "https://registry.npmjs.org/@cloudplatform-single-spa%2flogaas",
+      "https://registry.npmjs.org/@capibar.chat%2fui-kit",
+      "https://registry.npmjs.org/@sber-ecom-core%2fsberpay-widget"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [
+      "npmjs.com"
+    ],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-05-29T00:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-05-29",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-05-29",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "package installation",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [],
+    "domains": [],
+    "urls": [],
+    "ips": [],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

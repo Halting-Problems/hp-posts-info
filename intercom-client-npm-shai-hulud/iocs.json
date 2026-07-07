@@ -1,0 +1,102 @@
+{
+  "schema_version": "3.0",
+  "event_id": "intercom-client-npm-shai-hulud-2026-04-30",
+  "event_name": "intercom-client npm Mini Shai-Hulud Compromise",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "npm",
+    "package-compromise",
+    "supply-chain",
+    "credential-theft",
+    "shai-hulud"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://github.com/intercom/intercom-node/security/advisories/GHSA-54pg-9963-v8vg",
+      "https://www.intercomstatus.com/us-hosting/incidents/01KQFN6VS6ARP1XBR1K1SBYY59",
+      "https://registry.npmjs.org/intercom-client",
+      "https://www.stepsecurity.io/blog/shai-hulud-worm-pivots-to-multi-cloud-intercom-client-hijacked",
+      "https://socket.dev/blog/intercom-s-npm-package-compromised-in-supply-chain-attack"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [
+      "npmjs.com"
+    ],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-04-30T14:41:04Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-04-30",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-04-30",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "package installation",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [
+      "5f748fbc89cde66abefa826439c765a0081a027792e9da8d80fbf23571311622",
+      "fe64699649591948d6f960705caac86fe99600bf76e3eae29b4517705a58f0e2",
+      "5ae8b2343e97cc3b2c945ec34318b63f27fa2db1e3d8fbaa78c298aa63db52ed"
+    ],
+    "domains": [
+      "api.github.com",
+      "metadata.google.internal"
+    ],
+    "urls": [
+      "https://github.com/oven-sh/bun/releases/download/bun-v1.3.13/"
+    ],
+    "ips": [
+      "169.254.169.254"
+    ],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [
+      "api.github.com",
+      "metadata.google.internal",
+      "169.254.169.254"
+    ],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

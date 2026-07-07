@@ -1,0 +1,103 @@
+{
+  "schema_version": "3.0",
+  "event_id": "tanstack-pipeline-poisoning-2026-05-11",
+  "event_name": "TanStack CI/CD Release Pipeline Poisoning",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "npm",
+    "supply-chain",
+    "compromise",
+    "github-actions",
+    "oidc",
+    "teampcp"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://tanstack.com/blog/tanstack-pipeline-poisoning-security-postmortem",
+      "https://github.com/advisories/GHSA-g7cv-rxg3-hmpx",
+      "https://snyk.io/blog/tanstack-pipeline-poisoning-pwn-request-attack",
+      "https://www.stepsecurity.io/blog/tanstack-pipeline-poisoning-investigation"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [
+      "npmjs.com"
+    ],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [
+      "GitHub Actions"
+    ],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-05-11T19:20:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-05-11",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-05-11",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "package installation",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [
+      "ab4fcadaec49c03278063dd269ea5eef82d24f2124a8e15d7b90f2fa8601266c"
+    ],
+    "domains": [
+      "git-tanstack.com",
+      "tanstack.com",
+      "snyk.io"
+    ],
+    "urls": [
+      "https://git-tanstack.com",
+      "https://tanstack.com",
+      "https://snyk.io"
+    ],
+    "ips": [],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [
+      "git-tanstack.com",
+      "tanstack.com",
+      "snyk.io"
+    ],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}

@@ -1,0 +1,9 @@
+hunts:
+  - id: "sicoob-sdk-nuget-certificate-exfiltration-hunt-1"
+    title: "local repository and exported telemetry scope"
+    question: "Does the telemetry scope contain patterns associated with Sicoob.Sdk NuGet Certificate Exfiltration?"
+    telemetry:
+      family: "file"
+      collection_context: "host filesystem or log export"
+    positive_signal: "Indicators of compromise matched in telemetry: local repository and exported telemetry scope"
+    script_path: "scripts/local_repository_and_exported_telemetry_scope.py"

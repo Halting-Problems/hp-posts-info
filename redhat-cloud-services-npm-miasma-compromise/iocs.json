@@ -1,0 +1,98 @@
+{
+  "schema_version": "3.0",
+  "event_id": "redhat-cloud-services-npm-miasma-compromise-2026-06-02",
+  "event_name": "Red Hat Cloud Services npm Trusted-Publishing Compromise",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "medium",
+  "confidence_reason": "",
+  "attack_types": [
+    "npm",
+    "redhat",
+    "supply-chain",
+    "ci-cd",
+    "oidc",
+    "credential-theft",
+    "mini-shai-hulud"
+  ],
+  "sources": {
+    "direct": [],
+    "primary_research": [
+      "https://www.stepsecurity.io/blog/multiple-redhat-cloud-services-npm-packages-compromised",
+      "https://www.ox.security/blog/new-npm-supply-chain-attack-redhat-cloud-services-compromised",
+      "https://www.mend.io/blog/miasma-malware-analysis-a-deep-dive-into-the-red-hat-npm-supply-chain-attack/",
+      "https://www.bleepingcomputer.com/news/security/red-hat-npm-packages-compromised-to-steal-developer-credentials/"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [],
+    "registries": [
+      "npmjs.com"
+    ],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": []
+  },
+  "timeline": {
+    "first_seen": "2026-06-02T00:00:00Z",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-06-02",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-06-02",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "package installation",
+    "payload_behavior": [],
+    "provenance": {}
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [],
+    "domains": [
+      "registry.npmjs.org",
+      "api.github.com",
+      "github.com"
+    ],
+    "urls": [
+      "https://github.com/RedHatInsights/javascript-clients"
+    ],
+    "ips": [],
+    "process_patterns": [],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [],
+    "process_hunts": [],
+    "network_hunts": [
+      "registry.npmjs.org",
+      "api.github.com",
+      "github.com"
+    ],
+    "ci_cd_hunts": [],
+    "registry_hunts": []
+  },
+  "open_questions": [],
+  "defender_takeaways": {
+    "detection": "",
+    "hunting": "",
+    "remediation": "",
+    "prevention": ""
+  },
+  "remediation_gates": {
+    "containment_complete": [],
+    "eradication_complete": [],
+    "recovery_complete": [],
+    "closure_required": []
+  }
+}
