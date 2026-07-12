@@ -1,0 +1,14 @@
+{
+  "task_id": "atomic-arch-aur-compromise-21-publishability-gate",
+  "source_version_hash": "02100f03b897643d15fc4c238b0d4eaa547fa47f81cba444b7403930ea75f23a",
+  "completed_at": "2026-07-12T20:03:30Z",
+  "decision": "publish_ready",
+  "blocking_findings": [],
+  "warnings": [],
+  "evidence": [
+    "Agency reviews complete",
+    "focused and central tests pass",
+    "Postgres dry-run and protected production import pass",
+    "canonical health, threat page, search, feed, and raw script verified"
+  ]
+}

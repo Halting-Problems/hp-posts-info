@@ -1,0 +1,20 @@
+{
+  "task_id": "cavern-manticore-sysaid-supply-chain-19-production-verification",
+  "source_version_hash": "b82f961e8ba23d21d3a13b2f3a115c16ee93c4811af23e9aac1648295abe3bf2",
+  "completed_at": "2026-07-12T20:03:30Z",
+  "decision": "pass",
+  "blocking_findings": [],
+  "warnings": [],
+  "checks": {
+    "canonical_health": 200,
+    "canonical_data_source": "primary",
+    "incident_count": 115,
+    "source_document_count": 472,
+    "script_count": 126,
+    "threat_page": 200,
+    "search_api": 200,
+    "search_contains_slug": true,
+    "feed_contains_entry": true,
+    "raw_script": 200
+  }
+}

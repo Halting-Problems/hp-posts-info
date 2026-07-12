@@ -1,0 +1,14 @@
+{
+  "task_id": "cavern-manticore-sysaid-supply-chain-20-publishability-gate",
+  "source_version_hash": "b82f961e8ba23d21d3a13b2f3a115c16ee93c4811af23e9aac1648295abe3bf2",
+  "completed_at": "2026-07-12T20:03:30Z",
+  "decision": "publish_ready",
+  "blocking_findings": [],
+  "warnings": [],
+  "evidence": [
+    "Agency reviews complete",
+    "focused and central tests pass",
+    "Postgres dry-run and protected production import pass",
+    "canonical health, threat page, search, feed, and raw script verified"
+  ]
+}

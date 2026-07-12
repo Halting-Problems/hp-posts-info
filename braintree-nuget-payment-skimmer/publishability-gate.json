@@ -1,0 +1,14 @@
+{
+  "task_id": "braintree-nuget-payment-skimmer-26-publishability-gate",
+  "source_version_hash": "8f18e95856959d9bae5e7d141a25f33f7a9914cfc56946feed6e8116438fa273",
+  "completed_at": "2026-07-12T20:03:30Z",
+  "decision": "publish_ready",
+  "blocking_findings": [],
+  "warnings": [],
+  "evidence": [
+    "Agency reviews complete",
+    "focused and central tests pass",
+    "Postgres dry-run and protected production import pass",
+    "canonical health, threat page, search, feed, and raw script verified"
+  ]
+}

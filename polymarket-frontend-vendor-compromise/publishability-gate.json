@@ -1,0 +1,14 @@
+{
+  "task_id": "polymarket-frontend-vendor-compromise-22-publishability-gate",
+  "source_version_hash": "76f1fa81b67c3cd061183b9105048499483df463f9dca4774212cf2b09bbbc91",
+  "completed_at": "2026-07-12T20:03:30Z",
+  "decision": "publish_ready",
+  "blocking_findings": [],
+  "warnings": [],
+  "evidence": [
+    "Agency reviews complete",
+    "focused and central tests pass",
+    "Postgres dry-run and protected production import pass",
+    "canonical health, threat page, search, feed, and raw script verified"
+  ]
+}

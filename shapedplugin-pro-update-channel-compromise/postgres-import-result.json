@@ -1,0 +1,28 @@
+{
+  "task_id": "shapedplugin-pro-update-channel-compromise-19-postgres-import",
+  "source_version_hash": "655c906dad8a9f07ab560eae04ba399d9eb0505470ee3d807719893446545d82",
+  "completed_at": "2026-07-12T20:03:30Z",
+  "command": [
+    "pnpm",
+    "exec",
+    "tsx",
+    ".cache/import-selected-posts.ts",
+    "injective-labs-sdk-npm-compromise",
+    "braintree-nuget-payment-skimmer",
+    "paysafe-skrill-neteller-typosquats",
+    "klue-integration-oauth-compromise",
+    "shapedplugin-pro-update-channel-compromise",
+    "cavern-manticore-sysaid-supply-chain",
+    "polymarket-frontend-vendor-compromise",
+    "atomic-arch-aur-compromise",
+    "operation-muck-and-load-github-go",
+    "polinrider-cross-ecosystem-campaign"
+  ],
+  "exit_code": 0,
+  "transport": "protected production admin importer over Cloudflare Hyperdrive",
+  "result": {
+    "http_status": 200,
+    "success": true,
+    "slug": "shapedplugin-pro-update-channel-compromise"
+  }
+}

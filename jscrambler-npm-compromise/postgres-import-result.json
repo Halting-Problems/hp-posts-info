@@ -1,0 +1,19 @@
+{
+  "task_id": "jscrambler-npm-compromise-25-postgres-import",
+  "source_version_hash": "b95fa7d1724eea4471a54600fba1b6e0472eb3218a9b72cb34150f04c280f60f",
+  "completed_at": "2026-07-12T20:03:30Z",
+  "command": [
+    "pnpm",
+    "exec",
+    "tsx",
+    ".cache/import-selected-posts.ts",
+    "jscrambler-npm-compromise"
+  ],
+  "exit_code": 0,
+  "transport": "protected production admin importer over Cloudflare Hyperdrive",
+  "result": {
+    "http_status": 200,
+    "success": true,
+    "slug": "jscrambler-npm-compromise"
+  }
+}

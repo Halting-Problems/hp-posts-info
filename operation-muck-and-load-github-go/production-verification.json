@@ -1,0 +1,20 @@
+{
+  "task_id": "operation-muck-and-load-github-go-20-production-verification",
+  "source_version_hash": "b63d5e347fb102e2495b650618b1d8db56b0cee8c787a4a88fb438cf86971f8d",
+  "completed_at": "2026-07-12T20:03:30Z",
+  "decision": "pass",
+  "blocking_findings": [],
+  "warnings": [],
+  "checks": {
+    "canonical_health": 200,
+    "canonical_data_source": "primary",
+    "incident_count": 115,
+    "source_document_count": 472,
+    "script_count": 126,
+    "threat_page": 200,
+    "search_api": 200,
+    "search_contains_slug": true,
+    "feed_contains_entry": true,
+    "raw_script": 200
+  }
+}

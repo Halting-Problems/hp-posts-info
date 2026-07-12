@@ -1,0 +1,20 @@
+{
+  "task_id": "braintree-nuget-payment-skimmer-25-production-verification",
+  "source_version_hash": "8f18e95856959d9bae5e7d141a25f33f7a9914cfc56946feed6e8116438fa273",
+  "completed_at": "2026-07-12T20:03:30Z",
+  "decision": "pass",
+  "blocking_findings": [],
+  "warnings": [],
+  "checks": {
+    "canonical_health": 200,
+    "canonical_data_source": "primary",
+    "incident_count": 115,
+    "source_document_count": 472,
+    "script_count": 126,
+    "threat_page": 200,
+    "search_api": 200,
+    "search_contains_slug": true,
+    "feed_contains_entry": true,
+    "raw_script": 200
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "task_id": "jscrambler-npm-compromise-27-publishability-gate",
+  "source_version_hash": "b95fa7d1724eea4471a54600fba1b6e0472eb3218a9b72cb34150f04c280f60f",
+  "completed_at": "2026-07-12T20:03:30Z",
+  "decision": "publish_ready",
+  "blocking_findings": [],
+  "warnings": [],
+  "evidence": [
+    "Agency reviews complete",
+    "focused and central tests pass",
+    "Postgres dry-run and protected production import pass",
+    "canonical health, threat page, search, feed, and raw script verified"
+  ]
+}

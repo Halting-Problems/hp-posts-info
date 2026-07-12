@@ -1,0 +1,20 @@
+{
+  "task_id": "klue-integration-oauth-compromise-20-production-verification",
+  "source_version_hash": "81bcbf28a73b12946690622f57d2d8ebf4e7b96b0528e0171ca72c085d7ff56a",
+  "completed_at": "2026-07-12T20:03:30Z",
+  "decision": "pass",
+  "blocking_findings": [],
+  "warnings": [],
+  "checks": {
+    "canonical_health": 200,
+    "canonical_data_source": "primary",
+    "incident_count": 115,
+    "source_document_count": 472,
+    "script_count": 126,
+    "threat_page": 200,
+    "search_api": 200,
+    "search_contains_slug": true,
+    "feed_contains_entry": true,
+    "raw_script": 200
+  }
+}

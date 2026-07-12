@@ -1,0 +1,28 @@
+{
+  "task_id": "atomic-arch-aur-compromise-19-postgres-import",
+  "source_version_hash": "02100f03b897643d15fc4c238b0d4eaa547fa47f81cba444b7403930ea75f23a",
+  "completed_at": "2026-07-12T20:03:30Z",
+  "command": [
+    "pnpm",
+    "exec",
+    "tsx",
+    ".cache/import-selected-posts.ts",
+    "injective-labs-sdk-npm-compromise",
+    "braintree-nuget-payment-skimmer",
+    "paysafe-skrill-neteller-typosquats",
+    "klue-integration-oauth-compromise",
+    "shapedplugin-pro-update-channel-compromise",
+    "cavern-manticore-sysaid-supply-chain",
+    "polymarket-frontend-vendor-compromise",
+    "atomic-arch-aur-compromise",
+    "operation-muck-and-load-github-go",
+    "polinrider-cross-ecosystem-campaign"
+  ],
+  "exit_code": 0,
+  "transport": "protected production admin importer over Cloudflare Hyperdrive",
+  "result": {
+    "http_status": 200,
+    "success": true,
+    "slug": "atomic-arch-aur-compromise"
+  }
+}

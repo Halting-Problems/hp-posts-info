@@ -1,0 +1,14 @@
+{
+  "task_id": "paysafe-skrill-neteller-typosquats-26-publishability-gate",
+  "source_version_hash": "c15d69a0598709e7c636a596700c52d91720b6a5787d55c4e1b5db7cfa82aa9b",
+  "completed_at": "2026-07-12T20:03:30Z",
+  "decision": "publish_ready",
+  "blocking_findings": [],
+  "warnings": [],
+  "evidence": [
+    "Agency reviews complete",
+    "focused and central tests pass",
+    "Postgres dry-run and protected production import pass",
+    "canonical health, threat page, search, feed, and raw script verified"
+  ]
+}

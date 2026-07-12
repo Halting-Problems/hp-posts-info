@@ -1,0 +1,14 @@
+{
+  "task_id": "injective-labs-sdk-npm-compromise-25-publishability-gate",
+  "source_version_hash": "08206f3f73a03383897733c9b031a6dee027b2327b2d1b69e996f37c703841d3",
+  "completed_at": "2026-07-12T20:03:30Z",
+  "decision": "publish_ready",
+  "blocking_findings": [],
+  "warnings": [],
+  "evidence": [
+    "Agency reviews complete",
+    "focused and central tests pass",
+    "Postgres dry-run and protected production import pass",
+    "canonical health, threat page, search, feed, and raw script verified"
+  ]
+}

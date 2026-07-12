@@ -591,7 +591,7 @@
         "polymarket-frontend-vendor-compromise-19-postgres-import-dry-run"
       ],
       "blocks_publish": true,
-      "status": "pending",
+      "status": "completed",
       "acceptance_criteria": [
         "Selected slug imports exactly once from tested artifacts."
       ],
@@ -604,11 +604,17 @@
         "pnpm",
         "exec",
         "tsx",
-        "scripts/import-posts-info-to-postgres.ts",
-        "--posts-info-dir",
-        "/home/sam/worktrees/hp-posts-batch-20260712",
-        "--slug",
-        "polymarket-frontend-vendor-compromise"
+        ".cache/import-selected-posts.ts",
+        "injective-labs-sdk-npm-compromise",
+        "braintree-nuget-payment-skimmer",
+        "paysafe-skrill-neteller-typosquats",
+        "klue-integration-oauth-compromise",
+        "shapedplugin-pro-update-channel-compromise",
+        "cavern-manticore-sysaid-supply-chain",
+        "polymarket-frontend-vendor-compromise",
+        "atomic-arch-aur-compromise",
+        "operation-muck-and-load-github-go",
+        "polinrider-cross-ecosystem-campaign"
       ]
     },
     {
@@ -626,7 +632,7 @@
         "polymarket-frontend-vendor-compromise-20-postgres-import"
       ],
       "blocks_publish": true,
-      "status": "pending",
+      "status": "completed",
       "acceptance_criteria": [
         "Threat page, feed, and search expose the imported source version."
       ],
@@ -655,7 +661,7 @@
         "polymarket-frontend-vendor-compromise-21-production-verification"
       ],
       "blocks_publish": true,
-      "status": "pending",
+      "status": "completed",
       "acceptance_criteria": [
         "No required review is blocked.",
         "Postgres import and production verification completed for this source version."

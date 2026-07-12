@@ -1,0 +1,14 @@
+{
+  "task_id": "polinrider-cross-ecosystem-campaign-23-publishability-gate",
+  "source_version_hash": "ae83022d58356d6facfd4674c02c041a51f57e17a2aaa95578c7d993c578ee4d",
+  "completed_at": "2026-07-12T20:03:30Z",
+  "decision": "publish_ready",
+  "blocking_findings": [],
+  "warnings": [],
+  "evidence": [
+    "Agency reviews complete",
+    "focused and central tests pass",
+    "Postgres dry-run and protected production import pass",
+    "canonical health, threat page, search, feed, and raw script verified"
+  ]
+}

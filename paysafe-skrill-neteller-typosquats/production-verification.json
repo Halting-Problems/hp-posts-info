@@ -1,0 +1,20 @@
+{
+  "task_id": "paysafe-skrill-neteller-typosquats-25-production-verification",
+  "source_version_hash": "c15d69a0598709e7c636a596700c52d91720b6a5787d55c4e1b5db7cfa82aa9b",
+  "completed_at": "2026-07-12T20:03:30Z",
+  "decision": "pass",
+  "blocking_findings": [],
+  "warnings": [],
+  "checks": {
+    "canonical_health": 200,
+    "canonical_data_source": "primary",
+    "incident_count": 115,
+    "source_document_count": 472,
+    "script_count": 126,
+    "threat_page": 200,
+    "search_api": 200,
+    "search_contains_slug": true,
+    "feed_contains_entry": true,
+    "raw_script": 200
+  }
+}

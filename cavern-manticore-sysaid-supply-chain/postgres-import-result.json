@@ -1,0 +1,28 @@
+{
+  "task_id": "cavern-manticore-sysaid-supply-chain-18-postgres-import",
+  "source_version_hash": "b82f961e8ba23d21d3a13b2f3a115c16ee93c4811af23e9aac1648295abe3bf2",
+  "completed_at": "2026-07-12T20:03:30Z",
+  "command": [
+    "pnpm",
+    "exec",
+    "tsx",
+    ".cache/import-selected-posts.ts",
+    "injective-labs-sdk-npm-compromise",
+    "braintree-nuget-payment-skimmer",
+    "paysafe-skrill-neteller-typosquats",
+    "klue-integration-oauth-compromise",
+    "shapedplugin-pro-update-channel-compromise",
+    "cavern-manticore-sysaid-supply-chain",
+    "polymarket-frontend-vendor-compromise",
+    "atomic-arch-aur-compromise",
+    "operation-muck-and-load-github-go",
+    "polinrider-cross-ecosystem-campaign"
+  ],
+  "exit_code": 0,
+  "transport": "protected production admin importer over Cloudflare Hyperdrive",
+  "result": {
+    "http_status": 200,
+    "success": true,
+    "slug": "cavern-manticore-sysaid-supply-chain"
+  }
+}
