@@ -1,0 +1,13 @@
+{
+  "task_id": "shapedplugin-pro-update-channel-compromise-04-research-packet",
+  "source_version_hash": "655c906dad8a9f07ab560eae04ba399d9eb0505470ee3d807719893446545d82",
+  "completed_at": "2026-07-12T19:39:49Z",
+  "status": "pass",
+  "summary": "Build a sourced claim ledger for ShapedPlugin Pro update-channel compromise.",
+  "evidence_references": [
+    "analysis.md",
+    "iocs.json",
+    "manifest.yaml",
+    "references/source-binding.json"
+  ]
+}

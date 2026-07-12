@@ -1,0 +1,16 @@
+{
+  "task_id": "jscrambler-npm-compromise-20-incident-response-review",
+  "source_version_hash": "b95fa7d1724eea4471a54600fba1b6e0472eb3218a9b72cb34150f04c280f60f",
+  "completed_at": "2026-07-12T19:49:05Z",
+  "agency_profile": "/home/sam/agency-agents/security/security-incident-responder.md",
+  "decision": "pass",
+  "blocking_findings": [],
+  "warnings": [],
+  "evidence": "The packet separates exposure, likely execution, and confirmed compromise; it includes UTC evidence collection, containment, credential rotation, downstream-abuse review, and closure gates.",
+  "evidence_references": [
+    "analysis.md",
+    "soc-actionability.json",
+    "credential-impact.json",
+    "manifest.yaml"
+  ]
+}

@@ -1,0 +1,13 @@
+hunts:
+- id: operation-muck-and-load-github-go-hunt-1
+  title: Operation Muck and Load Uses a Malicious Go Module and a 222-Repository GitHub
+    Lure Network evidence scope
+  question: Do exported repository, dependency, endpoint, or network records contain
+    incident selectors?
+  telemetry:
+    family: exported_telemetry
+    collection_context: Local text, JSON, CSV, lockfile, repository, EDR, and network
+      exports
+  positive_signal: One or more embedded incident selectors matched; correlate before
+    declaring compromise.
+  script_path: scripts/hunt_operation_muck_and_load_github_go.py

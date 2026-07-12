@@ -1,0 +1,143 @@
+{
+  "schema_version": "3.0",
+  "event_id": "polinrider-cross-ecosystem-campaign",
+  "candidate_id": "polinrider-cross-ecosystem-campaign",
+  "event_name": "PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions",
+  "title": "PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions",
+  "parent_campaign_id": "none",
+  "is_campaign_level": true,
+  "publication_state": "needs_review",
+  "confidence": "high",
+  "confidence_reason": "Direct supplied research source(s); unknowns preserved.",
+  "attack_types": [
+    "software-supply-chain",
+    "developer-targeting"
+  ],
+  "sources": {
+    "direct": [
+      "https://socket.dev/blog/polinrider-north-korea-linked-supply-chain-campaign-expands"
+    ],
+    "primary_research": [
+      "https://socket.dev/blog/polinrider-north-korea-linked-supply-chain-campaign-expands"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "npm",
+      "packagist",
+      "go",
+      "chrome-extension"
+    ],
+    "registries": [
+      "npm",
+      "packagist",
+      "go",
+      "chrome-extension"
+    ],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [
+      "VS Code"
+    ],
+    "credentials_at_risk": [
+      "developer, repository, registry, CI, and cloud credentials accessible during execution"
+    ]
+  },
+  "timeline": {
+    "first_seen": "unknown",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-07-01",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-07-01",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "obfuscated JavaScript loaders hidden in repositories or fake font files execute through developer tooling such as VS Code tasks",
+    "payload_behavior": [
+      "whitespace-padded JavaScript loaders",
+      "fake .woff2 payload hiding",
+      "VS Code task execution",
+      "force-pushed or anti-dated commits",
+      "blockchain/public RPC retrieval and XOR decryption"
+    ],
+    "provenance": {
+      "status": "reported; no untrusted artifact executed"
+    }
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [
+      ".vscode/tasks.json",
+      "*.woff2"
+    ],
+    "hashes": [],
+    "domains": [],
+    "urls": [],
+    "ips": [],
+    "process_patterns": [
+      "eval(",
+      "code --folder-uri"
+    ],
+    "network_patterns": [
+      "TRON RPC",
+      "Aptos RPC",
+      "BNB Smart Chain RPC"
+    ]
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [
+      ".vscode/tasks.json",
+      "*.woff2"
+    ],
+    "process_hunts": [
+      "eval(",
+      "code --folder-uri"
+    ],
+    "network_hunts": [
+      "TRON RPC",
+      "Aptos RPC",
+      "BNB Smart Chain RPC"
+    ],
+    "ci_cd_hunts": [],
+    "registry_hunts": [],
+    "source_selectors": [
+      "https://socket.dev/blog/polinrider-north-korea-linked-supply-chain-campaign-expands"
+    ],
+    "hunt_selectors": [
+      ".vscode/tasks.json",
+      "*.woff2",
+      "eval(",
+      "code --folder-uri"
+    ]
+  },
+  "open_questions": [
+    "Exact affected versions and organization-specific execution remain to be established from local evidence."
+  ],
+  "defender_takeaways": {
+    "detection": "Scan dependency, repository, endpoint, and network exports for incident selectors.",
+    "hunting": "Correlate selector matches with execution and identity telemetry.",
+    "remediation": "Rebuild executed hosts and rotate exposed secrets from a clean system.",
+    "prevention": "Pin reviewed dependencies and protect maintainer/registry identities."
+  },
+  "remediation_gates": {
+    "containment_complete": [
+      "Installation stopped and executed hosts isolated"
+    ],
+    "eradication_complete": [
+      "Malicious artifacts and persistence removed"
+    ],
+    "recovery_complete": [
+      "Known-good rebuild and negative post-recovery hunt"
+    ],
+    "closure_required": [
+      "UTC timeline, evidence custody, downstream identity audit, and credential rotation decision recorded"
+    ]
+  }
+}

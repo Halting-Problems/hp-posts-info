@@ -1,0 +1,13 @@
+{
+  "task_id": "jscrambler-npm-compromise-06-artifact-diff",
+  "source_version_hash": "b95fa7d1724eea4471a54600fba1b6e0472eb3218a9b72cb34150f04c280f60f",
+  "completed_at": "2026-07-12T19:39:49Z",
+  "status": "pass",
+  "summary": "Compare trusted and suspect artifacts for Jscrambler npm compromise drops cross-platform credential stealer.",
+  "evidence_references": [
+    "analysis.md",
+    "iocs.json",
+    "manifest.yaml",
+    "references/source-binding.json"
+  ]
+}

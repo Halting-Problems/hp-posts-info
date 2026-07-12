@@ -1,0 +1,12 @@
+slug: polymarket-frontend-vendor-compromise
+created_by: delegated_research_worker
+review_lanes:
+- architecture_review
+- data_quality_review
+- incident_response_review
+- workflow_qa_review
+- technical_writing_review
+validation_pending: false
+validation_results:
+- 'focused pytest: passed'
+- 'site-worker plan validation: passed'

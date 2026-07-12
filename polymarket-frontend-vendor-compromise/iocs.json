@@ -1,0 +1,170 @@
+{
+  "schema_version": "3.0",
+  "event_id": "polymarket-frontend-vendor-compromise",
+  "candidate_id": "polymarket-frontend-vendor-compromise",
+  "source_item_key": "https://x.com/polymarkettrade/status/2070155882906730671",
+  "source_version_hash": "76f1fa81b67c3cd061183b9105048499483df463f9dca4774212cf2b09bbbc91",
+  "source_version_at": "2026-06-25",
+  "event_name": "Polymarket frontend vendor compromise and malicious browser code",
+  "title": "Polymarket frontend vendor compromise and malicious browser code",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "high",
+  "confidence_reason": "Direct vendor/research reporting supports the core incident; public technical completeness varies.",
+  "attack_types": [
+    "browser-supply-chain",
+    "third-party-vendor-compromise",
+    "cryptocurrency-theft"
+  ],
+  "sources": {
+    "direct": [
+      "https://x.com/polymarkettrade/status/2070155882906730671",
+      "https://x.com/PeckShieldAlert/status/2070157742514618443",
+      "https://techcrunch.com/2026/06/25/polymarket-says-hackers-stole-users-funds/"
+    ],
+    "primary_research": [
+      "https://x.com/polymarkettrade/status/2070155882906730671",
+      "https://x.com/PeckShieldAlert/status/2070157742514618443",
+      "https://techcrunch.com/2026/06/25/polymarket-says-hackers-stole-users-funds/"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "browser-frontend"
+    ],
+    "registries": [],
+    "packages": [],
+    "versions": [],
+    "repositories": [],
+    "vendors": [
+      "Polymarket"
+    ],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": [
+      "browser wallet approvals, sessions, and transaction-signing context"
+    ]
+  },
+  "timeline": {
+    "first_seen": "2026-06-25",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-06-25",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-06-25",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [],
+    "execution_trigger": "See analysis.md; exact trigger is unknown where not publicly disclosed.",
+    "payload_behavior": [
+      "Polymarket said a compromise at a third-party vendor allowed malicious code to be injected into its website for some users, that it contained the incident, and that it was contacting and fully refunding affected users. TechCrunch independently obtained confirmation from a Polymarket spokesperson that user funds were stolen. PeckShield reported a related phishing campaign and approximately $3 million in losses; the exact technical injection path, vendor, code artifact, exposure window, and victim count remained publicly unclear."
+    ],
+    "provenance": {
+      "status": "public artifact identity incomplete"
+    }
+  },
+  "iocs": {
+    "package_versions": [],
+    "files": [],
+    "hashes": [],
+    "domains": [],
+    "urls": [],
+    "ips": [],
+    "process_patterns": [
+      "Polymarket",
+      "third-party vendor",
+      "malicious code",
+      "frontend deployment",
+      "CSP report",
+      "CDN cache"
+    ],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [
+      "Polymarket",
+      "third-party vendor",
+      "malicious code",
+      "frontend deployment",
+      "CSP report",
+      "CDN cache"
+    ],
+    "process_hunts": [
+      "Polymarket",
+      "third-party vendor",
+      "malicious code",
+      "frontend deployment",
+      "CSP report",
+      "CDN cache"
+    ],
+    "network_hunts": [],
+    "ci_cd_hunts": [],
+    "registry_hunts": [],
+    "source_selectors": [
+      "https://x.com/polymarkettrade/status/2070155882906730671",
+      "https://x.com/PeckShieldAlert/status/2070157742514618443",
+      "https://techcrunch.com/2026/06/25/polymarket-says-hackers-stole-users-funds/"
+    ],
+    "hunt_selectors": [
+      "Polymarket",
+      "third-party vendor",
+      "malicious code",
+      "frontend deployment",
+      "CSP report",
+      "CDN cache",
+      "Polymarket frontend deployment version unknown"
+    ]
+  },
+  "browser_exposure": {
+    "affected_package": "unknown third-party frontend vendor/artifact",
+    "affected_versions": [],
+    "build_artifacts_searched": [
+      "JavaScript bundles",
+      "source maps",
+      "deployment manifests"
+    ],
+    "cdn_or_hosting_layers": [
+      "Polymarket website/CDN, exact provider unknown"
+    ],
+    "source_map_results": [],
+    "served_to_users": "confirmed",
+    "first_served": "unknown",
+    "last_served": "unknown",
+    "required_actions": [
+      "inventory bundles",
+      "map deployment versions",
+      "invalidate caches",
+      "review CSP/WAF/proxy logs",
+      "audit wallet/session activity"
+    ],
+    "closure_condition": "All served deployment IDs scoped, malicious assets removed and caches invalidated, affected sessions/wallet activity reviewed."
+  },
+  "open_questions": [
+    "Exact artifact/deployment identity and complete exposure window remain unknown."
+  ],
+  "defender_takeaways": {
+    "detection": "Scan exported evidence with the tested incident-specific hunt.",
+    "hunting": "Correlate selector matches with deployment and identity timelines.",
+    "remediation": "Disable the affected path, rotate exposed identities, and recover from verified artifacts.",
+    "prevention": "Require scoped credentials, immutable deployment evidence, and independent release validation."
+  },
+  "remediation_gates": {
+    "containment_complete": [
+      "Affected delivery path disabled and exposed identities revoked"
+    ],
+    "eradication_complete": [
+      "Malicious or unauthorized artifacts removed"
+    ],
+    "recovery_complete": [
+      "Verified clean deployment and monitoring restored"
+    ],
+    "closure_required": [
+      "UTC timeline, evidence owner, complete inventory, downstream audit, and rotation evidence recorded"
+    ]
+  },
+  "source_version_basis": "references/source-binding.json"
+}

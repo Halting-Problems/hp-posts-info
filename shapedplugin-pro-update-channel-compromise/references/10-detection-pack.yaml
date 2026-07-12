@@ -1,0 +1,11 @@
+decision: pass
+selectors:
+- ShapedPlugin
+- Real Testimonials Pro 3.2.5
+- Product Slider Pro before 3.5.4
+- Smart Post Pro before 4.0.2
+- LicenseLoader.php
+- wp-content/plugins/woocommerce-subscription/
+- /wp-json/wc/v3/settings/apply
+- generate.2faplugin.org
+- 194.76.217.28:2871

@@ -1,0 +1,5 @@
+sources:
+- https://www.sonatype.com/blog/atomic-arch-npm-campaign-adds-malicious-dependency
+- https://lists.archlinux.org/archives/list/aur-general@lists.archlinux.org/thread/FGXPCB3ZVCJIV7FX323SBAX2JHYB7ZS4/
+- https://github.com/lenucksi/aur-malware-check
+safety: static review only; never execute untrusted code

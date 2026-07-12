@@ -1,0 +1,3 @@
+credentials_at_risk:
+- WordPress passwords and TOTP seeds
+review: required

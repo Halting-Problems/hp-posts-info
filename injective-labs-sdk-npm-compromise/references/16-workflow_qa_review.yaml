@@ -1,0 +1,4 @@
+lane: workflow_qa_review
+decision: pass
+blocking_findings: []
+notes: reviewed against source-bounded folder contract

@@ -1,0 +1,16 @@
+{
+  "task_id": "klue-integration-oauth-compromise-13-data-quality-review",
+  "source_version_hash": "81bcbf28a73b12946690622f57d2d8ebf4e7b96b0528e0171ca72c085d7ff56a",
+  "completed_at": "2026-07-12T19:49:49Z",
+  "agency_profile": "/home/sam/agency-agents/engineering/engineering-ai-data-remediation-engineer.md",
+  "decision": "pass_with_warnings",
+  "blocking_findings": [],
+  "warnings": [
+    "Consumers must preserve the packet uncertainty labels and must not reinterpret unknown values as confirmed coordinates.",
+    "Klue and its incident-reporting domain are legitimate vendor/source context, not attacker infrastructure; IOC fields remain limited to supported attacker-controlled observables."
+  ],
+  "evidence": [
+    "The normalized profile preserves unsupported or unknown values instead of imputing versions, hashes, infrastructure, victim counts, or attribution.",
+    "Legitimate vendor, reporting, and source domains remain evidence or hunt selectors and are not promoted to attacker-controlled IOC fields."
+  ]
+}

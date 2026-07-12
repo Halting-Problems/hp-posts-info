@@ -1,0 +1,8 @@
+{
+  "task_id": "polinrider-cross-ecosystem-campaign-01-scope-gate",
+  "source_version_hash": "ae83022d58356d6facfd4674c02c041a51f57e17a2aaa95578c7d993c578ee4d",
+  "completed_at": "2026-07-12T19:39:49Z",
+  "decision": "in_scope",
+  "blocking_findings": [],
+  "warnings": []
+}

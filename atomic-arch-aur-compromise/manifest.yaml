@@ -1,49 +1,13 @@
 hunts:
-  - id: atomic-arch-aur-compromise-ebpf-maps
-    title: Detect Atomic Arch Pinned eBPF Maps
-    question: Did the rootkit pin its known eBPF maps to the BPF virtual filesystem?
-    evidence_basis:
-      source_ids: [2]
-      selectors:
-        - /sys/fs/bpf/hidden_pids
-        - /sys/fs/bpf/hidden_names
-        - /sys/fs/bpf/hidden_inodes
-    telemetry:
-      family: linux-filesystem
-      collection_context: trusted recovery environment or root shell
-    positive_signal: At least one documented pinned eBPF map exists in /sys/fs/bpf/
-    false_positives: None known for these specific map names.
-    classification_on_match: confirmed_compromise
-    script_path: scripts/detect_ebpf_maps.py
-
-  - id: atomic-arch-aur-compromise-package-caches
-    title: Detect Tampered Package Manager Caches
-    question: Are the compromised dependency packages atomic-lockfile or js-digest cached on this workstation?
-    evidence_basis:
-      source_ids: [1, 2, 4]
-      selectors:
-        - atomic-lockfile
-        - js-digest
-    telemetry:
-      family: linux-filesystem
-      collection_context: developer home directories
-    positive_signal: Cached files containing references to atomic-lockfile or js-digest exist in NPM or Bun caches.
-    false_positives: Developer intentionally researching the malware in a sandbox.
-    classification_on_match: presumed_exposed
-    script_path: scripts/check_package_caches.py
-
-  - id: atomic-arch-aur-compromise-systemd-persistence
-    title: Detect Suspicious Systemd Persistence Units
-    question: Did the malware configure a persistent systemd service with instant infinite restart logic?
-    evidence_basis:
-      source_ids: [2, 4]
-      selectors:
-        - Restart=always
-        - RestartSec=30
-    telemetry:
-      family: linux-filesystem
-      collection_context: systemd service directories
-    positive_signal: A systemd unit contains the exact Restart=always and RestartSec=30 parameters.
-    false_positives: Legitimate local services configured with similar aggressive recovery limits.
-    classification_on_match: presumed_exposed
-    script_path: scripts/check_systemd_persistence.py
+- id: atomic-arch-aur-compromise-hunt-1
+  title: Atomic Arch Hijacks Orphaned AUR Packages to Install Malicious npm Dependencies
+    evidence scope
+  question: Do exported repository, dependency, endpoint, or network records contain
+    incident selectors?
+  telemetry:
+    family: exported_telemetry
+    collection_context: Local text, JSON, CSV, lockfile, repository, EDR, and network
+      exports
+  positive_signal: One or more embedded incident selectors matched; correlate before
+    declaring compromise.
+  script_path: scripts/hunt_atomic_arch_aur_compromise.py

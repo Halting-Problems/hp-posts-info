@@ -1,0 +1,14 @@
+{
+  "task_id": "polymarket-frontend-vendor-compromise-10-script-pack",
+  "source_version_hash": "76f1fa81b67c3cd061183b9105048499483df463f9dca4774212cf2b09bbbc91",
+  "completed_at": "2026-07-12T19:40:49Z",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "/home/sam/worktrees/hp-posts-batch-20260712/polymarket-frontend-vendor-compromise/tests",
+    "-q"
+  ],
+  "exit_code": 0,
+  "summary": "Focused incident script tests passed."
+}

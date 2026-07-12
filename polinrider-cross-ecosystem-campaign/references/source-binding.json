@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "source_item_key": "https://socket.dev/blog/polinrider-north-korea-linked-supply-chain-campaign-expands",
+  "source_version_at": "2026-07-01T00:00:00Z",
+  "captures": [
+    {
+      "path": "01-source.md",
+      "sha256": "907c09c70e8041c65cfe5578027701336da43612081ee78f75714b25f14cc67d",
+      "bytes": 250
+    }
+  ],
+  "retrieval_status": "captured",
+  "hash_basis": "canonical JSON of this normalized item record excluding source_version_hash",
+  "source_version_hash": "ae83022d58356d6facfd4674c02c041a51f57e17a2aaa95578c7d993c578ee4d"
+}

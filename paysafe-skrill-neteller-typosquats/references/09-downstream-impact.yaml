@@ -1,0 +1,2 @@
+status: reviewed
+credentials_at_risk: "payment API keys, cloud secrets, source-control tokens, registry tokens, passwords, and CI credentials"

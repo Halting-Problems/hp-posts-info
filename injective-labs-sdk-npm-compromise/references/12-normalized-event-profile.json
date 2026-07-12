@@ -1,0 +1,297 @@
+{
+  "schema_version": "3.0",
+  "event_id": "injective-labs-sdk-npm-compromise",
+  "candidate_id": "injective-labs-sdk-npm-compromise",
+  "event_name": "Injective Labs SDK npm compromise steals wallet keys and mnemonics",
+  "title": "Injective Labs SDK npm compromise steals wallet keys and mnemonics",
+  "source_item_key": "https://socket.dev/blog/compromised-injective-sdk-npm-package",
+  "source_version_hash": "9d2268c3284a7a65207f36433061378f4baacfd25370be7f7ec7bd27f93a7cc0",
+  "source_version_at": "2026-07-09T00:00:00Z",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "high",
+  "confidence_reason": "Behavior, affected versions, and indicators are documented by the cited primary security research; publication remains needs_review until Postgres import and page/API verification.",
+  "attack_types": [
+    "software-supply-chain",
+    "malicious-package",
+    "credential-theft"
+  ],
+  "sources": {
+    "direct": [
+      "https://socket.dev/blog/compromised-injective-sdk-npm-package",
+      "https://www.stepsecurity.io/blog/injective-npm-supply-chain-attack-18-packages-backdoored-to-steal-crypto-wallet-keys"
+    ],
+    "primary_research": [
+      "https://socket.dev/blog/compromised-injective-sdk-npm-package",
+      "https://www.stepsecurity.io/blog/injective-npm-supply-chain-attack-18-packages-backdoored-to-steal-crypto-wallet-keys"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "npm"
+    ],
+    "registries": [
+      "registry.npmjs.org"
+    ],
+    "packages": [
+      "@injectivelabs/sdk-ts",
+      "@injectivelabs/utils",
+      "@injectivelabs/networks",
+      "@injectivelabs/ts-types",
+      "@injectivelabs/exceptions",
+      "@injectivelabs/wallet-base",
+      "@injectivelabs/wallet-core",
+      "@injectivelabs/wallet-cosmos",
+      "@injectivelabs/wallet-private-key",
+      "@injectivelabs/wallet-evm",
+      "@injectivelabs/wallet-trezor",
+      "@injectivelabs/wallet-cosmostation",
+      "@injectivelabs/wallet-ledger",
+      "@injectivelabs/wallet-wallet-connect",
+      "@injectivelabs/wallet-magic",
+      "@injectivelabs/wallet-strategy",
+      "@injectivelabs/wallet-turnkey",
+      "@injectivelabs/wallet-cosmos-strategy"
+    ],
+    "versions": [
+      "@injectivelabs/sdk-ts@1.20.21",
+      "@injectivelabs/utils@1.20.21",
+      "@injectivelabs/networks@1.20.21",
+      "@injectivelabs/ts-types@1.20.21",
+      "@injectivelabs/exceptions@1.20.21",
+      "@injectivelabs/wallet-base@1.20.21",
+      "@injectivelabs/wallet-core@1.20.21",
+      "@injectivelabs/wallet-cosmos@1.20.21",
+      "@injectivelabs/wallet-private-key@1.20.21",
+      "@injectivelabs/wallet-evm@1.20.21",
+      "@injectivelabs/wallet-trezor@1.20.21",
+      "@injectivelabs/wallet-cosmostation@1.20.21",
+      "@injectivelabs/wallet-ledger@1.20.21",
+      "@injectivelabs/wallet-wallet-connect@1.20.21",
+      "@injectivelabs/wallet-magic@1.20.21",
+      "@injectivelabs/wallet-strategy@1.20.21",
+      "@injectivelabs/wallet-turnkey@1.20.21",
+      "@injectivelabs/wallet-cosmos-strategy@1.20.21"
+    ],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [
+      "GitHub Actions",
+      "other CI runners"
+    ],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": [
+      "Injective wallet private keys, mnemonic phrases, and funds controlled by those keys"
+    ]
+  },
+  "timeline": {
+    "first_seen": "2026-07-09T00:00:00Z",
+    "malicious_publish_time": "See cited source timeline; exact time unknown where not stated",
+    "discovery_time": "2026-07-09",
+    "removal_time": "unknown_after_direct_source_review",
+    "disclosure_time": "2026-07-09",
+    "patch_or_fix_time": "all affected packages@1.20.23"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [
+      "src/utils/key-derivation-telemetry.ts",
+      "dist/esm/accounts-jQ1GSgaW.js",
+      "dist/cjs/accounts-Cy0p4lLW.cjs"
+    ],
+    "execution_trigger": "runtime calls to PrivateKey.fromMnemonic() or PrivateKey.fromHex()",
+    "payload_behavior": [
+      "base64-encodes wallet recovery material and sends it in X-Request-Id on a disguised gRPC-Web POST"
+    ],
+    "provenance": {
+      "method": "source-reported static analysis; no package executed in this research folder"
+    }
+  },
+  "iocs": {
+    "package_versions": [
+      "@injectivelabs/sdk-ts@1.20.21",
+      "@injectivelabs/utils@1.20.21",
+      "@injectivelabs/networks@1.20.21",
+      "@injectivelabs/ts-types@1.20.21",
+      "@injectivelabs/exceptions@1.20.21",
+      "@injectivelabs/wallet-base@1.20.21",
+      "@injectivelabs/wallet-core@1.20.21",
+      "@injectivelabs/wallet-cosmos@1.20.21",
+      "@injectivelabs/wallet-private-key@1.20.21",
+      "@injectivelabs/wallet-evm@1.20.21",
+      "@injectivelabs/wallet-trezor@1.20.21",
+      "@injectivelabs/wallet-cosmostation@1.20.21",
+      "@injectivelabs/wallet-ledger@1.20.21",
+      "@injectivelabs/wallet-wallet-connect@1.20.21",
+      "@injectivelabs/wallet-magic@1.20.21",
+      "@injectivelabs/wallet-strategy@1.20.21",
+      "@injectivelabs/wallet-turnkey@1.20.21",
+      "@injectivelabs/wallet-cosmos-strategy@1.20.21"
+    ],
+    "files": [
+      "src/utils/key-derivation-telemetry.ts",
+      "dist/esm/accounts-jQ1GSgaW.js",
+      "dist/cjs/accounts-Cy0p4lLW.cjs"
+    ],
+    "hashes": [
+      "103c4e6181151c1bcfedc41506cd1815458c38375d08a8fcd9981dbe0b965ce0",
+      "9a59eb454f3ca3fe91214136ee5edd417cc47a80e6f169b52099d6561944baf9"
+    ],
+    "domains": [
+      "testnet.archival.chain.grpc-web.injective.network"
+    ],
+    "urls": [],
+    "ips": [],
+    "process_patterns": [],
+    "network_patterns": [
+      "testnet.archival.chain.grpc-web.injective.network"
+    ]
+  },
+  "detection": {
+    "lockfile_hunts": [
+      "@injectivelabs/sdk-ts@1.20.21",
+      "@injectivelabs/utils@1.20.21",
+      "@injectivelabs/networks@1.20.21",
+      "@injectivelabs/ts-types@1.20.21",
+      "@injectivelabs/exceptions@1.20.21",
+      "@injectivelabs/wallet-base@1.20.21",
+      "@injectivelabs/wallet-core@1.20.21",
+      "@injectivelabs/wallet-cosmos@1.20.21",
+      "@injectivelabs/wallet-private-key@1.20.21",
+      "@injectivelabs/wallet-evm@1.20.21",
+      "@injectivelabs/wallet-trezor@1.20.21",
+      "@injectivelabs/wallet-cosmostation@1.20.21",
+      "@injectivelabs/wallet-ledger@1.20.21",
+      "@injectivelabs/wallet-wallet-connect@1.20.21",
+      "@injectivelabs/wallet-magic@1.20.21",
+      "@injectivelabs/wallet-strategy@1.20.21",
+      "@injectivelabs/wallet-turnkey@1.20.21",
+      "@injectivelabs/wallet-cosmos-strategy@1.20.21"
+    ],
+    "filesystem_hunts": [
+      "src/utils/key-derivation-telemetry.ts",
+      "dist/esm/accounts-jQ1GSgaW.js",
+      "dist/cjs/accounts-Cy0p4lLW.cjs",
+      "103c4e6181151c1bcfedc41506cd1815458c38375d08a8fcd9981dbe0b965ce0",
+      "9a59eb454f3ca3fe91214136ee5edd417cc47a80e6f169b52099d6561944baf9"
+    ],
+    "process_hunts": [],
+    "network_hunts": [
+      "testnet.archival.chain.grpc-web.injective.network"
+    ],
+    "ci_cd_hunts": [
+      "@injectivelabs/sdk-ts",
+      "@injectivelabs/utils",
+      "@injectivelabs/networks",
+      "@injectivelabs/ts-types",
+      "@injectivelabs/exceptions",
+      "@injectivelabs/wallet-base",
+      "@injectivelabs/wallet-core",
+      "@injectivelabs/wallet-cosmos",
+      "@injectivelabs/wallet-private-key",
+      "@injectivelabs/wallet-evm",
+      "@injectivelabs/wallet-trezor",
+      "@injectivelabs/wallet-cosmostation",
+      "@injectivelabs/wallet-ledger",
+      "@injectivelabs/wallet-wallet-connect",
+      "@injectivelabs/wallet-magic",
+      "@injectivelabs/wallet-strategy",
+      "@injectivelabs/wallet-turnkey",
+      "@injectivelabs/wallet-cosmos-strategy"
+    ],
+    "registry_hunts": [
+      "@injectivelabs/sdk-ts@1.20.21",
+      "@injectivelabs/utils@1.20.21",
+      "@injectivelabs/networks@1.20.21",
+      "@injectivelabs/ts-types@1.20.21",
+      "@injectivelabs/exceptions@1.20.21",
+      "@injectivelabs/wallet-base@1.20.21",
+      "@injectivelabs/wallet-core@1.20.21",
+      "@injectivelabs/wallet-cosmos@1.20.21",
+      "@injectivelabs/wallet-private-key@1.20.21",
+      "@injectivelabs/wallet-evm@1.20.21",
+      "@injectivelabs/wallet-trezor@1.20.21",
+      "@injectivelabs/wallet-cosmostation@1.20.21",
+      "@injectivelabs/wallet-ledger@1.20.21",
+      "@injectivelabs/wallet-wallet-connect@1.20.21",
+      "@injectivelabs/wallet-magic@1.20.21",
+      "@injectivelabs/wallet-strategy@1.20.21",
+      "@injectivelabs/wallet-turnkey@1.20.21",
+      "@injectivelabs/wallet-cosmos-strategy@1.20.21"
+    ],
+    "source_selectors": [
+      "https://socket.dev/blog/compromised-injective-sdk-npm-package",
+      "https://www.stepsecurity.io/blog/injective-npm-supply-chain-attack-18-packages-backdoored-to-steal-crypto-wallet-keys"
+    ],
+    "hunt_selectors": [
+      "@injectivelabs/sdk-ts",
+      "@injectivelabs/utils",
+      "@injectivelabs/networks",
+      "@injectivelabs/ts-types",
+      "@injectivelabs/exceptions",
+      "@injectivelabs/wallet-base",
+      "@injectivelabs/wallet-core",
+      "@injectivelabs/wallet-cosmos",
+      "@injectivelabs/wallet-private-key",
+      "@injectivelabs/wallet-evm",
+      "@injectivelabs/wallet-trezor",
+      "@injectivelabs/wallet-cosmostation",
+      "@injectivelabs/wallet-ledger",
+      "@injectivelabs/wallet-wallet-connect",
+      "@injectivelabs/wallet-magic",
+      "@injectivelabs/wallet-strategy",
+      "@injectivelabs/wallet-turnkey",
+      "@injectivelabs/wallet-cosmos-strategy",
+      "@injectivelabs/sdk-ts@1.20.21",
+      "@injectivelabs/utils@1.20.21",
+      "@injectivelabs/networks@1.20.21",
+      "@injectivelabs/ts-types@1.20.21",
+      "@injectivelabs/exceptions@1.20.21",
+      "@injectivelabs/wallet-base@1.20.21",
+      "@injectivelabs/wallet-core@1.20.21",
+      "@injectivelabs/wallet-cosmos@1.20.21",
+      "@injectivelabs/wallet-private-key@1.20.21",
+      "@injectivelabs/wallet-evm@1.20.21",
+      "@injectivelabs/wallet-trezor@1.20.21",
+      "@injectivelabs/wallet-cosmostation@1.20.21",
+      "@injectivelabs/wallet-ledger@1.20.21",
+      "@injectivelabs/wallet-wallet-connect@1.20.21",
+      "@injectivelabs/wallet-magic@1.20.21",
+      "@injectivelabs/wallet-strategy@1.20.21",
+      "@injectivelabs/wallet-turnkey@1.20.21",
+      "@injectivelabs/wallet-cosmos-strategy@1.20.21",
+      "src/utils/key-derivation-telemetry.ts",
+      "dist/esm/accounts-jQ1GSgaW.js",
+      "dist/cjs/accounts-Cy0p4lLW.cjs",
+      "testnet.archival.chain.grpc-web.injective.network",
+      "103c4e6181151c1bcfedc41506cd1815458c38375d08a8fcd9981dbe0b965ce0",
+      "9a59eb454f3ca3fe91214136ee5edd417cc47a80e6f169b52099d6561944baf9"
+    ]
+  },
+  "open_questions": [
+    "The cited sources do not establish a verified victim count.",
+    "Registry removal status and additional infrastructure should be rechecked before publication."
+  ],
+  "defender_takeaways": {
+    "detection": "Scan lockfiles, restore/install logs, files, and egress telemetry with the tested incident-specific hunter.",
+    "hunting": "A package-version match establishes exposure; runtime/network evidence raises it to likely or confirmed execution.",
+    "remediation": "Preserve evidence, remove malicious packages, rebuild affected systems, and rotate the enumerated secrets.",
+    "prevention": "Use exact pins, registry policy and cooldowns, provenance review, and restricted build egress."
+  },
+  "remediation_gates": {
+    "containment_complete": [
+      "Affected hosts isolated and listed IOCs blocked"
+    ],
+    "eradication_complete": [
+      "Malicious versions and cached artifacts removed; systems rebuilt from verified inputs"
+    ],
+    "recovery_complete": [
+      "Verified replacement applied and post-recovery scan is negative"
+    ],
+    "closure_required": [
+      "UTC timeline and evidence owner recorded; exposed credentials rotated; downstream abuse and transaction review complete"
+    ]
+  }
+}

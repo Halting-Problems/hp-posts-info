@@ -1,0 +1,11 @@
+synthesis_result:
+  slug: polinrider-cross-ecosystem-campaign
+  required_lanes_complete: true
+  blocking_conflicts: []
+  preserved_warnings:
+    - Exact package, version, and hash inventory remains unknown.
+    - Attribution is Socket-reported and is not independently strengthened.
+    - Broad behavioral selectors require local correlation.
+    - Production Postgres import and page/API verification remain pending.
+  disposition: campaign_update
+  resolution: No reviewer conflict; retain one campaign-level post and needs_review status.

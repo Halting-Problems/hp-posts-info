@@ -1,0 +1,11 @@
+slug: polinrider-cross-ecosystem-campaign
+created_by: Hermes delegated research batch
+review_lanes:
+- architecture_review
+- data_quality_review
+- incident_response_review
+- workflow_qa_review
+- technical_writing_review
+focused_tests: 'pytest -q tests/test_hunt.py: 3 passed'
+plan_validation: 'site-worker plan validation passed'
+publication_state: needs_review

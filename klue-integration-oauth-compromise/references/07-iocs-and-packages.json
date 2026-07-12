@@ -1,0 +1,18 @@
+{
+  "package_versions": [
+    "Klue integration service version unknown"
+  ],
+  "files": [],
+  "hashes": [],
+  "domains": [],
+  "urls": [],
+  "ips": [],
+  "process_patterns": [
+    "Klue",
+    "Salesforce",
+    "OAuth",
+    "integration service",
+    "June 12, 2026"
+  ],
+  "network_patterns": []
+}

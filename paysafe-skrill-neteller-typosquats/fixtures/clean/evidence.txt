@@ -1,0 +1,2 @@
+verified-clean-package@0.0.1
+example.invalid

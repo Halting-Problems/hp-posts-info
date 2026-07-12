@@ -1,0 +1,9 @@
+hunts:
+  - id: "injective-labs-sdk-npm-compromise-hunt-1"
+    title: "Injective Labs SDK npm compromise steals wallet keys and mnemonics evidence scope"
+    question: "Do exported dependency, file, or network records contain incident-specific selectors?"
+    telemetry:
+      family: "dependency_and_egress_exports"
+      collection_context: "Lockfiles, SBOMs, package restore logs, file inventories, DNS/proxy/firewall logs"
+    positive_signal: "One or more exact package-version, file, hash, domain, or IP selectors matched."
+    script_path: "scripts/hunt.py"

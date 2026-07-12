@@ -1,0 +1,9 @@
+decision: pass
+selectors:
+- '*.woff2'
+- .vscode/tasks.json
+- Aptos RPC
+- BNB Smart Chain RPC
+- TRON RPC
+- code --folder-uri
+- eval(

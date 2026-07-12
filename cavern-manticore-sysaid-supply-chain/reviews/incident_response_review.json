@@ -1,0 +1,16 @@
+{
+  "task_id": "cavern-manticore-sysaid-supply-chain-13-incident-response-review",
+  "source_version_hash": "b82f961e8ba23d21d3a13b2f3a115c16ee93c4811af23e9aac1648295abe3bf2",
+  "completed_at": "2026-07-12T19:49:49Z",
+  "agency_profile": "/home/sam/agency-agents/security/security-incident-responder.md",
+  "decision": "pass_with_warnings",
+  "blocking_findings": [],
+  "warnings": [
+    "Closure remains dependent on organization-specific telemetry and confirmation that the packet\u2019s incident-specific recovery gates are satisfied.",
+    "Scoping must correlate SysAid deployment activity with endpoint and identity evidence because the legitimate mechanism was abused after access."
+  ],
+  "evidence": [
+    "The packet includes incident-specific hunting, containment, credential or session impact review, recovery, and evidence-based closure gates.",
+    "Manifest-backed tooling and clean/dirty fixtures provide a reproducible starting point while unresolved public-evidence gaps remain explicit."
+  ]
+}

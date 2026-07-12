@@ -1,0 +1,13 @@
+hunts:
+- id: polinrider-cross-ecosystem-campaign-hunt-1
+  title: PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions
+    evidence scope
+  question: Do exported repository, dependency, endpoint, or network records contain
+    incident selectors?
+  telemetry:
+    family: exported_telemetry
+    collection_context: Local text, JSON, CSV, lockfile, repository, EDR, and network
+      exports
+  positive_signal: One or more embedded incident selectors matched; correlate before
+    declaring compromise.
+  script_path: scripts/hunt_polinrider_cross_ecosystem_campaign.py

@@ -1,0 +1,2 @@
+decision: in_scope
+reason: Vendor/browser/update-path compromise with defender-relevant downstream exposure.

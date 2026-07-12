@@ -1,0 +1,12 @@
+decision: pass
+selectors:
+- dnsub-scanning-tool
+- github.com/kaleidora/dnsub-scanning-tool
+- github.com/kaleidora/dnsub-scanning-tool unknown
+- go.mod
+- go.sum
+- muckcoding.com
+- muckdeveloper.com
+- powershell.exe
+- protected archive download
+- public dead-drop retrieval

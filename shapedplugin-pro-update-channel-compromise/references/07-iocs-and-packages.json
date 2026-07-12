@@ -1,0 +1,36 @@
+{
+  "package_versions": [
+    "real-testimonials-pro 3.2.5",
+    "product-slider-pro <3.5.4",
+    "smart-post-pro <4.0.2"
+  ],
+  "files": [
+    "src/Includes/LicenseLoader.php",
+    "wp-content/plugins/woocommerce-subscription/"
+  ],
+  "hashes": [
+    "0e17c869d3e4586d4c160041042bd15123c2a37117a98a995fae885f0f4417fc"
+  ],
+  "domains": [
+    "generate.2faplugin.org"
+  ],
+  "urls": [],
+  "ips": [
+    "194.76.217.28"
+  ],
+  "process_patterns": [
+    "ShapedPlugin",
+    "Real Testimonials Pro 3.2.5",
+    "Product Slider Pro before 3.5.4",
+    "Smart Post Pro before 4.0.2",
+    "LicenseLoader.php",
+    "wp-content/plugins/woocommerce-subscription/",
+    "/wp-json/wc/v3/settings/apply",
+    "generate.2faplugin.org",
+    "194.76.217.28:2871"
+  ],
+  "network_patterns": [
+    "generate.2faplugin.org",
+    "194.76.217.28"
+  ]
+}

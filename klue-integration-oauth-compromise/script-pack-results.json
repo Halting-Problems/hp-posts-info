@@ -1,0 +1,14 @@
+{
+  "task_id": "klue-integration-oauth-compromise-09-script-pack",
+  "source_version_hash": "81bcbf28a73b12946690622f57d2d8ebf4e7b96b0528e0171ca72c085d7ff56a",
+  "completed_at": "2026-07-12T19:40:49Z",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "/home/sam/worktrees/hp-posts-batch-20260712/klue-integration-oauth-compromise/tests",
+    "-q"
+  ],
+  "exit_code": 0,
+  "summary": "Focused incident script tests passed."
+}

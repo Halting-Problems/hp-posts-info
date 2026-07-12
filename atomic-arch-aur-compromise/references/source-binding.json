@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "source_item_key": "https://www.sonatype.com/blog/atomic-arch-npm-campaign-adds-malicious-dependency",
+  "source_version_at": "2026-06-12T00:00:00Z",
+  "captures": [
+    {
+      "path": "01-source.md",
+      "sha256": "8d18f6bcad154cf111cb113b10a4e5ea4a7f69b384f86c54143319a0c258ef94",
+      "bytes": 247
+    },
+    {
+      "path": "02-source.md",
+      "sha256": "0e670f98d8dc5450c7b122fa8b8ef9f936ac4f49851d55d7a5e5c281f54c5d74",
+      "bytes": 281
+    },
+    {
+      "path": "03-source.md",
+      "sha256": "b5e5a310f50c63f4176077eadc57ddff6497f04bf43ea5ab99d8a5416705c75f",
+      "bytes": 212
+    }
+  ],
+  "retrieval_status": "captured",
+  "hash_basis": "canonical JSON of this normalized item record excluding source_version_hash",
+  "source_version_hash": "02100f03b897643d15fc4c238b0d4eaa547fa47f81cba444b7403930ea75f23a"
+}

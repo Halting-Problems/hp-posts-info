@@ -1,0 +1,3 @@
+credentials_at_risk:
+- browser wallet approvals, sessions, and transaction-signing context
+review: required

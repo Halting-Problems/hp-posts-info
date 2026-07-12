@@ -1,0 +1,10 @@
+hunts:
+- id: shapedplugin-pro-update-channel-compromise-hunt-1
+  title: ShapedPlugin Pro update-channel compromise exported-evidence scope
+  question: Do collected exports contain source-backed incident selectors?
+  telemetry:
+    family: wordpress
+    collection_context: Offline exported evidence; no network access required
+  positive_signal: One or more source-backed selectors appear and require contextual
+    validation.
+  script_path: scripts/hunt_shapedplugin-pro-update-channel-compromise.py

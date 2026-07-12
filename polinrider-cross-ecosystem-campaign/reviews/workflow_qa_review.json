@@ -1,0 +1,18 @@
+{
+  "task_id": "polinrider-cross-ecosystem-campaign-17-workflow-qa-review",
+  "source_version_hash": "ae83022d58356d6facfd4674c02c041a51f57e17a2aaa95578c7d993c578ee4d",
+  "completed_at": "2026-07-12T19:49:00Z",
+  "agency_profile": "/home/sam/agency-agents/testing/testing-workflow-optimizer.md",
+  "decision": "pass_with_warnings",
+  "blocking_findings": [],
+  "warnings": [
+    "Production import verification remains pending."
+  ],
+  "evidence": [
+    "references/16-workflow_qa_review.yaml",
+    "analysis.md",
+    "references/claim-ledger.md",
+    "tests/test_hunt.py",
+    "Retain campaign_update disposition for the canonical campaign-level post; source linkage to Contagious Interview / Famous Chollima is not independently strengthened by Halting Problems."
+  ]
+}

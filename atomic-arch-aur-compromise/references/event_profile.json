@@ -1,0 +1,163 @@
+{
+  "schema_version": "3.0",
+  "event_id": "atomic-arch-aur-compromise",
+  "candidate_id": "atomic-arch-aur-compromise",
+  "event_name": "Atomic Arch Hijacks Orphaned AUR Packages to Install Malicious npm Dependencies",
+  "title": "Atomic Arch Hijacks Orphaned AUR Packages to Install Malicious npm Dependencies",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "high",
+  "confidence_reason": "Direct supplied research source(s); unknowns preserved.",
+  "attack_types": [
+    "software-supply-chain",
+    "developer-targeting"
+  ],
+  "sources": {
+    "direct": [
+      "https://www.sonatype.com/blog/atomic-arch-npm-campaign-adds-malicious-dependency",
+      "https://lists.archlinux.org/archives/list/aur-general@lists.archlinux.org/thread/FGXPCB3ZVCJIV7FX323SBAX2JHYB7ZS4/",
+      "https://github.com/lenucksi/aur-malware-check"
+    ],
+    "primary_research": [
+      "https://www.sonatype.com/blog/atomic-arch-npm-campaign-adds-malicious-dependency",
+      "https://lists.archlinux.org/archives/list/aur-general@lists.archlinux.org/thread/FGXPCB3ZVCJIV7FX323SBAX2JHYB7ZS4/",
+      "https://github.com/lenucksi/aur-malware-check"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "aur",
+      "npm"
+    ],
+    "registries": [
+      "aur",
+      "npm"
+    ],
+    "packages": [
+      "atomic-lockfile",
+      "js-digest",
+      "lockfile-js"
+    ],
+    "versions": [
+      "atomic-lockfile unknown",
+      "js-digest unknown",
+      "lockfile-js unknown"
+    ],
+    "repositories": [],
+    "vendors": [],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": [
+      "developer, repository, registry, CI, and cloud credentials accessible during execution"
+    ]
+  },
+  "timeline": {
+    "first_seen": "unknown",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-06-12",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-06-12",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [
+      "atomic-lockfile",
+      "js-digest",
+      "lockfile-js"
+    ],
+    "execution_trigger": "modified PKGBUILD installs an npm dependency; npm preinstall executes a bundled native Linux executable",
+    "payload_behavior": [
+      "modified AUR build instructions",
+      "npm preinstall execution",
+      "native Linux payload with eBPF/libbpf references"
+    ],
+    "provenance": {
+      "status": "reported; no untrusted artifact executed"
+    }
+  },
+  "iocs": {
+    "package_versions": [
+      "atomic-lockfile unknown",
+      "js-digest unknown",
+      "lockfile-js unknown"
+    ],
+    "files": [
+      "PKGBUILD",
+      "package.json"
+    ],
+    "hashes": [],
+    "domains": [],
+    "urls": [],
+    "ips": [],
+    "process_patterns": [
+      "npm install atomic-lockfile",
+      "bun install",
+      "atomic-lockfile"
+    ],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [
+      "atomic-lockfile",
+      "js-digest",
+      "lockfile-js"
+    ],
+    "filesystem_hunts": [
+      "PKGBUILD",
+      "package.json"
+    ],
+    "process_hunts": [
+      "npm install atomic-lockfile",
+      "bun install",
+      "atomic-lockfile"
+    ],
+    "network_hunts": [],
+    "ci_cd_hunts": [],
+    "registry_hunts": [
+      "atomic-lockfile",
+      "js-digest",
+      "lockfile-js"
+    ],
+    "source_selectors": [
+      "https://www.sonatype.com/blog/atomic-arch-npm-campaign-adds-malicious-dependency",
+      "https://lists.archlinux.org/archives/list/aur-general@lists.archlinux.org/thread/FGXPCB3ZVCJIV7FX323SBAX2JHYB7ZS4/",
+      "https://github.com/lenucksi/aur-malware-check"
+    ],
+    "hunt_selectors": [
+      "atomic-lockfile",
+      "js-digest",
+      "lockfile-js",
+      "PKGBUILD",
+      "package.json",
+      "npm install atomic-lockfile",
+      "bun install",
+      "atomic-lockfile"
+    ]
+  },
+  "open_questions": [
+    "Exact affected versions and organization-specific execution remain to be established from local evidence."
+  ],
+  "defender_takeaways": {
+    "detection": "Scan dependency, repository, endpoint, and network exports for incident selectors.",
+    "hunting": "Correlate selector matches with execution and identity telemetry.",
+    "remediation": "Rebuild executed hosts and rotate exposed secrets from a clean system.",
+    "prevention": "Pin reviewed dependencies and protect maintainer/registry identities."
+  },
+  "remediation_gates": {
+    "containment_complete": [
+      "Installation stopped and executed hosts isolated"
+    ],
+    "eradication_complete": [
+      "Malicious artifacts and persistence removed"
+    ],
+    "recovery_complete": [
+      "Known-good rebuild and negative post-recovery hunt"
+    ],
+    "closure_required": [
+      "UTC timeline, evidence custody, downstream identity audit, and credential rotation decision recorded"
+    ]
+  }
+}

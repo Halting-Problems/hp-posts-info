@@ -1,0 +1,2 @@
+status: pass
+telemetry: [lockfiles, sboms, package_logs, file_inventory, dns_proxy_logs, identity_audit_logs]

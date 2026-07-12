@@ -1,0 +1,3 @@
+credentials_at_risk:
+- SysAid/RMM administrative identities and victim-host credentials
+review: required

@@ -1,0 +1,8 @@
+{
+  "task_id": "braintree-nuget-payment-skimmer-02-dedupe-and-disposition",
+  "source_version_hash": "8f18e95856959d9bae5e7d141a25f33f7a9914cfc56946feed6e8116438fa273",
+  "completed_at": "2026-07-12T19:39:49Z",
+  "decision": "new",
+  "blocking_findings": [],
+  "warnings": []
+}

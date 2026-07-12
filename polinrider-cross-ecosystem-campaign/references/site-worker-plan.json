@@ -1,0 +1,697 @@
+{
+  "site_worker_plan_version": "3.0",
+  "event_id": "polinrider-cross-ecosystem-campaign",
+  "event_name": "PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions",
+  "profile_path": "/home/sam/worktrees/hp-posts-batch-20260712/polinrider-cross-ecosystem-campaign/event_profile.json",
+  "profile_content_hash": "ed1b898446a9ee4e082fc7c2e674c250b9b6e8503a98476880c3ceb6ce270f22",
+  "artifact_root": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign",
+  "source_item_key": "unknown",
+  "source_version_hash": "unknown",
+  "source_version_at": "",
+  "canonical_publication_target": "nextjs-postgres",
+  "legacy_paths_disallowed": [
+    "d1-primary",
+    "static-primary"
+  ],
+  "run_ledger_schema": "skills/site-worker/references/site-worker-run-ledger-schema.json",
+  "applicability": {
+    "registry": true,
+    "artifact_diff": false,
+    "provenance": false,
+    "cloud": true,
+    "browser": false,
+    "endpoint": true,
+    "campaign": true,
+    "credential_impact": true,
+    "detection": false
+  },
+  "optional_halting_skills": [
+    "cloud-oidc-and-ci-cd-abuse-hunter",
+    "developer-endpoint-forensics-runbooker",
+    "campaign-clustering-and-event-graph-builder"
+  ],
+  "tasks": [
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-01-scope-gate",
+      "runner": "gate",
+      "task_type": "gate",
+      "specialist": "site-refresh-orchestrator",
+      "objective": "Decide whether PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions is in Halting Problems scope.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/polinrider-cross-ecosystem-campaign/event_profile.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/01-scope-gate.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-decision-artifact.schema.json",
+      "depends_on": [],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Decision is in_scope, out_of_scope, or needs_primary_source.",
+        "Syndicated-only evidence is blocked."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-02-dedupe-and-disposition",
+      "runner": "gate",
+      "task_type": "gate",
+      "specialist": "site-feed-curator-and-dedupe-skill",
+      "objective": "Select new, update, campaign, duplicate, review, or reject disposition for PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/01-scope-gate.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/02-dedupe-disposition.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-decision-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-01-scope-gate"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Matched slugs and dedupe keys are recorded.",
+        "Update decisions name the existing slug."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-03-evidence-plan",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "site-worker",
+      "objective": "Create a bounded evidence collection plan for PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/02-dedupe-disposition.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/03-evidence-plan.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-02-dedupe-and-disposition"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Every collection item names the claim it can prove.",
+        "Unsafe execution is forbidden."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-04-research-packet",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "supply-chain-compromise-researcher",
+      "objective": "Build a sourced claim ledger for PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/03-evidence-plan.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/04-research-packet.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-03-evidence-plan"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Claims have sources and confidence.",
+        "Facts, inference, and unknowns are separated."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-05-registry-analysis",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "soc-ir-enrichment-engineer",
+      "objective": "Verify registry package coordinates and version history for PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/04-research-packet.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/registry-analysis.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-04-research-packet"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Registry coordinates and version evidence are explicit."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-06-cloud-oidc-audit",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "cloud-oidc-and-ci-cd-abuse-hunter",
+      "objective": "Audit CI/CD, cloud, and OIDC downstream abuse. Event: PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/04-research-packet.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/cloud-oidc-audit.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-04-research-packet"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Applicability and evidence are explicit.",
+        "Unknowns remain blocking when required."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-07-endpoint-forensics",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "developer-endpoint-forensics-runbooker",
+      "objective": "Build developer endpoint triage guidance. Event: PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/04-research-packet.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/endpoint-forensics.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-04-research-packet"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Applicability and evidence are explicit.",
+        "Unknowns remain blocking when required."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-08-campaign-graph",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "campaign-clustering-and-event-graph-builder",
+      "objective": "Build and validate campaign relationships. Event: PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/04-research-packet.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/campaign-graph.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-04-research-packet"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Applicability and evidence are explicit.",
+        "Unknowns remain blocking when required."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-09-credential-impact",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "remediation-and-credential-rotation-planner",
+      "objective": "Map exposed credentials to rotation and closure gates. Event: PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/04-research-packet.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/credential-impact.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-04-research-packet"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Applicability and evidence are explicit.",
+        "Unknowns remain blocking when required."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-10-ioc-package-normalization",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "ioc-normalizer-and-sharing-exporter",
+      "objective": "Normalize IOCs, package coordinates, hashes, and repositories for PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/04-research-packet.json",
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/registry-analysis.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/iocs-and-packages.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-04-research-packet",
+        "polinrider-cross-ecosystem-campaign-05-registry-analysis"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Raw machine-readable IOCs are typed and deduplicated.",
+        "Package coordinates separate names from versions."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-11-soc-actionability",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "soc-ir-enrichment-engineer",
+      "objective": "Create testable SOC/AppSec audit recipes for PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/04-research-packet.json",
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/registry-analysis.json",
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/cloud-oidc-audit.json",
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/endpoint-forensics.json",
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/campaign-graph.json",
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/credential-impact.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/soc-actionability.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-04-research-packet",
+        "polinrider-cross-ecosystem-campaign-05-registry-analysis",
+        "polinrider-cross-ecosystem-campaign-06-cloud-oidc-audit",
+        "polinrider-cross-ecosystem-campaign-07-endpoint-forensics",
+        "polinrider-cross-ecosystem-campaign-08-campaign-graph",
+        "polinrider-cross-ecosystem-campaign-09-credential-impact"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Hunts name telemetry, fields, windows, and interpretation.",
+        "Positive, negative, and inconclusive outcomes are defined."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-12-post-draft",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "supply-chain-compromise-technical-writer",
+      "objective": "Draft the source-backed Halting Problems analysis for PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/04-research-packet.json",
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/iocs-and-packages.json",
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/soc-actionability.json",
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/registry-analysis.json",
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/cloud-oidc-audit.json",
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/endpoint-forensics.json",
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/campaign-graph.json",
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/credential-impact.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/post-draft.md",
+      "artifact_schema": "",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-04-research-packet",
+        "polinrider-cross-ecosystem-campaign-10-ioc-package-normalization",
+        "polinrider-cross-ecosystem-campaign-11-soc-actionability",
+        "polinrider-cross-ecosystem-campaign-05-registry-analysis",
+        "polinrider-cross-ecosystem-campaign-06-cloud-oidc-audit",
+        "polinrider-cross-ecosystem-campaign-07-endpoint-forensics",
+        "polinrider-cross-ecosystem-campaign-08-campaign-graph",
+        "polinrider-cross-ecosystem-campaign-09-credential-impact"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Operational details are preserved.",
+        "Claim-heavy prose has nearby citations."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-13-schema-normalization",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "post-schema-normalizer-and-migrator",
+      "objective": "Normalize the final event profile for PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/post-draft.md"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/normalized-event-profile.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-12-post-draft"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Normalized data is ready for selected-slug Postgres import."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-14-architecture-review",
+      "runner": "agency_review",
+      "task_type": "agency_review",
+      "specialist": "agency-agent-reviewer",
+      "objective": "Critique topology, dependency graph, context boundaries, failure handling, and observability.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/normalized-event-profile.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/reviews/architecture_review.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-13-schema-normalization"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Decision is pass, pass_with_warnings, or block.",
+        "Blocking findings identify task IDs and artifact paths."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ],
+      "review_lane": "architecture_review",
+      "agent_profile_path": "/home/sam/agency-agents/engineering/engineering-multi-agent-systems-architect.md"
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-15-data-quality-review",
+      "runner": "agency_review",
+      "task_type": "agency_review",
+      "specialist": "agency-agent-reviewer",
+      "objective": "Critique data quality, normalization, quarantine paths, auditability, and zero-data-loss assumptions.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/normalized-event-profile.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/reviews/data_quality_review.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-13-schema-normalization"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Decision is pass, pass_with_warnings, or block.",
+        "Blocking findings identify task IDs and artifact paths."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ],
+      "review_lane": "data_quality_review",
+      "agent_profile_path": "/home/sam/agency-agents/engineering/engineering-ai-data-remediation-engineer.md"
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-16-incident-response-review",
+      "runner": "agency_review",
+      "task_type": "agency_review",
+      "specialist": "agency-agent-reviewer",
+      "objective": "Critique SOC/IR usability, hunt clarity, containment guidance, and closure gates.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/normalized-event-profile.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/reviews/incident_response_review.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-13-schema-normalization"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Decision is pass, pass_with_warnings, or block.",
+        "Blocking findings identify task IDs and artifact paths."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ],
+      "review_lane": "incident_response_review",
+      "agent_profile_path": "/home/sam/agency-agents/security/security-incident-responder.md"
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-17-workflow-qa-review",
+      "runner": "agency_review",
+      "task_type": "agency_review",
+      "specialist": "agency-agent-reviewer",
+      "objective": "Critique whether the chained workflow is modular, testable, and free of handoff ambiguity.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/normalized-event-profile.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/reviews/workflow_qa_review.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-13-schema-normalization"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Decision is pass, pass_with_warnings, or block.",
+        "Blocking findings identify task IDs and artifact paths."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ],
+      "review_lane": "workflow_qa_review",
+      "agent_profile_path": "/home/sam/agency-agents/testing/testing-workflow-optimizer.md"
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-18-technical-writing-review",
+      "runner": "agency_review",
+      "task_type": "agency_review",
+      "specialist": "agency-agent-reviewer",
+      "objective": "Critique clarity, source-backed writing, and preservation of operational detail.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/normalized-event-profile.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/reviews/technical_writing_review.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-13-schema-normalization"
+      ],
+      "blocks_publish": false,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Decision is pass, pass_with_warnings, or block.",
+        "Blocking findings identify task IDs and artifact paths."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ],
+      "review_lane": "technical_writing_review",
+      "agent_profile_path": "/home/sam/agency-agents/engineering/engineering-technical-writer.md"
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-19-synthesis-conflict-resolution",
+      "runner": "gate",
+      "task_type": "gate",
+      "specialist": "site-worker",
+      "objective": "Resolve specialist and reviewer conflicts for PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/reviews/architecture_review.json",
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/reviews/data_quality_review.json",
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/reviews/incident_response_review.json",
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/reviews/workflow_qa_review.json",
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/reviews/technical_writing_review.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/synthesis-conflicts.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-decision-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-14-architecture-review",
+        "polinrider-cross-ecosystem-campaign-15-data-quality-review",
+        "polinrider-cross-ecosystem-campaign-16-incident-response-review",
+        "polinrider-cross-ecosystem-campaign-17-workflow-qa-review",
+        "polinrider-cross-ecosystem-campaign-18-technical-writing-review"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Blocking findings are fixed or remain explicit blockers.",
+        "Warnings are preserved."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-20-postgres-import-dry-run",
+      "runner": "command",
+      "task_type": "command",
+      "specialist": "site-worker",
+      "objective": "Dry-run the selected-slug Postgres import for PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/normalized-event-profile.json",
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/synthesis-conflicts.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/postgres-import-dry-run.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-command-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-13-schema-normalization",
+        "polinrider-cross-ecosystem-campaign-19-synthesis-conflict-resolution"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Dry-run succeeds without mutating Postgres."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ],
+      "command": [
+        "pnpm",
+        "exec",
+        "tsx",
+        "scripts/import-posts-info-to-postgres.ts",
+        "--posts-info-dir",
+        "/home/sam/hp-posts-info",
+        "--slug",
+        "polinrider-cross-ecosystem-campaign",
+        "--dry-run"
+      ]
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-21-postgres-import",
+      "runner": "command",
+      "task_type": "command",
+      "specialist": "site-worker",
+      "objective": "Execute the selected-slug Postgres import for PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/postgres-import-dry-run.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/postgres-import-result.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-command-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-20-postgres-import-dry-run"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Selected slug imports exactly once from tested artifacts."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ],
+      "command": [
+        "pnpm",
+        "exec",
+        "tsx",
+        "scripts/import-posts-info-to-postgres.ts",
+        "--posts-info-dir",
+        "/home/sam/hp-posts-info",
+        "--slug",
+        "polinrider-cross-ecosystem-campaign"
+      ]
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-22-production-verification",
+      "runner": "gate",
+      "task_type": "gate",
+      "specialist": "site-worker",
+      "objective": "Verify the production threat page, feed, and search results for PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/postgres-import-result.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/production-verification.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-decision-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-21-postgres-import"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Threat page, feed, and search expose the imported source version."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "polinrider-cross-ecosystem-campaign-23-publishability-gate",
+      "runner": "gate",
+      "task_type": "gate",
+      "specialist": "site-worker",
+      "objective": "Decide whether PolinRider Expands Across npm, Packagist, Go Modules, and Chrome Extensions can be published.",
+      "inputs": [
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/synthesis-conflicts.json",
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/postgres-import-result.json",
+        "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/production-verification.json"
+      ],
+      "artifact_path": "/home/sam/hp-posts-info/polinrider-cross-ecosystem-campaign/publishability-gate.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-decision-artifact.schema.json",
+      "depends_on": [
+        "polinrider-cross-ecosystem-campaign-19-synthesis-conflict-resolution",
+        "polinrider-cross-ecosystem-campaign-21-postgres-import",
+        "polinrider-cross-ecosystem-campaign-22-production-verification"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "No required review is blocked.",
+        "Postgres import and production verification completed for this source version."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "iocs": {
+    "package_versions": [
+      "github.com/kaleidora/dnsub-scanning-tool unknown"
+    ],
+    "files": [
+      "go.mod",
+      "go.sum"
+    ],
+    "hashes": [],
+    "domains": [
+      "muckcoding.com",
+      "muckdeveloper.com"
+    ],
+    "urls": [],
+    "ips": [],
+    "process_patterns": [
+      "powershell.exe",
+      "dnsub-scanning-tool"
+    ],
+    "network_patterns": [
+      "public dead-drop retrieval",
+      "protected archive download"
+    ]
+  },
+  "packages": [
+    "github.com/kaleidora/dnsub-scanning-tool"
+  ]
+}

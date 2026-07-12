@@ -1,0 +1,3 @@
+jscrambler@8.14.0
+dist/setup.js
+check.torproject.org

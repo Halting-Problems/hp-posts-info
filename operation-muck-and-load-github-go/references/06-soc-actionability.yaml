@@ -1,0 +1,2 @@
+decision: pass
+script: scripts/hunt_operation_muck_and_load_github_go.py

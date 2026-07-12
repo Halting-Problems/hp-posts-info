@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "source_item_key": "https://research.checkpoint.com/2026/cavern-manticore-exposing-iran-linked-modular-c2-framework/",
+  "source_version_at": "2026-07-06",
+  "captures": [
+    {
+      "path": "references/source-primary.html",
+      "sha256": "31e02c2892a8cc2ffced1841b0a70392fd3dc789c83570747ff7a7b2a2e51b0a",
+      "bytes": 250156
+    }
+  ],
+  "retrieval_status": "captured",
+  "hash_basis": "canonical JSON of this normalized item record excluding source_version_hash",
+  "source_version_hash": "b82f961e8ba23d21d3a13b2f3a115c16ee93c4811af23e9aac1648295abe3bf2"
+}

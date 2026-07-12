@@ -1,0 +1,9 @@
+synthesis_result:
+  slug: atomic-arch-aur-compromise
+  required_lanes_complete: true
+  blocking_conflicts: []
+  preserved_warnings:
+    - Exact malicious versions, hashes, and final affected-package count remain unknown.
+    - Production Postgres import and page/API verification remain pending.
+  disposition: new_incident_post
+  resolution: No reviewer conflict; preserve unknowns and keep publication at needs_review.

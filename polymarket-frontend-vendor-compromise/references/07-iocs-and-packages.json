@@ -1,0 +1,19 @@
+{
+  "package_versions": [
+    "Polymarket frontend deployment version unknown"
+  ],
+  "files": [],
+  "hashes": [],
+  "domains": [],
+  "urls": [],
+  "ips": [],
+  "process_patterns": [
+    "Polymarket",
+    "third-party vendor",
+    "malicious code",
+    "frontend deployment",
+    "CSP report",
+    "CDN cache"
+  ],
+  "network_patterns": []
+}

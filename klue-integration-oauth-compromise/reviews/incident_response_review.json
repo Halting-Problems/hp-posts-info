@@ -1,0 +1,16 @@
+{
+  "task_id": "klue-integration-oauth-compromise-14-incident-response-review",
+  "source_version_hash": "81bcbf28a73b12946690622f57d2d8ebf4e7b96b0528e0171ca72c085d7ff56a",
+  "completed_at": "2026-07-12T19:49:49Z",
+  "agency_profile": "/home/sam/agency-agents/security/security-incident-responder.md",
+  "decision": "pass_with_warnings",
+  "blocking_findings": [],
+  "warnings": [
+    "Closure remains dependent on organization-specific telemetry and confirmation that the packet\u2019s incident-specific recovery gates are satisfied.",
+    "Tenant scoping and closure depend on OAuth integration token revocation, downstream access review, and confirmation that replacement credentials are active."
+  ],
+  "evidence": [
+    "The packet includes incident-specific hunting, containment, credential or session impact review, recovery, and evidence-based closure gates.",
+    "Manifest-backed tooling and clean/dirty fixtures provide a reproducible starting point while unresolved public-evidence gaps remain explicit."
+  ]
+}

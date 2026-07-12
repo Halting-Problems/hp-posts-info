@@ -1,0 +1,8 @@
+{
+  "task_id": "klue-integration-oauth-compromise-01-scope-gate",
+  "source_version_hash": "81bcbf28a73b12946690622f57d2d8ebf4e7b96b0528e0171ca72c085d7ff56a",
+  "completed_at": "2026-07-12T19:39:49Z",
+  "decision": "in_scope",
+  "blocking_findings": [],
+  "warnings": []
+}

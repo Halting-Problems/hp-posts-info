@@ -1,0 +1,23 @@
+{
+  "iocs": {
+    "package_versions": [],
+    "files": [
+      ".vscode/tasks.json",
+      "*.woff2"
+    ],
+    "hashes": [],
+    "domains": [],
+    "urls": [],
+    "ips": [],
+    "process_patterns": [
+      "eval(",
+      "code --folder-uri"
+    ],
+    "network_patterns": [
+      "TRON RPC",
+      "Aptos RPC",
+      "BNB Smart Chain RPC"
+    ]
+  },
+  "packages": []
+}

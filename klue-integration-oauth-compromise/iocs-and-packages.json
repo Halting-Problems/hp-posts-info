@@ -1,0 +1,152 @@
+{
+  "task_id": "klue-integration-oauth-compromise-06-ioc-package-normalization",
+  "source_version_hash": "81bcbf28a73b12946690622f57d2d8ebf4e7b96b0528e0171ca72c085d7ff56a",
+  "completed_at": "2026-07-12T19:39:49Z",
+  "status": "pass",
+  "summary": "Normalize IOCs, package coordinates, hashes, and repositories for Klue integration OAuth token compromise.",
+  "evidence_references": [
+    "analysis.md",
+    "iocs.json",
+    "manifest.yaml",
+    "references/source-binding.json"
+  ],
+  "normalized_event_profile": {
+    "schema_version": "3.0",
+    "event_id": "klue-integration-oauth-compromise",
+    "candidate_id": "klue-integration-oauth-compromise",
+    "source_item_key": "https://klue.com/blog/an-update-on-recent-klue-security-incident",
+    "source_version_hash": "81bcbf28a73b12946690622f57d2d8ebf4e7b96b0528e0171ca72c085d7ff56a",
+    "source_version_at": "2026-06-18",
+    "event_name": "Klue integration OAuth token compromise",
+    "title": "Klue integration OAuth token compromise",
+    "parent_campaign_id": "none",
+    "is_campaign_level": false,
+    "publication_state": "needs_review",
+    "confidence": "high",
+    "confidence_reason": "Direct vendor/research reporting supports the core incident; public technical completeness varies.",
+    "attack_types": [
+      "vendor-compromise",
+      "oauth-token-theft",
+      "third-party-integration"
+    ],
+    "sources": {
+      "direct": [
+        "https://klue.com/blog/an-update-on-recent-klue-security-incident"
+      ],
+      "primary_research": [
+        "https://klue.com/blog/an-update-on-recent-klue-security-incident"
+      ],
+      "correlated": []
+    },
+    "affected_assets": {
+      "ecosystems": [
+        "saas-integration"
+      ],
+      "registries": [],
+      "packages": [],
+      "versions": [],
+      "repositories": [],
+      "vendors": [
+        "Klue"
+      ],
+      "ci_cd_systems": [],
+      "container_images": [],
+      "developer_tools": [],
+      "credentials_at_risk": [
+        "OAuth tokens for connected third-party platforms"
+      ]
+    },
+    "timeline": {
+      "first_seen": "2026-06-18",
+      "malicious_publish_time": "unknown",
+      "discovery_time": "2026-06-18",
+      "removal_time": "unknown",
+      "disclosure_time": "2026-06-18",
+      "patch_or_fix_time": "unknown"
+    },
+    "artifact_analysis": {
+      "malicious_artifacts": [],
+      "execution_trigger": "See analysis.md; exact trigger is unknown where not publicly disclosed.",
+      "payload_behavior": [
+        "Klue identified unauthorized activity on June 12, 2026. A compromised legacy credential associated with an integration service let an attacker obtain OAuth tokens for third-party platforms including Salesforce and access data in connected customer environments. Klue reported no evidence that content stored in Klue itself was affected, and revoked credentials and tokens, removed unauthorized code, and disabled potentially affected integrations."
+      ],
+      "provenance": {
+        "status": "public artifact identity incomplete"
+      }
+    },
+    "iocs": {
+      "package_versions": [],
+      "files": [],
+      "hashes": [],
+      "domains": [],
+      "urls": [],
+      "ips": [],
+      "process_patterns": [
+        "Klue",
+        "Salesforce",
+        "OAuth",
+        "integration service",
+        "June 12, 2026"
+      ],
+      "network_patterns": []
+    },
+    "detection": {
+      "lockfile_hunts": [],
+      "filesystem_hunts": [
+        "Klue",
+        "Salesforce",
+        "OAuth",
+        "integration service",
+        "June 12, 2026"
+      ],
+      "process_hunts": [
+        "Klue",
+        "Salesforce",
+        "OAuth",
+        "integration service",
+        "June 12, 2026"
+      ],
+      "network_hunts": [],
+      "ci_cd_hunts": [],
+      "registry_hunts": [],
+      "source_selectors": [
+        "https://klue.com/blog/an-update-on-recent-klue-security-incident"
+      ],
+      "hunt_selectors": [
+        "Klue",
+        "Salesforce",
+        "OAuth",
+        "integration service",
+        "June 12, 2026",
+        "Klue integration service version unknown"
+      ]
+    },
+    "browser_exposure": {
+      "served_to_users": "not_applicable"
+    },
+    "open_questions": [
+      "Exact artifact/deployment identity and complete exposure window remain unknown."
+    ],
+    "defender_takeaways": {
+      "detection": "Scan exported evidence with the tested incident-specific hunt.",
+      "hunting": "Correlate selector matches with deployment and identity timelines.",
+      "remediation": "Disable the affected path, rotate exposed identities, and recover from verified artifacts.",
+      "prevention": "Require scoped credentials, immutable deployment evidence, and independent release validation."
+    },
+    "remediation_gates": {
+      "containment_complete": [
+        "Affected delivery path disabled and exposed identities revoked"
+      ],
+      "eradication_complete": [
+        "Malicious or unauthorized artifacts removed"
+      ],
+      "recovery_complete": [
+        "Verified clean deployment and monitoring restored"
+      ],
+      "closure_required": [
+        "UTC timeline, evidence owner, complete inventory, downstream audit, and rotation evidence recorded"
+      ]
+    },
+    "source_version_basis": "references/source-binding.json"
+  }
+}

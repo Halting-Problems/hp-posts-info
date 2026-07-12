@@ -1,0 +1,163 @@
+{
+  "schema_version": "3.0",
+  "event_id": "cavern-manticore-sysaid-supply-chain",
+  "candidate_id": "cavern-manticore-sysaid-supply-chain",
+  "source_item_key": "https://research.checkpoint.com/2026/cavern-manticore-exposing-iran-linked-modular-c2-framework/",
+  "source_version_hash": "unknown_not_provided",
+  "source_version_at": "2026-07-06",
+  "event_name": "Cavern Manticore abuse of SysAid software deployment",
+  "title": "Cavern Manticore abuse of SysAid software deployment",
+  "parent_campaign_id": "none",
+  "is_campaign_level": false,
+  "publication_state": "needs_review",
+  "confidence": "high",
+  "confidence_reason": "Direct vendor/research reporting supports the core incident; public technical completeness varies.",
+  "attack_types": [
+    "rmm-abuse",
+    "software-deployment-abuse",
+    "post-exploitation"
+  ],
+  "sources": {
+    "direct": [
+      "https://research.checkpoint.com/2026/cavern-manticore-exposing-iran-linked-modular-c2-framework/"
+    ],
+    "primary_research": [
+      "https://research.checkpoint.com/2026/cavern-manticore-exposing-iran-linked-modular-c2-framework/"
+    ],
+    "correlated": []
+  },
+  "affected_assets": {
+    "ecosystems": [
+      "enterprise-rmm"
+    ],
+    "registries": [],
+    "packages": [
+      "SysAid software update deployment feature"
+    ],
+    "versions": [
+      "SysAid deployment feature version unknown"
+    ],
+    "repositories": [],
+    "vendors": [
+      "SysAid"
+    ],
+    "ci_cd_systems": [],
+    "container_images": [],
+    "developer_tools": [],
+    "credentials_at_risk": [
+      "SysAid/RMM administrative identities and victim-host credentials"
+    ]
+  },
+  "timeline": {
+    "first_seen": "2026-07-06",
+    "malicious_publish_time": "unknown",
+    "discovery_time": "2026-07-06",
+    "removal_time": "unknown",
+    "disclosure_time": "2026-07-06",
+    "patch_or_fix_time": "unknown"
+  },
+  "artifact_analysis": {
+    "malicious_artifacts": [
+      "C:\\ProgramData\\WinDir\\WinDirStat.exe",
+      "C:\\ProgramData\\WinDir\\uxtheme.dll",
+      "n-HTCommp.dll"
+    ],
+    "execution_trigger": "See analysis.md; exact trigger is unknown where not publicly disclosed.",
+    "payload_behavior": [
+      "Check Point Research explicitly states that SysAid was not compromised and no SysAid vulnerability was involved. After gaining access to victim environments, Cavern Manticore abused the legitimate SysAid software-update feature to deploy a WinDirStat DLL-sideloading package. WinDirStat.exe loaded a trojanized uxtheme.dll Cavern Agent, which loaded n-HTCommp.dll for command and control and operator-selected modules. CPR also observed initial footholds through existing RMM software in multiple intrusions."
+    ],
+    "provenance": {
+      "status": "public artifact identity incomplete"
+    }
+  },
+  "iocs": {
+    "package_versions": [
+      "SysAid deployment feature version unknown"
+    ],
+    "files": [
+      "C:\\ProgramData\\WinDir\\WinDirStat.exe",
+      "C:\\ProgramData\\WinDir\\uxtheme.dll",
+      "n-HTCommp.dll"
+    ],
+    "hashes": [],
+    "domains": [],
+    "urls": [],
+    "ips": [],
+    "process_patterns": [
+      "SysAid",
+      "Cavern Manticore",
+      "C:\\ProgramData\\WinDir\\WinDirStat.exe",
+      "uxtheme.dll",
+      "n-HTCommp.dll",
+      "MYMUTEX123HELLP02",
+      "MYMUTEX123HELLP04"
+    ],
+    "network_patterns": []
+  },
+  "detection": {
+    "lockfile_hunts": [],
+    "filesystem_hunts": [
+      "C:\\ProgramData\\WinDir\\WinDirStat.exe",
+      "C:\\ProgramData\\WinDir\\uxtheme.dll",
+      "n-HTCommp.dll",
+      "SysAid",
+      "Cavern Manticore",
+      "C:\\ProgramData\\WinDir\\WinDirStat.exe",
+      "uxtheme.dll",
+      "n-HTCommp.dll",
+      "MYMUTEX123HELLP02",
+      "MYMUTEX123HELLP04"
+    ],
+    "process_hunts": [
+      "SysAid",
+      "Cavern Manticore",
+      "C:\\ProgramData\\WinDir\\WinDirStat.exe",
+      "uxtheme.dll",
+      "n-HTCommp.dll",
+      "MYMUTEX123HELLP02",
+      "MYMUTEX123HELLP04"
+    ],
+    "network_hunts": [],
+    "ci_cd_hunts": [],
+    "registry_hunts": [],
+    "source_selectors": [
+      "https://research.checkpoint.com/2026/cavern-manticore-exposing-iran-linked-modular-c2-framework/"
+    ],
+    "hunt_selectors": [
+      "SysAid",
+      "Cavern Manticore",
+      "C:\\ProgramData\\WinDir\\WinDirStat.exe",
+      "uxtheme.dll",
+      "n-HTCommp.dll",
+      "MYMUTEX123HELLP02",
+      "MYMUTEX123HELLP04",
+      "SysAid deployment feature version unknown"
+    ]
+  },
+  "browser_exposure": {
+    "served_to_users": "not_applicable"
+  },
+  "open_questions": [
+    "Exact artifact/deployment identity and complete exposure window remain unknown."
+  ],
+  "defender_takeaways": {
+    "detection": "Scan exported evidence with the tested incident-specific hunt.",
+    "hunting": "Correlate selector matches with deployment and identity timelines.",
+    "remediation": "Disable the affected path, rotate exposed identities, and recover from verified artifacts.",
+    "prevention": "Require scoped credentials, immutable deployment evidence, and independent release validation."
+  },
+  "remediation_gates": {
+    "containment_complete": [
+      "Affected delivery path disabled and exposed identities revoked"
+    ],
+    "eradication_complete": [
+      "Malicious or unauthorized artifacts removed"
+    ],
+    "recovery_complete": [
+      "Verified clean deployment and monitoring restored"
+    ],
+    "closure_required": [
+      "UTC timeline, evidence owner, complete inventory, downstream audit, and rotation evidence recorded"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+synthesis_result:
+  slug: operation-muck-and-load-github-go
+  required_lanes_complete: true
+  blocking_conflicts: []
+  preserved_warnings:
+    - Exact module versions and artifact hashes remain unknown.
+    - Muck and Load is a source tracking label, not independent actor attribution.
+    - Production Postgres import and page/API verification remain pending.
+  disposition: new_incident_post
+  resolution: No reviewer conflict; retain source-scoped attribution and needs_review status.

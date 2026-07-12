@@ -1,0 +1,13 @@
+{
+  "task_id": "polymarket-frontend-vendor-compromise-03-evidence-plan",
+  "source_version_hash": "76f1fa81b67c3cd061183b9105048499483df463f9dca4774212cf2b09bbbc91",
+  "completed_at": "2026-07-12T19:39:49Z",
+  "status": "pass",
+  "summary": "Create a bounded evidence collection plan for Polymarket frontend vendor compromise and malicious browser code.",
+  "evidence_references": [
+    "analysis.md",
+    "iocs.json",
+    "manifest.yaml",
+    "references/source-binding.json"
+  ]
+}

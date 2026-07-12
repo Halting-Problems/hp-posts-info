@@ -1,0 +1,4 @@
+status: pass
+hunt: scripts/hunt.py
+positive_exit_code: 2
+clean_exit_code: 0

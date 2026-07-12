@@ -1,0 +1,175 @@
+{
+  "task_id": "operation-muck-and-load-github-go-11-schema-normalization",
+  "source_version_hash": "b63d5e347fb102e2495b650618b1d8db56b0cee8c787a4a88fb438cf86971f8d",
+  "completed_at": "2026-07-12T19:39:49Z",
+  "status": "pass",
+  "summary": "Normalize the final event profile for Operation Muck and Load Uses a Malicious Go Module and a 222-Repository GitHub Lure Network.",
+  "evidence_references": [
+    "analysis.md",
+    "iocs.json",
+    "manifest.yaml",
+    "references/source-binding.json"
+  ],
+  "normalized_event_profile": {
+    "schema_version": "3.0",
+    "event_id": "operation-muck-and-load-github-go",
+    "candidate_id": "operation-muck-and-load-github-go",
+    "event_name": "Operation Muck and Load Uses a Malicious Go Module and a 222-Repository GitHub Lure Network",
+    "title": "Operation Muck and Load Uses a Malicious Go Module and a 222-Repository GitHub Lure Network",
+    "parent_campaign_id": "none",
+    "is_campaign_level": false,
+    "publication_state": "needs_review",
+    "confidence": "high",
+    "confidence_reason": "Direct supplied research source(s); unknowns preserved.",
+    "attack_types": [
+      "software-supply-chain",
+      "developer-targeting"
+    ],
+    "sources": {
+      "direct": [
+        "https://socket.dev/blog/malicious-go-module-exposes-github-malware-lure-network"
+      ],
+      "primary_research": [
+        "https://socket.dev/blog/malicious-go-module-exposes-github-malware-lure-network"
+      ],
+      "correlated": []
+    },
+    "affected_assets": {
+      "ecosystems": [
+        "go",
+        "github"
+      ],
+      "registries": [
+        "go",
+        "github"
+      ],
+      "packages": [
+        "github.com/kaleidora/dnsub-scanning-tool"
+      ],
+      "versions": [
+        "github.com/kaleidora/dnsub-scanning-tool unknown"
+      ],
+      "repositories": [],
+      "vendors": [],
+      "ci_cd_systems": [
+        "GitHub Actions"
+      ],
+      "container_images": [],
+      "developer_tools": [],
+      "credentials_at_risk": [
+        "developer, repository, registry, CI, and cloud credentials accessible during execution"
+      ]
+    },
+    "timeline": {
+      "first_seen": "unknown",
+      "malicious_publish_time": "unknown",
+      "discovery_time": "2026-07-08",
+      "removal_time": "unknown",
+      "disclosure_time": "2026-07-08",
+      "patch_or_fix_time": "unknown"
+    },
+    "artifact_analysis": {
+      "malicious_artifacts": [
+        "github.com/kaleidora/dnsub-scanning-tool"
+      ],
+      "execution_trigger": "use of the deceptive Go module leads to hidden PowerShell execution on Windows",
+      "payload_behavior": [
+        "public dead-drop resolution",
+        "protected archive delivery",
+        "RAT and infostealer staging",
+        "synthetic GitHub Actions commit farming"
+      ],
+      "provenance": {
+        "status": "reported; no untrusted artifact executed"
+      }
+    },
+    "iocs": {
+      "package_versions": [
+        "github.com/kaleidora/dnsub-scanning-tool unknown"
+      ],
+      "files": [
+        "go.mod",
+        "go.sum"
+      ],
+      "hashes": [],
+      "domains": [
+        "muckcoding.com",
+        "muckdeveloper.com"
+      ],
+      "urls": [],
+      "ips": [],
+      "process_patterns": [
+        "powershell.exe",
+        "dnsub-scanning-tool"
+      ],
+      "network_patterns": [
+        "public dead-drop retrieval",
+        "protected archive download"
+      ]
+    },
+    "detection": {
+      "lockfile_hunts": [
+        "github.com/kaleidora/dnsub-scanning-tool"
+      ],
+      "filesystem_hunts": [
+        "go.mod",
+        "go.sum"
+      ],
+      "process_hunts": [
+        "powershell.exe",
+        "dnsub-scanning-tool"
+      ],
+      "network_hunts": [
+        "public dead-drop retrieval",
+        "protected archive download",
+        "muckcoding.com",
+        "muckdeveloper.com"
+      ],
+      "ci_cd_hunts": [
+        "synthetic commit farming"
+      ],
+      "registry_hunts": [
+        "github.com/kaleidora/dnsub-scanning-tool"
+      ],
+      "source_selectors": [
+        "https://socket.dev/blog/malicious-go-module-exposes-github-malware-lure-network"
+      ],
+      "hunt_selectors": [
+        "github.com/kaleidora/dnsub-scanning-tool",
+        "go.mod",
+        "go.sum",
+        "muckcoding.com",
+        "muckdeveloper.com",
+        "powershell.exe",
+        "dnsub-scanning-tool"
+      ]
+    },
+    "open_questions": [
+      "Exact affected versions and organization-specific execution remain to be established from local evidence."
+    ],
+    "defender_takeaways": {
+      "detection": "Scan dependency, repository, endpoint, and network exports for incident selectors.",
+      "hunting": "Correlate selector matches with execution and identity telemetry.",
+      "remediation": "Rebuild executed hosts and rotate exposed secrets from a clean system.",
+      "prevention": "Pin reviewed dependencies and protect maintainer/registry identities."
+    },
+    "remediation_gates": {
+      "containment_complete": [
+        "Installation stopped and executed hosts isolated"
+      ],
+      "eradication_complete": [
+        "Malicious artifacts and persistence removed"
+      ],
+      "recovery_complete": [
+        "Known-good rebuild and negative post-recovery hunt"
+      ],
+      "closure_required": [
+        "UTC timeline, evidence custody, downstream identity audit, and credential rotation decision recorded"
+      ]
+    },
+    "source_item_key": "https://socket.dev/blog/malicious-go-module-exposes-github-malware-lure-network",
+    "source_version_at": "2026-07-08T00:00:00Z",
+    "source_version_hash": "b63d5e347fb102e2495b650618b1d8db56b0cee8c787a4a88fb438cf86971f8d",
+    "source_version_basis": "references/source-binding.json"
+  }
+}

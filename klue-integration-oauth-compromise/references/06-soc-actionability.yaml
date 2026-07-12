@@ -1,0 +1,2 @@
+decision: pass
+hunt: scripts/hunt_klue-integration-oauth-compromise.py

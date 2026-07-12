@@ -1,0 +1,8 @@
+{
+  "task_id": "cavern-manticore-sysaid-supply-chain-01-scope-gate",
+  "source_version_hash": "b82f961e8ba23d21d3a13b2f3a115c16ee93c4811af23e9aac1648295abe3bf2",
+  "completed_at": "2026-07-12T19:39:49Z",
+  "decision": "in_scope",
+  "blocking_findings": [],
+  "warnings": []
+}

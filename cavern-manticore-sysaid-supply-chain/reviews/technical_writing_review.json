@@ -1,0 +1,16 @@
+{
+  "task_id": "cavern-manticore-sysaid-supply-chain-15-technical-writing-review",
+  "source_version_hash": "b82f961e8ba23d21d3a13b2f3a115c16ee93c4811af23e9aac1648295abe3bf2",
+  "completed_at": "2026-07-12T19:49:49Z",
+  "agency_profile": "/home/sam/agency-agents/engineering/engineering-technical-writer.md",
+  "decision": "pass_with_warnings",
+  "blocking_findings": [],
+  "warnings": [
+    "Responders should prioritize incident-specific selectors and evidence requirements over any shared workflow language.",
+    "Keep the causal wording precise: the actor abused legitimate SysAid deployment functionality after access; available evidence does not establish a malicious SysAid update or vendor compromise."
+  ],
+  "evidence": [
+    "The draft and analysis preserve operational detail, numbered source attribution, uncertainty labels, and an explicit Sources section.",
+    "The prose distinguishes confirmed observations from inference and does not turn legitimate vendor or reporting infrastructure into attacker IOCs."
+  ]
+}

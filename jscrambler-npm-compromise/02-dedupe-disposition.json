@@ -1,0 +1,8 @@
+{
+  "task_id": "jscrambler-npm-compromise-02-dedupe-and-disposition",
+  "source_version_hash": "b95fa7d1724eea4471a54600fba1b6e0472eb3218a9b72cb34150f04c280f60f",
+  "completed_at": "2026-07-12T19:39:49Z",
+  "decision": "new",
+  "blocking_findings": [],
+  "warnings": []
+}

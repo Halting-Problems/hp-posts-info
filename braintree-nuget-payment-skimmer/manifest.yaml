@@ -1,0 +1,9 @@
+hunts:
+  - id: "braintree-nuget-payment-skimmer-hunt-1"
+    title: "Braintree.Net NuGet typosquat skims cards and merchant credentials evidence scope"
+    question: "Do exported dependency, file, or network records contain incident-specific selectors?"
+    telemetry:
+      family: "dependency_and_egress_exports"
+      collection_context: "Lockfiles, SBOMs, package restore logs, file inventories, DNS/proxy/firewall logs"
+    positive_signal: "One or more exact package-version, file, hash, domain, or IP selectors matched."
+    script_path: "scripts/hunt.py"

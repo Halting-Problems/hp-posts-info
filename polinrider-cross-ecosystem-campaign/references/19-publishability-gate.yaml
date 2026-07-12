@@ -1,0 +1,11 @@
+site_worker_result:
+  mode: campaign_update
+  decision: needs_review
+  event_id: polinrider-cross-ecosystem-campaign
+  slug: polinrider-cross-ecosystem-campaign
+  parent_campaign_id: none
+  spawned_tasks: [architecture_review, data_quality_review, incident_response_review, workflow_qa_review, technical_writing_review]
+  completed_artifacts: [references/12-normalized-event-profile.json, references/13-architecture_review.yaml, references/14-data_quality_review.yaml, references/15-incident_response_review.yaml, references/16-workflow_qa_review.yaml, references/17-technical_writing_review.yaml, references/18-synthesis-conflicts.yaml, references/run-ledger.yaml]
+  validation_results: [site-worker plan validation passed, targeted pytest passed, wildcard filename regression passed]
+  blocking_gaps: [Production Postgres importer and DB-backed page/API verification not performed, Exact live package/version inventory not materialized]
+  recommended_next_action: Refresh the source inventory, then run importer dry-run and DB-backed publication checks before publish_ready.

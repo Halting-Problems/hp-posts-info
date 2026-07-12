@@ -1,0 +1,12 @@
+decision: pass
+selectors:
+- PKGBUILD
+- atomic-lockfile
+- atomic-lockfile unknown
+- bun install
+- js-digest
+- js-digest unknown
+- lockfile-js
+- lockfile-js unknown
+- npm install atomic-lockfile
+- package.json

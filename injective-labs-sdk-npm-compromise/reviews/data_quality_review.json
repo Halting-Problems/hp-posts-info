@@ -1,0 +1,16 @@
+{
+  "task_id": "injective-labs-sdk-npm-compromise-17-data-quality-review",
+  "source_version_hash": "08206f3f73a03383897733c9b031a6dee027b2327b2d1b69e996f37c703841d3",
+  "completed_at": "2026-07-12T19:49:05Z",
+  "agency_profile": "/home/sam/agency-agents/engineering/engineering-ai-data-remediation-engineer.md",
+  "decision": "pass",
+  "blocking_findings": [],
+  "warnings": [],
+  "evidence": "Event and normalized profiles share the current source hash; package selectors, uncertainty labels, source binding, and tested manifest inputs are preserved without silent correction.",
+  "evidence_references": [
+    "event_profile.json",
+    "normalized-event-profile.json",
+    "iocs.json",
+    "references/source-binding.json"
+  ]
+}

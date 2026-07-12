@@ -1,0 +1,11 @@
+hunts:
+- id: polymarket-frontend-vendor-compromise-hunt-1
+  title: Polymarket frontend vendor compromise and malicious browser code exported-evidence
+    scope
+  question: Do collected exports contain source-backed incident selectors?
+  telemetry:
+    family: browser-frontend
+    collection_context: Offline exported evidence; no network access required
+  positive_signal: One or more source-backed selectors appear and require contextual
+    validation.
+  script_path: scripts/hunt_polymarket-frontend-vendor-compromise.py

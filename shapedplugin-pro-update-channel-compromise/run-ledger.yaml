@@ -1,0 +1,17 @@
+slug: shapedplugin-pro-update-channel-compromise
+reviewed_at: '2026-07-12'
+created_by: agency-review-self-repair
+review_lanes:
+  architecture_review: pass_with_warnings
+  data_quality_review: pass_with_warnings
+  incident_response_review: pass_with_warnings
+  workflow_qa_review: pass_with_warnings
+  technical_writing_review: pass_with_warnings
+validation_results:
+  focused_tests: 2 passed
+  placeholder_scan: clean
+  source_reachability: checked
+publishability: needs_review
+blocking_gaps:
+- postgres import dry-run/import pending
+- production verification pending

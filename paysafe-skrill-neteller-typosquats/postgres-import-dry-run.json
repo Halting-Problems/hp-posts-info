@@ -1,0 +1,18 @@
+{
+  "task_id": "paysafe-skrill-neteller-typosquats-23-postgres-import-dry-run",
+  "source_version_hash": "c15d69a0598709e7c636a596700c52d91720b6a5787d55c4e1b5db7cfa82aa9b",
+  "completed_at": "2026-07-12T19:52:08Z",
+  "command": [
+    "pnpm",
+    "exec",
+    "tsx",
+    "scripts/import-posts-info-to-postgres.ts",
+    "--posts-info-dir",
+    "/home/sam/worktrees/hp-posts-batch-20260712",
+    "--slug",
+    "paysafe-skrill-neteller-typosquats",
+    "--dry-run"
+  ],
+  "exit_code": 0,
+  "stdout_tail": "Already up to date\nDone in 377ms using pnpm v11.3.0\nvalidated: paysafe-skrill-neteller-typosquats"
+}

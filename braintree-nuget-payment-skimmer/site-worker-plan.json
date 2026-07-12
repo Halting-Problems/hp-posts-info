@@ -1,0 +1,796 @@
+{
+  "site_worker_plan_version": "3.0",
+  "event_id": "braintree-nuget-payment-skimmer",
+  "event_name": "Braintree.Net NuGet typosquat skims cards and merchant credentials",
+  "profile_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/event_profile.json",
+  "profile_content_hash": "214ab524350bc0d0229a52819b9db2861a75585e65ffb66bd0863bb28f1daae1",
+  "artifact_root": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer",
+  "source_item_key": "https://socket.dev/blog/braintree-nuget-typosquat-skims-credit-cards",
+  "source_version_hash": "8f18e95856959d9bae5e7d141a25f33f7a9914cfc56946feed6e8116438fa273",
+  "source_version_at": "2026-07-09T00:00:00Z",
+  "canonical_publication_target": "nextjs-postgres",
+  "legacy_paths_disallowed": [
+    "d1-primary",
+    "static-primary"
+  ],
+  "run_ledger_schema": "skills/site-worker/references/site-worker-run-ledger-schema.json",
+  "applicability": {
+    "registry": true,
+    "artifact_diff": true,
+    "provenance": true,
+    "cloud": true,
+    "browser": false,
+    "endpoint": true,
+    "campaign": false,
+    "credential_impact": true,
+    "detection": true
+  },
+  "optional_halting_skills": [
+    "cloud-oidc-and-ci-cd-abuse-hunter",
+    "developer-endpoint-forensics-runbooker",
+    "supply-chain-artifact-diff-lab",
+    "provenance-and-publishing-integrity-auditor",
+    "detection-pack-generator"
+  ],
+  "tasks": [
+    {
+      "task_id": "braintree-nuget-payment-skimmer-01-scope-gate",
+      "runner": "gate",
+      "task_type": "gate",
+      "specialist": "site-refresh-orchestrator",
+      "objective": "Decide whether Braintree.Net NuGet typosquat skims cards and merchant credentials is in Halting Problems scope.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/event_profile.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/01-scope-gate.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-decision-artifact.schema.json",
+      "depends_on": [],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Decision is in_scope, out_of_scope, or needs_primary_source.",
+        "Syndicated-only evidence is blocked."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-02-dedupe-and-disposition",
+      "runner": "gate",
+      "task_type": "gate",
+      "specialist": "site-feed-curator-and-dedupe-skill",
+      "objective": "Select new, update, campaign, duplicate, review, or reject disposition for Braintree.Net NuGet typosquat skims cards and merchant credentials.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/01-scope-gate.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/02-dedupe-disposition.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-decision-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-01-scope-gate"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Matched slugs and dedupe keys are recorded.",
+        "Update decisions name the existing slug."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-03-evidence-plan",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "site-worker",
+      "objective": "Create a bounded evidence collection plan for Braintree.Net NuGet typosquat skims cards and merchant credentials.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/02-dedupe-disposition.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/03-evidence-plan.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-02-dedupe-and-disposition"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Every collection item names the claim it can prove.",
+        "Unsafe execution is forbidden."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-04-research-packet",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "supply-chain-compromise-researcher",
+      "objective": "Build a sourced claim ledger for Braintree.Net NuGet typosquat skims cards and merchant credentials.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/03-evidence-plan.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/04-research-packet.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-03-evidence-plan"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Claims have sources and confidence.",
+        "Facts, inference, and unknowns are separated."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-05-registry-analysis",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "soc-ir-enrichment-engineer",
+      "objective": "Verify registry package coordinates and version history for Braintree.Net NuGet typosquat skims cards and merchant credentials.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/04-research-packet.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/registry-analysis.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-04-research-packet"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Registry coordinates and version evidence are explicit."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-06-artifact-diff",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "supply-chain-artifact-diff-lab",
+      "objective": "Compare trusted and suspect artifacts for Braintree.Net NuGet typosquat skims cards and merchant credentials.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/04-research-packet.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/registry-analysis.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/artifact-diff.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-04-research-packet",
+        "braintree-nuget-payment-skimmer-05-registry-analysis"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Artifact identities and reproducible differences are recorded."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-07-provenance-audit",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "provenance-and-publishing-integrity-auditor",
+      "objective": "Audit source-to-artifact provenance for Braintree.Net NuGet typosquat skims cards and merchant credentials.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/artifact-diff.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/provenance-audit.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-06-artifact-diff"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Tags, signatures, builders, and registry timestamps are verified or unknown."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-08-cloud-oidc-audit",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "cloud-oidc-and-ci-cd-abuse-hunter",
+      "objective": "Audit CI/CD, cloud, and OIDC downstream abuse. Event: Braintree.Net NuGet typosquat skims cards and merchant credentials.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/04-research-packet.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/cloud-oidc-audit.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-04-research-packet"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Applicability and evidence are explicit.",
+        "Unknowns remain blocking when required."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-09-endpoint-forensics",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "developer-endpoint-forensics-runbooker",
+      "objective": "Build developer endpoint triage guidance. Event: Braintree.Net NuGet typosquat skims cards and merchant credentials.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/04-research-packet.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/endpoint-forensics.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-04-research-packet"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Applicability and evidence are explicit.",
+        "Unknowns remain blocking when required."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-10-credential-impact",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "remediation-and-credential-rotation-planner",
+      "objective": "Map exposed credentials to rotation and closure gates. Event: Braintree.Net NuGet typosquat skims cards and merchant credentials.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/04-research-packet.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/credential-impact.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-04-research-packet"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Applicability and evidence are explicit.",
+        "Unknowns remain blocking when required."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-11-ioc-package-normalization",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "ioc-normalizer-and-sharing-exporter",
+      "objective": "Normalize IOCs, package coordinates, hashes, and repositories for Braintree.Net NuGet typosquat skims cards and merchant credentials.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/04-research-packet.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/registry-analysis.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/artifact-diff.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/iocs-and-packages.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-04-research-packet",
+        "braintree-nuget-payment-skimmer-05-registry-analysis",
+        "braintree-nuget-payment-skimmer-06-artifact-diff"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Raw machine-readable IOCs are typed and deduplicated.",
+        "Package coordinates separate names from versions."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-12-soc-actionability",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "soc-ir-enrichment-engineer",
+      "objective": "Create testable SOC/AppSec audit recipes for Braintree.Net NuGet typosquat skims cards and merchant credentials.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/04-research-packet.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/registry-analysis.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/artifact-diff.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/provenance-audit.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/cloud-oidc-audit.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/endpoint-forensics.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/credential-impact.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/soc-actionability.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-04-research-packet",
+        "braintree-nuget-payment-skimmer-05-registry-analysis",
+        "braintree-nuget-payment-skimmer-06-artifact-diff",
+        "braintree-nuget-payment-skimmer-07-provenance-audit",
+        "braintree-nuget-payment-skimmer-08-cloud-oidc-audit",
+        "braintree-nuget-payment-skimmer-09-endpoint-forensics",
+        "braintree-nuget-payment-skimmer-10-credential-impact"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Hunts name telemetry, fields, windows, and interpretation.",
+        "Positive, negative, and inconclusive outcomes are defined."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-13-detection-pack",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "detection-pack-generator",
+      "objective": "Generate applicable detection content for Braintree.Net NuGet typosquat skims cards and merchant credentials.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/iocs-and-packages.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/soc-actionability.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/detection-pack.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-11-ioc-package-normalization",
+        "braintree-nuget-payment-skimmer-12-soc-actionability"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Every detection names telemetry and false positives."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-14-script-pack",
+      "runner": "command",
+      "task_type": "command",
+      "specialist": "soc-ir-enrichment-engineer",
+      "objective": "Materialize and test hunt scripts for Braintree.Net NuGet typosquat skims cards and merchant credentials.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/detection-pack.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/soc-actionability.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/script-pack-results.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-command-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-13-detection-pack",
+        "braintree-nuget-payment-skimmer-12-soc-actionability"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Scripts, manifests, fixtures, and focused tests pass."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ],
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/tests",
+        "-q"
+      ]
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-15-post-draft",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "supply-chain-compromise-technical-writer",
+      "objective": "Draft the source-backed Halting Problems analysis for Braintree.Net NuGet typosquat skims cards and merchant credentials.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/04-research-packet.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/iocs-and-packages.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/soc-actionability.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/registry-analysis.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/artifact-diff.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/provenance-audit.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/cloud-oidc-audit.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/endpoint-forensics.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/credential-impact.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/detection-pack.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/script-pack-results.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/post-draft.md",
+      "artifact_schema": "",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-04-research-packet",
+        "braintree-nuget-payment-skimmer-11-ioc-package-normalization",
+        "braintree-nuget-payment-skimmer-12-soc-actionability",
+        "braintree-nuget-payment-skimmer-05-registry-analysis",
+        "braintree-nuget-payment-skimmer-06-artifact-diff",
+        "braintree-nuget-payment-skimmer-07-provenance-audit",
+        "braintree-nuget-payment-skimmer-08-cloud-oidc-audit",
+        "braintree-nuget-payment-skimmer-09-endpoint-forensics",
+        "braintree-nuget-payment-skimmer-10-credential-impact",
+        "braintree-nuget-payment-skimmer-13-detection-pack",
+        "braintree-nuget-payment-skimmer-14-script-pack"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Operational details are preserved.",
+        "Claim-heavy prose has nearby citations."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-16-schema-normalization",
+      "runner": "halting_skill",
+      "task_type": "halting_skill",
+      "specialist": "post-schema-normalizer-and-migrator",
+      "objective": "Normalize the final event profile for Braintree.Net NuGet typosquat skims cards and merchant credentials.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/post-draft.md"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/normalized-event-profile.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-15-post-draft"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Normalized data is ready for selected-slug Postgres import."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-17-architecture-review",
+      "runner": "agency_review",
+      "task_type": "agency_review",
+      "specialist": "agency-agent-reviewer",
+      "objective": "Critique topology, dependency graph, context boundaries, failure handling, and observability.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/normalized-event-profile.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/reviews/architecture_review.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-16-schema-normalization"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Decision is pass, pass_with_warnings, or block.",
+        "Blocking findings identify task IDs and artifact paths."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ],
+      "review_lane": "architecture_review",
+      "agent_profile_path": "/home/sam/agency-agents/engineering/engineering-multi-agent-systems-architect.md"
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-18-data-quality-review",
+      "runner": "agency_review",
+      "task_type": "agency_review",
+      "specialist": "agency-agent-reviewer",
+      "objective": "Critique data quality, normalization, quarantine paths, auditability, and zero-data-loss assumptions.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/normalized-event-profile.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/reviews/data_quality_review.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-16-schema-normalization"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Decision is pass, pass_with_warnings, or block.",
+        "Blocking findings identify task IDs and artifact paths."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ],
+      "review_lane": "data_quality_review",
+      "agent_profile_path": "/home/sam/agency-agents/engineering/engineering-ai-data-remediation-engineer.md"
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-19-incident-response-review",
+      "runner": "agency_review",
+      "task_type": "agency_review",
+      "specialist": "agency-agent-reviewer",
+      "objective": "Critique SOC/IR usability, hunt clarity, containment guidance, and closure gates.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/normalized-event-profile.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/reviews/incident_response_review.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-16-schema-normalization"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Decision is pass, pass_with_warnings, or block.",
+        "Blocking findings identify task IDs and artifact paths."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ],
+      "review_lane": "incident_response_review",
+      "agent_profile_path": "/home/sam/agency-agents/security/security-incident-responder.md"
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-20-workflow-qa-review",
+      "runner": "agency_review",
+      "task_type": "agency_review",
+      "specialist": "agency-agent-reviewer",
+      "objective": "Critique whether the chained workflow is modular, testable, and free of handoff ambiguity.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/normalized-event-profile.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/reviews/workflow_qa_review.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-16-schema-normalization"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Decision is pass, pass_with_warnings, or block.",
+        "Blocking findings identify task IDs and artifact paths."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ],
+      "review_lane": "workflow_qa_review",
+      "agent_profile_path": "/home/sam/agency-agents/testing/testing-workflow-optimizer.md"
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-21-technical-writing-review",
+      "runner": "agency_review",
+      "task_type": "agency_review",
+      "specialist": "agency-agent-reviewer",
+      "objective": "Critique clarity, source-backed writing, and preservation of operational detail.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/normalized-event-profile.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/reviews/technical_writing_review.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-task-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-16-schema-normalization"
+      ],
+      "blocks_publish": false,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Decision is pass, pass_with_warnings, or block.",
+        "Blocking findings identify task IDs and artifact paths."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ],
+      "review_lane": "technical_writing_review",
+      "agent_profile_path": "/home/sam/agency-agents/engineering/engineering-technical-writer.md"
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-22-synthesis-conflict-resolution",
+      "runner": "gate",
+      "task_type": "gate",
+      "specialist": "site-worker",
+      "objective": "Resolve specialist and reviewer conflicts for Braintree.Net NuGet typosquat skims cards and merchant credentials.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/reviews/architecture_review.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/reviews/data_quality_review.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/reviews/incident_response_review.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/reviews/workflow_qa_review.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/reviews/technical_writing_review.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/synthesis-conflicts.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-decision-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-17-architecture-review",
+        "braintree-nuget-payment-skimmer-18-data-quality-review",
+        "braintree-nuget-payment-skimmer-19-incident-response-review",
+        "braintree-nuget-payment-skimmer-20-workflow-qa-review",
+        "braintree-nuget-payment-skimmer-21-technical-writing-review"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Blocking findings are fixed or remain explicit blockers.",
+        "Warnings are preserved."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-23-postgres-import-dry-run",
+      "runner": "command",
+      "task_type": "command",
+      "specialist": "site-worker",
+      "objective": "Dry-run the selected-slug Postgres import for Braintree.Net NuGet typosquat skims cards and merchant credentials.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/normalized-event-profile.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/synthesis-conflicts.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/postgres-import-dry-run.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-command-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-16-schema-normalization",
+        "braintree-nuget-payment-skimmer-22-synthesis-conflict-resolution"
+      ],
+      "blocks_publish": true,
+      "status": "completed",
+      "acceptance_criteria": [
+        "Dry-run succeeds without mutating Postgres."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ],
+      "command": [
+        "pnpm",
+        "exec",
+        "tsx",
+        "scripts/import-posts-info-to-postgres.ts",
+        "--posts-info-dir",
+        "/home/sam/worktrees/hp-posts-batch-20260712",
+        "--slug",
+        "braintree-nuget-payment-skimmer",
+        "--dry-run"
+      ]
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-24-postgres-import",
+      "runner": "command",
+      "task_type": "command",
+      "specialist": "site-worker",
+      "objective": "Execute the selected-slug Postgres import for Braintree.Net NuGet typosquat skims cards and merchant credentials.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/postgres-import-dry-run.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/postgres-import-result.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-command-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-23-postgres-import-dry-run"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Selected slug imports exactly once from tested artifacts."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ],
+      "command": [
+        "pnpm",
+        "exec",
+        "tsx",
+        "scripts/import-posts-info-to-postgres.ts",
+        "--posts-info-dir",
+        "/home/sam/worktrees/hp-posts-batch-20260712",
+        "--slug",
+        "braintree-nuget-payment-skimmer"
+      ]
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-25-production-verification",
+      "runner": "gate",
+      "task_type": "gate",
+      "specialist": "site-worker",
+      "objective": "Verify the production threat page, feed, and search results for Braintree.Net NuGet typosquat skims cards and merchant credentials.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/postgres-import-result.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/production-verification.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-decision-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-24-postgres-import"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "Threat page, feed, and search expose the imported source version."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    },
+    {
+      "task_id": "braintree-nuget-payment-skimmer-26-publishability-gate",
+      "runner": "gate",
+      "task_type": "gate",
+      "specialist": "site-worker",
+      "objective": "Decide whether Braintree.Net NuGet typosquat skims cards and merchant credentials can be published.",
+      "inputs": [
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/synthesis-conflicts.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/postgres-import-result.json",
+        "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/production-verification.json"
+      ],
+      "artifact_path": "/home/sam/worktrees/hp-posts-batch-20260712/braintree-nuget-payment-skimmer/publishability-gate.json",
+      "artifact_schema": "skills/site-worker/references/site-worker-decision-artifact.schema.json",
+      "depends_on": [
+        "braintree-nuget-payment-skimmer-22-synthesis-conflict-resolution",
+        "braintree-nuget-payment-skimmer-24-postgres-import",
+        "braintree-nuget-payment-skimmer-25-production-verification"
+      ],
+      "blocks_publish": true,
+      "status": "pending",
+      "acceptance_criteria": [
+        "No required review is blocked.",
+        "Postgres import and production verification completed for this source version."
+      ],
+      "constraints": [
+        "Do not invent versions, timestamps, hashes, IOCs, victim counts, or attribution.",
+        "Preserve unknown, not_observed, disputed, and inferred labels.",
+        "Use Next.js/Postgres as publication authority; D1 may only be an explicitly versioned read replica."
+      ]
+    }
+  ]
+}

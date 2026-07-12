@@ -1,0 +1,10 @@
+hunts:
+- id: cavern-manticore-sysaid-supply-chain-hunt-1
+  title: Cavern Manticore abuse of SysAid software deployment exported-evidence scope
+  question: Do collected exports contain source-backed incident selectors?
+  telemetry:
+    family: enterprise-rmm
+    collection_context: Offline exported evidence; no network access required
+  positive_signal: One or more source-backed selectors appear and require contextual
+    validation.
+  script_path: scripts/hunt_cavern-manticore-sysaid-supply-chain.py

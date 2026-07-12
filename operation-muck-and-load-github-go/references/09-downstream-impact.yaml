@@ -1,0 +1,2 @@
+credentials_at_risk:
+- developer, repository, registry, CI, and cloud credentials accessible during execution

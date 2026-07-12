@@ -1,0 +1,2 @@
+decision: pass
+script: scripts/hunt_atomic_arch_aur_compromise.py

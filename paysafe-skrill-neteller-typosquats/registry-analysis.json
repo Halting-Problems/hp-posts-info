@@ -1,0 +1,13 @@
+{
+  "task_id": "paysafe-skrill-neteller-typosquats-05-registry-analysis",
+  "source_version_hash": "c15d69a0598709e7c636a596700c52d91720b6a5787d55c4e1b5db7cfa82aa9b",
+  "completed_at": "2026-07-12T19:39:49Z",
+  "status": "pass",
+  "summary": "Verify registry package coordinates and version history for Paysafe, Skrill, and Neteller npm/PyPI typosquats steal developer secrets.",
+  "evidence_references": [
+    "analysis.md",
+    "iocs.json",
+    "manifest.yaml",
+    "references/source-binding.json"
+  ]
+}

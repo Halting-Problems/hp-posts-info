@@ -1,0 +1,4 @@
+lane: incident_response_review
+decision: pass
+blocking_findings: []
+notes: reviewed against source-bounded folder contract

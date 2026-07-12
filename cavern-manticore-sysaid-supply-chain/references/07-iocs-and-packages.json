@@ -1,0 +1,24 @@
+{
+  "package_versions": [
+    "SysAid deployment feature version unknown"
+  ],
+  "files": [
+    "C:\\ProgramData\\WinDir\\WinDirStat.exe",
+    "C:\\ProgramData\\WinDir\\uxtheme.dll",
+    "n-HTCommp.dll"
+  ],
+  "hashes": [],
+  "domains": [],
+  "urls": [],
+  "ips": [],
+  "process_patterns": [
+    "SysAid",
+    "Cavern Manticore",
+    "C:\\ProgramData\\WinDir\\WinDirStat.exe",
+    "uxtheme.dll",
+    "n-HTCommp.dll",
+    "MYMUTEX123HELLP02",
+    "MYMUTEX123HELLP04"
+  ],
+  "network_patterns": []
+}

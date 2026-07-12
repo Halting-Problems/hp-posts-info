@@ -1,0 +1,13 @@
+{
+  "task_id": "cavern-manticore-sysaid-supply-chain-03-evidence-plan",
+  "source_version_hash": "b82f961e8ba23d21d3a13b2f3a115c16ee93c4811af23e9aac1648295abe3bf2",
+  "completed_at": "2026-07-12T19:39:49Z",
+  "status": "pass",
+  "summary": "Create a bounded evidence collection plan for Cavern Manticore abuse of SysAid software deployment.",
+  "evidence_references": [
+    "analysis.md",
+    "iocs.json",
+    "manifest.yaml",
+    "references/source-binding.json"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "task_id": "atomic-arch-aur-compromise-09-soc-actionability",
+  "source_version_hash": "02100f03b897643d15fc4c238b0d4eaa547fa47f81cba444b7403930ea75f23a",
+  "completed_at": "2026-07-12T19:39:49Z",
+  "status": "pass",
+  "summary": "Create testable SOC/AppSec audit recipes for Atomic Arch Hijacks Orphaned AUR Packages to Install Malicious npm Dependencies.",
+  "evidence_references": [
+    "analysis.md",
+    "iocs.json",
+    "manifest.yaml",
+    "references/source-binding.json"
+  ]
+}

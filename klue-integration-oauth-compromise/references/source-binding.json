@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "source_item_key": "https://klue.com/blog/an-update-on-recent-klue-security-incident",
+  "source_version_at": "2026-06-18",
+  "captures": [
+    {
+      "path": "references/source-primary.html",
+      "sha256": "b391ab68c3dfa5547e47a8705e14570d01c282ff62698d6b6233349fc26b47b8",
+      "bytes": 754127
+    }
+  ],
+  "retrieval_status": "captured",
+  "hash_basis": "canonical JSON of this normalized item record excluding source_version_hash",
+  "source_version_hash": "81bcbf28a73b12946690622f57d2d8ebf4e7b96b0528e0171ca72c085d7ff56a"
+}

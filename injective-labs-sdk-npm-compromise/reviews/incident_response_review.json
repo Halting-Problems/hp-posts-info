@@ -1,0 +1,16 @@
+{
+  "task_id": "injective-labs-sdk-npm-compromise-18-incident-response-review",
+  "source_version_hash": "08206f3f73a03383897733c9b031a6dee027b2327b2d1b69e996f37c703841d3",
+  "completed_at": "2026-07-12T19:49:05Z",
+  "agency_profile": "/home/sam/agency-agents/security/security-incident-responder.md",
+  "decision": "pass",
+  "blocking_findings": [],
+  "warnings": [],
+  "evidence": "The packet separates exposure, likely execution, and confirmed compromise; it includes UTC evidence collection, containment, credential rotation, downstream-abuse review, and closure gates.",
+  "evidence_references": [
+    "analysis.md",
+    "soc-actionability.json",
+    "credential-impact.json",
+    "manifest.yaml"
+  ]
+}

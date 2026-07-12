@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "source_item_key": "https://socket.dev/blog/malicious-go-module-exposes-github-malware-lure-network",
+  "source_version_at": "2026-07-08T00:00:00Z",
+  "captures": [
+    {
+      "path": "01-source.md",
+      "sha256": "4c6b078ea99e796bc9f5f26f2275e24420ad90010dfe7d9fc16cf7e6ce53d129",
+      "bytes": 246
+    }
+  ],
+  "retrieval_status": "captured",
+  "hash_basis": "canonical JSON of this normalized item record excluding source_version_hash",
+  "source_version_hash": "b63d5e347fb102e2495b650618b1d8db56b0cee8c787a4a88fb438cf86971f8d"
+}

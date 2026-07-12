@@ -1,0 +1,11 @@
+site_worker_result:
+  mode: new_incident_post
+  decision: needs_review
+  event_id: jscrambler-npm-compromise
+  slug: jscrambler-npm-compromise
+  parent_campaign_id: none
+  spawned_tasks: []
+  completed_artifacts: [analysis, event_profile, iocs, manifest, hunt_script, fixtures, tests, claim_ledger, blocking_dag_outputs]
+  validation_results: [focused_pytest_4_passed, site_worker_plan_validation_passed]
+  blocking_gaps: [postgres_import_and_db_backed_route_verification]
+  recommended_next_action: Run importer dry-run, import to Postgres, and verify threat/feed/search APIs.

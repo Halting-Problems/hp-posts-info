@@ -1,0 +1,14 @@
+{
+  "task_id": "injective-labs-sdk-npm-compromise-13-script-pack",
+  "source_version_hash": "08206f3f73a03383897733c9b031a6dee027b2327b2d1b69e996f37c703841d3",
+  "completed_at": "2026-07-12T19:40:49Z",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "/home/sam/worktrees/hp-posts-batch-20260712/injective-labs-sdk-npm-compromise/tests",
+    "-q"
+  ],
+  "exit_code": 0,
+  "summary": "Focused incident script tests passed."
+}

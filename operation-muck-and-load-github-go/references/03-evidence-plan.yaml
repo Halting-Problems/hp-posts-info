@@ -1,0 +1,3 @@
+sources:
+- https://socket.dev/blog/malicious-go-module-exposes-github-malware-lure-network
+safety: static review only; never execute untrusted code

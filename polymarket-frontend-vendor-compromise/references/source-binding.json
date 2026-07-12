@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "source_item_key": "https://x.com/polymarkettrade/status/2070155882906730671",
+  "source_version_at": "2026-06-25",
+  "captures": [
+    {
+      "path": "references/source-primary.html",
+      "sha256": "73a0c99cc741c32c9eb3c0c4f6c8bcfde040d2f1eacdb79c271561e1717ecf98",
+      "bytes": 213800
+    }
+  ],
+  "retrieval_status": "captured",
+  "hash_basis": "canonical JSON of this normalized item record excluding source_version_hash",
+  "source_version_hash": "76f1fa81b67c3cd061183b9105048499483df463f9dca4774212cf2b09bbbc91"
+}

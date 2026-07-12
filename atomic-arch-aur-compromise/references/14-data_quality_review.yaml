@@ -1,0 +1,15 @@
+agency_review_result:
+  lane_id: data_quality_review
+  agent_profile_path: /home/sam/agency-agents/engineering/engineering-ai-data-remediation-engineer.md
+  decision: pass_with_warnings
+  confidence: medium
+  blocking_findings: []
+  warnings:
+  - Production import verification remains pending.
+  required_fixes: []
+  evidence_references:
+  - analysis.md
+  - references/claim-ledger.md
+  - tests/test_hunt.py
+  reviewer_summary: Research packet is internally coherent, preserves unknowns, and
+    provides a focused static hunt.

@@ -1,0 +1,28 @@
+{
+  "iocs": {
+    "package_versions": [
+      "atomic-lockfile unknown",
+      "js-digest unknown",
+      "lockfile-js unknown"
+    ],
+    "files": [
+      "PKGBUILD",
+      "package.json"
+    ],
+    "hashes": [],
+    "domains": [],
+    "urls": [],
+    "ips": [],
+    "process_patterns": [
+      "npm install atomic-lockfile",
+      "bun install",
+      "atomic-lockfile"
+    ],
+    "network_patterns": []
+  },
+  "packages": [
+    "atomic-lockfile",
+    "js-digest",
+    "lockfile-js"
+  ]
+}
