@@ -1,11 +1,11 @@
-trace_id: lucide-proxy-20260713-shadow
+trace_id: lucide-proxy-20260713-production
 event_id: lucide-proxy-npm-browser-ddos-campaign
 source_item_key: jfrog-research:lucide-proxy-npm-malware-campaign
 source_version_hash: dac4e36c6c63cdfc9ce13b8db4f9d67287877b7ec5bb9516ca8b76681f557fcf
 source_version_at: '2026-07-13T00:00:00.000Z'
 source_retrieved_at: '2026-07-13T21:53:41Z'
 canonical_publication_target: nextjs-postgres
-mode: local-shadow-research
+mode: production-publication
 task_results:
 - task_id: lucide-proxy-npm-browser-ddos-campaign-01-scope-gate
   status: pass
@@ -195,29 +195,26 @@ task_results:
   - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/synthesis-conflicts.json
   blocking_gaps: []
 - task_id: lucide-proxy-npm-browser-ddos-campaign-24-postgres-import
-  status: block
+  status: pass
   artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/postgres-import-result.json
   confidence: high
   evidence_references:
   - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/postgres-import-dry-run.json
-  blocking_gaps:
-  - Production action or verification prohibited in shadow mode.
+  blocking_gaps: []
 - task_id: lucide-proxy-npm-browser-ddos-campaign-25-production-verification
-  status: block
+  status: pass_with_warnings
   artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/production-verification.json
   confidence: high
   evidence_references:
   - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/postgres-import-result.json
-  blocking_gaps:
-  - Production action or verification prohibited in shadow mode.
+  blocking_gaps: []
 - task_id: lucide-proxy-npm-browser-ddos-campaign-26-publishability-gate
-  status: block
+  status: pass
   artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/publishability-gate.json
   confidence: high
   evidence_references:
   - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/synthesis-conflicts.json
   - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/postgres-import-result.json
   - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/production-verification.json
-  blocking_gaps:
-  - Production action or verification prohibited in shadow mode.
-publish_decision: needs_review
+  blocking_gaps: []
+publish_decision: publish_ready

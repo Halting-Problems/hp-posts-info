@@ -1,10 +1,18 @@
 {
   "task_id": "lucide-proxy-npm-browser-ddos-campaign-25-production-verification",
   "source_version_hash": "dac4e36c6c63cdfc9ce13b8db4f9d67287877b7ec5bb9516ca8b76681f557fcf",
-  "completed_at": "2026-07-13T22:12:32.297446Z",
-  "decision": "block",
-  "blocking_findings": [
-    "No production import, threat page, feed, or search verification is authorized in this shadow run."
+  "completed_at": "2026-07-14T02:52:50Z",
+  "decision": "pass_with_warnings",
+  "blocking_findings": [],
+  "warnings": [
+    "The optional www.haltingproblems.com hostname did not resolve from the publisher environment; the primary haltingproblems.com production route passed."
   ],
-  "warnings": []
+  "verification": {
+    "worker_version_id": "54b606e1-7c3d-4e51-95f0-e66bd1020daf",
+    "canonical_health": "ok; Postgres primary; 117 incidents, 481 source documents, 129 scripts",
+    "threat_page": "200; title, 148-package scope, 398 package/version pairs, and both hunt scripts rendered",
+    "search": "slug and title returned for lucide proxy",
+    "feed": "HP-lucide-proxy-npm-browser-ddos-campaign; 398 affected rows, 148 unique package names, 41 IOC entries",
+    "raw_scripts": "both main-branch script URLs returned 200"
+  }
 }

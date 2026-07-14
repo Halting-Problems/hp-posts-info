@@ -718,7 +718,7 @@
         "lucide-proxy-npm-browser-ddos-campaign-23-postgres-import-dry-run"
       ],
       "blocks_publish": true,
-      "status": "skipped",
+      "status": "completed",
       "acceptance_criteria": [
         "Selected slug imports exactly once from tested artifacts."
       ],
@@ -753,7 +753,7 @@
         "lucide-proxy-npm-browser-ddos-campaign-24-postgres-import"
       ],
       "blocks_publish": true,
-      "status": "blocked",
+      "status": "completed",
       "acceptance_criteria": [
         "Threat page, feed, and search expose the imported source version."
       ],
@@ -782,7 +782,7 @@
         "lucide-proxy-npm-browser-ddos-campaign-25-production-verification"
       ],
       "blocks_publish": true,
-      "status": "blocked",
+      "status": "completed",
       "acceptance_criteria": [
         "No required review is blocked.",
         "Postgres import and production verification completed for this source version."
