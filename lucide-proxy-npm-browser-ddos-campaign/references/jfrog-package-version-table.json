@@ -1,0 +1,1436 @@
+[
+  {
+    "ecosystem": "npm",
+    "name": "charlie-kirk",
+    "malicious_versions": [
+      "2.0.0",
+      "3.0.1"
+    ],
+    "xray_id": "XRAY-1026483"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ilovefemboys",
+    "malicious_versions": [
+      "1.1.3",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026418"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden1",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026380"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden2",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026396"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden21",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026474"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden210",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026403"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden211",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026461"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden212",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026478"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden213",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026451"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden214",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026372"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden215",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026376"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden216",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026433"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden217",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026518"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden218",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026472"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden219",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026485"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden22",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026484"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden220",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026498"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden221",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026448"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden222",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026493"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden223",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026425"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden224",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026444"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden225",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026456"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden226",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026440"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden227",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026419"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden228",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026491"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden229",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026502"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden23",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026473"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden230",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026515"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden24",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026452"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden25",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026409"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden26",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026463"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden27",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026400"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden28",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026458"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden29",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026454"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden3",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026519"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden4",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026416"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "abuden5",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026462"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "acidic",
+    "malicious_versions": [
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026252"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "backup1-gg",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026432"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "backup2-asd",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026385"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "backup3-ff",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026508"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "backup4-gasp",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026445"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "backup5-updated",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026453"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "backupgenuine-updated",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026466"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "backupsitetuff10",
+    "malicious_versions": [
+      "1.1.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026481"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "backupsitetuff3",
+    "malicious_versions": [
+      "1.1.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026407"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "backupsitetuff6",
+    "malicious_versions": [
+      "1.1.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026422"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "backupsitetuff9",
+    "malicious_versions": [
+      "1.1.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026467"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "bismillahitidakimas",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026381"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "bomboclatwallahi",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026497"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "captainindia",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026388"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "crazynut",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026374"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "fflc-updated",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026512"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "howmanygreatbritain",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026404"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "imillegal1",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026475"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "imillegal2",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026441"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "imillegal3",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026389"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "imillegal4",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026511"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "imillegal5",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026414"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ishowfeet1",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026428"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ishowfeet10",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026471"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ishowfeet11",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026394"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ishowfeet12",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026490"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ishowfeet13",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026505"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ishowfeet14",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026426"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ishowfeet15",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026501"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ishowfeet16",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026486"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ishowfeet17",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026420"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ishowfeet18",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026417"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ishowfeet19",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026438"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ishowfeet2",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026487"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ishowfeet20",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026410"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ishowfeet3",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026408"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ishowfeet4",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026455"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ishowfeet5",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026436"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ishowfeet6",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026406"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ishowfeet7",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026386"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ishowfeet8",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026401"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ishowfeet9",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026446"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "kirkland",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026402"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "lowkeybored",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026378"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "lowkirkuenly",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026507"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "midnightrush",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026465"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "miguelphonk",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026517"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff1",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026464"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff10",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026450"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff11",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026373"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff12",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026379"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff13",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026468"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff14",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026423"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff15",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026391"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff16",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026449"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff17",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026447"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff18",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026499"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff19",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026383"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff2",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026470"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff20",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026421"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff21",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026459"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff22",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026480"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff23",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026479"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff24",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026488"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff25",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026442"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff26",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026399"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff27",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026434"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff28",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026415"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff29",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026382"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff3",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026489"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff30",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026439"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff4",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026443"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff5",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026424"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff6",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026413"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff7",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026390"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff8",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026495"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nottuff9",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026392"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "omglucidesotuff",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026482"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "omgyesyesyes",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026504"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "pasirianspirit",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026405"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ratelimitsucks",
+    "malicious_versions": [
+      "1.1.2",
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026494"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ratelimitsucks1",
+    "malicious_versions": [
+      "1.1.3",
+      "1.1.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026503"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ratelimitsucks10",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026516"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ratelimitsucks2",
+    "malicious_versions": [
+      "1.1.4",
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026429"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ratelimitsucks3",
+    "malicious_versions": [
+      "1.1.5",
+      "1.1.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026435"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ratelimitsucks4",
+    "malicious_versions": [
+      "1.1.6",
+      "1.1.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026460"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ratelimitsucks5",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026430"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ratelimitsucks6",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026510"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "ratelimitsucks9",
+    "malicious_versions": [
+      "1.1.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026398"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "sixseven1",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026457"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "sixseven10",
+    "malicious_versions": [
+      "1.7.7"
+    ],
+    "xray_id": "XRAY-1026276"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "sixseven2",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026375"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "sixseven3",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026393"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "sixseven4",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026384"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "sixseven5",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026509"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "sixseven6",
+    "malicious_versions": [
+      "1.1.7",
+      "1.7.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026395"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "sixseven7",
+    "malicious_versions": [
+      "1.7.7"
+    ],
+    "xray_id": "XRAY-1026279"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "sixseven8",
+    "malicious_versions": [
+      "1.7.7"
+    ],
+    "xray_id": "XRAY-1026269"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "sixseven9",
+    "malicious_versions": [
+      "1.7.7"
+    ],
+    "xray_id": "XRAY-1026250"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "speed1",
+    "malicious_versions": [
+      "1.1.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026469"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "speed2",
+    "malicious_versions": [
+      "1.1.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026506"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "speed3",
+    "malicious_versions": [
+      "1.1.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026427"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "speed4",
+    "malicious_versions": [
+      "1.1.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026411"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "speed5",
+    "malicious_versions": [
+      "1.1.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026476"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "thebigyahu",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026492"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "timmytuffknuckles3",
+    "malicious_versions": [
+      "1.1.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026496"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "timmytuffknuckles6",
+    "malicious_versions": [
+      "1.1.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026387"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "timmytuffknuckles9",
+    "malicious_versions": [
+      "1.1.7",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026377"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "whatsadmaidk",
+    "malicious_versions": [
+      "1.1.2",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026513"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "changiairportpromax",
+    "malicious_versions": [
+      "1.1.3",
+      "2.0.0"
+    ],
+    "xray_id": "XRAY-1026514"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "testdonotredeemit",
+    "malicious_versions": [
+      "1.0.0",
+      "2.0.0",
+      "2.1.1"
+    ],
+    "xray_id": "XRAY-1026313"
+  }
+]

@@ -1,0 +1,72 @@
+site_worker_result:
+  mode: new_incident_post
+  decision: needs_review
+  event_id: lucide-proxy-npm-browser-ddos-campaign
+  slug: lucide-proxy-npm-browser-ddos-campaign
+  parent_campaign_id: none
+  spawned_tasks:
+  - lucide-proxy-npm-browser-ddos-campaign-01-scope-gate
+  - lucide-proxy-npm-browser-ddos-campaign-02-dedupe-and-disposition
+  - lucide-proxy-npm-browser-ddos-campaign-03-evidence-plan
+  - lucide-proxy-npm-browser-ddos-campaign-04-research-packet
+  - lucide-proxy-npm-browser-ddos-campaign-05-registry-analysis
+  - lucide-proxy-npm-browser-ddos-campaign-06-artifact-diff
+  - lucide-proxy-npm-browser-ddos-campaign-07-provenance-audit
+  - lucide-proxy-npm-browser-ddos-campaign-08-browser-exposure
+  - lucide-proxy-npm-browser-ddos-campaign-09-endpoint-forensics
+  - lucide-proxy-npm-browser-ddos-campaign-10-campaign-graph
+  - lucide-proxy-npm-browser-ddos-campaign-11-ioc-package-normalization
+  - lucide-proxy-npm-browser-ddos-campaign-12-soc-actionability
+  - lucide-proxy-npm-browser-ddos-campaign-13-detection-pack
+  - lucide-proxy-npm-browser-ddos-campaign-14-script-pack
+  - lucide-proxy-npm-browser-ddos-campaign-15-post-draft
+  - lucide-proxy-npm-browser-ddos-campaign-16-schema-normalization
+  - lucide-proxy-npm-browser-ddos-campaign-17-architecture-review
+  - lucide-proxy-npm-browser-ddos-campaign-18-data-quality-review
+  - lucide-proxy-npm-browser-ddos-campaign-19-incident-response-review
+  - lucide-proxy-npm-browser-ddos-campaign-20-workflow-qa-review
+  - lucide-proxy-npm-browser-ddos-campaign-21-technical-writing-review
+  - lucide-proxy-npm-browser-ddos-campaign-22-synthesis-conflict-resolution
+  - lucide-proxy-npm-browser-ddos-campaign-23-postgres-import-dry-run
+  - lucide-proxy-npm-browser-ddos-campaign-24-postgres-import
+  - lucide-proxy-npm-browser-ddos-campaign-25-production-verification
+  - lucide-proxy-npm-browser-ddos-campaign-26-publishability-gate
+  completed_artifacts:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/01-scope-gate.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/02-dedupe-disposition.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/03-evidence-plan.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/04-research-packet.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/registry-analysis.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/artifact-diff.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/provenance-audit.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/browser-exposure.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/endpoint-forensics.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/campaign-graph.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/iocs-and-packages.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/soc-actionability.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/detection-pack.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/script-pack-results.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/post-draft.md
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/normalized-event-profile.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/reviews/architecture_review.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/reviews/data_quality_review.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/reviews/incident_response_review.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/reviews/workflow_qa_review.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/reviews/technical_writing_review.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/synthesis-conflicts.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/postgres-import-dry-run.json
+  validation_results:
+  - modular plan validation passed
+  - 6 focused hunt tests passed
+  - 50 candidate-scoped repository contract tests passed
+  - selected-slug Postgres importer dry-run passed
+  - five agency review lanes passed with warnings
+  blocking_gaps:
+  - Production Postgres import prohibited/not run
+  - Production page/feed/search verification prohibited/not run
+  - Current charlie-kirk package content not downloaded or verified
+  - Complete 93-host deployment list and victim counts unavailable
+  - Exact module-removal source/build commit mapping unresolved
+  recommended_next_action: Human review the local packet and, only under separate
+    authorization, statically acquire current charlie-kirk tarballs and complete selected-slug
+    Postgres import plus page/feed/search verification.

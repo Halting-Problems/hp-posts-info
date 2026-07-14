@@ -1,0 +1,31 @@
+hunts:
+  - id: "lucide-proxy-npm-browser-ddos-campaign-exposure-scope"
+    title: "Lucide Proxy package, hosting, browser, and network exposure scope"
+    question: "Do reader-owned dependency files, hosted assets, browser exports, DNS/proxy logs, or other telemetry contain exact Lucide Proxy campaign selectors?"
+    telemetry:
+      family: "repository-browser-network"
+      collection_context: "Local dependency/source trees and exported browser, service-worker, DNS, HTTP proxy, CDN, WAF, or hosting telemetry"
+      required_fields:
+        - "file path"
+        - "file content or exported log record"
+    positive_signal: "An affected npm package/version pair, campaign repository or publisher, payload hash, precise URL/domain/IP, or stable campaign identifier is present in the supplied scope. Correlation is required before concluding browser execution."
+    negative_signal: "No campaign selector is present in the supplied scope; this is inconclusive if lockfiles, deployment artifacts, proxy/DNS logs, browser history, or service-worker inventory were not included."
+    false_positives: "Names such as speed1 are generic; package-name-only matches require registry/lockfile context. Shared CDN URLs and advertising infrastructure require path and time correlation."
+    escalation: "Preserve the matched file/log and timestamps, classify it as package/deployment/browser/network evidence, then correlate package version, deployment origin, page visit, service-worker registration, and outbound traffic before containment."
+    closure_condition: "The scope scan is clean after package removal and rebuild, confirmed deployment origins are purged, associated service workers/site data are removed, and 30 days of browser plus network monitoring show no campaign selectors."
+    script_path: "scripts/scan_lucide_proxy_exposure.py"
+  - id: "lucide-proxy-npm-browser-ddos-campaign-chromium-evidence"
+    title: "Read-only Chromium Lucide Proxy history and service-worker evidence"
+    question: "Does a reader-owned Chromium/Chrome user-data directory or forensic copy contain campaign URLs, domains, identifiers, or payload hashes in history, service-worker, or cache artifacts?"
+    telemetry:
+      family: "browser"
+      collection_context: "Forensic copy of a Chromium or Chrome user-data directory"
+      required_fields:
+        - "History SQLite url/title/last_visit_time"
+        - "Service Worker and cache file bytes"
+    positive_signal: "A campaign selector is present in browser history, service-worker storage, or cached files."
+    negative_signal: "No selector is present in the supplied profile copy; this does not cover other browsers, deleted history, remote-only logs, or profiles not supplied."
+    false_positives: "Advertising infrastructure can be shared; correlate precise paths, the stable Analytics ID, payload hashes, and UTC timestamps."
+    escalation: "Preserve the profile copy and hash it, map the finding to a deployment origin and network records, then unregister the affected service worker and clear that origin only after preservation."
+    closure_condition: "The affected origin's service worker/site data are removed after preservation, the rebuilt deployment is clean, and follow-up browser plus network monitoring shows no selector for 30 days."
+    script_path: "scripts/collect_chromium_lucide_evidence.py"

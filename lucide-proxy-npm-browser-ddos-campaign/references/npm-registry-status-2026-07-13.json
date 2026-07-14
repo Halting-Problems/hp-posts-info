@@ -1,0 +1,3516 @@
+{
+  "queried_at": "2026-07-13T21:55:38.511301+00:00",
+  "method": "npm registry abbreviated metadata GET; no tarballs downloaded or code executed",
+  "records": [
+    {
+      "ecosystem": "npm",
+      "name": "charlie-kirk",
+      "jfrog_malicious_versions": [
+        "2.0.0",
+        "3.0.1"
+      ],
+      "xray_id": "XRAY-1026483",
+      "registry_url": "https://registry.npmjs.org/charlie-kirk",
+      "http_status": 200,
+      "availability": "available",
+      "available_versions": [
+        "2.0.0",
+        "3.0.1"
+      ],
+      "malicious_versions_currently_available": [
+        "2.0.0",
+        "3.0.1"
+      ],
+      "dist_tags": {
+        "latest": "3.0.1"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ilovefemboys",
+      "jfrog_malicious_versions": [
+        "1.1.3",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026418",
+      "registry_url": "https://registry.npmjs.org/ilovefemboys",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden1",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026380",
+      "registry_url": "https://registry.npmjs.org/abuden1",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden2",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026396",
+      "registry_url": "https://registry.npmjs.org/abuden2",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden21",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026474",
+      "registry_url": "https://registry.npmjs.org/abuden21",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden210",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026403",
+      "registry_url": "https://registry.npmjs.org/abuden210",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden211",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026461",
+      "registry_url": "https://registry.npmjs.org/abuden211",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden212",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026478",
+      "registry_url": "https://registry.npmjs.org/abuden212",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden213",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026451",
+      "registry_url": "https://registry.npmjs.org/abuden213",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden214",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026372",
+      "registry_url": "https://registry.npmjs.org/abuden214",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden215",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026376",
+      "registry_url": "https://registry.npmjs.org/abuden215",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden216",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026433",
+      "registry_url": "https://registry.npmjs.org/abuden216",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden217",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026518",
+      "registry_url": "https://registry.npmjs.org/abuden217",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden218",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026472",
+      "registry_url": "https://registry.npmjs.org/abuden218",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden219",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026485",
+      "registry_url": "https://registry.npmjs.org/abuden219",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden22",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026484",
+      "registry_url": "https://registry.npmjs.org/abuden22",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden220",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026498",
+      "registry_url": "https://registry.npmjs.org/abuden220",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden221",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026448",
+      "registry_url": "https://registry.npmjs.org/abuden221",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden222",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026493",
+      "registry_url": "https://registry.npmjs.org/abuden222",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden223",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026425",
+      "registry_url": "https://registry.npmjs.org/abuden223",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden224",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026444",
+      "registry_url": "https://registry.npmjs.org/abuden224",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden225",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026456",
+      "registry_url": "https://registry.npmjs.org/abuden225",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden226",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026440",
+      "registry_url": "https://registry.npmjs.org/abuden226",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden227",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026419",
+      "registry_url": "https://registry.npmjs.org/abuden227",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden228",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026491",
+      "registry_url": "https://registry.npmjs.org/abuden228",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden229",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026502",
+      "registry_url": "https://registry.npmjs.org/abuden229",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden23",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026473",
+      "registry_url": "https://registry.npmjs.org/abuden23",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden230",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026515",
+      "registry_url": "https://registry.npmjs.org/abuden230",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden24",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026452",
+      "registry_url": "https://registry.npmjs.org/abuden24",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden25",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026409",
+      "registry_url": "https://registry.npmjs.org/abuden25",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden26",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026463",
+      "registry_url": "https://registry.npmjs.org/abuden26",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden27",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026400",
+      "registry_url": "https://registry.npmjs.org/abuden27",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden28",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026458",
+      "registry_url": "https://registry.npmjs.org/abuden28",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden29",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026454",
+      "registry_url": "https://registry.npmjs.org/abuden29",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden3",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026519",
+      "registry_url": "https://registry.npmjs.org/abuden3",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden4",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026416",
+      "registry_url": "https://registry.npmjs.org/abuden4",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "abuden5",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026462",
+      "registry_url": "https://registry.npmjs.org/abuden5",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "acidic",
+      "jfrog_malicious_versions": [
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026252",
+      "registry_url": "https://registry.npmjs.org/acidic",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "backup1-gg",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026432",
+      "registry_url": "https://registry.npmjs.org/backup1-gg",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "backup2-asd",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026385",
+      "registry_url": "https://registry.npmjs.org/backup2-asd",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "backup3-ff",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026508",
+      "registry_url": "https://registry.npmjs.org/backup3-ff",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "backup4-gasp",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026445",
+      "registry_url": "https://registry.npmjs.org/backup4-gasp",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "backup5-updated",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026453",
+      "registry_url": "https://registry.npmjs.org/backup5-updated",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "backupgenuine-updated",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026466",
+      "registry_url": "https://registry.npmjs.org/backupgenuine-updated",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "backupsitetuff10",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026481",
+      "registry_url": "https://registry.npmjs.org/backupsitetuff10",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "backupsitetuff3",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026407",
+      "registry_url": "https://registry.npmjs.org/backupsitetuff3",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "backupsitetuff6",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026422",
+      "registry_url": "https://registry.npmjs.org/backupsitetuff6",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "backupsitetuff9",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026467",
+      "registry_url": "https://registry.npmjs.org/backupsitetuff9",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "bismillahitidakimas",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026381",
+      "registry_url": "https://registry.npmjs.org/bismillahitidakimas",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "bomboclatwallahi",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026497",
+      "registry_url": "https://registry.npmjs.org/bomboclatwallahi",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "captainindia",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026388",
+      "registry_url": "https://registry.npmjs.org/captainindia",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "crazynut",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026374",
+      "registry_url": "https://registry.npmjs.org/crazynut",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "fflc-updated",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026512",
+      "registry_url": "https://registry.npmjs.org/fflc-updated",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "howmanygreatbritain",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026404",
+      "registry_url": "https://registry.npmjs.org/howmanygreatbritain",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "imillegal1",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026475",
+      "registry_url": "https://registry.npmjs.org/imillegal1",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "imillegal2",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026441",
+      "registry_url": "https://registry.npmjs.org/imillegal2",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "imillegal3",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026389",
+      "registry_url": "https://registry.npmjs.org/imillegal3",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "imillegal4",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026511",
+      "registry_url": "https://registry.npmjs.org/imillegal4",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "imillegal5",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026414",
+      "registry_url": "https://registry.npmjs.org/imillegal5",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ishowfeet1",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026428",
+      "registry_url": "https://registry.npmjs.org/ishowfeet1",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ishowfeet10",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026471",
+      "registry_url": "https://registry.npmjs.org/ishowfeet10",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ishowfeet11",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026394",
+      "registry_url": "https://registry.npmjs.org/ishowfeet11",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ishowfeet12",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026490",
+      "registry_url": "https://registry.npmjs.org/ishowfeet12",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ishowfeet13",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026505",
+      "registry_url": "https://registry.npmjs.org/ishowfeet13",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ishowfeet14",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026426",
+      "registry_url": "https://registry.npmjs.org/ishowfeet14",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ishowfeet15",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026501",
+      "registry_url": "https://registry.npmjs.org/ishowfeet15",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ishowfeet16",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026486",
+      "registry_url": "https://registry.npmjs.org/ishowfeet16",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ishowfeet17",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026420",
+      "registry_url": "https://registry.npmjs.org/ishowfeet17",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ishowfeet18",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026417",
+      "registry_url": "https://registry.npmjs.org/ishowfeet18",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ishowfeet19",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026438",
+      "registry_url": "https://registry.npmjs.org/ishowfeet19",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ishowfeet2",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026487",
+      "registry_url": "https://registry.npmjs.org/ishowfeet2",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ishowfeet20",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026410",
+      "registry_url": "https://registry.npmjs.org/ishowfeet20",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ishowfeet3",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026408",
+      "registry_url": "https://registry.npmjs.org/ishowfeet3",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ishowfeet4",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026455",
+      "registry_url": "https://registry.npmjs.org/ishowfeet4",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ishowfeet5",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026436",
+      "registry_url": "https://registry.npmjs.org/ishowfeet5",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ishowfeet6",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026406",
+      "registry_url": "https://registry.npmjs.org/ishowfeet6",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ishowfeet7",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026386",
+      "registry_url": "https://registry.npmjs.org/ishowfeet7",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ishowfeet8",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026401",
+      "registry_url": "https://registry.npmjs.org/ishowfeet8",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ishowfeet9",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026446",
+      "registry_url": "https://registry.npmjs.org/ishowfeet9",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "kirkland",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026402",
+      "registry_url": "https://registry.npmjs.org/kirkland",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "lowkeybored",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026378",
+      "registry_url": "https://registry.npmjs.org/lowkeybored",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "lowkirkuenly",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026507",
+      "registry_url": "https://registry.npmjs.org/lowkirkuenly",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "midnightrush",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026465",
+      "registry_url": "https://registry.npmjs.org/midnightrush",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "miguelphonk",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026517",
+      "registry_url": "https://registry.npmjs.org/miguelphonk",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff1",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026464",
+      "registry_url": "https://registry.npmjs.org/nottuff1",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff10",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026450",
+      "registry_url": "https://registry.npmjs.org/nottuff10",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff11",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026373",
+      "registry_url": "https://registry.npmjs.org/nottuff11",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff12",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026379",
+      "registry_url": "https://registry.npmjs.org/nottuff12",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff13",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026468",
+      "registry_url": "https://registry.npmjs.org/nottuff13",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff14",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026423",
+      "registry_url": "https://registry.npmjs.org/nottuff14",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff15",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026391",
+      "registry_url": "https://registry.npmjs.org/nottuff15",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff16",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026449",
+      "registry_url": "https://registry.npmjs.org/nottuff16",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff17",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026447",
+      "registry_url": "https://registry.npmjs.org/nottuff17",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff18",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026499",
+      "registry_url": "https://registry.npmjs.org/nottuff18",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff19",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026383",
+      "registry_url": "https://registry.npmjs.org/nottuff19",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff2",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026470",
+      "registry_url": "https://registry.npmjs.org/nottuff2",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff20",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026421",
+      "registry_url": "https://registry.npmjs.org/nottuff20",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff21",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026459",
+      "registry_url": "https://registry.npmjs.org/nottuff21",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff22",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026480",
+      "registry_url": "https://registry.npmjs.org/nottuff22",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff23",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026479",
+      "registry_url": "https://registry.npmjs.org/nottuff23",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff24",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026488",
+      "registry_url": "https://registry.npmjs.org/nottuff24",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff25",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026442",
+      "registry_url": "https://registry.npmjs.org/nottuff25",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff26",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026399",
+      "registry_url": "https://registry.npmjs.org/nottuff26",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff27",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026434",
+      "registry_url": "https://registry.npmjs.org/nottuff27",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff28",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026415",
+      "registry_url": "https://registry.npmjs.org/nottuff28",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff29",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026382",
+      "registry_url": "https://registry.npmjs.org/nottuff29",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff3",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026489",
+      "registry_url": "https://registry.npmjs.org/nottuff3",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff30",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026439",
+      "registry_url": "https://registry.npmjs.org/nottuff30",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff4",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026443",
+      "registry_url": "https://registry.npmjs.org/nottuff4",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff5",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026424",
+      "registry_url": "https://registry.npmjs.org/nottuff5",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff6",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026413",
+      "registry_url": "https://registry.npmjs.org/nottuff6",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff7",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026390",
+      "registry_url": "https://registry.npmjs.org/nottuff7",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff8",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026495",
+      "registry_url": "https://registry.npmjs.org/nottuff8",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nottuff9",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026392",
+      "registry_url": "https://registry.npmjs.org/nottuff9",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "omglucidesotuff",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026482",
+      "registry_url": "https://registry.npmjs.org/omglucidesotuff",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "omgyesyesyes",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026504",
+      "registry_url": "https://registry.npmjs.org/omgyesyesyes",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "pasirianspirit",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026405",
+      "registry_url": "https://registry.npmjs.org/pasirianspirit",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ratelimitsucks",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026494",
+      "registry_url": "https://registry.npmjs.org/ratelimitsucks",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ratelimitsucks1",
+      "jfrog_malicious_versions": [
+        "1.1.3",
+        "1.1.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026503",
+      "registry_url": "https://registry.npmjs.org/ratelimitsucks1",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ratelimitsucks10",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026516",
+      "registry_url": "https://registry.npmjs.org/ratelimitsucks10",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ratelimitsucks2",
+      "jfrog_malicious_versions": [
+        "1.1.4",
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026429",
+      "registry_url": "https://registry.npmjs.org/ratelimitsucks2",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ratelimitsucks3",
+      "jfrog_malicious_versions": [
+        "1.1.5",
+        "1.1.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026435",
+      "registry_url": "https://registry.npmjs.org/ratelimitsucks3",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ratelimitsucks4",
+      "jfrog_malicious_versions": [
+        "1.1.6",
+        "1.1.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026460",
+      "registry_url": "https://registry.npmjs.org/ratelimitsucks4",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ratelimitsucks5",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026430",
+      "registry_url": "https://registry.npmjs.org/ratelimitsucks5",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ratelimitsucks6",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026510",
+      "registry_url": "https://registry.npmjs.org/ratelimitsucks6",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "ratelimitsucks9",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026398",
+      "registry_url": "https://registry.npmjs.org/ratelimitsucks9",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "sixseven1",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026457",
+      "registry_url": "https://registry.npmjs.org/sixseven1",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "sixseven10",
+      "jfrog_malicious_versions": [
+        "1.7.7"
+      ],
+      "xray_id": "XRAY-1026276",
+      "registry_url": "https://registry.npmjs.org/sixseven10",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "sixseven2",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026375",
+      "registry_url": "https://registry.npmjs.org/sixseven2",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "sixseven3",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026393",
+      "registry_url": "https://registry.npmjs.org/sixseven3",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "sixseven4",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026384",
+      "registry_url": "https://registry.npmjs.org/sixseven4",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "sixseven5",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026509",
+      "registry_url": "https://registry.npmjs.org/sixseven5",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "sixseven6",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "1.7.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026395",
+      "registry_url": "https://registry.npmjs.org/sixseven6",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "sixseven7",
+      "jfrog_malicious_versions": [
+        "1.7.7"
+      ],
+      "xray_id": "XRAY-1026279",
+      "registry_url": "https://registry.npmjs.org/sixseven7",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "sixseven8",
+      "jfrog_malicious_versions": [
+        "1.7.7"
+      ],
+      "xray_id": "XRAY-1026269",
+      "registry_url": "https://registry.npmjs.org/sixseven8",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "sixseven9",
+      "jfrog_malicious_versions": [
+        "1.7.7"
+      ],
+      "xray_id": "XRAY-1026250",
+      "registry_url": "https://registry.npmjs.org/sixseven9",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "speed1",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026469",
+      "registry_url": "https://registry.npmjs.org/speed1",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "speed2",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026506",
+      "registry_url": "https://registry.npmjs.org/speed2",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "speed3",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026427",
+      "registry_url": "https://registry.npmjs.org/speed3",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "speed4",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026411",
+      "registry_url": "https://registry.npmjs.org/speed4",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "speed5",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026476",
+      "registry_url": "https://registry.npmjs.org/speed5",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "thebigyahu",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026492",
+      "registry_url": "https://registry.npmjs.org/thebigyahu",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "timmytuffknuckles3",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026496",
+      "registry_url": "https://registry.npmjs.org/timmytuffknuckles3",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "timmytuffknuckles6",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026387",
+      "registry_url": "https://registry.npmjs.org/timmytuffknuckles6",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "timmytuffknuckles9",
+      "jfrog_malicious_versions": [
+        "1.1.7",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026377",
+      "registry_url": "https://registry.npmjs.org/timmytuffknuckles9",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "whatsadmaidk",
+      "jfrog_malicious_versions": [
+        "1.1.2",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026513",
+      "registry_url": "https://registry.npmjs.org/whatsadmaidk",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "changiairportpromax",
+      "jfrog_malicious_versions": [
+        "1.1.3",
+        "2.0.0"
+      ],
+      "xray_id": "XRAY-1026514",
+      "registry_url": "https://registry.npmjs.org/changiairportpromax",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    },
+    {
+      "ecosystem": "npm",
+      "name": "testdonotredeemit",
+      "jfrog_malicious_versions": [
+        "1.0.0",
+        "2.0.0",
+        "2.1.1"
+      ],
+      "xray_id": "XRAY-1026313",
+      "registry_url": "https://registry.npmjs.org/testdonotredeemit",
+      "http_status": 200,
+      "availability": "security_placeholder",
+      "available_versions": [
+        "0.0.1-security"
+      ],
+      "malicious_versions_currently_available": [],
+      "dist_tags": {
+        "latest": "0.0.1-security"
+      },
+      "modified": null,
+      "publish_times": {},
+      "maintainers": [],
+      "deprecations": {}
+    }
+  ]
+}

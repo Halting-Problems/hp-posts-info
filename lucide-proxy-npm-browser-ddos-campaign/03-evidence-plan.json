@@ -1,0 +1,37 @@
+{
+  "task_id": "lucide-proxy-npm-browser-ddos-campaign-03-evidence-plan",
+  "source_version_hash": "dac4e36c6c63cdfc9ce13b8db4f9d67287877b7ec5bb9516ca8b76681f557fcf",
+  "completed_at": "2026-07-13T22:12:32.297446Z",
+  "collection_items": [
+    {
+      "claim": "exact package/version scope",
+      "source": "JFrog package/Xray table",
+      "method": "static HTML table parsing",
+      "unsafe_execution": false
+    },
+    {
+      "claim": "current registry availability",
+      "source": "registry.npmjs.org abbreviated metadata",
+      "method": "GET metadata only; no tarballs",
+      "unsafe_execution": false
+    },
+    {
+      "claim": "historical loader and Wisp phases",
+      "source": "GitHub commit API plus JFrog reverse engineering",
+      "method": "static patch-term counts and metadata",
+      "unsafe_execution": false
+    },
+    {
+      "claim": "May adware-only snapshot",
+      "source": "SafeDep primary static analysis",
+      "method": "source capture and claim comparison",
+      "unsafe_execution": false
+    }
+  ],
+  "safety_constraints": [
+    "No package install",
+    "No package tarball execution",
+    "No live traffic replay",
+    "Untrusted captures remain below this candidate references directory"
+  ]
+}

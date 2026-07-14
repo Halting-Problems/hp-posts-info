@@ -1,0 +1,33 @@
+{
+  "task_id": "lucide-proxy-npm-browser-ddos-campaign-09-endpoint-forensics",
+  "source_version_hash": "dac4e36c6c63cdfc9ce13b8db4f9d67287877b7ec5bb9516ca8b76681f557fcf",
+  "completed_at": "2026-07-13T22:12:32.297446Z",
+  "applicability": "not_applicable_for_install_time_endpoint_compromise",
+  "endpoint_runbook": {
+    "platforms": [
+      "managed browsers only"
+    ],
+    "collection_order": [
+      "browser history",
+      "service-worker/cache evidence",
+      "DNS/proxy records"
+    ],
+    "triage_commands": [
+      "scripts/collect_chromium_lucide_evidence.py"
+    ],
+    "credential_files_to_review": [],
+    "persistence_locations": [
+      "Chromium Service Worker storage for confirmed origins"
+    ],
+    "process_and_network_hunts": [
+      "scripts/scan_lucide_proxy_exposure.py"
+    ],
+    "reimage_criteria": [],
+    "rotation_order": [],
+    "evidence_to_preserve": [
+      "browser profile forensic copy",
+      "UTC network logs"
+    ]
+  },
+  "reason": "Primary sources found no npm lifecycle hook or host implant. Reimage/general developer credential rotation would overstate evidence."
+}

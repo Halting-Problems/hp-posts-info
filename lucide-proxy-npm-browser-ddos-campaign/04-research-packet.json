@@ -1,0 +1,76 @@
+{
+  "task_id": "lucide-proxy-npm-browser-ddos-campaign-04-research-packet",
+  "source_version_hash": "dac4e36c6c63cdfc9ce13b8db4f9d67287877b7ec5bb9516ca8b76681f557fcf",
+  "completed_at": "2026-07-13T22:12:32.297446Z",
+  "disposition": "new_post",
+  "source_retrieval": {
+    "jfrog_retrieved_at": "2026-07-13T21:53:41Z",
+    "jfrog_sha256": "dac4e36c6c63cdfc9ce13b8db4f9d67287877b7ec5bb9516ca8b76681f557fcf",
+    "npm_status_queried_at": "2026-07-13T21:55:38.511301+00:00"
+  },
+  "claim_ledger": [
+    {
+      "claim_id": "C1",
+      "claim": "JFrog mapped 148 package names and 398 malicious package/version pairs.",
+      "status": "confirmed",
+      "confidence": "high",
+      "evidence": [
+        "references/jfrog-package-version-table.json"
+      ]
+    },
+    {
+      "claim_id": "C2",
+      "claim": "May history contained a mutable loader and Wisp-compatible browser traffic generator.",
+      "status": "confirmed",
+      "confidence": "high",
+      "evidence": [
+        "JFrog primary research",
+        "references/github-commit-static-summary.json"
+      ]
+    },
+    {
+      "claim_id": "C3",
+      "claim": "An archived May 30 page generated HTTP flood traffic from visitors' browsers.",
+      "status": "confirmed",
+      "confidence": "high",
+      "evidence": [
+        "JFrog primary research"
+      ]
+    },
+    {
+      "claim_id": "C4",
+      "claim": "SafeDep's May 27 package snapshot had adware/static proxy assets and no install hook or credential stealer.",
+      "status": "confirmed",
+      "confidence": "high",
+      "evidence": [
+        "SafeDep primary research"
+      ]
+    },
+    {
+      "claim_id": "C5",
+      "claim": "The July 8 wave currently executes DDoS code.",
+      "status": "not_observed",
+      "confidence": "medium",
+      "evidence": [
+        "JFrog says the July builds were adware-only"
+      ]
+    },
+    {
+      "claim_id": "C6",
+      "claim": "147 names now resolve to npm security placeholders; charlie-kirk 2.0.0/3.0.1 remained available by metadata.",
+      "status": "confirmed",
+      "confidence": "high",
+      "evidence": [
+        "references/npm-registry-status-2026-07-13.json"
+      ]
+    },
+    {
+      "claim_id": "C7",
+      "claim": "Campaign victim/browser-session count is known.",
+      "status": "unknown",
+      "confidence": "high",
+      "evidence": []
+    }
+  ],
+  "source_conflict_resolution": "SafeDep and JFrog inspected different evidence layers/times. SafeDep accurately described the published May package snapshot; JFrog later recovered earlier mutable behavior from history and archives."
+}

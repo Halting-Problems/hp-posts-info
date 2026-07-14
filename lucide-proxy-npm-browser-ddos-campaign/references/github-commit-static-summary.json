@@ -1,0 +1,53 @@
+[
+  {
+    "sha": "9b7ca53d6bd8c197e8fe29eabcff54b03331f98f",
+    "html_url": "https://github.com/lucideproxy/svg/commit/9b7ca53d6bd8c197e8fe29eabcff54b03331f98f",
+    "commit_date": "2026-05-17T04:26:12Z",
+    "changed_files": 19,
+    "patch_truncated_files": 4,
+    "token_counts_in_returned_patches": {
+      "remote_loader_reference": 2,
+      "websocket_constructor": 8,
+      "wisp_reference": 6,
+      "beacon_reference": 0,
+      "local_storage_reference": 8,
+      "cookie_reference": 0,
+      "loopback_target": 2
+    },
+    "note": "Zero is not evidence of absence when GitHub omitted or truncated patches."
+  },
+  {
+    "sha": "bcc9868e345b6a04e2b2b89de355d1829daf31e1",
+    "html_url": "https://github.com/lucideproxy/svg/commit/bcc9868e345b6a04e2b2b89de355d1829daf31e1",
+    "commit_date": "2026-05-16T17:01:27Z",
+    "changed_files": 33,
+    "patch_truncated_files": 4,
+    "token_counts_in_returned_patches": {
+      "remote_loader_reference": 8,
+      "websocket_constructor": 8,
+      "wisp_reference": 6,
+      "beacon_reference": 0,
+      "local_storage_reference": 61,
+      "cookie_reference": 14,
+      "loopback_target": 2
+    },
+    "note": "Zero is not evidence of absence when GitHub omitted or truncated patches."
+  },
+  {
+    "sha": "ccc7c921bc931c93cf418a877e16fe768a201500",
+    "html_url": "https://github.com/lucideproxy/svg/commit/ccc7c921bc931c93cf418a877e16fe768a201500",
+    "commit_date": "2026-05-17T13:25:50Z",
+    "changed_files": 34,
+    "patch_truncated_files": 10,
+    "token_counts_in_returned_patches": {
+      "remote_loader_reference": 2,
+      "websocket_constructor": 4,
+      "wisp_reference": 3,
+      "beacon_reference": 0,
+      "local_storage_reference": 25,
+      "cookie_reference": 7,
+      "loopback_target": 1
+    },
+    "note": "Zero is not evidence of absence when GitHub omitted or truncated patches."
+  }
+]
