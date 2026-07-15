@@ -1,0 +1,78 @@
+{
+  "event_id": "sicoob-sdk-nuget-certificate-exfiltration",
+  "slug": "sicoob-sdk-nuget-certificate-exfiltration",
+  "title": "Malicious NuGet Package Impersonates Sicoob SDK to Exfiltrate Banking Certificates and Passwords",
+  "status": "publish_ready",
+  "first_seen": "2026-05-28",
+  "ecosystem": [
+    "NuGet",
+    ".NET"
+  ],
+  "package": {
+    "name": "Sicoob.Sdk",
+    "registry": "NuGet",
+    "owner": "sicoob",
+    "malicious_versions": [
+      "2.0.0",
+      "2.0.1",
+      "2.0.2",
+      "2.0.3",
+      "2.0.4"
+    ],
+    "known_non_malicious_versions": [
+      "1.0.0"
+    ],
+    "nuget_flat_container": "https://api.nuget.org/v3-flatcontainer/sicoob.sdk/index.json",
+    "nuget_registration_index": "https://api.nuget.org/v3/registration5-gz-semver2/sicoob.sdk/index.json"
+  },
+  "artifact_hashes_sha256": {
+    "Sicoob.Sdk@1.0.0": "87b66028e491573b787ee00bc81916241047e035d152dfbf4807b57c1bbbb043",
+    "Sicoob.Sdk@2.0.0": "7d2332e76c266509cdec8b552ccc839f50c28e6b01070071257bd3f57d1d9da2",
+    "Sicoob.Sdk@2.0.1": "f0dff53969080584560b2971411415bdf9064d5a5a50185c4ae018943e7d5cbe",
+    "Sicoob.Sdk@2.0.2": "94eb8da6703dd073184015c9e3cb34e9b6153fc499c9cb1a7db6e4361ec349dd",
+    "Sicoob.Sdk@2.0.3": "ac9dc55f13d973e05865e9674c8b8e6744e7fbfca3355199b292f614f13ac7bc",
+    "Sicoob.Sdk@2.0.4": "190dbcafa776e8cc221106414b8fbd68252d98438c5e46b8449788fbe70316a4"
+  },
+  "indicators": {
+    "domains": [
+      "o4511335034847232.ingest.de.sentry.io"
+    ],
+    "urls": [
+      "https://d565e3f03d0b1a7c8935d7ff94237316@o4511335034847232.ingest.de.sentry.io/4511337546317904"
+    ],
+    "strings": [
+      "cliend_id:",
+      "pass:",
+      "Boleto:",
+      "SentrySdk",
+      "CaptureMessage",
+      "ReadAllBytes",
+      "ToBase64String"
+    ],
+    "github_accounts": [
+      "Sicoob-Cooperativa",
+      "joaobcdev"
+    ],
+    "nuget_owner": [
+      "sicoob"
+    ]
+  },
+  "credentials_at_risk": [
+    "PFX client certificate archive contents",
+    "PFX passwords",
+    "Sicoob API client IDs",
+    "Sicoob API tokens derived from client credentials",
+    "boleto API response data"
+  ],
+  "confidence": "high",
+  "attribution": "unknown",
+  "parent_campaign_id": "none",
+  "sources": [
+    "https://socket.dev/blog/malicious-nuget-package-impersonates-sicoob-sdk",
+    "https://api.nuget.org/v3-flatcontainer/sicoob.sdk/index.json",
+    "https://api.nuget.org/v3/registration5-gz-semver2/sicoob.sdk/index.json",
+    "https://api.github.com/orgs/Sicoob-Cooperativa",
+    "https://api.github.com/users/Sicoob",
+    "https://raw.githubusercontent.com/Sicoob-Cooperativa/sicoob_sdk_csharp/main/SicoobClient.cs"
+  ]
+}

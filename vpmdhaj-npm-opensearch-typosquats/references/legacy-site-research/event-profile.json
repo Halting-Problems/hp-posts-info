@@ -1,0 +1,92 @@
+{
+  "event_id": "vpmdhaj-npm-opensearch-typosquats",
+  "title": "vpmdhaj npm typosquat credential theft cluster",
+  "first_seen": "2026-05-28",
+  "ecosystem": [
+    "npm",
+    "node",
+    "bun",
+    "ci-cd",
+    "cloud"
+  ],
+  "affected_assets": {
+    "packages": [
+      "@vpmdhaj/devops-tools",
+      "@vpmdhaj/elastic-helper",
+      "@vpmdhaj/opensearch-setup",
+      "@vpmdhaj/search-setup",
+      "app-config-utility",
+      "elastic-opensearch-helper",
+      "env-config-manager",
+      "opensearch-config-utility",
+      "opensearch-security-scanner",
+      "opensearch-setup",
+      "opensearch-setup-tool",
+      "search-cluster-setup",
+      "search-engine-setup",
+      "vpmdhaj-opensearch-setup"
+    ],
+    "known_versions": {
+      "@vpmdhaj/opensearch-setup": [
+        "1.0.9102",
+        "1.0.9103"
+      ],
+      "@vpmdhaj/elastic-helper": [
+        "1.0.7267",
+        "1.0.7268",
+        "1.0.7269",
+        "1.0.7270"
+      ]
+    }
+  },
+  "execution_triggers": [
+    "npm or npx install/execution of typosquatted packages",
+    "Bun runtime or loader execution of package contents",
+    "postinstall lifecycle execution where package manager settings permit scripts"
+  ],
+  "credential_material_at_risk": [
+    "AWS environment credentials",
+    "AWS web identity and container credentials",
+    "HashiCorp Vault tokens",
+    "GitHub Actions OIDC request tokens",
+    "npm tokens and npmrc credentials",
+    "Kubernetes service account tokens",
+    "local SSH keys and cloud config files"
+  ],
+  "iocs": {
+    "domains": [
+      "aab.sportsontheweb.net",
+      "www.sportsontheweb.net"
+    ],
+    "urls": [
+      "https://aab.sportsontheweb.net/api/b"
+    ],
+    "sha256": [
+      "a39155771e93e65b05195c8a705dfc03aa85c2ec682505f0d557233a8f275145",
+      "9d962ed605bb4a39991f8fab9b1d2e423ea4d545f23fd44d9473a6423d94bbf"
+    ],
+    "headers": [
+      "x-forwarded-host"
+    ],
+    "environment_markers": [
+      "NPX_ISOLATED_ENVIRONMENT",
+      "AWS_CONTAINER_CREDENTIALS_FULL_URI",
+      "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI",
+      "AWS_CONTAINER_AUTHORIZATION_TOKEN",
+      "AWS_WEB_IDENTITY_TOKEN_FILE",
+      "ACTIONS_ID_TOKEN_REQUEST_URL",
+      "ACTIONS_ID_TOKEN_REQUEST_TOKEN",
+      "NPM_TOKEN",
+      "VAULT_TOKEN"
+    ]
+  },
+  "sources": [
+    "https://www.microsoft.com/en-us/security/blog/2026/05/28/typosquatted-npm-packages-used-steal-cloud-ci-cd-secrets/",
+    "https://www.npmjs.com/~vpmdhaj",
+    "https://www.npmjs.com/package/@vpmdhaj/elastic-helper",
+    "https://docs.npmjs.com/cli/v11/using-npm/scripts",
+    "https://bun.com/docs/runtime",
+    "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html"
+  ],
+  "confidence": "high"
+}

@@ -15,3 +15,11 @@ hunts:
       collection_context: "host filesystem or log export"
     positive_signal: "Indicators of compromise matched in telemetry: local repository and exported telemetry scope"
     script_path: "scripts/local_repository_and_exported_telemetry_scope_2.py"
+  - id: "vpmdhaj-npm-opensearch-typosquats-specialized-audit-1"
+    title: "vpmdhaj npm audit"
+    question: "Does collected host or repository telemetry contain evidence covered by the specialized vpmdhaj npm audit audit?"
+    telemetry:
+      family: "file"
+      collection_context: "host filesystem, package cache, repository, or exported telemetry"
+    positive_signal: "The specialized audit reports one or more incident-specific indicators or vulnerable artifacts."
+    script_path: "scripts/vpmdhaj_npm_audit.py"

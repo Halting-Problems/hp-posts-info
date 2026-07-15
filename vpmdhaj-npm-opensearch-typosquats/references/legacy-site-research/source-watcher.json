@@ -1,0 +1,59 @@
+{
+  "candidate_incidents": [
+    {
+      "candidate_id": "vpmdhaj-npm-opensearch-typosquats",
+      "title": "vpmdhaj npm typosquat credential theft cluster",
+      "first_seen": "2026-05-28",
+      "candidate_threat_classes": [
+        "typosquatting",
+        "malicious package",
+        "credential theft",
+        "ci-cd abuse",
+        "cloud credential theft"
+      ],
+      "ecosystem": [
+        "npm",
+        "node",
+        "bun",
+        "aws",
+        "github-actions"
+      ],
+      "affected_assets": [
+        "@vpmdhaj/devops-tools",
+        "@vpmdhaj/elastic-helper",
+        "@vpmdhaj/opensearch-setup",
+        "@vpmdhaj/search-setup",
+        "app-config-utility",
+        "elastic-opensearch-helper",
+        "env-config-manager",
+        "opensearch-config-utility",
+        "opensearch-security-scanner",
+        "opensearch-setup",
+        "opensearch-setup-tool",
+        "search-cluster-setup",
+        "search-engine-setup",
+        "vpmdhaj-opensearch-setup"
+      ],
+      "starting_sources": [
+        {
+          "name": "Microsoft Threat Intelligence",
+          "url": "https://www.microsoft.com/en-us/security/blog/2026/05/28/typosquatted-npm-packages-used-steal-cloud-ci-cd-secrets/",
+          "source_role": "PRIMARY_RESEARCH"
+        }
+      ],
+      "dedupe_keys": [
+        "npm:@vpmdhaj/opensearch-setup",
+        "npm:@vpmdhaj/elastic-helper",
+        "domain:aab.sportsontheweb.net",
+        "sha256:a39155771e93e65b05195c8a705dfc03aa85c2ec682505f0d557233a8f275145"
+      ],
+      "suggested_next_skill": "site-worker",
+      "confidence": "high",
+      "reason": "Primary Microsoft research documents a malicious npm typosquat cluster with credential theft behavior and concrete IOCs.",
+      "collection_gaps": [
+        "Complete version list for every vpmdhaj package is not fully public.",
+        "Original tarballs are likely removed from npm and require cached package artifacts or registry mirrors for deeper diffing."
+      ]
+    }
+  ]
+}
