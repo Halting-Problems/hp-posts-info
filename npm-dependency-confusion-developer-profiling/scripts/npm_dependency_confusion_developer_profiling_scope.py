@@ -3,6 +3,7 @@
 import argparse
 import json
 import os
+import re
 from dataclasses import dataclass, asdict
 from pathlib import Path
 from typing import Iterable
@@ -138,8 +139,19 @@ def scan_paths(paths: Iterable[Path]) -> list[Finding]:
         lowered = text.lower()
         for category, indicator in INDICATORS:
             needle = indicator.lower()
-            if needle in lowered:
-                line, evidence = _first_line_with(text, indicator)
+            contextual_package_match = None
+            if category == "package_version":
+                package, version = indicator.rsplit("@", 1)
+                contextual_package_match = re.search(
+                    rf'"{re.escape(package)}"\s*:\s*"{re.escape(version)}"',
+                    text,
+                    re.IGNORECASE,
+                )
+            if needle in lowered or contextual_package_match:
+                line, evidence = _first_line_with(
+                    text,
+                    indicator if needle in lowered else indicator.rsplit("@", 1)[0],
+                )
                 key = (str(path), category, indicator)
                 if key in seen:
                     continue

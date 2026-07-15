@@ -1,89 +1,132 @@
 #!/usr/bin/env python3
+"""Generated offline hunt scanner; regenerate with generate_scanners.py."""
+import importlib.util
 import os
-import sys
-import subprocess
 from pathlib import Path
+import sys
 
-ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
-LOG_ROOT = os.environ.get("LOG_ROOT", "")
-OUT = Path(os.environ.get("OUT", "hp-trapdoor-cross-ecosystem-crypto-stealer-scope"))
+PACKAGES = [
+    "async-pipeline-builder",
+    "build-scripts-utils",
+    "chain-key-validator",
+    "crypto-credential-scanner",
+    "defi-env-auditor",
+    "defi-threat-scanner",
+    "deployment-key-auditor",
+    "dev-env-bootstrapper",
+    "eth-wallet-sentinel",
+    "llm-context-compressor",
+    "mnemonic-safety-check",
+    "model-switch-router",
+    "node-setup-helpers",
+    "project-init-tools",
+    "prompt-engineering-toolkit",
+    "solidity-deploy-guard",
+    "token-usage-tracker",
+    "wallet-backup-verifier",
+    "wallet-security-checker",
+    "web3-secrets-detector",
+    "workspace-config-loader",
+    "cryptowallet-safety",
+    "data-pipeline-check",
+    "defi-risk-scanner",
+    "env-loader-cli",
+    "eth-security-auditor",
+    "git-config-sync",
+    "solidity-build-guard",
+    "move-analyzer-build",
+    "move-compiler-tools",
+    "move-project-builder",
+    "sui-framework-helpers",
+    "sui-move-build-helper",
+    "sui-sdk-build-utils"
+]
+PACKAGE_VERSIONS = [
+    "env-loader-cli@0.1.0",
+    "env-loader-cli@0.1.1",
+    "eth-security-auditor@0.1.0",
+    "sui-framework-helpers@0.1.0",
+    "PyPI/env-loader-cli 0.1.0",
+    "PyPI/env-loader-cli 0.1.1",
+    "PyPI/eth-security-auditor 0.1.0",
+    "Crates.io/sui-framework-helpers 0.1.0",
+    "async-pipeline-builder@1.0.0",
+    "build-scripts-utils@1.0.0",
+    "chain-key-validator@1.0.0",
+    "crypto-credential-scanner@1.0.0",
+    "defi-env-auditor@1.0.0",
+    "defi-threat-scanner@1.0.0",
+    "deployment-key-auditor@1.0.0",
+    "dev-env-bootstrapper@1.0.0",
+    "eth-wallet-sentinel@1.0.0",
+    "llm-context-compressor@1.0.0",
+    "mnemonic-safety-check@1.0.0",
+    "model-switch-router@1.0.0",
+    "node-setup-helpers@1.0.0",
+    "project-init-tools@1.0.0",
+    "prompt-engineering-toolkit@1.0.0",
+    "solidity-deploy-guard@1.0.0",
+    "token-usage-tracker@1.0.0",
+    "wallet-backup-verifier@1.0.0",
+    "wallet-security-checker@1.0.0",
+    "web3-secrets-detector@1.0.0",
+    "workspace-config-loader@1.0.0",
+    "cryptowallet-safety@1.0.0",
+    "data-pipeline-check@1.0.0",
+    "defi-risk-scanner@1.0.0",
+    "git-config-sync@1.0.0",
+    "solidity-build-guard@1.0.0",
+    "move-analyzer-build@1.0.0",
+    "move-compiler-tools@1.0.0",
+    "move-project-builder@1.0.0",
+    "sui-move-build-helper@1.0.0",
+    "sui-sdk-build-utils@1.0.0"
+]
+FILES = [
+    "trap-core.js",
+    ".cursorrules",
+    "CLAUDE.md",
+    "build.rs"
+]
+DOMAINS = [
+    "ddjidd564.github.io"
+]
+PROCESS_PATTERNS = [
+    "npm -> node trap-core.js",
+    "python -> node -e",
+    "cargo -> build.rs"
+]
+NETWORK_PATTERNS = [
+    "developer or CI host egress to ddjidd564.github.io",
+    "post-install GitHub or AWS credential validation"
+]
+PROFILE = {
+    'packages': PACKAGES,
+    'package_versions': PACKAGE_VERSIONS,
+    'files': FILES,
+    'domains': DOMAINS,
+    'process_patterns': PROCESS_PATTERNS,
+    'network_patterns': NETWORK_PATTERNS
+}
 
-PACKAGES = ["async-pipeline-builder","build-scripts-utils","chain-key-validator","crypto-credential-scanner","defi-env-auditor","defi-threat-scanner","deployment-key-auditor","dev-env-bootstrapper","eth-wallet-sentinel","llm-context-compressor","mnemonic-safety-check","model-switch-router","node-setup-helpers","project-init-tools","prompt-engineering-toolkit","solidity-deploy-guard","token-usage-tracker","wallet-backup-verifier","wallet-security-checker","web3-secrets-detector","workspace-config-loader","cryptowallet-safety","data-pipeline-check","defi-risk-scanner","env-loader-cli","eth-security-auditor","git-config-sync","solidity-build-guard","move-analyzer-build","move-compiler-tools","move-project-builder","sui-framework-helpers","sui-move-build-helper","sui-sdk-build-utils"]
-VERSIONS = ["env-loader-cli@0.1.0","env-loader-cli@0.1.1","eth-security-auditor@0.1.0","sui-framework-helpers@0.1.0","PyPI/env-loader-cli 0.1.0","PyPI/env-loader-cli 0.1.1","PyPI/eth-security-auditor 0.1.0","Crates.io/sui-framework-helpers 0.1.0"]
-FILES = ["trap-core.js",".cursorrules","CLAUDE.md","build.rs"]
-DOMAINS = ["ddjidd564.github.io"]
-URLS = ["https://ddjidd564.github.io/defi-security-best-practices/","https://ddjidd564.github.io/defi-security-best-practices/config.json","https://ddjidd564.github.io/defi-security-best-practices/payloads/compliance-scanner-light.js","https://ddjidd564.github.io/defi-security-best-practices/payloads/risk-profiler.js"]
-PROCESS_PATTERNS = ["npm -> node trap-core.js","python -> node -e","cargo -> build.rs"]
-NETWORK_PATTERNS = ["developer or CI host egress to ddjidd564.github.io","post-install GitHub or AWS credential validation"]
+def main() -> int:
+    try:
+        runtime_path = Path(__file__).resolve().parents[2] / "scanner_runtime.py"
+        spec = importlib.util.spec_from_file_location("hp_scanner_runtime", runtime_path)
+        if spec is None or spec.loader is None:
+            print(f"scanner runtime not found: {runtime_path}", file=sys.stderr)
+            return 2
+        runtime = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(runtime)
+        args = list(sys.argv[1:])
+        if os.environ.get("LOG_ROOT") and "--log-root" not in args:
+            args.extend(["--log-root", os.environ["LOG_ROOT"]])
+        if os.environ.get("OUT") and "--out" not in args:
+            args.extend(["--out", os.environ["OUT"]])
+        return runtime.main(args, PROFILE) if args else 2
+    except Exception as exc:
+        print(f"scanner execution error: {exc}", file=sys.stderr)
+        return 2
 
-# Collect unique indicators
-indicators = set()
-for group in [PACKAGES, VERSIONS, FILES, DOMAINS, URLS, PROCESS_PATTERNS, NETWORK_PATTERNS]:
-    for val in group:
-        if val:
-            indicators.add(val)
-
-with open(indicators_file, "w") as f:
-    for ind in sorted(indicators):
-        f.write(ind + "\n")
-
-print(f"[+] Written unique selectors to {indicators_file}")
-
-# Walk local directory
-print(f"[+] Scanning directory: {ROOT} for selectors...")
-matches = []
-exclude_dirs = {"node_modules", "vendor", "dist", ".git"}
-for root, dirs, filenames in os.walk(ROOT):
-    dirs[:] = [d for d in dirs if d not in exclude_dirs]
-    for filename in filenames:
-        filepath = Path(root) / filename
-        try:
-            content = filepath.read_text(errors="ignore")
-            for ind in indicators:
-                if ind in content:
-                    matches.append(f"{filepath}: found '{ind}'")
-        except Exception:
-            pass  # pass # return or raise not needed here
-
-if matches:
-    (OUT / "repository-indicator-matches.txt").write_text("\n".join(matches) + "\n")
-    print(f"[!] Found {len(matches)} matches in codebase!")
-
-# Optional Log Scanning
-if LOG_ROOT and os.path.exists(LOG_ROOT):
-    print(f"[+] Scanning telemetry log directory: {LOG_ROOT}...")
-    log_matches = []
-    for root, _, filenames in os.walk(LOG_ROOT):
-        for filename in filenames:
-            filepath = Path(root) / filename
-            try:
-                content = filepath.read_text(errors="ignore")
-                for ind in indicators:
-                    if ind in content:
-                        log_matches.append(f"{filepath}: found '{ind}'")
-            except Exception:
-                pass  # pass # return or raise not needed here
-    if log_matches:
-        (OUT / "exported-telemetry-indicator-matches.txt").write_text("\n".join(log_matches) + "\n")
-        print(f"[!] Found {len(log_matches)} matches in logs!")
-
-    if PACKAGES:
-        registry_dir = OUT / "registry"
-        registry_dir.mkdir(exist_ok=True)
-        for package in PACKAGES:
-            if not package: continue
-            safe_name = package.replace("/", "__")
-            print(f"[+] Querying npm view for {package}...")
-            res = subprocess.run(["npm", "view", package, "name", "version", "time", "versions", "dist-tags", "maintainers", "dist.tarball", "dist.integrity", "scripts", "--json"], capture_output=True, text=True)
-            if res.returncode == 0:
-                (registry_dir / f"npm-{safe_name}.json").write_text(res.stdout)
-        for package in PACKAGES:
-            if not package: continue
-            safe_name = package.replace("/", "__")
-            print(f"[+] Querying pip index for {package}...")
-            res = subprocess.run(["python3", "-m", "pip", "index", "versions", package], capture_output=True, text=True)
-            if res.returncode == 0:
-                (registry_dir / f"pypi-{safe_name}-versions.txt").write_text(res.stdout)
-            subprocess.run(["python3", "-m", "pip", "download", "--no-deps", package, "-d", str(registry_dir)], capture_output=True)
-
-print(f"[+] Wrote scope artifacts under {OUT}")
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -47,10 +47,10 @@ class TestFolderStructure:
 
     def test_no_unexpected_top_level_files(self, post_folder):
         """
-        Top-level files should only be iocs.json and manifest.yaml.
-        Extra files are flagged as unexpected to keep folders tidy.
+        Top-level files should only be canonical authoring files.
+        Workflow and evidence artifacts belong in references/.
         """
-        allowed_files = {"iocs.json", "manifest.yaml"}
+        allowed_files = {"analysis.md", "analysis.mdx", "iocs.json", "manifest.yaml"}
         actual_files = {f.name for f in post_folder.iterdir() if f.is_file()}
         unexpected = actual_files - allowed_files
         assert not unexpected, (

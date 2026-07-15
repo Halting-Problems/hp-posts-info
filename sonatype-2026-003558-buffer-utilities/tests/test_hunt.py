@@ -46,7 +46,7 @@ def _run_script(root: Path, out_dir: Path, packument: Path | None = None) -> dic
     args = [sys.executable, str(SCRIPT), str(root), "--out", str(out_dir)]
     if packument is not None:
         args.extend(["--packument", str(packument)])
-    completed = subprocess.run(args, capture_output=True, text=True, check=True)
+    completed = subprocess.run(args, capture_output=True, text=True, check=False)
     report = json.loads((out_dir / "report.json").read_text(encoding="utf-8"))
     report["stdout"] = completed.stdout
     report["stderr"] = completed.stderr

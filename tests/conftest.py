@@ -17,7 +17,11 @@ import yaml
 REPO_ROOT = Path(__file__).parent.parent
 
 # Folders that are NOT post folders
-_EXCLUDED = {".git", ".venv", ".pytest_cache", "tests", "__pycache__"}
+_EXCLUDED = {
+    ".git", ".venv", ".pytest_cache", "tests", "__pycache__",
+    # Protected scanner package: never collect, copy, index, or execute it.
+    "shai-hulululud-ai-scanner-disruption-package",
+}
 
 # Required keys at the top level of iocs.json
 IOCS_REQUIRED_TOP_LEVEL_KEYS = [
@@ -84,6 +88,7 @@ def _is_post_folder(path: Path) -> bool:
     return (
         path.is_dir()
         and path.name not in _EXCLUDED
+        and not path.name.startswith("hp-")
         and not path.name.startswith(".")
     )
 

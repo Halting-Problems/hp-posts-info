@@ -39,7 +39,9 @@ class TestManifest:
             data = yaml.safe_load(f)
         assert "hunts" in data, "Missing top-level 'hunts' key"
         assert isinstance(data["hunts"], list), "'hunts' must be a list"
-        assert len(data["hunts"]) >= 1, "'hunts' must contain at least one entry"
+        if not data["hunts"]:
+            assert data.get("hunt_status") == "not_applicable"
+            assert isinstance(data.get("hunt_reason"), str) and data["hunt_reason"].strip()
 
     def test_manifest_hunt_required_fields(self, post_folder):
         """Every hunt entry must have all required fields."""

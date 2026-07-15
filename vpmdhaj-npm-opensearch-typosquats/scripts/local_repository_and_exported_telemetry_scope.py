@@ -1,78 +1,102 @@
 #!/usr/bin/env python3
+"""Generated offline hunt scanner; regenerate with generate_scanners.py."""
+import importlib.util
 import os
-import sys
-import subprocess
 from pathlib import Path
+import sys
 
-ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
-LOG_ROOT = os.environ.get("LOG_ROOT", "")
-OUT = Path(os.environ.get("OUT", "hp-vpmdhaj-npm-opensearch-typosquats-scope"))
+PACKAGES = [
+    "@vpmdhaj/devops-tools",
+    "@vpmdhaj/elastic-helper",
+    "@vpmdhaj/opensearch-setup",
+    "@vpmdhaj/search-setup",
+    "app-config-utility",
+    "elastic-opensearch-helper",
+    "env-config-manager",
+    "opensearch-config-utility",
+    "opensearch-security-scanner",
+    "opensearch-setup",
+    "opensearch-setup-tool",
+    "search-cluster-setup",
+    "search-engine-setup",
+    "vpmdhaj-opensearch-setup",
+    "@vpmdhaj/aws-compat",
+    "@vpmdhaj/aws-credential-provider-env",
+    "@vpmdhaj/aws-credential-provider-http",
+    "@vpmdhaj/aws-sdk-client-opensearch",
+    "@vpmdhaj/aws-sdk-client-sts",
+    "@vpmdhaj/aws-sdk-credential-provider-node",
+    "@vpmdhaj/aws-sdk-types",
+    "@vpmdhaj/bun",
+    "@vpmdhaj/opensearch",
+    "@vpmdhaj/opensearch-project",
+    "@vpmdhaj/opensearch-js",
+    "@vpmdhaj/sts-client"
+]
+PACKAGE_VERSIONS = [
+    "@vpmdhaj/opensearch-setup@1.0.9102",
+    "@vpmdhaj/opensearch-setup@1.0.9103",
+    "@vpmdhaj/elastic-helper@1.0.7267",
+    "@vpmdhaj/elastic-helper@1.0.7268",
+    "@vpmdhaj/elastic-helper@1.0.7269",
+    "@vpmdhaj/elastic-helper@1.0.7270",
+    "@vpmdhaj/devops-tools@1.0.0",
+    "@vpmdhaj/search-setup@1.0.0",
+    "app-config-utility@1.0.0",
+    "elastic-opensearch-helper@1.0.0",
+    "env-config-manager@1.0.0",
+    "opensearch-config-utility@1.0.0",
+    "opensearch-security-scanner@1.0.0",
+    "opensearch-setup@1.0.0",
+    "opensearch-setup-tool@1.0.0",
+    "search-cluster-setup@1.0.0",
+    "search-engine-setup@1.0.0",
+    "vpmdhaj-opensearch-setup@1.0.0",
+    "@vpmdhaj/aws-compat@1.0.0",
+    "@vpmdhaj/aws-credential-provider-env@1.0.0",
+    "@vpmdhaj/aws-credential-provider-http@1.0.0",
+    "@vpmdhaj/aws-sdk-client-opensearch@1.0.0",
+    "@vpmdhaj/aws-sdk-client-sts@1.0.0",
+    "@vpmdhaj/aws-sdk-credential-provider-node@1.0.0",
+    "@vpmdhaj/aws-sdk-types@1.0.0",
+    "@vpmdhaj/bun@1.0.0",
+    "@vpmdhaj/opensearch@1.0.0",
+    "@vpmdhaj/opensearch-project@1.0.0",
+    "@vpmdhaj/opensearch-js@1.0.0",
+    "@vpmdhaj/sts-client@1.0.0"
+]
+HASHES = [
+    "a39155771e93e65b05195c8a705dfc03aa85c2ec682505f0d557233a8f275145"
+]
+DOMAINS = [
+    "aab.sportsontheweb.net",
+    "www.sportsontheweb.net"
+]
+PROFILE = {
+    'packages': PACKAGES,
+    'package_versions': PACKAGE_VERSIONS,
+    'hashes': HASHES,
+    'domains': DOMAINS
+}
 
-PACKAGES = ["@vpmdhaj/devops-tools","@vpmdhaj/elastic-helper","@vpmdhaj/opensearch-setup","@vpmdhaj/search-setup","app-config-utility","elastic-opensearch-helper","env-config-manager","opensearch-config-utility","opensearch-security-scanner","opensearch-setup","opensearch-setup-tool","search-cluster-setup","search-engine-setup","vpmdhaj-opensearch-setup","@vpmdhaj/aws-compat","@vpmdhaj/aws-credential-provider-env","@vpmdhaj/aws-credential-provider-http","@vpmdhaj/aws-sdk-client-opensearch","@vpmdhaj/aws-sdk-client-sts","@vpmdhaj/aws-sdk-credential-provider-node","@vpmdhaj/aws-sdk-types","@vpmdhaj/bun","@vpmdhaj/opensearch","@vpmdhaj/opensearch-project","@vpmdhaj/opensearch-js","@vpmdhaj/sts-client"]
-VERSIONS = ["@vpmdhaj/opensearch-setup@1.0.9102","@vpmdhaj/opensearch-setup@1.0.9103","@vpmdhaj/elastic-helper@1.0.7267","@vpmdhaj/elastic-helper@1.0.7268","@vpmdhaj/elastic-helper@1.0.7269","@vpmdhaj/elastic-helper@1.0.7270"]
-DOMAINS = ["aab.sportsontheweb.net","www.sportsontheweb.net"]
-HASHES = ["a39155771e93e65b05195c8a705dfc03aa85c2ec682505f0d557233a8f275145","9d962ed605bb4a39991f8fab9b1d2e423ea4d545f23fd44d9473a6423d94bbf"]
+def main() -> int:
+    try:
+        runtime_path = Path(__file__).resolve().parents[2] / "scanner_runtime.py"
+        spec = importlib.util.spec_from_file_location("hp_scanner_runtime", runtime_path)
+        if spec is None or spec.loader is None:
+            print(f"scanner runtime not found: {runtime_path}", file=sys.stderr)
+            return 2
+        runtime = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(runtime)
+        args = list(sys.argv[1:])
+        if os.environ.get("LOG_ROOT") and "--log-root" not in args:
+            args.extend(["--log-root", os.environ["LOG_ROOT"]])
+        if os.environ.get("OUT") and "--out" not in args:
+            args.extend(["--out", os.environ["OUT"]])
+        return runtime.main(args, PROFILE) if args else 2
+    except Exception as exc:
+        print(f"scanner execution error: {exc}", file=sys.stderr)
+        return 2
 
-# Collect unique indicators
-indicators = set()
-for group in [PACKAGES, VERSIONS, DOMAINS, HASHES]:
-    for val in group:
-        if val:
-            indicators.add(val)
-
-with open(indicators_file, "w") as f:
-    for ind in sorted(indicators):
-        f.write(ind + "\n")
-
-print(f"[+] Written unique selectors to {indicators_file}")
-
-# Walk local directory
-print(f"[+] Scanning directory: {ROOT} for selectors...")
-matches = []
-exclude_dirs = {"node_modules", "vendor", "dist", ".git"}
-for root, dirs, filenames in os.walk(ROOT):
-    dirs[:] = [d for d in dirs if d not in exclude_dirs]
-    for filename in filenames:
-        filepath = Path(root) / filename
-        try:
-            content = filepath.read_text(errors="ignore")
-            for ind in indicators:
-                if ind in content:
-                    matches.append(f"{filepath}: found '{ind}'")
-        except Exception:
-            pass  # pass # return or raise not needed here
-
-if matches:
-    (OUT / "repository-indicator-matches.txt").write_text("\n".join(matches) + "\n")
-    print(f"[!] Found {len(matches)} matches in codebase!")
-
-# Optional Log Scanning
-if LOG_ROOT and os.path.exists(LOG_ROOT):
-    print(f"[+] Scanning telemetry log directory: {LOG_ROOT}...")
-    log_matches = []
-    for root, _, filenames in os.walk(LOG_ROOT):
-        for filename in filenames:
-            filepath = Path(root) / filename
-            try:
-                content = filepath.read_text(errors="ignore")
-                for ind in indicators:
-                    if ind in content:
-                        log_matches.append(f"{filepath}: found '{ind}'")
-            except Exception:
-                pass  # pass # return or raise not needed here
-    if log_matches:
-        (OUT / "exported-telemetry-indicator-matches.txt").write_text("\n".join(log_matches) + "\n")
-        print(f"[!] Found {len(log_matches)} matches in logs!")
-
-    if PACKAGES:
-        registry_dir = OUT / "registry"
-        registry_dir.mkdir(exist_ok=True)
-        for package in PACKAGES:
-            if not package: continue
-            safe_name = package.replace("/", "__")
-            print(f"[+] Querying npm view for {package}...")
-            res = subprocess.run(["npm", "view", package, "name", "version", "time", "versions", "dist-tags", "maintainers", "dist.tarball", "dist.integrity", "scripts", "--json"], capture_output=True, text=True)
-            if res.returncode == 0:
-                (registry_dir / f"npm-{safe_name}.json").write_text(res.stdout)
-
-print(f"[+] Wrote scope artifacts under {OUT}")
+if __name__ == "__main__":
+    raise SystemExit(main())

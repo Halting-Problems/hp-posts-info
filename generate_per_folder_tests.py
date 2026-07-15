@@ -16,7 +16,10 @@ from pathlib import Path
 from string import Template
 
 REPO_ROOT = Path(__file__).parent
-EXCLUDED = {".git", ".venv", ".pytest_cache", "tests", "__pycache__"}
+EXCLUDED = {
+    ".git", ".venv", ".pytest_cache", "tests", "__pycache__",
+    "shai-hulululud-ai-scanner-disruption-package",
+}
 
 
 def _get_ioc_values(iocs: dict, path: list) -> list:
@@ -50,7 +53,7 @@ def _build_ioc_constant_test(var: str, ioc_display_path: str, values: list) -> s
         f'    actual = _extract_list_constant(script_tree, "{var}")',
         f"    assert actual is not None, \"Script missing {var} constant but iocs.json has values\"",
         f'    assert sorted(actual) == expected, (',
-        f'        f"{{{var}}} mismatch:\\n  script: {{sorted(actual)}}\\n  iocs.json: {{expected}}"',
+        f'        f"{var} mismatch:\\n  script: {{sorted(actual)}}\\n  iocs.json: {{expected}}"',
         f"    )",
     ]
     return "\n".join(lines)
@@ -344,6 +347,7 @@ def test_no_matches_in_clean_directory(tmp_path):
 
 def main():
     created = 0
+    removed = 0
     skipped = 0
 
     for folder in sorted(REPO_ROOT.iterdir()):
@@ -354,29 +358,47 @@ def main():
         if folder.name == "tests":
             continue
 
-        # Skip folders that already have their own tests/ directory
         tests_dir = folder / "tests"
-        if tests_dir.exists():
-            print(f"[skip] {folder.name} — already has tests/")
-            skipped += 1
-            continue
-
-        # Only process folders with the standard scope script
         script = folder / "scripts" / "local_repository_and_exported_telemetry_scope.py"
         if not script.exists():
             print(f"[skip] {folder.name} — no scope script")
             skipped += 1
             continue
 
-        tests_dir.mkdir(exist_ok=True)
-        (tests_dir / "__init__.py").write_text("# per-folder test package\n")
-        test_content = generate_test_file(folder)
         test_file = tests_dir / "test_hunt.py"
+        generated_test = (
+            test_file.exists()
+            and "Auto-generated per-folder tests for:" in test_file.read_text(encoding="utf-8", errors="ignore")
+        )
+        generated_wrapper = (
+            "Generated offline hunt scanner; regenerate with generate_scanners.py."
+            in script.read_text(encoding="utf-8", errors="ignore")
+        )
+        if generated_wrapper:
+            if generated_test:
+                test_file.unlink()
+                removed += 1
+                print(f"[rm]   {folder.name}/tests/test_hunt.py — covered by tests/test_scanner_runtime.py")
+            else:
+                print(f"[skip] {folder.name} — generated wrapper has no obsolete generated test")
+                skipped += 1
+            continue
+
+        if tests_dir.exists() and not generated_test:
+            print(f"[skip] {folder.name} — has hand-written tests/")
+            skipped += 1
+            continue
+
+        tests_dir.mkdir(exist_ok=True)
+        init_file = tests_dir / "__init__.py"
+        if not init_file.exists():
+            init_file.write_text("# per-folder test package\n")
+        test_content = generate_test_file(folder)
         test_file.write_text(test_content, encoding="utf-8")
         print(f"[ok]   {folder.name}/tests/test_hunt.py")
         created += 1
 
-    print(f"\nDone: {created} generated, {skipped} skipped.")
+    print(f"\nDone: {created} generated, {removed} obsolete tests removed, {skipped} skipped.")
 
 
 if __name__ == "__main__":

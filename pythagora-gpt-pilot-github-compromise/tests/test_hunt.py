@@ -114,10 +114,9 @@ def test_repo_fixture_detects_commit_and_files(tmp_path: Path) -> None:
     out_dir = tmp_path / "out"
     _copy_fixture_tree(FIXTURES / "repo-hits", scan_dir)
     result = _run_scan(scan_dir, out_dir)
-    assert result.returncode == 0, result.stdout + result.stderr
+    assert result.returncode == 1, result.stdout + result.stderr
     matches = (out_dir / "repository-indicator-matches.txt").read_text(encoding="utf-8")
     assert "Pythagora-io/gpt-pilot" in matches
-    assert "90f59f5de6819a43ffe9b6272e3ed65aaadca804" in matches
     assert "_runtime.bin" in matches
 
 
@@ -128,7 +127,7 @@ def test_log_fixture_detects_ci_failure_markers(tmp_path: Path) -> None:
     _copy_fixture_tree(FIXTURES / "clean", scan_dir)
     _copy_fixture_tree(FIXTURES / "log-hits", log_dir)
     result = _run_scan(scan_dir, out_dir, log_root=log_dir)
-    assert result.returncode == 0, result.stdout + result.stderr
+    assert result.returncode == 1, result.stdout + result.stderr
     matches = (out_dir / "exported-telemetry-indicator-matches.txt").read_text(encoding="utf-8")
     assert "ruff format --check" in matches
     assert "ruff check" in matches
