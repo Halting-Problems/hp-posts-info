@@ -1,0 +1,57 @@
+{
+  "task_id": "lucide-proxy-npm-browser-ddos-campaign-13-detection-pack",
+  "source_version_hash": "dac4e36c6c63cdfc9ce13b8db4f9d67287877b7ec5bb9516ca8b76681f557fcf",
+  "completed_at": "2026-07-13T22:12:32.297446Z",
+  "event_id": "lucide-proxy-npm-browser-ddos-campaign",
+  "detections": [
+    {
+      "name": "Lucide Proxy exact multi-scope selector scan",
+      "type": "python",
+      "telemetry": "local repository and exported dependency/deployment/browser/network telemetry",
+      "query": "scripts/scan_lucide_proxy_exposure.py",
+      "output_fields": [
+        "status",
+        "finding_count",
+        "type",
+        "value",
+        "path"
+      ],
+      "positive_signal": "one or more embedded incident selectors",
+      "false_positives": "generic package names and shared advertising/CDN infrastructure require context",
+      "severity": "high",
+      "maps_to_iocs": [
+        "all package/version pairs, hashes, precise network selectors"
+      ],
+      "maps_to_behaviors": [
+        "registry abuse",
+        "mutable loader",
+        "browser traffic generation",
+        "adware"
+      ]
+    },
+    {
+      "name": "Chromium history/service-worker evidence",
+      "type": "python",
+      "telemetry": "Chromium forensic profile copy",
+      "query": "scripts/collect_chromium_lucide_evidence.py",
+      "output_fields": [
+        "evidence_type",
+        "last_visit_time_utc",
+        "matched_selectors",
+        "path"
+      ],
+      "positive_signal": "campaign URL/domain/identifier/hash in history or stored browser artifact",
+      "false_positives": "shared infrastructure; correlate path/time",
+      "severity": "high",
+      "maps_to_iocs": [
+        "domains",
+        "campaign identifiers",
+        "payload hashes"
+      ],
+      "maps_to_behaviors": [
+        "browser execution",
+        "service-worker persistence"
+      ]
+    }
+  ]
+}

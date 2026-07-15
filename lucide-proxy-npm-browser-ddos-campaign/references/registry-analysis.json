@@ -1,0 +1,26 @@
+{
+  "task_id": "lucide-proxy-npm-browser-ddos-campaign-05-registry-analysis",
+  "source_version_hash": "dac4e36c6c63cdfc9ce13b8db4f9d67287877b7ec5bb9516ca8b76681f557fcf",
+  "completed_at": "2026-07-13T22:12:32.297446Z",
+  "ecosystem": "npm",
+  "total_names": 148,
+  "total_malicious_version_pairs": 398,
+  "availability": {
+    "security_placeholder": 147,
+    "available": 1
+  },
+  "currently_available": [
+    {
+      "name": "charlie-kirk",
+      "versions": [
+        "2.0.0",
+        "3.0.1"
+      ]
+    }
+  ],
+  "method": "Abbreviated npm registry metadata only; no tarball download or install.",
+  "evidence_references": [
+    "references/jfrog-package-version-table.json",
+    "references/npm-registry-status-2026-07-13.json"
+  ]
+}

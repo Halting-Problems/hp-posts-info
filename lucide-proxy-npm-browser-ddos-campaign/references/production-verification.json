@@ -1,0 +1,10 @@
+{
+  "task_id": "lucide-proxy-npm-browser-ddos-campaign-25-production-verification",
+  "source_version_hash": "dac4e36c6c63cdfc9ce13b8db4f9d67287877b7ec5bb9516ca8b76681f557fcf",
+  "completed_at": "2026-07-13T22:12:32.297446Z",
+  "decision": "block",
+  "blocking_findings": [
+    "No production import, threat page, feed, or search verification is authorized in this shadow run."
+  ],
+  "warnings": []
+}

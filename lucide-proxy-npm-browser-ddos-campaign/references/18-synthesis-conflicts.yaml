@@ -1,0 +1,40 @@
+synthesis_conflict_resolution:
+  task_id: lucide-proxy-npm-browser-ddos-campaign-22-synthesis-conflict-resolution
+  source_version_hash: dac4e36c6c63cdfc9ce13b8db4f9d67287877b7ec5bb9516ca8b76681f557fcf
+  completed_at: '2026-07-13T22:12:32.297446Z'
+  decision: pass_with_warnings
+  blocking_findings: []
+  warnings:
+  - Production import and verification nodes are intentionally blocked; artifact-mode
+    plan validation cannot pass in this shadow run.
+  - The endpoint-forensics node was planner-selected by a broad malicious-package
+    heuristic and was explicitly narrowed to browser evidence.
+  - JFrog's abbreviated module-removal source commit did not resolve directly in the
+    public build repository.
+  - The complete 93-hostname list and victim counts are unavailable.
+  - Current charlie-kirk tarball content was not downloaded in this safety-constrained
+    run.
+  - The browser collector covers Chromium-family forensic copies, not Firefox or Safari.
+  - A clean scanner result is inconclusive unless dependency, deployment, browser,
+    and network evidence scopes are complete.
+  - The generated script-pack command requires the hp-posts-info virtualenv on PATH;
+    /usr/bin/python has no pytest.
+  - Pre-existing repository-local Python pipeline tests have four stale site-refresh-orchestrator
+    failures unrelated to this candidate.
+  - The full 148-name list remains machine-readable rather than repeated in prose.
+  - Current DDoS capability language must remain explicitly unconfirmed.
+  conflicts:
+  - topic: SafeDep adware-only vs JFrog DDoS/RCE
+    resolution: Different snapshot/history evidence; preserve both and time-bound
+      DDoS claims.
+  - topic: Current package availability vs current malicious behavior
+    resolution: Registry availability is not execution evidence; current DDoS remains
+      not observed.
+  - topic: package consumer vs browser victim
+    resolution: Use separate exposure classifications and never infer execution from
+      dependency presence.
+  unresolved:
+  - complete 93-hostname list
+  - current charlie-kirk tarball behavior
+  - exact module-removal source/build mapping
+  - victim counts

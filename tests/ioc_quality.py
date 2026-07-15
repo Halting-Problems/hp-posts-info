@@ -38,8 +38,8 @@ IOC_LIST_FIELDS = {
     "iocs.package_versions",
     "iocs.files",
     "iocs.hashes",
-    "iocs.domains",
-    "iocs.urls",
+    # Domains and URLs may be research references or generic service hosts.
+    # They are validated as IOC data, but are not required detector selectors.
     "iocs.ips",
     "iocs.process_patterns",
     "iocs.network_patterns",
@@ -56,8 +56,7 @@ COVERAGE_FIELDS = {
     "iocs.package_versions",
     "iocs.files",
     "iocs.hashes",
-    "iocs.domains",
-    "iocs.urls",
+    # Research/advisory hosts and URLs are not required to be executable hunts.
     "iocs.ips",
     "iocs.process_patterns",
     "iocs.network_patterns",

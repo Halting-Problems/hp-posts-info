@@ -1,0 +1,21 @@
+{
+  "task_id": "lucide-proxy-npm-browser-ddos-campaign-20-workflow-qa-review",
+  "source_version_hash": "dac4e36c6c63cdfc9ce13b8db4f9d67287877b7ec5bb9516ca8b76681f557fcf",
+  "completed_at": "2026-07-13T22:12:32.297446Z",
+  "lane_id": "workflow_qa_review",
+  "agent_profile_path": "/home/sam/agency-agents/testing/testing-workflow-optimizer.md",
+  "decision": "pass_with_warnings",
+  "confidence": "high",
+  "blocking_findings": [],
+  "warnings": [
+    "The generated script-pack command requires the hp-posts-info virtualenv on PATH; /usr/bin/python has no pytest.",
+    "Pre-existing repository-local Python pipeline tests have four stale site-refresh-orchestrator failures unrelated to this candidate."
+  ],
+  "required_fixes": [],
+  "evidence_references": [
+    "script-pack-results.json",
+    "postgres-import-dry-run.json",
+    "site-worker-plan.json"
+  ],
+  "reviewer_summary": "The candidate has mock clean/dirty/failure paths, focused contract tests, a selected-slug importer dry-run, exact artifact handoffs, and explicit skipped production nodes."
+}

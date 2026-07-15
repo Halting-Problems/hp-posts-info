@@ -1,0 +1,25 @@
+{
+  "task_id": "lucide-proxy-npm-browser-ddos-campaign-02-dedupe-and-disposition",
+  "source_version_hash": "dac4e36c6c63cdfc9ce13b8db4f9d67287877b7ec5bb9516ca8b76681f557fcf",
+  "completed_at": "2026-07-13T22:12:32.297446Z",
+  "decision": "new",
+  "blocking_findings": [],
+  "warnings": [],
+  "feed_decision": {
+    "action": "new_post",
+    "matched_existing_posts": [],
+    "dedupe_keys": [
+      "campaign:lucide-proxy",
+      "repo:lucideproxy/svg",
+      "npm-publisher:terminal3airport",
+      "npm-publisher:eerikakirk",
+      "ga:G-0VL3ZSBXDH",
+      "package:charlie-kirk"
+    ],
+    "parent_campaign_id": "none",
+    "child_event_id": "lucide-proxy-npm-browser-ddos-campaign",
+    "reason": "No matching local or live-feed entry was identified; JFrog defines one correlated campaign spanning the two publisher waves.",
+    "required_updates": [],
+    "canonical_slug": "lucide-proxy-npm-browser-ddos-campaign"
+  }
+}

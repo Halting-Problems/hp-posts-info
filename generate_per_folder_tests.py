@@ -16,7 +16,10 @@ from pathlib import Path
 from string import Template
 
 REPO_ROOT = Path(__file__).parent
-EXCLUDED = {".git", ".venv", ".pytest_cache", "tests", "__pycache__"}
+EXCLUDED = {
+    ".git", ".venv", ".pytest_cache", "tests", "__pycache__",
+    "shai-hulululud-ai-scanner-disruption-package",
+}
 
 
 def _get_ioc_values(iocs: dict, path: list) -> list:

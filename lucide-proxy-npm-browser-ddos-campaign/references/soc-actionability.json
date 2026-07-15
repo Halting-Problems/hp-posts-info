@@ -1,0 +1,55 @@
+{
+  "task_id": "lucide-proxy-npm-browser-ddos-campaign-12-soc-actionability",
+  "source_version_hash": "dac4e36c6c63cdfc9ce13b8db4f9d67287877b7ec5bb9516ca8b76681f557fcf",
+  "completed_at": "2026-07-13T22:12:32.297446Z",
+  "analyst_summary": "Distinguish package presence, hosted deployment, and browser execution. No install-time host compromise was observed.",
+  "exposure_decisions": [
+    "confirmed_browser_execution",
+    "confirmed_hosted_exposure",
+    "package_present_execution_unproven",
+    "not_affected"
+  ],
+  "hunts": [
+    {
+      "hunt_name": "Lucide Proxy multi-scope scanner",
+      "script": "scripts/scan_lucide_proxy_exposure.py",
+      "telemetry": "dependency/deployment/browser/network exports",
+      "window": "2026-03-05 onward",
+      "positive": "exact campaign selector",
+      "negative": "clean only for supplied scopes",
+      "inconclusive": "required evidence family omitted"
+    },
+    {
+      "hunt_name": "Read-only Chromium evidence collector",
+      "script": "scripts/collect_chromium_lucide_evidence.py",
+      "telemetry": "History SQLite and service-worker/cache files",
+      "window": "browser artifact retention window",
+      "positive": "campaign selector in browser profile",
+      "negative": "no selector in supplied profile",
+      "inconclusive": "profile/browser not supplied or artifacts deleted"
+    }
+  ],
+  "evidence_preservation": [
+    "Hash and retain original exports before cleanup",
+    "Use UTC",
+    "Keep package/deployment/browser evidence classifications separate"
+  ],
+  "remediation_gates": {
+    "containment_complete": [
+      "Affected hosted proxy deployments are disabled and precise campaign infrastructure is blocked.",
+      "Managed-browser service workers tied to confirmed deployment origins are unregistered after evidence preservation."
+    ],
+    "eradication_complete": [
+      "All 148 package names and malicious version pairs are absent from dependency manifests, lockfiles, caches selected for rebuild, and deployed static assets.",
+      "Hosted assets are rebuilt from reviewed sources without mutable campaign loaders or advertising scripts."
+    ],
+    "recovery_complete": [
+      "Rebuilt deployments pass the provided scope scan and browser/network monitoring shows no campaign selectors.",
+      "Users return only after cache invalidation and service-worker cleanup are verified for affected origins."
+    ],
+    "closure_required": [
+      "Thirty days of DNS, proxy, and managed-browser monitoring show no campaign infrastructure, GA identifier, payload hashes, or affected package versions.",
+      "Package consumers and proxy-page visitors are counted separately in the incident record, with unknown exposure left explicit."
+    ]
+  }
+}

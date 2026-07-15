@@ -1,0 +1,14 @@
+publishability_gate:
+  task_id: lucide-proxy-npm-browser-ddos-campaign-26-publishability-gate
+  source_version_hash: dac4e36c6c63cdfc9ce13b8db4f9d67287877b7ec5bb9516ca8b76681f557fcf
+  completed_at: '2026-07-13T22:12:32.297446Z'
+  decision: block
+  blocking_findings:
+  - Production Postgres import not run.
+  - Production /threat, /api/feed, and /api/search checks not run.
+  warnings:
+  - Current charlie-kirk content was not downloaded or statically verified.
+  - Full deployment-host list and victim counts remain unavailable.
+  site_worker_decision: needs_review
+  reason: All local research, scripts, focused tests, reviews, and selected-slug dry-run
+    pass, but production actions are prohibited.

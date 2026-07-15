@@ -1,0 +1,58 @@
+{
+  "task_id": "lucide-proxy-npm-browser-ddos-campaign-06-artifact-diff",
+  "source_version_hash": "dac4e36c6c63cdfc9ce13b8db4f9d67287877b7ec5bb9516ca8b76681f557fcf",
+  "completed_at": "2026-07-13T22:12:32.297446Z",
+  "artifact_diff": {
+    "artifact_identity": {
+      "ecosystem": "npm/browser/GitHub",
+      "registry": "registry.npmjs.org",
+      "name": "Lucide Proxy campaign (148 names)",
+      "suspicious_version_or_ref": "398 JFrog-listed version pairs and May GitHub commits",
+      "known_good_version_or_ref": "unknown; later builds are adware-only, not trusted clean releases"
+    },
+    "collection_commands": [
+      "GET JFrog/SafeDep source HTML",
+      "GET npm abbreviated metadata for each package",
+      "GET GitHub repository/commit API metadata"
+    ],
+    "hashes": [
+      "eb4e1394d537d8eba509dd5c57e7aaf4c1df57715c7161330012a11f6202af84",
+      "10ddbbae0070267b8d15888b09a3cdb19fa74d861315b71f21c9ace8b9f85c75",
+      "4b188d179e50e8208a6efec85e273e88d8fc390c836f299ba12915e0840408fd"
+    ],
+    "size_delta": "unknown; package tarballs were not downloaded",
+    "changed_manifest_fields": [],
+    "new_files": [
+      "assets/73sxysj46r.js",
+      "assets/script.js"
+    ],
+    "removed_files": [],
+    "modified_files": [
+      "obfuscated build assets and index.html in cited commits"
+    ],
+    "execution_trigger": "browser visit to hosted static application; no install hook",
+    "payload_behavior": [
+      "Historical builds loaded mutable JavaScript from a remote CDN path.",
+      "Historical builds created Wisp-compatible WebSocket control traffic capable of connection exhaustion.",
+      "An archived May 30 payload generated HTTP flood traffic from visitor browsers.",
+      "Later builds retained popunder and third-party advertising script behavior without confirmed DDoS modules."
+    ],
+    "provenance": {
+      "present": null,
+      "verified": null,
+      "issuer": "unknown",
+      "identity": "unknown",
+      "workflow_ref": "unknown"
+    },
+    "source_match": {
+      "expected_source_ref": "lucideproxy/svg May build history",
+      "registry_artifact_matches_source": null,
+      "notes": "Historical commit metadata was verified, but npm tarballs were not collected."
+    },
+    "confidence": "medium",
+    "analyst_notes": [
+      "Direct primary reverse engineering is stronger than this run's metadata-only artifact check.",
+      "Do not describe later adware-only builds as clean."
+    ]
+  }
+}

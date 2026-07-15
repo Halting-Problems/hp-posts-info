@@ -1,0 +1,42 @@
+{
+  "task_id": "lucide-proxy-npm-browser-ddos-campaign-10-campaign-graph",
+  "source_version_hash": "dac4e36c6c63cdfc9ce13b8db4f9d67287877b7ec5bb9516ca8b76681f557fcf",
+  "completed_at": "2026-07-13T22:12:32.297446Z",
+  "campaign_graph": {
+    "parent_campaign_id": "none",
+    "child_events": [
+      "terminal3airport May package waves",
+      "eerikakirk July 8 wave"
+    ],
+    "shared_indicators": [
+      "G-0VL3ZSBXDH",
+      "Lucide Proxy build/repository identity",
+      "ad-monetization and proxy application structure"
+    ],
+    "shared_payloads": [
+      "later obfuscated adware/static proxy build family"
+    ],
+    "shared_infrastructure": [
+      "campaign advertising domains and hosting concentration"
+    ],
+    "shared_publishing_paths": [
+      "npm static asset packages"
+    ],
+    "shared_victimology": [
+      "visitors to student-oriented proxy deployments"
+    ],
+    "evidence_for_linking": [
+      "Direct JFrog source defines one campaign",
+      "shared stable Analytics ID",
+      "shared application/build lineage"
+    ],
+    "evidence_against_linking": [
+      "The July wave lacks the historical DDoS modules"
+    ],
+    "alternative_hypotheses": [
+      "A copycat could reuse public assets, but direct source and shared identifiers favor one campaign"
+    ],
+    "confidence": "high",
+    "decision": "campaign"
+  }
+}

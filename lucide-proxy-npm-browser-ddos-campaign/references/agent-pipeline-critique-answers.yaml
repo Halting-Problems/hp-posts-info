@@ -1,0 +1,139 @@
+defender_usability:
+- question: Can an everyday appsec engineer or SOC analyst understand what to check
+    in under five minutes?
+  answer: 'yes'
+  evidence: Executive decision path, Key Facts, and exposure table.
+- question: Does the output provide a short Should I care decision path?
+  answer: 'yes'
+  evidence: Executive Summary.
+- question: Does the output list affected assets in machine-readable form before long
+    narrative prose?
+  answer: 'yes'
+  evidence: iocs.json contains 148 names and 398 pairs; analysis summarizes the count.
+- question: Would the user need to manually clean package names, versions, IOCs, or
+    queries before scripting?
+  answer: 'no'
+  evidence: Raw typed iocs.json and embedded script constants.
+- question: Are unknowns explicit enough that a user will not mistake missing evidence
+    for absence of risk?
+  answer: 'yes'
+  evidence: Open Questions and clean/inconclusive semantics.
+package_and_artifact_fidelity:
+- question: Are package coordinates exact?
+  answer: 'yes'
+  evidence: 148-row JFrog table, 398 name@version selectors, registry URLs in captured
+    metadata.
+- question: Are version ranges valid for the ecosystem?
+  answer: 'yes'
+  evidence: Exact npm versions only; no synthetic ranges.
+- question: Are hashes labeled with algorithm and artifact identity?
+  answer: 'yes'
+  evidence: Analysis labels the HTTP payload SHA-256; JFrog hash descriptions preserved.
+- question: Are native identifiers represented correctly?
+  answer: 'yes'
+  evidence: npm names/versions and GitHub full commit SHAs.
+- question: Are malicious, suspicious, clean, and fixed artifacts clearly separated?
+  answer: yes_with_warning
+  evidence: Later builds are called adware-only, never clean; exact trusted fixed
+    release is unknown.
+ioc_fidelity:
+- question: Are raw machine-readable IOCs valid for direct use?
+  answer: 'yes'
+  evidence: 50 candidate-scoped IOC/manifest/script tests passed.
+- question: Are prose IOCs defanged?
+  answer: 'yes'
+  evidence: Network observables defanged in analysis.
+- question: Are IOC types separate?
+  answer: 'yes'
+  evidence: iocs.json splits domains, URLs, IPs, hashes, files, package versions,
+    and network patterns.
+- question: Are IOCs tied to evidence and timestamps when known?
+  answer: yes_with_warning
+  evidence: Claim ledger and source timeline; per-IOC timestamps are unavailable.
+- question: Are noisy observables labeled?
+  answer: 'yes'
+  evidence: Manifest and analysis warn about generic names, advertising, and shared
+    CDN infrastructure.
+provenance_and_evidence:
+- question: Does every behavioral claim have linked evidence?
+  answer: 'yes'
+  evidence: Nearby numbered citations and claim ledger.
+- question: Does each evidence item include URL, type, retrieval time, and confidence?
+  answer: 'yes'
+  evidence: Research packet, source capture hashes, and ledger.
+- question: Are fact, inference, hypothesis, and attribution separated?
+  answer: 'yes'
+  evidence: Evidence Assessment statuses.
+- question: Are artifact/provenance claims backed by direct metadata?
+  answer: yes_with_warning
+  evidence: GitHub commit API and npm metadata; tarball provenance remains unknown.
+- question: Are primary sources preferred?
+  answer: 'yes'
+  evidence: JFrog, SafeDep, GitHub, and npm only.
+soc_and_ir_actionability:
+- question: Do hunts specify telemetry, language, fields, and window?
+  answer: 'yes'
+  evidence: Manifest and analysis; Python collectors cover evidence retained from
+    March 5 onward.
+- question: Do hunts define positive, negative, and inconclusive outcomes?
+  answer: 'yes'
+  evidence: Manifest plus exit-code contract.
+- question: Do detections include false-positive guidance?
+  answer: 'yes'
+  evidence: Both manifest hunts and detection-pack.json.
+- question: Are escalation and closure explicit?
+  answer: 'yes'
+  evidence: Manifest and Remediation and Recovery Gates.
+- question: Are commands safe and reader-scoped?
+  answer: 'yes'
+  evidence: Read-only/no-network scripts accept reader-owned directories only.
+scripts_and_fixtures:
+- question: Do scripts live under the slug?
+  answer: 'yes'
+  evidence: scripts/ directory.
+- question: Does each script have a manifest, fixture, and test?
+  answer: 'yes'
+  evidence: Two manifest hunts and six tests including clean/dirty/failure paths.
+- question: Are incident constants embedded and inputs reader-owned?
+  answer: 'yes'
+  evidence: All exact event constants embedded; only scope paths are supplied.
+- question: Are forbidden incident placeholders absent?
+  answer: 'yes'
+  evidence: Static source check and focused tests.
+- question: Can scripts run in clean and dirty states?
+  answer: 'yes'
+  evidence: 6/6 focused tests passed.
+remediation:
+- question: Are recommendations incident-specific?
+  answer: 'yes'
+  evidence: Lucide deployment, service-worker, cache, and browser steps.
+- question: Is credential rotation mapped to actual exposure?
+  answer: 'yes'
+  evidence: Broad rotation rejected; only demonstrated same-origin session/token exposure
+    triggers revocation.
+- question: Are containment, eradication, recovery, and closure present?
+  answer: 'yes'
+  evidence: Profile gates and analysis sequence.
+- question: Is blast radius stated without unsupported victims?
+  answer: 'yes'
+  evidence: 148 packages and 93 hostnames stated; visitor count unknown.
+- question: Are monitoring windows and rechecks included?
+  answer: 'yes'
+  evidence: 30-day monitoring plus rerun both collectors.
+feed_api_site_publication:
+- question: Does output write facts to Postgres through approved import path?
+  answer: not_run
+  evidence: Selected-slug dry-run passed; production import prohibited.
+- question: Does Next.js read from Postgres with no fallback authority?
+  answer: not_applicable_no_site_change
+  evidence: No website code or production data changed.
+- question: Does api/feed include valid package data?
+  answer: not_run
+  evidence: Production verification prohibited; importer dry-run accepted all package
+    data.
+- question: Does publication preserve claim/source mappings?
+  answer: yes_locally
+  evidence: analysis.md, iocs.json, claim ledger, and importer dry-run.
+- question: Can downstream users reconstruct the decision?
+  answer: 'yes'
+  evidence: Run ledger, reviews, synthesis, and blocked publishability gate.

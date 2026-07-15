@@ -1,100 +1,33 @@
 #!/usr/bin/env python3
-"""Generic IOC scope scanner for claude-code-github-action-secret-exposure.
-
-Searches repository trees and exported logs for literal IOC values from iocs.json.
-Exit codes:
-  0: no matches
-  1: one or more indicators matched
-  2: execution error
-"""
-import argparse
-import fnmatch
+"""Generated offline hunt scanner; regenerate with generate_scanners.py."""
+import importlib.util
 import os
-import sys
 from pathlib import Path
+import sys
 
-OUT = Path(os.environ.get("OUT", "hp-claude-code-github-action-secret-exposure-ioc-scope"))
-CONTENT_INDICATORS = [
-  "anthropics/claude-code",
-  "v2.1.128",
-  "ANTHROPIC_API_KEY",
-  "/proc/self/environ"
-]
-PATH_INDICATORS = [
-  ".github/workflows/*.yml",
-  "action.yml"
-]
-EXCLUDE_DIRS = {".git", "node_modules", "vendor", "dist", "build", ".venv", "__pycache__"}
 
-def _iter_files(root):
-    root = Path(root)
-    if not root.exists():
-        return
-    if root.is_file():
-        yield root
-        return
-    for current, dirs, files in os.walk(root):
-        dirs[:] = [d for d in dirs if d not in EXCLUDE_DIRS]
-        for name in files:
-            yield Path(current) / name
+PROFILE = {
 
-def _path_matches(path):
-    text = str(path)
-    matches = []
-    for indicator in PATH_INDICATORS:
-        if not indicator:
-            continue
-        if indicator.startswith(("/", "~")):
-            candidate = Path(os.path.expanduser(indicator))
-            if candidate.exists() and path == candidate:
-                matches.append(indicator)
-        if indicator in text or fnmatch.fnmatch(text, indicator) or fnmatch.fnmatch(path.name, indicator):
-            matches.append(indicator)
-    return matches
+}
 
-def _content_matches(path):
+def main() -> int:
     try:
-        content = path.read_text(errors="ignore")
-    except Exception:
-        return []
-    return [indicator for indicator in CONTENT_INDICATORS if indicator and indicator in content]
-
-def _scan_roots(roots):
-    matches = []
-    for root in roots:
-        if not root:
-            continue
-        for path in _iter_files(root):
-            for indicator in _path_matches(path):
-                matches.append(f"{path}: path matched {indicator!r}")
-            for indicator in _content_matches(path):
-                matches.append(f"{path}: content matched {indicator!r}")
-    return matches
-
-def main():
-    parser = argparse.ArgumentParser(description="Scan files and logs for Halting Problems IOC values")
-    parser.add_argument("roots", nargs="*", default=["."], help="File or directory roots to scan")
-    parser.add_argument("--log-root", default=os.environ.get("LOG_ROOT", ""), help="Optional exported log directory")
-    args = parser.parse_args()
-
-    OUT.mkdir(parents=True, exist_ok=True)
-    indicator_lines = sorted(set(CONTENT_INDICATORS + PATH_INDICATORS))
-    (OUT / "ioc-indicators.txt").write_text("\n".join(indicator_lines) + "\n")
-
-    roots = list(args.roots)
-    if args.log_root:
-        roots.append(args.log_root)
-    matches = _scan_roots(roots)
-    if matches:
-        (OUT / "ioc-scope-matches.txt").write_text("\n".join(matches) + "\n")
-        print(f"[!] Found {len(matches)} IOC matches; details written under {OUT}")
-        return 1
-    print(f"[+] No IOC matches found; indicator inventory written under {OUT}")
-    return 0
+        runtime_path = Path(__file__).resolve().parents[2] / "scanner_runtime.py"
+        spec = importlib.util.spec_from_file_location("hp_scanner_runtime", runtime_path)
+        if spec is None or spec.loader is None:
+            print(f"scanner runtime not found: {runtime_path}", file=sys.stderr)
+            return 2
+        runtime = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(runtime)
+        args = list(sys.argv[1:])
+        if os.environ.get("LOG_ROOT") and "--log-root" not in args:
+            args.extend(["--log-root", os.environ["LOG_ROOT"]])
+        if os.environ.get("OUT") and "--out" not in args:
+            args.extend(["--out", os.environ["OUT"]])
+        return runtime.main(args, PROFILE) if args else 2
+    except Exception as exc:
+        print(f"scanner execution error: {exc}", file=sys.stderr)
+        return 2
 
 if __name__ == "__main__":
-    try:
-        sys.exit(main())
-    except Exception as exc:
-        print(f"[-] Execution failure: {exc}", file=sys.stderr)
-        sys.exit(2)
+    raise SystemExit(main())

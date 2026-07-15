@@ -1,0 +1,19 @@
+{
+  "task_id": "lucide-proxy-npm-browser-ddos-campaign-23-postgres-import-dry-run",
+  "source_version_hash": "dac4e36c6c63cdfc9ce13b8db4f9d67287877b7ec5bb9516ca8b76681f557fcf",
+  "completed_at": "2026-07-13T22:12:32.297446Z",
+  "command": [
+    "pnpm",
+    "exec",
+    "tsx",
+    "scripts/import-posts-info-to-postgres.ts",
+    "--posts-info-dir",
+    "/home/sam/hp-posts-info",
+    "--slug",
+    "lucide-proxy-npm-browser-ddos-campaign",
+    "--dry-run"
+  ],
+  "exit_code": 0,
+  "stdout": "validated: lucide-proxy-npm-browser-ddos-campaign",
+  "mutation": "none (dry-run)"
+}

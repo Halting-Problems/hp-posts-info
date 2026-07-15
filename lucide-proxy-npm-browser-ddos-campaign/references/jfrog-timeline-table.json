@@ -1,0 +1,42 @@
+[
+  {
+    "date": "March 5, 2026",
+    "event": "Earliest Lucide page observed utilizing GA property G-0VL3ZSBXDH and reverse DNS geeked.wtf.",
+    "phase": "None (Adware Only)"
+  },
+  {
+    "date": "March 16, 2026",
+    "event": "First traffic monetized via woofbeginner.com scripts.",
+    "phase": "None (Adware Only)"
+  },
+  {
+    "date": "May 16, 2026",
+    "event": "Commit bcc9868e345b6 adds the remote script loader cdn.js just 33 minutes after the GitHub account canyoupleasesaysomething was created.",
+    "phase": "Remote Loader (RCE)"
+  },
+  {
+    "date": "May 17, 2026",
+    "event": "Commit 9b7ca53d6bd8c adds the Wisp WebSocket generator, capped at 64 sockets.",
+    "phase": "Remote Loader + Wisp Flood (64 sockets)"
+  },
+  {
+    "date": "May 17, 2026",
+    "event": "Commit ccc7c921bc931 introduces full-bundle obfuscation and increases the maximum socket limit to 1,024.",
+    "phase": "Remote Loader + Wisp Flood (1,024 sockets)"
+  },
+  {
+    "date": "May 30, 2026",
+    "event": "Wayback records active HTTP flood attacking cdn.caan.edu from visitor browsers.",
+    "phase": "Active HTTP Flood"
+  },
+  {
+    "date": "May 31, 2026",
+    "event": "Commit cf741e982181a removes the remote script loader and Wisp modules, returning the build to standard ad-supported files.",
+    "phase": "None (Adware Only)"
+  },
+  {
+    "date": "July 8, 2026",
+    "event": "A second wave brings the campaign total to 148 packages under account eerikakirk, containing the obfuscated, ad-monetized builds.",
+    "phase": "None (Adware Only)"
+  }
+]

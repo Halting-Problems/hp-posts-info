@@ -1,0 +1,20 @@
+agency_review_result:
+  lane_id: data_quality_review
+  agent_profile_path: /home/sam/agency-agents/engineering/engineering-ai-data-remediation-engineer.md
+  decision: pass_with_warnings
+  confidence: high
+  blocking_findings: []
+  warnings:
+  - JFrog's abbreviated module-removal source commit did not resolve directly in the
+    public build repository.
+  - The complete 93-hostname list and victim counts are unavailable.
+  - Current charlie-kirk tarball content was not downloaded in this safety-constrained
+    run.
+  required_fixes: []
+  evidence_references:
+  - iocs.json
+  - references/jfrog-package-version-table.json
+  - references/npm-registry-status-2026-07-13.json
+  reviewer_summary: The source binding, 148 unique names, 398 package/version pairs,
+    147/1 registry status split, typed IOCs, and source-snapshot distinction are auditable
+    and lossless.

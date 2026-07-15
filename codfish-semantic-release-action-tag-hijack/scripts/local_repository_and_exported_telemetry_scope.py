@@ -1,16 +1,12 @@
 #!/usr/bin/env python3
+"""Generated offline hunt scanner; regenerate with generate_scanners.py."""
+import importlib.util
 import os
-import sys
 from pathlib import Path
+import sys
 
-ROOT = Path(sys.argv[1] if len(sys.argv) > 1 else ".").expanduser().resolve()
-LOG_ROOT = os.environ.get("LOG_ROOT", "")
-OUT = Path(os.environ.get("OUT", "hp-codfish-semantic-release-action-tag-hijack-scope"))
-
-PACKAGES = ["codfish/semantic-release-action"]
-HASHES = [
-    "5792aba0e2180b9b80b77644370a6889d5817456",
-    "8f9a58f2acdc190c356f79159b5de2548cdb63cd",
+PACKAGES = [
+    "codfish/semantic-release-action"
 ]
 PACKAGE_VERSIONS = [
     "codfish/semantic-release-action@v5.0.0",
@@ -27,75 +23,47 @@ PACKAGE_VERSIONS = [
     "codfish/semantic-release-action@v3.1.0",
     "codfish/semantic-release-action@v3.0.0",
     "codfish/semantic-release-action@v3",
-    "codfish/semantic-release-action@v2.2.1",
+    "codfish/semantic-release-action@v2.2.1"
 ]
-TEXT_SELECTORS = [
-    'uses: "codfish/semantic-release-action@8f9a58f2acdc190c356f79159b5de2548cdb63cd"',
+FILES = [
+    "action.yml",
+    "index.js"
+]
+HASHES = [
+    "5792aba0e2180b9b80b77644370a6889d5817456",
+    "8f9a58f2acdc190c356f79159b5de2548cdb63cd"
+]
+PROCESS_PATTERNS = [
     "oven-sh/setup-bun",
     "bun run $GITHUB_ACTION_PATH/index.js",
-    "using: composite",
+    "Runner.Worker memory access"
 ]
+PROFILE = {
+    'packages': PACKAGES,
+    'package_versions': PACKAGE_VERSIONS,
+    'files': FILES,
+    'hashes': HASHES,
+    'process_patterns': PROCESS_PATTERNS
+}
 
-VALIDATOR_REQUIRED_SELECTORS = [
-    'action.yml',
-    'Runner.Worker memory access',
-    'https://raw.githubusercontent.com/codfish/semantic-release-action/5792aba0e2180b9b80b77644370a6889d5817456/action.yml',
-    'https://raw.githubusercontent.com/codfish/semantic-release-action/8f9a58f2acdc190c356f79159b5de2548cdb63cd/action.yml',
-]
-INDICATOR_GROUPS = [PACKAGES, HASHES, PACKAGE_VERSIONS, TEXT_SELECTORS, VALIDATOR_REQUIRED_SELECTORS]
+def main() -> int:
+    try:
+        runtime_path = Path(__file__).resolve().parents[2] / "scanner_runtime.py"
+        spec = importlib.util.spec_from_file_location("hp_scanner_runtime", runtime_path)
+        if spec is None or spec.loader is None:
+            print(f"scanner runtime not found: {runtime_path}", file=sys.stderr)
+            return 2
+        runtime = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(runtime)
+        args = list(sys.argv[1:])
+        if os.environ.get("LOG_ROOT") and "--log-root" not in args:
+            args.extend(["--log-root", os.environ["LOG_ROOT"]])
+        if os.environ.get("OUT") and "--out" not in args:
+            args.extend(["--out", os.environ["OUT"]])
+        return runtime.main(args, PROFILE) if args else 2
+    except Exception as exc:
+        print(f"scanner execution error: {exc}", file=sys.stderr)
+        return 2
 
-if not ROOT.exists():
-    raise SystemExit(f"scan root does not exist: {ROOT}")
-
-OUT.mkdir(parents=True, exist_ok=True)
-indicators = set()
-for group in INDICATOR_GROUPS:
-    for value in group:
-        indicators.add(value)
-
-indicators_file = OUT / "indicators.txt"
-indicators_file.write_text("\n".join(sorted(indicators)) + "\n", encoding="utf-8")
-print(f"[+] Wrote selectors to {indicators_file}")
-
-
-def scan_tree(base: Path) -> list[str]:
-    matches: list[str] = []
-    exclude_dirs = {".git", ".venv", "dist", "node_modules", "vendor", "coverage"}
-    for current_root, dirs, files in os.walk(base):
-        dirs[:] = [entry for entry in dirs if entry not in exclude_dirs]
-        for filename in files:
-            file_path = Path(current_root) / filename
-            if not file_path.is_file():
-                continue
-            try:
-                content = file_path.read_text(encoding="utf-8", errors="ignore")
-            except OSError as exc:
-                raise RuntimeError(f"failed to read {file_path}: {exc}") from exc
-            for indicator in indicators:
-                if indicator in content:
-                    matches.append(f"{file_path}: found '{indicator}'")
-    return matches
-
-
-repository_matches = scan_tree(ROOT)
-if repository_matches:
-    repository_file = OUT / "repository-indicator-matches.txt"
-    repository_file.write_text("\n".join(repository_matches) + "\n", encoding="utf-8")
-    print(f"[!] Found {len(repository_matches)} repository matches")
-else:
-    print("[+] No repository matches found")
-
-if LOG_ROOT:
-    log_base = Path(LOG_ROOT).expanduser().resolve()
-    if log_base.exists():
-        log_matches = scan_tree(log_base)
-        if log_matches:
-            log_file = OUT / "exported-telemetry-indicator-matches.txt"
-            log_file.write_text("\n".join(log_matches) + "\n", encoding="utf-8")
-            print(f"[!] Found {len(log_matches)} exported telemetry matches")
-        else:
-            print("[+] No exported telemetry matches found")
-    else:
-        raise SystemExit(f"LOG_ROOT does not exist: {log_base}")
-
-print(f"[+] Scope artifacts written under {OUT}")
+if __name__ == "__main__":
+    raise SystemExit(main())

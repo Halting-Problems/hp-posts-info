@@ -1,0 +1,223 @@
+trace_id: lucide-proxy-20260713-shadow
+event_id: lucide-proxy-npm-browser-ddos-campaign
+source_item_key: jfrog-research:lucide-proxy-npm-malware-campaign
+source_version_hash: dac4e36c6c63cdfc9ce13b8db4f9d67287877b7ec5bb9516ca8b76681f557fcf
+source_version_at: '2026-07-13T00:00:00.000Z'
+source_retrieved_at: '2026-07-13T21:53:41Z'
+canonical_publication_target: nextjs-postgres
+mode: local-shadow-research
+task_results:
+- task_id: lucide-proxy-npm-browser-ddos-campaign-01-scope-gate
+  status: pass
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/01-scope-gate.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/event_profile.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-02-dedupe-and-disposition
+  status: pass
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/02-dedupe-disposition.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/01-scope-gate.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-03-evidence-plan
+  status: pass
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/03-evidence-plan.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/02-dedupe-disposition.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-04-research-packet
+  status: pass
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/04-research-packet.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/03-evidence-plan.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-05-registry-analysis
+  status: pass
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/registry-analysis.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/04-research-packet.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-06-artifact-diff
+  status: pass_with_warnings
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/artifact-diff.json
+  confidence: medium
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/04-research-packet.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/registry-analysis.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-07-provenance-audit
+  status: pass_with_warnings
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/provenance-audit.json
+  confidence: medium
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/artifact-diff.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-08-browser-exposure
+  status: pass_with_warnings
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/browser-exposure.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/04-research-packet.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-09-endpoint-forensics
+  status: not_applicable
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/endpoint-forensics.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/04-research-packet.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-10-campaign-graph
+  status: pass
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/campaign-graph.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/04-research-packet.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-11-ioc-package-normalization
+  status: pass
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/iocs-and-packages.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/04-research-packet.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/registry-analysis.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/artifact-diff.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-12-soc-actionability
+  status: pass
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/soc-actionability.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/04-research-packet.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/registry-analysis.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/artifact-diff.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/provenance-audit.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/browser-exposure.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/endpoint-forensics.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/campaign-graph.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-13-detection-pack
+  status: pass
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/detection-pack.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/iocs-and-packages.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/soc-actionability.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-14-script-pack
+  status: pass
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/script-pack-results.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/detection-pack.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/soc-actionability.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-15-post-draft
+  status: pass
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/post-draft.md
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/04-research-packet.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/iocs-and-packages.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/soc-actionability.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/registry-analysis.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/artifact-diff.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/provenance-audit.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/browser-exposure.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/endpoint-forensics.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/campaign-graph.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/detection-pack.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/script-pack-results.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-16-schema-normalization
+  status: pass
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/normalized-event-profile.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/post-draft.md
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-17-architecture-review
+  status: pass_with_warnings
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/reviews/architecture_review.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/normalized-event-profile.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-18-data-quality-review
+  status: pass_with_warnings
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/reviews/data_quality_review.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/normalized-event-profile.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-19-incident-response-review
+  status: pass_with_warnings
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/reviews/incident_response_review.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/normalized-event-profile.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-20-workflow-qa-review
+  status: pass_with_warnings
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/reviews/workflow_qa_review.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/normalized-event-profile.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-21-technical-writing-review
+  status: pass_with_warnings
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/reviews/technical_writing_review.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/normalized-event-profile.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-22-synthesis-conflict-resolution
+  status: pass_with_warnings
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/synthesis-conflicts.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/reviews/architecture_review.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/reviews/data_quality_review.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/reviews/incident_response_review.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/reviews/workflow_qa_review.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/reviews/technical_writing_review.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-23-postgres-import-dry-run
+  status: pass
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/postgres-import-dry-run.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/normalized-event-profile.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/synthesis-conflicts.json
+  blocking_gaps: []
+- task_id: lucide-proxy-npm-browser-ddos-campaign-24-postgres-import
+  status: block
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/postgres-import-result.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/postgres-import-dry-run.json
+  blocking_gaps:
+  - Production action or verification prohibited in shadow mode.
+- task_id: lucide-proxy-npm-browser-ddos-campaign-25-production-verification
+  status: block
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/production-verification.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/postgres-import-result.json
+  blocking_gaps:
+  - Production action or verification prohibited in shadow mode.
+- task_id: lucide-proxy-npm-browser-ddos-campaign-26-publishability-gate
+  status: block
+  artifact_path: /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/publishability-gate.json
+  confidence: high
+  evidence_references:
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/synthesis-conflicts.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/postgres-import-result.json
+  - /home/sam/hp-posts-info/lucide-proxy-npm-browser-ddos-campaign/production-verification.json
+  blocking_gaps:
+  - Production action or verification prohibited in shadow mode.
+publish_decision: needs_review

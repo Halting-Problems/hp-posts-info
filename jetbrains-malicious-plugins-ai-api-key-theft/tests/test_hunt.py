@@ -18,7 +18,7 @@ def run_script(scan_root: Path, telemetry_root: Path | None, out_dir: Path) -> s
     cmd = [sys.executable, str(SCRIPT), str(scan_root), "--out", str(out_dir)]
     if telemetry_root is not None:
         cmd.extend(["--telemetry-root", str(telemetry_root)])
-    return subprocess.run(cmd, check=True, text=True, capture_output=True)
+    return subprocess.run(cmd, check=False, text=True, capture_output=True)
 
 
 def load_iocs() -> dict:

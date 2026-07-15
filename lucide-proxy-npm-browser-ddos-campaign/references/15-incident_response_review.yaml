@@ -1,0 +1,19 @@
+agency_review_result:
+  lane_id: incident_response_review
+  agent_profile_path: /home/sam/agency-agents/security/security-incident-responder.md
+  decision: pass_with_warnings
+  confidence: high
+  blocking_findings: []
+  warnings:
+  - The browser collector covers Chromium-family forensic copies, not Firefox or Safari.
+  - A clean scanner result is inconclusive unless dependency, deployment, browser,
+    and network evidence scopes are complete.
+  required_fixes: []
+  evidence_references:
+  - analysis.md
+  - manifest.yaml
+  - scripts/scan_lucide_proxy_exposure.py
+  - scripts/collect_chromium_lucide_evidence.py
+  reviewer_summary: The post gives an under-five-minute decision path, separates exposure
+    classes, preserves evidence before cleanup, provides two tested collectors with
+    0/1/2 semantics, and defines containment/eradication/recovery/closure gates.
