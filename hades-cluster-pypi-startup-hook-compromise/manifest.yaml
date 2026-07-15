@@ -7,3 +7,11 @@ hunts:
       collection_context: filesystem or log export
     positive_signal: Indicators of compromise matched in telemetry
     script_path: scripts/scan_hades_cluster.py
+  - id: hades-cluster-pypi-startup-hook-compromise-specialized-audit-1
+    title: hades cluster pypi audit
+    question: Does collected host or repository telemetry contain evidence covered by the specialized Hades Cluster PyPI audit?
+    telemetry:
+      family: file
+      collection_context: host filesystem, package cache, repository, or exported telemetry
+    positive_signal: The specialized audit reports one or more incident-specific indicators or vulnerable artifacts.
+    script_path: scripts/hades_cluster_pypi_audit.py
